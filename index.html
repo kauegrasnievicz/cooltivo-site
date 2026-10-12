@@ -276,17 +276,17 @@ nav .btn{padding:11px 20px;font-size:14px}
 .s li{padding:11px 0;border-bottom:1px solid var(--line);font-size:16px;display:flex;gap:12px;align-items:center;transition:border-color .35s,color .35s}
 .s li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);flex:none;transition:background .35s}
 .s:hover,.s:focus-within{background:var(--green-strong);transform:translateY(-4px)}
-.s:hover h3,.s:hover .what{color:var(--cream)}
-.s:hover .dur{color:rgba(249,243,227,.7)}
-.s:hover ul,.s:hover li{border-color:rgba(249,243,227,.2);color:var(--cream)}
-.s:hover li::before{background:var(--green-soft)}
-.s:hover .chip{background:var(--cream);color:var(--green-strong)}
+.s:hover h3,.s:hover .what,.s:focus-within h3,.s:focus-within .what{color:var(--cream)}
+.s:hover .dur,.s:focus-within .dur{color:rgba(249,243,227,.7)}
+.s:hover ul,.s:hover li,.s:focus-within ul,.s:focus-within li{border-color:rgba(249,243,227,.2);color:var(--cream)}
+.s:hover li::before,.s:focus-within li::before{background:var(--green-soft)}
+.s:hover .chip,.s:focus-within .chip{background:var(--cream);color:var(--green-strong)}
 .s-cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-weight:700;font-size:15px;color:var(--green);text-decoration:none}
 .s-cta svg{width:11px;height:11px;transition:transform .25s}
 .s-cta:hover svg{transform:translate(3px,-3px)}
-.s:hover .s-cta{color:var(--cream)}
+.s:hover .s-cta,.s:focus-within .s-cta{color:var(--cream)}
 .wa-fab{display:none}
-.s:hover .chip.rec{background:var(--green-soft);color:var(--green-strong)}
+.s:hover .chip.rec,.s:focus-within .chip.rec{background:var(--green-soft);color:var(--green-strong)}
 @media (prefers-reduced-motion:reduce){.s{transition:none}.s:hover{transform:none}}
 
 /* INSTAGRAM / VÍDEOS */
