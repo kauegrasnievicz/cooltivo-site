@@ -154,6 +154,10 @@ nav .btn{padding:11px 20px;font-size:14px}
 .watch{position:absolute;right:16px;bottom:16px;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:0;background:rgba(22,54,38,.72);backdrop-filter:blur(6px);color:var(--cream);font:700 13px/1 var(--font);cursor:pointer}
 .watch svg{width:12px;height:12px}
 .watch:hover{background:var(--orange);color:#fff}
+.collab{display:flex;align-items:center;gap:12px;margin:0 0 18px;padding:10px 14px 10px 10px;border:1.5px solid rgba(249,243,227,.22);border-radius:16px;width:fit-content;max-width:100%}
+.collab .sym{height:26px;width:36px;color:var(--orange);flex:none}
+.collab small{display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(249,243,227,.6)}
+.collab b{display:block;font-size:14px;font-weight:700;color:var(--cream);line-height:1.25}
 .cases .hint{margin-top:18px;font-size:13px;color:rgba(249,243,227,.6);display:flex;gap:8px;align-items:center}
 
 /* REDE */
@@ -194,6 +198,7 @@ nav .btn{padding:11px 20px;font-size:14px}
 .insta{padding:130px 0 120px;background:var(--green-ink);color:var(--cream);overflow:hidden}
 .insta .head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:46px}
 .insta h2{font-size:72px;letter-spacing:-.05em}
+.insta .sub{font-size:20px;line-height:1.45;font-weight:500;color:rgba(249,243,227,.85);max-width:560px;margin-top:18px}
 .insta .handle{font-family:var(--font-display);font-weight:800;font-size:22px;color:var(--orange);letter-spacing:-.02em;margin-top:12px;display:inline-block;text-decoration:none}
 .insta .right{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
 .row{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:max(40px,calc((100vw - var(--wrap))/2 + 40px));padding:10px max(40px,calc((100vw - var(--wrap))/2 + 40px)) 30px;scrollbar-width:none;cursor:grab}
@@ -422,6 +427,7 @@ footer .links a:hover{color:var(--orange)}
         <h3>Recorde de faturamento e um canal de crescimento exponencial.</h3>
         <p>O desafio era ganhar escala, autoridade e previsibilidade comercial em um mercado técnico e competitivo. Criamos o posicionamento, estruturamos a performance digital e atuamos com consultoria estratégica, conectando marca, conteúdo e geração de demanda.</p>
         <div class="nums"><div><b>2 anos</b><span>seguidos de recorde de faturamento</span></div><div><b>1.500+</b><span>membros na comunidade Guardiões Digitais</span></div></div>
+        
         <div class="chips"><span>Consultoria de marketing</span><span>Gestão de projetos</span><span>Presença e performance</span><span>Direção criativa</span></div>
       </div>
       <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/introduce.jpg" aria-label="Evento Guardiões Digitais da Introduce"><source src="video/cases/introduce.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/introduce.mp4" data-ig="https://www.instagram.com/p/DWZwsjIEgHx/"><svg><use href="#play"/></svg>Assistir com som</button></div>
@@ -430,9 +436,10 @@ footer .links a:hover{color:var(--orange)}
     <article class="case">
       <div class="txt">
         <div class="meta"><span class="brandname">Santa Clara</span><span class="seg">Cooperativa · Programa Plantando o Bem</span></div>
-        <h3>Das hortas abandonadas ao 1º Concurso de Sustentabilidade Criativa.</h3>
-        <p>O Plantando o Bem leva educação alimentar e hortas orgânicas a escolas do interior gaúcho, com cartilhas e teatro. Só que as hortas acabavam abandonadas depois da implantação. Nosso desafio foi reinventar o programa, e assim nasceu o primeiro concurso de sustentabilidade criativa, em que os próprios alunos criam e tocam projetos sustentáveis.</p>
+        <h3>1º Concurso de Sustentabilidade Criativa.</h3>
+        <p>O Plantando o Bem leva educação alimentar e hortas orgânicas a escolas do interior gaúcho, com cartilhas e teatro. Só que as hortas não tinham continuidade depois da implantação. Nosso desafio foi reinventar o programa, e assim nasceu o primeiro concurso de sustentabilidade criativa, em que os próprios alunos criam e tocam projetos sustentáveis.</p>
         <div class="nums"><div><b>58</b><span>projetos inscritos</span></div><div><b>R$ 35 mil</b><span>em prêmios para alunos e professores</span></div></div>
+        
         <div class="chips"><span>Conceito</span><span>Gestão de projetos</span><span>Comunicação</span><span>Direção criativa</span></div>
       </div>
       <div class="vis"><div class="award"><span class="medal">TOP</span><span>Top de Marketing ADVB/RS 2024</span></div><video data-auto muted loop playsinline preload="none" poster="video/cases/santa-clara.jpg" aria-label="Plantando o Bem, Santa Clara"><source src="video/cases/santa-clara.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/santa-clara.mp4" data-ig="https://www.instagram.com/p/C1-NUVQs1nO/"><svg><use href="#play"/></svg>Assistir com som</button></div>
@@ -444,9 +451,22 @@ footer .links a:hover{color:var(--orange)}
         <h3>Uma marca brasileira no Salone del Mobile de Milão.</h3>
         <p>Levamos a Zen Design pela primeira vez a Milão, no Salone del Mobile 2025, com o lançamento de uma linha exclusiva para pets. A Zen Pet Collection nasce como extensão de um lifestyle em que o pet também expressa quem somos e como vivemos.</p>
         <div class="nums"><div><b>1ª vez</b><span>da marca em Milão</span></div><div><b>2025</b><span>lançamento da Zen Pet Collection</span></div></div>
+        
         <div class="chips"><span>Direção criativa</span><span>Lançamento</span><span>Conteúdo</span></div>
       </div>
       <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/zen-milao.jpg" aria-label="Zen Design no Salone del Mobile"><source src="video/cases/zen-milao.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/zen-milao.mp4" data-ig="https://www.instagram.com/reel/DI17ktgPibj/"><svg><use href="#play"/></svg>Assistir com som</button></div>
+    </article>
+
+    <article class="case">
+      <div class="txt">
+        <div class="meta"><span class="brandname">Neomot</span><span class="seg">Tecnologia · Prédios inteligentes</span></div>
+        <h3>Muito além do elevador: um ecossistema para prédios inteligentes.</h3>
+        <p>Reconhecida por elevadores, a Neomot precisava mostrar ao mercado que ia além disso e oferecia uma visão de ecossistema de tecnologia para prédios inteligentes. Unimos um time de especialistas e, depois da imersão e do diagnóstico, conduzimos o workshop de posicionamento, a direção criativa e o refresh da identidade. Também entregamos o plano de go-to-market para levar a nova mensagem ao mercado.</p>
+        <div class="nums"><div><b>Imersão</b><span>diagnóstico e workshop de posicionamento</span></div><div><b>GTM</b><span>plano de go-to-market</span></div></div>
+        
+        <div class="chips"><span>Reposicionamento</span><span>Workshop</span><span>Identidade visual</span><span>Go-to-market</span></div>
+      </div>
+      <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/neomot.jpg" aria-label="Filme institucional da Neomot"><source src="video/cases/neomot.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/neomot.mp4" data-ig="https://www.instagram.com/cooltivoestudio/"><svg><use href="#play"/></svg>Assistir com som</button></div>
     </article>
 
     <article class="case">
@@ -455,20 +475,10 @@ footer .links a:hover{color:var(--orange)}
         <h3>Uma gigante da indústria mais nativa no digital.</h3>
         <p>O desafio foi levar o novo posicionamento da Soprano para o digital, com uma comunicação que coloca as histórias à frente dos produtos: as pessoas, os bastidores e quem usa a marca no dia a dia. O resultado foi um crescimento exponencial de engajamento.</p>
         <div class="nums"><div><b>Histórias</b><span>à frente dos produtos</span></div><div><b>Pessoas</b><span>como protagonistas da marca</span></div></div>
+        <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>Fabu Design e Vitral Filmes</b></span></div>
         <div class="chips"><span>Posicionamento</span><span>Presença digital</span><span>Produção de conteúdo</span></div>
       </div>
       <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/soprano-digital.jpg" aria-label="Conteúdo da Soprano"><source src="video/cases/soprano-digital.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/soprano-digital.mp4" data-ig="https://www.instagram.com/p/DdRaOx4Ae9v/"><svg><use href="#play"/></svg>Assistir com som</button></div>
-    </article>
-
-    <article class="case">
-      <div class="txt">
-        <div class="meta"><span class="brandname">Soprano Energia</span><span class="seg">Indústria · Energia renovável</span></div>
-        <h3>Do zero aos R$ 2 milhões em pipeline.</h3>
-        <p>Entre as frentes de crescimento da Soprano, as energias renováveis ganharam protagonismo, com carregadores para veículos elétricos e energia fotovoltaica. Criamos tudo do zero e, na segunda etapa, aceleramos a geração de demanda online, que até então era inexistente.</p>
-        <div class="nums"><div><b>R$ 2 mi</b><span>em pipeline no primeiro ano</span></div><div><b>&lt; R$ 10</b><span>por lead qualificado</span></div></div>
-        <div class="chips"><span>Consultoria de marketing</span><span>Gestão de projetos</span></div>
-      </div>
-      <div class="vis"><img src="img/cases/soprano.jpg" alt="Fábrica da Soprano com painéis solares"></div>
     </article>
 
     <article class="case">
@@ -477,9 +487,10 @@ footer .links a:hover{color:var(--orange)}
         <h3>De R$ 20 mil para R$ 627 mil no mês.</h3>
         <p>Um e-commerce com mais de 1.000 rótulos de 30 países precisava crescer sem competir só por preço. Deixamos de tratar a marca como uma loja que vive de conteúdo de terceiros e criamos uma cultura de comunicação focada em valor de marca, integrada a campanhas mensais em Google Ads, Meta Ads, e-mail, WhatsApp e CRM.</p>
         <div class="nums"><div><b>R$ 627 mil</b><span>de faturamento em um único mês</span></div><div><b>1.000+</b><span>rótulos de 30 países</span></div></div>
+        <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>Impulse Company</b></span></div>
         <div class="chips"><span>Consultoria de marketing</span><span>Presença e performance</span><span>Direção criativa</span></div>
       </div>
-      <div class="vis"><img src="img/cases/vino-verace.jpg" alt="Degustação Vino Verace"></div>
+      <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/vino-verace.jpg" aria-label="Vino Verace"><source src="video/cases/vino-verace.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/vino-verace.mp4" data-ig="https://www.instagram.com/p/DN1TI1sZil0/"><svg><use href="#play"/></svg>Assistir com som</button></div>
     </article>
 
     <article class="case">
@@ -488,6 +499,7 @@ footer .links a:hover{color:var(--orange)}
         <h3>Sua Casa Veste Zen: moda e arquitetura no mesmo lugar.</h3>
         <p>Com o conceito de posicionamento Sua Casa Veste Zen, que conecta a inspiração da moda à arquitetura, levamos a campanha estrelada por Ana Hickmann até a Expo Revestir e transformamos a presença da marca em uma experiência de marca e de conteúdo.</p>
         <div class="nums"><div><b>Ana Hickmann</b><span>rosto da campanha</span></div><div><b>Expo Revestir</b><span>experiência de marca e conteúdo</span></div></div>
+        
         <div class="chips"><span>Posicionamento</span><span>Campanha</span><span>Experiência de marca</span></div>
       </div>
       <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/zen-ana-hickmann.jpg" aria-label="Zen Design e Ana Hickmann na Expo Revestir"><source src="video/cases/zen-ana-hickmann.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/zen-ana-hickmann.mp4" data-ig="https://www.instagram.com/reel/DHjgMhqvjAF/"><svg><use href="#play"/></svg>Assistir com som</button></div>
@@ -497,9 +509,10 @@ footer .links a:hover{color:var(--orange)}
       <div class="txt">
         <div class="meta"><span class="brandname">Garbo Enologia Criativa</span><span class="seg">Vinícola · Serra Gaúcha</span></div>
         <h3>Histórias que vão além do rótulo.</h3>
-        <p>Conduzimos a direção criativa da produção de foto e filme da linha da Garbo. Cada vinho ganhou um conceito cênico próprio, do roteiro ao set, com a Vitral Filmes na captação e o Estúdio Alba Arte como palco.</p>
-        <div class="nums"><div><b>8</b><span>vinhos com conceito cênico próprio</span></div><div><b>24</b><span>entregas entre fotos e filmes</span></div></div>
-        <div class="chips"><span>Direção criativa</span><span>Produção audiovisual</span><span>Direção de arte</span></div>
+        <p>Ajudamos uma das vinícolas mais criativas do Brasil a se posicionar de maneira única nas redes sociais, com direcionamento criativo e uma operação de conteúdo eficiente.</p>
+        <div style="height:24px"></div>
+        
+        <div class="chips"><span>Posicionamento nas redes</span><span>Direção criativa</span><span>Operação de conteúdo</span></div>
       </div>
       <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/garbo.jpg" aria-label="Filme da Garbo Enologia Criativa"><source src="video/cases/garbo.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/garbo.mp4" data-ig="https://www.instagram.com/reel/DMiEqAKq_YA/"><svg><use href="#play"/></svg>Assistir com som</button></div>
     </article>
@@ -508,9 +521,10 @@ footer .links a:hover{color:var(--orange)}
       <div class="txt">
         <div class="meta"><span class="brandname">Vallontano</span><span class="seg">Vinícola · Serra Gaúcha</span></div>
         <h3>Uma imagem à altura do vinho.</h3>
-        <p>Assinamos a direção criativa da produção audiovisual e fotográfica da Vallontano, com direção de arte própria e a Vitral Filmes na captação. O resultado é um acervo de imagens consistente para a marca usar em todos os canais.</p>
+        <p>Construímos a estratégia de posicionamento da comunicação e do conteúdo da Vallontano e fazemos a gestão da presença digital da marca. Nas produções, a direção criativa e de arte é nossa, o que garante um acervo de imagens consistente para usar em todos os canais.</p>
         <div class="nums"><div><b>Foto + filme</b><span>em uma única produção</span></div></div>
-        <div class="chips"><span>Direção criativa</span><span>Produção audiovisual</span><span>Direção de arte</span></div>
+        <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>Vitral Filmes e Alba Arte</b></span></div>
+        <div class="chips"><span>Posicionamento</span><span>Presença digital</span><span>Direção criativa</span></div>
       </div>
       <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/vallontano.jpg" aria-label="Filme da Vallontano"><source src="video/cases/vallontano.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/vallontano.mp4" data-ig="https://www.instagram.com/p/DdcB5r1lZyP/"><svg><use href="#play"/></svg>Assistir com som</button></div>
     </article>
@@ -561,6 +575,7 @@ footer .links a:hover{color:var(--orange)}
     <div>
       <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Conteúdos</div>
       <h2 style="margin-top:16px">Siga a <span class="hl">Cooltivo.</span></h2>
+      <p class="sub">Conteúdos sobre negócios, posicionamento e criatividade para quem quer ir além do óbvio.</p>
       <a class="handle" href="https://www.instagram.com/cooltivoestudio/" target="_blank" rel="noopener">@cooltivoestudio</a>
     </div>
     <div class="right">
@@ -572,6 +587,9 @@ footer .links a:hover{color:var(--orange)}
       <button class="reel" type="button" data-play="video/reels/r1.mp4" data-ig="https://www.instagram.com/cooltivoestudio/" aria-label="Assistir: Go-to-market: da promessa à prática"><span class="ph"></span><video data-hover muted loop playsinline preload="none" poster="video/reels/r1.jpg"><source src="video/reels/r1.mp4" type="video/mp4"></video><span class="pbtn"><svg><use href="#play"/></svg></span><span class="info"><b>Go-to-market: da promessa à prática</b><span>@cooltivoestudio</span></span></button>
       <button class="reel" type="button" data-play="video/reels/r2.mp4" data-ig="https://www.instagram.com/cooltivoestudio/" aria-label="Assistir: A empresa precisa ter clareza da essência, com Marcius Dal Bó"><span class="ph"></span><video data-hover muted loop playsinline preload="none" poster="video/reels/r2.jpg"><source src="video/reels/r2.mp4" type="video/mp4"></video><span class="pbtn"><svg><use href="#play"/></svg></span><span class="info"><b>A empresa precisa ter clareza da essência, com Marcius Dal Bó</b><span>@cooltivoestudio</span></span></button>
       <button class="reel" type="button" data-play="video/reels/r3.mp4" data-ig="https://www.instagram.com/cooltivoestudio/" aria-label="Assistir: Por que tá todo mundo correndo?"><span class="ph"></span><video data-hover muted loop playsinline preload="none" poster="video/reels/r3.jpg"><source src="video/reels/r3.mp4" type="video/mp4"></video><span class="pbtn"><svg><use href="#play"/></svg></span><span class="info"><b>Por que tá todo mundo correndo?</b><span>@cooltivoestudio</span></span></button>
+      <button class="reel" type="button" data-play="video/reels/r4.mp4" data-ig="https://www.instagram.com/cooltivoestudio/" aria-label="Assistir: A tríade do posicionamento"><span class="ph"></span><video data-hover muted loop playsinline preload="none" poster="video/reels/r4.jpg"><source src="video/reels/r4.mp4" type="video/mp4"></video><span class="pbtn"><svg><use href="#play"/></svg></span><span class="info"><b>A tríade do posicionamento</b><span>@cooltivoestudio</span></span></button>
+      <button class="reel" type="button" data-play="video/reels/r6.mp4" data-ig="https://www.instagram.com/cooltivoestudio/" aria-label="Assistir: A maior comunidade de cibersegurança: o que a gente aprendeu"><span class="ph"></span><video data-hover muted loop playsinline preload="none" poster="video/reels/r6.jpg"><source src="video/reels/r6.mp4" type="video/mp4"></video><span class="pbtn"><svg><use href="#play"/></svg></span><span class="info"><b>A maior comunidade de cibersegurança: o que a gente aprendeu</b><span>@cooltivoestudio</span></span></button>
+      <button class="reel" type="button" data-play="video/reels/r5.mp4" data-ig="https://www.instagram.com/cooltivoestudio/" aria-label="Assistir: Pela cafeína?"><span class="ph"></span><video data-hover muted loop playsinline preload="none" poster="video/reels/r5.jpg"><source src="video/reels/r5.mp4" type="video/mp4"></video><span class="pbtn"><svg><use href="#play"/></svg></span><span class="info"><b>Pela cafeína?</b><span>@cooltivoestudio</span></span></button>
   </div>
 </section>
 
