@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cooltivo Estúdio · Cultivando marcas que resistem ao tempo</title>
+<meta name="description" content="Estúdio de estratégia e criatividade da Serra Gaúcha. Mais de 100 projetos em 6 anos construindo marcas que resistem ao tempo.">
+<link rel="icon" href="img/favicon.svg">
+<style>
+/* Fonte provisória: Helvetica Neue onde existir (Mac/iOS); Inter (incluída) no restante.
+   Para trocar a família inteira, edite apenas --font e --font-display. */
+@font-face{font-family:"Inter Local";src:url(fonts/Inter-Regular.otf);font-weight:400}
+@font-face{font-family:"Inter Local";src:url(fonts/Inter-Medium.otf);font-weight:500}
+@font-face{font-family:"Inter Local";src:url(fonts/Inter-SemiBold.otf);font-weight:600}
+@font-face{font-family:"Inter Local";src:url(fonts/Inter-Bold.otf);font-weight:700}
+@font-face{font-family:"Inter Display Local";src:url(fonts/InterDisplay-Bold.otf);font-weight:700}
+@font-face{font-family:"Inter Display Local";src:url(fonts/InterDisplay-ExtraBold.otf);font-weight:800}
+@font-face{font-family:"Inter Display Local";src:url(fonts/InterDisplay-Black.otf);font-weight:900}
+:root{
+  --font:"Helvetica Neue",Helvetica,"Inter Local",Arial,sans-serif;
+  --font-display:"Helvetica Neue",Helvetica,"Inter Display Local",Arial,sans-serif;
+  --green:#366c4c; --green-deep:#24503a; --orange:#ff673e; --cream:#f9f3e3; --cream-2:#efe6cf;
+  --ink:#16241c; --muted:#56655c; --line:rgba(54,108,76,.2);
+  --wrap:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact;scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--cream);color:var(--ink);font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 40px}
+.sym{display:inline-block;aspect-ratio:669/488;height:1em;width:auto}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:10px}
+.eyebrow .sym{height:14px;flex:none}
+h1,h2,h3{font-family:var(--font-display);font-weight:800;letter-spacing:-.035em;line-height:1}
+h2{font-size:60px}
+.lead{font-size:22px;line-height:1.45;font-weight:500;letter-spacing:-.01em}
+.btn{display:inline-flex;align-items:center;gap:12px;font-weight:700;font-size:16px;padding:16px 26px;border-radius:999px;text-decoration:none;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:13px;height:13px}
+.btn-orange{background:var(--orange);color:#fff}
+.btn-ghost{border:1.5px solid currentColor;color:var(--green)}
+.btn-cream{background:var(--cream);color:var(--green)}
+.hl{color:var(--orange)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:20;background:rgba(249,243,227,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--green)}
+.brand .sym{height:30px}
+.brand b{font-family:var(--font-display);font-weight:800;font-size:22px;letter-spacing:-.03em}
+.brand span{font-size:13px;font-weight:500;color:var(--muted);letter-spacing:0}
+nav ul{display:flex;gap:34px;list-style:none;font-weight:600;font-size:15px}
+nav ul a{color:var(--green);text-decoration:none}
+nav .btn{padding:11px 20px;font-size:14px}
+
+/* HERO */
+.hero{padding:80px 0 96px;position:relative;overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero h1{font-size:104px;color:var(--green);line-height:.92;margin:24px 0 30px;letter-spacing:-.045em}
+.hero .lead{max-width:560px}
+.hero .ctas{display:flex;gap:14px;margin-top:38px}
+.hero .proof{margin-top:44px;display:flex;gap:40px;padding-top:24px;border-top:1px solid var(--line);max-width:600px}
+.hero .proof b{display:block;font-family:var(--font-display);font-size:38px;font-weight:800;color:var(--orange);letter-spacing:-.03em;line-height:1}
+.hero .proof span{font-size:14px;color:var(--muted);font-weight:500}
+.hero .photo{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5}
+.hero .photo img{width:100%;height:100%;object-fit:cover;object-position:52% 50%}
+.tagline{position:absolute;left:20px;bottom:20px;background:var(--green);color:var(--cream);border-radius:16px;padding:14px 18px;font-weight:700;font-size:13px;letter-spacing:.06em;line-height:1.25;display:flex;gap:12px;align-items:center}
+.tagline .sym{height:22px;color:var(--orange)}
+
+/* MANIFESTO */
+.manifesto{background:var(--green);color:var(--cream);padding:120px 0;position:relative;overflow:hidden}
+.manifesto .bg-sym{position:absolute;right:-220px;top:50%;transform:translateY(-50%);height:640px;width:auto;color:var(--cream);opacity:.06}
+.manifesto h2{font-size:84px;max-width:960px;letter-spacing:-.045em}
+.manifesto .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;margin-top:64px;align-items:start;position:relative}
+.vs{border-top:1px solid rgba(249,243,227,.3);padding-top:18px}
+.vs h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:14px;color:var(--orange)}
+.vs.pro h4{color:var(--cream)}
+.vs li{list-style:none;font-size:20px;font-weight:600;padding:10px 0;border-bottom:1px solid rgba(249,243,227,.14);letter-spacing:-.01em}
+.vs.contra li{text-decoration:line-through;text-decoration-color:var(--orange);text-decoration-thickness:2px;opacity:.75}
+
+/* CLIENTS */
+.clients{padding:96px 0 104px;border-bottom:1px solid var(--line)}
+.clients .head{display:flex;justify-content:space-between;align-items:end;margin-bottom:56px;gap:40px}
+.clients h2{font-size:48px;color:var(--green);max-width:640px}
+.clients .head p{max-width:400px;color:var(--muted);font-size:17px}
+.marquee{overflow:hidden;position:relative;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee+.marquee{margin-top:34px}
+.track{display:flex;width:max-content;animation:scroll 60s linear infinite}
+.marquee.rev .track{animation-direction:reverse;animation-duration:70s}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.track{animation:none}}
+.logo-item{flex:none;height:72px;width:200px;margin:0 22px;display:flex;align-items:center;justify-content:center}
+.logo-item .lg{max-width:100%;max-height:52px;width:auto;height:auto;opacity:.62;filter:grayscale(1);transition:opacity .3s}
+.logo-item:hover .lg,.logo-item:hover .wm{opacity:1}
+.lg-cfl,.lg-dsf,.lg-santa-clara{max-height:64px!important}.lg-soprano,.lg-comabe{max-height:34px!important}.lg-sicredi,.lg-cinex{max-height:44px!important}.lg-sicredi,.lg-introduce,.lg-planeta-agua{opacity:.9!important}
+.wm{font-weight:700;color:#222;opacity:.62;white-space:nowrap;text-align:center;line-height:1}
+.wm small{display:block;font-size:10px;letter-spacing:.32em;font-weight:500;margin-top:6px}
+
+/* STORY */
+.story{padding:120px 0}
+.story .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+.story .ph{border-radius:28px;overflow:hidden;aspect-ratio:4/5;position:relative}
+.story .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;filter:grayscale(1) contrast(1.05)}
+.story .ph .cap{position:absolute;left:0;right:0;bottom:0;padding:26px;color:var(--cream);background:linear-gradient(transparent,rgba(36,80,58,.94));font-size:14px}
+.story .ph .cap b{display:block;font-size:20px;font-weight:700}
+.story h2{color:var(--green);margin:20px 0 28px}
+.story p+p{margin-top:18px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:44px;border-top:1px solid var(--line)}
+.facts div{padding:22px 18px 0 0}
+.facts b{display:block;font-family:var(--font-display);font-size:52px;font-weight:800;color:var(--orange);line-height:1;letter-spacing:-.04em}
+.facts span{font-size:14px;color:var(--muted);font-weight:500;display:block;margin-top:8px;line-height:1.35}
+
+/* WAY */
+.way{background:var(--green);color:var(--cream);padding:120px 0}
+.way .head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:60px}
+.way h2{font-size:72px;letter-spacing:-.045em}
+.cs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.c{background:var(--cream);color:var(--green);border-radius:26px;padding:34px 32px 36px;position:relative;overflow:hidden;min-height:420px;display:flex;flex-direction:column}
+.c:nth-child(2){background:linear-gradient(160deg,var(--cream) 45%,#ffc3ab 100%)}
+.c:nth-child(3){background:linear-gradient(200deg,#ffb79f 0%,var(--cream) 55%)}
+.c .n{font-size:14px;font-weight:700;letter-spacing:.12em;color:var(--orange)}
+.c h3{font-size:52px;margin:70px 0 8px;letter-spacing:-.04em}
+.c .q{font-size:19px;font-weight:700;color:var(--ink);margin-bottom:22px}
+.c hr{border:0;border-top:1.5px solid var(--green);opacity:.35;margin-bottom:20px}
+.c p{font-size:16px;line-height:1.5;color:var(--ink)}
+.c .ico{position:absolute;right:28px;top:28px;height:28px;width:auto}
+
+/* NETWORK */
+.network{padding:120px 0;overflow:hidden}
+.network .grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.network h2{color:var(--green);font-size:64px;margin:20px 0 26px;letter-spacing:-.045em}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.pill{border:1.5px solid var(--green);color:var(--green);border-radius:999px;padding:10px 18px;font-weight:600;font-size:15px}
+.network .collage{border-radius:28px;overflow:hidden;aspect-ratio:16/11}
+.network .collage img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.network .note{margin-top:30px;display:flex;gap:14px;align-items:center;font-weight:700;color:var(--green);font-size:17px}
+.network .note .sym{height:22px;color:var(--orange);flex:none}
+
+/* SERVICES */
+.services{background:var(--cream-2);padding:120px 0}
+.services .head{display:flex;justify-content:space-between;align-items:end;margin-bottom:54px;gap:40px}
+.services h2{color:var(--green);font-size:64px;letter-spacing:-.045em}
+.services .head p{max-width:400px;color:var(--muted);font-size:17px}
+.sv{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.s{background:var(--cream);border-radius:26px;padding:38px 38px 34px;display:flex;flex-direction:column;border:1px solid var(--line)}
+.s .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:46px}
+.chips{display:flex;gap:8px}
+.chip{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:var(--green);color:var(--cream)}
+.chip.rec{background:var(--orange);color:#fff}
+.s .dur{font-size:14px;font-weight:600;color:var(--muted)}
+.s h3{font-size:42px;color:var(--green);margin-bottom:14px;letter-spacing:-.04em}
+.s .what{font-size:18px;font-weight:600;color:var(--ink);margin-bottom:22px;max-width:480px}
+.s ul{list-style:none;border-top:1px solid var(--line);margin-top:auto}
+.s li{padding:11px 0;border-bottom:1px solid var(--line);font-size:16px;display:flex;gap:12px;align-items:center}
+.s li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange);flex:none}
+.s.dark{background:var(--green);border-color:var(--green)}
+.s.dark h3,.s.dark .what{color:var(--cream)}
+.s.dark .dur{color:rgba(249,243,227,.75)}
+.s.dark ul,.s.dark li{border-color:rgba(249,243,227,.2);color:var(--cream)}
+.s.dark .chip{background:var(--cream);color:var(--green)}
+
+/* CTA */
+.cta{background:var(--green);color:var(--cream);padding:130px 0 0;position:relative;overflow:hidden}
+.cta .inner{text-align:center;max-width:1000px;margin:0 auto;position:relative}
+.cta h2{font-size:104px;line-height:.92;letter-spacing:-.05em}
+.cta .lead{margin:28px auto 40px;max-width:640px;opacity:.95}
+.cta .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta .btn{font-size:17px;padding:19px 30px}
+.cta .bg-sym{position:absolute;left:-290px;top:60px;height:300px;width:auto;color:var(--orange)}
+.cta .arr{position:absolute;width:140px;height:140px;right:80px;top:110px;color:var(--cream)}
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:90px;border-top:1px solid rgba(249,243,227,.22);border-bottom:1px solid rgba(249,243,227,.22)}
+.contact a,.contact div{padding:30px 0;text-decoration:none;display:block}
+.contact a+a,.contact a+div{border-left:1px solid rgba(249,243,227,.22);padding-left:32px}
+.contact small{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:6px}
+.contact span{font-family:var(--font-display);font-size:26px;font-weight:800;letter-spacing:-.03em}
+footer{padding:30px 0 40px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;font-size:14px}
+footer .brand{color:var(--cream)}
+footer .brand span{color:rgba(249,243,227,.7)}
+footer .sig{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.06em;font-size:12px;line-height:1.2}
+footer .sig .sym{height:18px;color:var(--orange)}
+footer .links{display:flex;gap:28px;font-weight:600}
+footer .links a{text-decoration:none}
+
+/* Mobile */
+@media (max-width:820px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  nav ul,.brand span{display:none}
+  .hero{padding:44px 0 64px}
+  .hero .grid,.story .grid,.network .grid,.way .head{grid-template-columns:1fr;gap:36px}
+  .hero h1{font-size:56px}
+  .hero .ctas{flex-wrap:wrap}
+  .hero .proof{gap:24px}
+  .hero .proof b{font-size:30px}
+  h2,.manifesto h2,.way h2,.network h2,.services h2{font-size:42px}
+  .manifesto,.story,.way,.network,.services{padding:76px 0}
+  .manifesto .bg-sym{height:320px;right:-140px}
+  .manifesto .cols,.facts{grid-template-columns:1fr}
+  .sv,.cs{grid-template-columns:minmax(0,1fr)}
+  .clients .head,.services .head{flex-direction:column;align-items:start;gap:16px}
+  .clients h2{font-size:34px}
+  .logo-item{width:140px;height:54px;margin:0 14px}
+  .c{min-height:auto}.c h3{margin-top:36px;font-size:44px}
+  .s{padding:28px 24px}.s h3{font-size:32px}.s .top{flex-wrap:wrap;gap:10px;margin-bottom:28px}
+  .cta{padding-top:90px}
+  .cta h2{font-size:54px}
+  .cta .arr,.cta .bg-sym{display:none}
+  .contact{grid-template-columns:1fr;margin-top:60px}
+  .contact a+a,.contact a+div{border-left:0;padding-left:0;border-top:1px solid rgba(249,243,227,.22)}
+  .contact a,.contact div{padding:22px 0}
+  .contact span{font-size:22px}
+  footer .wrap{flex-direction:column;gap:18px;align-items:start}
+  footer .links{flex-wrap:wrap;gap:12px 20px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="sym" viewBox="205 295 669 488"><path fill="currentColor" fill-rule="evenodd" d="M298.3 781.2C294.4 780.9 293.4 780.2 286.6 772.7C245.4 727.4 219.6 667.1 210.0 594.0C207.2 573.2 206.2 531.5 207.9 509.0C214.1 426.4 244.5 351.7 290.2 306.2L299.6 297.0L336.0 297.2L372.5 297.5L372.8 300.1C373.1 302.3 371.2 305.0 363.0 314.1C334.3 346.2 315.6 377.4 299.9 419.0C291.3 441.6 284.0 471.8 280.3 499.5C278.2 515.8 277.9 562.2 279.8 578.0C289.2 653.8 316.0 715.0 363.2 768.2C369.7 775.5 370.7 779.4 366.6 781.0C364.5 781.8 308.7 782.0 298.3 781.2ZM712.8 780.9C709.3 778.9 710.6 774.6 716.8 767.8C762.6 717.2 791.2 651.7 799.6 578.5C801.8 559.3 801.8 523.1 799.6 503.5C791.5 430.9 761.2 361.9 716.5 314.0C708.1 305.0 706.9 303.4 707.2 300.6L707.5 297.5L744.1 297.2L780.7 297.0L790.3 306.9C831.7 350.1 858.6 410.5 869.0 483.5C875.0 525.7 873.6 579.1 865.4 620.5C853.3 681.8 827.2 736.7 793.0 772.3L784.3 781.4L749.4 781.7C727.2 781.8 713.9 781.6 712.8 780.9ZM524.8 693.0C471.4 687.4 429.3 659.4 406.4 614.4C384.0 570.3 383.7 509.6 405.7 465.5C420.6 435.6 442.2 414.2 471.5 400.0C496.3 388.1 523.2 383.2 554.3 385.1C592.4 387.4 622.7 400.2 648.2 424.8C659.9 436.1 668.4 447.9 675.6 462.5C681.2 474.0 686.4 488.6 685.4 490.1C685.1 490.6 667.3 491.0 645.0 491.0L605.1 491.0L601.4 485.2C590.7 468.6 578.3 459.5 559.8 454.8C548.1 451.9 528.0 452.6 516.4 456.3C494.0 463.7 476.8 482.4 469.5 507.6C464.1 526.2 463.9 551.4 469.0 570.0C476.4 597.0 495.6 616.8 521.0 623.7C530.1 626.2 552.0 626.2 561.0 623.7C577.1 619.3 591.6 608.7 600.1 595.2C602.4 591.5 604.8 588.2 605.4 587.8C607.0 586.7 683.2 586.9 684.9 587.9C686.1 588.7 685.7 590.7 682.6 599.5C675.5 620.2 665.0 637.1 650.0 652.0C629.6 672.5 603.2 685.9 573.5 691.0C559.8 693.3 537.2 694.3 524.8 693.0Z"/></symbol>
+    <symbol id="arr" viewBox="0 0 100 100"><path fill="currentColor" d="M30 6H94V70H74V40.1L20.1 94 6 79.9 59.9 26H30Z"/></symbol>
+  </defs>
+</svg>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#"><svg class="sym"><use href="#sym"/></svg><b>cooltivo</b><span>estúdio</span></a>
+    <ul>
+      <li><a href="#manifesto">Manifesto</a></li>
+      <li><a href="#historia">Nossa história</a></li>
+      <li><a href="#jeito">Nosso jeito</a></li>
+      <li><a href="#entregas">Entregas</a></li>
+    </ul>
+    <a class="btn btn-orange" href="#contato">Vamos conversar <svg><use href="#arr"/></svg></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Cooltivo Estúdio · Made in Serra Gaúcha</div>
+      <h1>Cultivando marcas que resistem <span class="hl">ao tempo.</span></h1>
+      <p class="lead">Somos um estúdio de estratégia e criatividade. Construímos marca, conteúdo e comunicação a serviço do negócio, com olhar de longo prazo.</p>
+      <div class="ctas">
+        <a class="btn btn-orange" href="#contato">Vamos conversar <svg><use href="#arr"/></svg></a>
+        <a class="btn btn-ghost" href="#jeito">Conheça nosso jeito</a>
+      </div>
+      <div class="proof">
+        <div><b>100+</b><span>projetos entregues</span></div>
+        <div><b>6</b><span>anos de estúdio</span></div>
+        <div><b>3C</b><span>método próprio</span></div>
+      </div>
+    </div>
+    <div class="photo">
+      <img src="img/time.jpg" alt="Time Cooltivo em sessão de trabalho">
+      <div class="tagline"><svg class="sym"><use href="#sym"/></svg>NOTHING GREAT<br>IS MADE ALONE</div>
+    </div>
+  </div>
+</header>
+
+<!-- MANIFESTO -->
+<section class="manifesto" id="manifesto">
+  <svg class="bg-sym sym"><use href="#sym"/></svg>
+  <div class="wrap">
+    <div class="eyebrow">Manifesto</div>
+    <h2 style="margin-top:20px">Não jogamos o jogo do <span class="hl">curto prazo.</span></h2>
+    <div class="cols">
+      <p class="lead" style="font-size:21px">Marca, conteúdo e comunicação existem para servir ao negócio. E o que serve ao negócio se constrói com clareza, consistência e tempo, não com a próxima trend.</p>
+      <div class="vs contra">
+        <h4>Somos contra</h4>
+        <ul><li>A trend pela trend</li><li>O post pelo post</li><li>A comunicação vazia</li></ul>
+      </div>
+      <div class="vs pro">
+        <h4>Somos a favor</h4>
+        <ul><li>Posicionamento claro</li><li>Consistência que se acumula</li><li>Marca como ativo do negócio</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients" id="clientes">
+  <div class="wrap head">
+    <div>
+      <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Quem já atendemos</div>
+      <h2 style="margin-top:16px">Marcas que confiaram no nosso jeito de fazer.</h2>
+    </div>
+    <p>Mais de 100 projetos nos últimos 6 anos. Da cooperativa centenária à startup de tecnologia, negócios que escolheram construir marca com profundidade.</p>
+  </div>
+  <div class="marquee"><div class="track" id="row1"></div></div>
+  <div class="marquee rev"><div class="track" id="row2"></div></div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="historia">
+  <div class="wrap grid">
+    <div class="ph">
+      <img src="img/kaue.jpg" alt="Kauê Grasnievicz conduzindo workshop">
+      <div class="cap"><b>Kauê Grasnievicz</b>Fundador e diretor de estratégia</div>
+    </div>
+    <div>
+      <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Nossa história</div>
+      <h2>Comunicação muda negócios. E pessoas.</h2>
+      <p class="lead">Acreditamos que a comunicação é uma das ferramentas mais poderosas para impactar pessoas, negócios e a sociedade. Por isso trabalhamos com ela todos os dias: para ajudar a construir marcas que resistem ao tempo.</p>
+      <p>A Cooltivo foi fundada por Kauê Grasnievicz, estrategista com mais de 10 anos de marketing e especialista em marca e comunicação. Antes do estúdio, foi gerente de marketing da rede Dall'Onder Hotéis e líder de digital da agência Avalanche.</p>
+      <div class="facts">
+        <div><b>100+</b><span>projetos nos últimos 6 anos</span></div>
+        <div><b>6</b><span>anos de estúdio na Serra Gaúcha</span></div>
+        <div><b>10+</b><span>anos de experiência do fundador em marketing</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAY -->
+<section class="way" id="jeito">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Nosso jeito</div>
+        <h2 style="margin-top:18px">Os 3 C's da <span class="hl">Cooltivo.</span></h2>
+      </div>
+      <p class="lead">Um método simples e rigoroso: entender antes de criar, decidir junto com quem conhece o negócio e executar com excelência.</p>
+    </div>
+    <div class="cs">
+      <div class="c">
+        <svg class="ico" style="color:var(--green);width:28px"><use href="#arr"/></svg>
+        <span class="n">01</span>
+        <h3>Context</h3>
+        <div class="q">Entender antes de criar.</div>
+        <hr>
+        <p>Imersão no negócio, pesquisa, entrevistas em profundidade, desk research e mapeamento de canais e dados.</p>
+      </div>
+      <div class="c">
+        <svg class="ico sym" style="color:var(--orange)"><use href="#sym"/></svg>
+        <span class="n">02</span>
+        <h3>Concept</h3>
+        <div class="q">Decidir junto.</div>
+        <hr>
+        <p>Workshops e construção colaborativa para definir o conceito, o posicionamento e a estratégia de comunicação.</p>
+      </div>
+      <div class="c">
+        <svg class="ico" style="color:var(--green);width:28px"><use href="#arr"/></svg>
+        <span class="n">03</span>
+        <h3>Craft</h3>
+        <div class="q">Fazer bem feito.</div>
+        <hr>
+        <p>Desenvolvimento dos materiais de comunicação, com o especialista certo em cada entrega.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NETWORK -->
+<section class="network">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Nothing great is made alone</div>
+      <h2>Nada grande é feito <span class="hl">sozinho.</span></h2>
+      <p class="lead">Contamos com uma rede de parceiros de confiança e excelência em todas as áreas do marketing. Para cada projeto, montamos um time sob medida para o seu modelo de negócio.</p>
+      <div class="pills">
+        <span class="pill">Audiovisual</span><span class="pill">Mídia paga</span><span class="pill">Assessoria de imprensa</span><span class="pill">Redação</span><span class="pill">Negócios e inovação</span><span class="pill">Bureau de design</span><span class="pill">Desenvolvimento e tecnologia</span><span class="pill">Treinamento comercial e de liderança</span>
+      </div>
+    </div>
+    <div>
+      <div class="collage"><img src="img/rede.jpg" alt="Rede de parceiros da Cooltivo"></div>
+      <div class="note"><svg class="sym"><use href="#sym"/></svg>Um time sob medida, com a Cooltivo na estratégia e na orquestração.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="entregas">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Nossas entregas</div>
+        <h2 style="margin-top:16px">Como podemos<br>trabalhar juntos.</h2>
+      </div>
+      <p>Projetos pontuais para destravar decisões e contratos recorrentes para sustentar a construção da marca ao longo do tempo.</p>
+    </div>
+    <div class="sv">
+      <div class="s dark">
+        <div class="top"><span class="chips"><span class="chip">Pontual</span></span><span class="dur">6 a 8 semanas</span></div>
+        <h3>Posicionamento</h3>
+        <p class="what">Construímos marcas com propósito, claras sobre quem são, o que defendem e como querem ser lembradas.</p>
+        <ul><li>Diagnóstico</li><li>Workshop de co-criação</li><li>Criação da plataforma de marca</li></ul>
+      </div>
+      <div class="s">
+        <div class="top"><span class="chips"><span class="chip rec">Recorrente</span></span><span class="dur">Contratos de 6 a 12 meses</span></div>
+        <h3>Presença digital</h3>
+        <p class="what">Planejamos e conduzimos a comunicação da marca no digital, com consistência mês a mês.</p>
+        <ul><li>Planejamento de presença digital</li><li>Produção de conteúdo</li><li>Estratégia e gestão de canais</li></ul>
+      </div>
+      <div class="s">
+        <div class="top"><span class="chips"><span class="chip">Pontual</span></span><span class="dur">4 semanas</span></div>
+        <h3>Estratégia de canais</h3>
+        <p class="what">Diagnóstico da presença digital atual e direcionamento claro de onde estar, com qual papel e com qual mensagem.</p>
+        <ul><li>Diagnóstico de canais e dados</li><li>Papel de cada canal</li><li>Direcionamento estratégico</li></ul>
+      </div>
+      <div class="s">
+        <div class="top"><span class="chips"><span class="chip">Pontual</span><span class="chip rec">Recorrente</span></span><span class="dur">Formato flexível</span></div>
+        <h3>Consultoria de marketing</h3>
+        <p class="what">Conexão profunda com o negócio e acompanhamento estratégico para planejar o marketing a partir dos objetivos da empresa.</p>
+        <ul><li>Planejamento estratégico de marketing</li><li>Encontros semanais de acompanhamento</li><li>Imersões com liderança e time</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTATO -->
+<section class="cta" id="contato">
+  <svg class="bg-sym sym"><use href="#sym"/></svg>
+  <svg class="arr"><use href="#arr"/></svg>
+  <div class="wrap">
+    <div class="inner">
+      <div class="eyebrow" style="justify-content:center">Vamos conversar</div>
+      <h2 style="margin-top:22px">Qual marca vamos <span class="hl">cultivar</span> juntos?</h2>
+      <p class="lead">Conte o momento do seu negócio. A gente começa entendendo o contexto.</p>
+      <div class="btns">
+        <a class="btn btn-orange" href="https://wa.me/5554991000102" target="_blank" rel="noopener">Chamar no WhatsApp <svg><use href="#arr"/></svg></a>
+        <a class="btn btn-cream" href="mailto:kaue@cooltivo.com.br">Enviar um e-mail</a>
+      </div>
+    </div>
+    <div class="contact">
+      <a href="mailto:kaue@cooltivo.com.br"><small>E-mail</small><span>kaue@cooltivo.com.br</span></a>
+      <a href="https://wa.me/5554991000102" target="_blank" rel="noopener"><small>WhatsApp</small><span>(54) 9.9100-0102</span></a>
+      <div><small>Onde estamos</small><span>Made in Serra Gaúcha</span></div>
+    </div>
+  </div>
+  <footer>
+    <div class="wrap">
+      <span class="brand"><svg class="sym"><use href="#sym"/></svg><b>cooltivo</b><span>estúdio</span></span>
+      <div class="sig"><svg class="sym"><use href="#sym"/></svg>NOTHING GREAT<br>IS MADE ALONE</div>
+      <div class="links"><a href="https://www.instagram.com/cooltivoestudio/" target="_blank" rel="noopener">@cooltivoestudio</a><a href="https://cooltivo.com.br">cooltivo.com.br</a><span>© 2026 Cooltivo</span></div>
+    </div>
+  </footer>
+</section>
+
+<script>
+const L=[
+ ['sicredi','Sicredi'],['santa-clara','Santa Clara'],['zen','Zen Design'],['soprano','Soprano'],['cinex','Cinex'],['introduce','Introduce'],['cfl','CFL Construtora'],
+ [null,'Vida Farmácias','vida'],['planeta-agua','Planeta Água'],[null,'Vallontano','vallontano'],[null,'Garbo','garbo'],['neomot','Neomot'],[null,'Obispa','obispa'],
+ ['comabe','Comabe'],['dsf','DSF Advogados'],['souto-correa','Souto Correa Advogados'],[null,'Martini','martini'],[null,'Mesal','mesal'],[null,'MRP','mrp']
+];
+/* Wordmarks provisórios: trocar por logos oficiais (PNG em /logos com o mesmo nome) */
+const WM={
+ vida:'<div class="wm" style="font-size:28px;font-weight:800">vida<span style="font-weight:400"> farmácias</span></div>',
+ vallontano:'<div class="wm" style="font-family:Georgia,serif;font-size:27px;letter-spacing:.12em;font-weight:400">VALLONTANO</div>',
+ garbo:'<div class="wm" style="font-family:Georgia,serif;font-style:italic;font-size:34px;font-weight:400">Garbo<small style="font-style:normal;font-family:var(--font)">ENOLOGIA CRIATIVA</small></div>',
+ obispa:'<div class="wm" style="font-size:32px;font-weight:800;letter-spacing:-.03em">obispa</div>',
+ martini:'<div class="wm" style="font-family:Georgia,serif;font-size:26px;letter-spacing:.18em;font-weight:400">MARTINI<small>ADVOGADOS</small></div>',
+ mesal:'<div class="wm" style="font-size:32px;font-weight:800;letter-spacing:.06em">MESAL</div>',
+ mrp:'<div class="wm" style="font-size:36px;font-weight:800;letter-spacing:-.02em">MRP<small>CONSTRUTORA</small></div>'
+};
+function item(l){
+  if(l[0]) return `<div class="logo-item" title="${l[1]}"><img class="lg lg-${l[0]}" src="logos/${l[0]}.png" alt="${l[1]}"></div>`;
+  return `<div class="logo-item" title="${l[1]}">${WM[l[2]]}</div>`;
+}
+const fill=(id,arr)=>{const h=arr.map(item).join('');document.getElementById(id).innerHTML=h+h;};
+fill('row1',L.slice(0,10));fill('row2',L.slice(10));
+</script>
+</body>
+</html>
