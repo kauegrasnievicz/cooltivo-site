@@ -110,6 +110,12 @@ nav .btn{padding:11px 20px;font-size:14px}
 .story h3.about{font-size:15px;font-family:var(--font);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:30px 0 10px}
 .story h2{color:var(--green);margin:20px 0 28px}
 .story h2.belief{font-size:56px;line-height:.98;color:var(--green-strong);margin:20px 0 26px}
+.story h2.belief{font-size:50px}
+.story .beliefs{list-style:none;display:grid;gap:12px;margin:0}
+.story .beliefs li{display:flex;gap:14px;align-items:flex-start;font-size:17.5px;line-height:1.5;color:var(--ink)}
+.story .beliefs li .sym{height:15px;width:20px;flex:none;margin-top:5px;color:var(--green)}
+.story .beliefs b{color:var(--green-strong)}
+@media (min-width:901px){.story .grid{align-items:start}.story .slides-wrap{position:sticky;top:110px}}
 .story .origin{margin-top:34px;padding-top:6px;border-top:1px solid var(--line)}
 .story .origin p{font-size:17px;line-height:1.6;color:var(--muted)}
 .story .origin h3.about{margin-top:24px}
@@ -540,14 +546,20 @@ footer .links a:hover{color:var(--orange)}
     </figure>
     <div>
       <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Nossa história</div>
-      <h2 class="belief">Acreditamos na marca como <span class="hl">ativo de negócio.</span></h2>
-      <p class="lead">E acreditamos no longo prazo: na construção diária de decisões que falam a língua dos negócios, com criatividade, clareza e coragem. É isso que fazemos todos os dias: ajudamos a construir marcas que resistem ao tempo.</p>
-      <p class="lead lead-2">Resistir ao tempo não é apenas durar. É ter coragem de ir contra o status quo do seu momento, escolher uma posição e sustentá-la mesmo quando ela ainda parece estranha.</p>
+      <h2 class="belief">Resistir ao tempo não é apenas durar. <span class="hl">É ter coragem de ir contra o status quo do seu momento.</span></h2>
+      <p class="lead">É escolher uma posição e sustentá-la mesmo quando ela ainda parece estranha. São essas marcas que continuam vivas quando as tendências passam.</p>
+      <p class="lead lead-2">Por isso pensamos o agora com os olhos no longo prazo, ao lado de quem sabe que marca é o ativo mais duradouro de um negócio. É isso que fazemos todos os dias: ajudamos a construir marcas que resistem ao tempo.</p>
+      <h3 class="about">No que acreditamos</h3>
+      <ul class="beliefs">
+        <li><svg class="sym"><use href="#sym"/></svg><span><b>Marca é ativo de negócio.</b> Ela gera valor, e deve ser construída e cuidada como tal.</span></li>
+        <li><svg class="sym"><use href="#sym"/></svg><span><b>Longo prazo e visão.</b> O agora importa, mas sempre com os olhos no que vai durar.</span></li>
+        <li><svg class="sym"><use href="#sym"/></svg><span><b>Decisões diárias que falam a língua dos negócios,</b> com criatividade, clareza e coragem.</span></li>
+      </ul>
       <div class="origin">
         <h3 class="about">Como começamos</h3>
         <p>Nascemos da inquietude de quem já conhecia os dois lados da mesa: o marketing das empresas e o dia a dia das agências. Nos dois, faltava a mesma coisa: especialistas trabalhando em rede, de forma colaborativa, e gente que olhasse para a marca no longo prazo, com a estratégia conectada à comunicação.</p>
         <h3 class="about">Sobre Kauê Grasnievicz</h3>
-        <p>A Cooltivo foi cofundada por <a class="name" href="https://www.linkedin.com/in/kauegrasnievicz/" target="_blank" rel="noopener">Kauê Grasnievicz</a>, estrategista com mais de 10 anos de marketing e especialista em marca e comunicação. Antes do estúdio, foi gerente de marketing da rede Dall'Onder Hotéis e líder de digital da agência Avalanche.</p>
+        <p>A Cooltivo foi cofundada por <a class="name" href="https://www.linkedin.com/in/kauegrasnievicz/" target="_blank" rel="noopener">Kauê Grasnievicz</a>, estrategista com mais de 10 anos de marketing e especialista em marca e comunicação. Antes do estúdio, foi gerente de marketing de uma grande rede hoteleira e líder de digital de uma agência de comunicação que atendia grandes marcas gaúchas.</p>
         <blockquote class="quote-sm"><p>“A comunicação é uma das ferramentas mais poderosas para transformar pessoas, sociedade e negócios.”</p><cite>Kauê Grasnievicz</cite></blockquote>
       </div>
       <div class="facts">
