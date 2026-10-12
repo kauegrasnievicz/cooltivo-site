@@ -1,0 +1,842 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marcas que resistem ao tempo · A tese da Cooltivo</title>
+<meta name="description" content="A tese da Cooltivo em profundidade: por que algumas marcas atravessam gerações. Livros, pesquisas e cases de Apple, Nike, Volvo, LEGO, Tramontina, Sicredi e outras marcas que resistem ao tempo.">
+<link rel="icon" href="img/favicon.svg">
+<style>
+@font-face{font-family:"Inter Local";src:url(fonts/Inter-Regular.otf);font-weight:400;font-display:swap}
+@font-face{font-family:"Inter Local";src:url(fonts/Inter-Medium.otf);font-weight:500;font-display:swap}
+@font-face{font-family:"Inter Local";src:url(fonts/Inter-SemiBold.otf);font-weight:600;font-display:swap}
+@font-face{font-family:"Inter Local";src:url(fonts/Inter-Bold.otf);font-weight:700;font-display:swap}
+@font-face{font-family:"Inter Display Local";src:url(fonts/InterDisplay-Bold.otf);font-weight:700;font-display:swap}
+@font-face{font-family:"Inter Display Local";src:url(fonts/InterDisplay-ExtraBold.otf);font-weight:800;font-display:swap}
+@font-face{font-family:"Inter Display Local";src:url(fonts/InterDisplay-Black.otf);font-weight:900;font-display:swap}
+:root{
+  color-scheme:light;
+  --font:"Helvetica Neue",Helvetica,"Inter Local",Arial,sans-serif;
+  --font-display:"Helvetica Neue",Helvetica,"Inter Display Local",Arial,sans-serif;
+  --green:#366c4c; --green-deep:#24503a; --green-strong:#1d3a2a; --green-soft:#a9c8b3; --green-mist:#e3ece5; --white:#ffffff; --cream:#f9f3e3;
+  --ink:#17261d; --body:#25352b; --muted:#5d6b62; --line:rgba(54,108,76,.2); --line-inv:rgba(249,243,227,.22);
+  --wrap:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--white);color:var(--ink);font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:40px}
+.sym{display:inline-block;height:1em;width:auto;aspect-ratio:669/488}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:800;letter-spacing:-.04em;line-height:1;text-wrap:balance}
+.btn{display:inline-flex;align-items:center;gap:12px;font-weight:700;font-size:16px;padding:16px 26px;border-radius:999px;text-decoration:none;transition:transform .2s,background .2s,color .2s;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:13px;height:13px;flex:none}
+.btn-soft{background:var(--green-soft);color:var(--green-strong)}
+.btn-soft:hover{background:#fff}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-strong)}
+.btn-line-inv{border:1.5px solid rgba(249,243,227,.6);color:var(--cream);background:transparent}
+.btn-line-inv:hover{background:#fff;color:var(--green-strong);border-color:#fff}
+
+/* NAV */
+nav{position:fixed;left:0;right:0;top:0;z-index:30;padding-top:env(safe-area-inset-top,0px);transition:background .3s,border-color .3s,color .3s;border-bottom:1px solid transparent;color:var(--cream)}
+nav.solid{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-color:var(--line);color:var(--green)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand .sym{height:28px;width:38px}
+.brand b{font-family:var(--font-display);font-weight:800;font-size:22px;letter-spacing:-.03em}
+.brand span{font-size:10px;font-weight:600;letter-spacing:.04em;opacity:.8;align-self:flex-start;margin:5px 0 0 -10px;line-height:1}
+nav ul{display:flex;gap:30px;list-style:none;font-weight:600;font-size:15px}
+nav ul a{text-decoration:none;color:inherit;opacity:.92}
+nav ul a:hover,nav ul a[aria-current]{opacity:1;color:var(--green-soft)}
+nav.solid ul a:hover,nav.solid ul a[aria-current]{color:var(--green)}
+nav .btn{padding:11px 20px;font-size:14px;background:var(--green-soft);color:var(--green-strong)}
+nav.solid .btn{background:var(--green);color:#fff}
+nav .btn:hover{background:#fff;color:var(--green-strong)}
+nav.solid .btn:hover{background:var(--green-strong);color:#fff}
+.progress{position:fixed;left:0;top:0;height:3px;width:100%;transform-origin:left;transform:scaleX(0);background:var(--green-soft);z-index:40}
+nav.solid ~ .progress{background:var(--green)}
+
+/* HERO */
+.hero-t{background:var(--green-strong);color:var(--cream);padding:180px 0 96px;position:relative;overflow:hidden}
+.hero-t .bg-sym{position:absolute;right:-180px;bottom:-140px;width:820px;height:auto;color:var(--green-soft);opacity:.07}
+.hero-t .eyebrow{display:flex;align-items:center;gap:10px;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--green-soft)}
+.hero-t .eyebrow .sym{height:14px;width:19px}
+.hero-t h1{font-size:clamp(52px,8.6vw,132px);line-height:.9;letter-spacing:-.055em;margin-top:24px;max-width:10.5ch}
+.hero-t h1 span{color:var(--green-soft)}
+.hero-t .lead{font-size:clamp(19px,1.9vw,23px);line-height:1.45;font-weight:500;max-width:660px;margin-top:30px;color:rgba(249,243,227,.9)}
+.hero-t .meta{display:flex;flex-wrap:wrap;gap:10px 30px;margin-top:44px;padding-top:22px;border-top:1px solid var(--line-inv);font-size:14px;font-weight:600;color:rgba(249,243,227,.75);max-width:820px}
+.hero-t .meta b{font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--cream);letter-spacing:-.03em;display:block;font-variant-numeric:tabular-nums}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:72px;max-width:var(--wrap);margin:0 auto;padding:84px 40px 40px}
+.toc{position:sticky;top:110px;max-height:calc(100vh - 130px);overflow:auto;padding-bottom:20px}
+.toc p{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.toc ol{list-style:none}
+.toc a{display:flex;gap:10px;padding:7px 0 7px 14px;border-left:2px solid var(--line);font-size:14px;line-height:1.35;color:var(--muted);text-decoration:none;transition:color .2s,border-color .2s}
+.toc a i{font-style:normal;font-weight:700;color:var(--green-soft);min-width:18px;font-variant-numeric:tabular-nums}
+.toc a:hover{color:var(--green-strong)}
+.toc a.on{border-color:var(--green);color:var(--green-strong);font-weight:700}
+.toc a.on i{color:var(--green)}
+.toc-m{display:none}
+article{max-width:760px;min-width:0}
+article > section{scroll-margin-top:96px}
+article > section + section{margin-top:84px;padding-top:56px;border-top:1px solid var(--line)}
+.chap{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+article h2{font-size:clamp(34px,4.2vw,52px);margin:14px 0 28px;color:var(--green-strong)}
+article h3{font-size:clamp(22px,2.2vw,27px);letter-spacing:-.025em;margin:44px 0 14px;color:var(--green-strong);line-height:1.1}
+article p{font-size:19px;line-height:1.7;color:var(--body);margin:0 0 20px}
+article p strong{color:var(--ink)}
+article ul.list{margin:0 0 22px 0;padding-left:22px}
+article ul.list li{font-size:18px;line-height:1.65;color:var(--body);margin-bottom:8px}
+sup{line-height:0}
+sup a{font-size:12px;font-weight:700;color:var(--green);text-decoration:none;padding:0 2px;font-family:var(--font)}
+sup a:hover{text-decoration:underline}
+.opening p{font-size:22px;line-height:1.6;color:var(--ink)}
+.opening .big{font-family:var(--font-display);font-weight:800;font-size:clamp(40px,5.4vw,72px);line-height:.95;letter-spacing:-.05em;color:var(--green-strong);margin-bottom:34px}
+.opening .big span{color:var(--green)}
+.pull{display:flex;gap:16px;align-items:flex-start;margin:40px 0;font-family:var(--font-display);font-weight:800;font-size:clamp(26px,3vw,36px);line-height:1.1;letter-spacing:-.035em;color:var(--green)}
+.pull .sym{height:22px;width:30px;flex:none;margin-top:6px;color:var(--green-soft)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1.5px solid var(--green);border-bottom:1px solid var(--line);margin:36px 0}
+.stats > div{padding:22px 20px 22px 0;min-width:0}
+.stats > div + div{padding-left:20px;border-left:1px solid var(--line)}
+.stats b{display:block;font-family:var(--font-display);font-weight:800;font-size:clamp(34px,4vw,48px);letter-spacing:-.04em;color:var(--green);line-height:1;font-variant-numeric:tabular-nums}
+.stats span{display:block;font-size:14.5px;line-height:1.45;color:var(--muted);margin-top:10px}
+.note{background:var(--green-mist);border-radius:22px;padding:28px 30px;margin:34px 0}
+.note h4{font-size:20px;letter-spacing:-.02em;color:var(--green-strong);margin-bottom:12px}
+.note p{font-size:17px;line-height:1.6;margin:0}
+.note p + p{margin-top:12px}
+.note dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font-size:16.5px;line-height:1.5}
+.note dt{font-weight:700;color:var(--green)}
+.note dd{color:var(--body)}
+.cg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:32px 0}
+.cc{background:var(--green-strong);color:var(--cream);border-radius:24px;padding:26px 26px 24px;display:flex;flex-direction:column;min-width:0}
+.cc .yr{font-family:var(--font-display);font-weight:800;font-size:40px;line-height:1;letter-spacing:-.04em;color:var(--green-soft);font-variant-numeric:tabular-nums}
+.cc h4{font-size:22px;letter-spacing:-.025em;margin:10px 0 10px}
+.cc p{font-size:15.5px;line-height:1.55;color:rgba(249,243,227,.88);margin:0}
+.cc .lic{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-inv);font-size:14px;line-height:1.45;font-weight:600;color:var(--green-soft)}
+.cc sup a{color:var(--green-soft)}
+.cc.wide{grid-column:1/-1}
+.tw{overflow-x:auto;margin:32px 0}
+table{width:100%;border-collapse:collapse;font-size:15.5px;line-height:1.5;min-width:560px}
+th{text-align:left;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);padding:0 16px 12px 0;border-bottom:1.5px solid var(--green);font-weight:700}
+td{padding:14px 16px 14px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--body)}
+td:first-child{font-weight:700;color:var(--ink);white-space:nowrap}
+.tri-fig{margin:36px 0;background:var(--green);border-radius:28px;padding:34px 30px 26px;color:var(--cream)}
+.tri-fig svg{width:100%;height:auto;max-width:620px;margin:0 auto}
+.tri-fig figcaption{text-align:center;font-size:15px;line-height:1.5;color:rgba(249,243,227,.85);margin-top:12px}
+.tri-fig .ed{stroke:var(--cream);stroke-width:2.5;fill:none;stroke-linejoin:round}
+.tri-fig .dt{fill:var(--green-soft)}
+.tri-fig .n{font:700 15px var(--font);fill:var(--green-soft);letter-spacing:.08em}
+.tri-fig .t{font:800 21px var(--font-display);fill:var(--cream);letter-spacing:.03em}
+.tri-fig .s{font:500 15px var(--font);fill:rgba(249,243,227,.8)}
+.tri-fig .core{font:900 38px var(--font-display);fill:var(--cream);letter-spacing:-.02em}
+.tri-fig .cs{font:600 16px var(--font);fill:var(--green-soft)}
+.timeline{list-style:none;margin:34px 0;position:relative}
+.timeline::before{content:"";position:absolute;left:83px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.timeline li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:40px;padding:11px 0;position:relative}
+.timeline li::after{content:"";position:absolute;left:78px;top:19px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--green-soft)}
+.timeline .y{font-family:var(--font-display);font-weight:800;font-size:22px;letter-spacing:-.03em;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums;line-height:1.4}
+.timeline .w{font-size:16.5px;line-height:1.5;color:var(--body)}
+.timeline .w b{color:var(--ink)}
+.timeline .w small{display:block;font-size:14px;color:var(--muted)}
+.timeline li.serra::after{background:var(--green);border-color:var(--green);width:14px;height:14px;left:77px;top:18px}
+.timeline li.serra .y{color:var(--green)}
+.timeline li.serra .w b::after{content:"Serra Gaúcha";margin-left:10px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--green);padding:3px 8px;border-radius:99px;vertical-align:2px}
+.princ{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:32px 0}
+.pr{border:1.5px solid var(--line);border-radius:22px;padding:22px 24px 22px;min-width:0;transition:border-color .2s,background .2s}
+.pr:hover{border-color:var(--green);background:var(--green-mist)}
+.pr .n{font-family:var(--font-display);font-weight:800;font-size:15px;color:var(--green);font-variant-numeric:tabular-nums}
+.pr h4{font-size:20px;letter-spacing:-.025em;margin:8px 0 8px;color:var(--green-strong);line-height:1.15}
+.pr p{font-size:15px;line-height:1.55;margin:0;color:var(--muted)}
+.bib h3{margin-top:40px}
+.bg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0 10px}
+.bk{border:1px solid var(--line);border-radius:18px;padding:18px 20px;min-width:0}
+.bk b{display:block;font-family:var(--font-display);font-weight:800;font-size:17.5px;letter-spacing:-.02em;color:var(--green-strong);line-height:1.2}
+.bk em{display:block;font-style:normal;font-size:13px;font-weight:700;color:var(--green);margin:6px 0 8px}
+.bk span{display:block;font-size:14.5px;line-height:1.5;color:var(--muted)}
+.refs ol{padding-left:30px;margin-top:20px}
+.refs li{font-size:14.5px;line-height:1.55;color:var(--muted);margin-bottom:9px;padding:3px 6px;border-radius:8px;scroll-margin-top:110px;overflow-wrap:anywhere}
+.refs li:target{background:var(--green-mist);color:var(--ink)}
+.refs h3{margin-top:36px}
+.refs a{color:var(--green)}
+.updated{margin-top:30px;font-size:14px;color:var(--muted)}
+
+/* CTA + rodapé */
+.cta{background:var(--green);color:var(--cream);padding:120px 0 0;position:relative;overflow:hidden;margin-top:80px}
+.cta .inner{text-align:center;max-width:900px;margin:0 auto;position:relative}
+.cta .eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--green-soft)}
+.cta h2{font-size:clamp(48px,7.4vw,96px);line-height:.92;letter-spacing:-.05em;margin-top:22px}
+.cta h2 span{color:var(--green-soft)}
+.cta .lead{font-size:21px;line-height:1.5;margin:26px auto 38px;max-width:620px;color:rgba(249,243,227,.92)}
+.cta .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta .bg-sym{position:absolute;left:-290px;top:60px;height:300px;width:411px;color:var(--green-soft);opacity:.5}
+.contact{display:grid;grid-template-columns:repeat(3,1fr);margin-top:90px;border-top:1px solid var(--line-inv);border-bottom:1px solid var(--line-inv)}
+.contact>*{padding:30px 0;text-decoration:none;display:block;min-width:0}
+.contact>*+*{border-left:1px solid var(--line-inv);padding-left:32px}
+.contact small{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--green-soft);font-weight:700;margin-bottom:6px}
+.contact span{font-family:var(--font-display);font-size:26px;font-weight:800;letter-spacing:-.03em;overflow-wrap:anywhere}
+footer{padding:30px 0 calc(40px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;font-size:14px;gap:20px}
+footer .sig{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.06em;font-size:12px;line-height:1.2}
+footer .sig .sym{height:18px;width:25px;color:var(--green-soft)}
+footer .links{display:flex;gap:24px;font-weight:600;flex-wrap:wrap}
+footer .links a{text-decoration:none}
+footer .links a:hover{color:var(--green-soft)}
+
+@media (max-width:1100px){
+  .layout{grid-template-columns:minmax(0,1fr);gap:0;padding-top:56px}
+  .layout > aside{display:none}
+  .toc-m{display:block;margin-bottom:40px;border:1.5px solid var(--line);border-radius:18px;padding:16px 20px}
+  .toc-m summary{cursor:pointer;font-weight:700;color:var(--green-strong);font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  .toc-m summary::-webkit-details-marker{display:none}
+  .toc-m summary::after{content:"+";font-size:22px;color:var(--green)}
+  .toc-m[open] summary::after{content:"−"}
+  .toc-m ol{list-style:none;margin-top:12px}
+  .toc-m a{display:flex;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:15px;text-decoration:none;color:var(--body)}
+  .toc-m a i{font-style:normal;font-weight:700;color:var(--green);min-width:20px}
+  article{max-width:none}
+}
+@media (max-width:900px){
+  body{font-size:16px}
+  .wrap{padding-inline:20px}
+  nav ul,.brand span{display:none}
+  nav .wrap{height:66px}
+  .layout{padding:48px 20px 20px}
+  .hero-t{padding:130px 0 64px}
+  .hero-t .bg-sym{width:520px;right:-200px;bottom:-90px}
+  article p{font-size:17.5px;line-height:1.68}
+  .opening p{font-size:19px}
+  .stats{grid-template-columns:minmax(0,1fr)}
+  .stats > div + div{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+  .cg,.princ,.bg{grid-template-columns:minmax(0,1fr)}
+  .note{padding:22px 20px}
+  .note dl{grid-template-columns:minmax(0,1fr);gap:2px}
+  .note dd{margin-bottom:10px}
+  .tri-fig{padding:24px 14px 20px;border-radius:22px}
+  .timeline::before{left:63px}
+  .timeline li{grid-template-columns:48px minmax(0,1fr);gap:32px}
+  .timeline li::after{left:58px}
+  .timeline li.serra::after{left:57px}
+  .timeline .y{font-size:18px}
+  .timeline li.serra .w b::after{display:block;width:max-content;margin:4px 0 0}
+  .cta{padding-top:80px}
+  .cta .bg-sym{display:none}
+  .contact{grid-template-columns:minmax(0,1fr);margin-top:60px}
+  .contact>*+*{border-left:0;padding-left:0;border-top:1px solid var(--line-inv)}
+  .contact span{font-size:22px}
+  footer .wrap{flex-direction:column;align-items:flex-start;gap:16px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.pr{transition:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="sym" viewBox="205 295 669 488"><path fill="currentColor" fill-rule="evenodd" d="M298.3 781.2C294.4 780.9 293.4 780.2 286.6 772.7C245.4 727.4 219.6 667.1 210.0 594.0C207.2 573.2 206.2 531.5 207.9 509.0C214.1 426.4 244.5 351.7 290.2 306.2L299.6 297.0L336.0 297.2L372.5 297.5L372.8 300.1C373.1 302.3 371.2 305.0 363.0 314.1C334.3 346.2 315.6 377.4 299.9 419.0C291.3 441.6 284.0 471.8 280.3 499.5C278.2 515.8 277.9 562.2 279.8 578.0C289.2 653.8 316.0 715.0 363.2 768.2C369.7 775.5 370.7 779.4 366.6 781.0C364.5 781.8 308.7 782.0 298.3 781.2ZM712.8 780.9C709.3 778.9 710.6 774.6 716.8 767.8C762.6 717.2 791.2 651.7 799.6 578.5C801.8 559.3 801.8 523.1 799.6 503.5C791.5 430.9 761.2 361.9 716.5 314.0C708.1 305.0 706.9 303.4 707.2 300.6L707.5 297.5L744.1 297.2L780.7 297.0L790.3 306.9C831.7 350.1 858.6 410.5 869.0 483.5C875.0 525.7 873.6 579.1 865.4 620.5C853.3 681.8 827.2 736.7 793.0 772.3L784.3 781.4L749.4 781.7C727.2 781.8 713.9 781.6 712.8 780.9ZM524.8 693.0C471.4 687.4 429.3 659.4 406.4 614.4C384.0 570.3 383.7 509.6 405.7 465.5C420.6 435.6 442.2 414.2 471.5 400.0C496.3 388.1 523.2 383.2 554.3 385.1C592.4 387.4 622.7 400.2 648.2 424.8C659.9 436.1 668.4 447.9 675.6 462.5C681.2 474.0 686.4 488.6 685.4 490.1C685.1 490.6 667.3 491.0 645.0 491.0L605.1 491.0L601.4 485.2C590.7 468.6 578.3 459.5 559.8 454.8C548.1 451.9 528.0 452.6 516.4 456.3C494.0 463.7 476.8 482.4 469.5 507.6C464.1 526.2 463.9 551.4 469.0 570.0C476.4 597.0 495.6 616.8 521.0 623.7C530.1 626.2 552.0 626.2 561.0 623.7C577.1 619.3 591.6 608.7 600.1 595.2C602.4 591.5 604.8 588.2 605.4 587.8C607.0 586.7 683.2 586.9 684.9 587.9C686.1 588.7 685.7 590.7 682.6 599.5C675.5 620.2 665.0 637.1 650.0 652.0C629.6 672.5 603.2 685.9 573.5 691.0C559.8 693.3 537.2 694.3 524.8 693.0Z"/></symbol>
+    <symbol id="arr" viewBox="0 0 100 100"><path fill="currentColor" d="M30 6H94V70H74V40.1L20.1 94 6 79.9 59.9 26H30Z"/></symbol>
+    <symbol id="chev" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M9 4l8 8-8 8"/></symbol>
+    <symbol id="li" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zm7 0h3.8v1.6h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1v6.35h-4v-5.63c0-1.34-.03-3.07-1.87-3.07-1.88 0-2.17 1.46-2.17 2.97v5.73h-4z"/></symbol>
+    <symbol id="ig" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2c-2.7 0-3.1 0-4.1.1C4.3 2.2 2.2 4.3 2.1 7.9 2 8.9 2 9.3 2 12s0 3.1.1 4.1c.1 3.6 2.2 5.7 5.8 5.8 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c3.6-.1 5.7-2.2 5.8-5.8.1-1 .1-1.4.1-4.1s0-3.1-.1-4.1c-.1-3.6-2.2-5.7-5.8-5.8C15.1 2 14.7 2 12 2zm0 1.8c2.7 0 3 0 4 .1 2.6.1 3.9 1.4 4 4 .1 1 .1 1.3.1 4s0 3-.1 4c-.1 2.6-1.4 3.9-4 4-1 .1-1.3.1-4 .1s-3 0-4-.1c-2.6-.1-3.9-1.4-4-4-.1-1-.1-1.3-.1-4s0-3 .1-4c.1-2.6 1.4-3.9 4-4 1-.1 1.3-.1 4-.1z"/></symbol>
+    <symbol id="play" viewBox="0 0 24 24"><path fill="currentColor" d="M6 3.5v17l14-8.5z"/></symbol>
+  </defs>
+</svg>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Cooltivo Estúdio, página inicial"><svg class="sym"><use href="#sym"/></svg><b>cooltivo</b><span>estúdio</span></a>
+    <ul>
+      <li><a href="index.html#historia">Nossa história</a></li>
+      <li><a href="index.html#tese" aria-current="page">Nossa tese</a></li>
+      <li><a href="index.html#jeito">Método</a></li>
+      <li><a href="index.html#cases">Cases</a></li>
+      <li><a href="index.html#entregas">Entregas</a></li>
+      <li><a href="index.html#conteudos">Conteúdos</a></li>
+    </ul>
+    <a class="btn" href="index.html#contato">Vamos conversar <svg><use href="#arr"/></svg></a>
+  </div>
+</nav>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="hero-t" id="topo">
+  <svg class="bg-sym sym" aria-hidden="true"><use href="#sym"/></svg>
+  <div class="wrap">
+    <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Nossa tese, em profundidade</div>
+    <h1>Marcas que resistem <span>ao tempo.</span></h1>
+    <p class="lead">Por que algumas marcas atravessam gerações enquanto outras somem na próxima trend. A tese da Cooltivo, explicada com os livros, as pesquisas e os cases que a sustentam.</p>
+    <div class="meta">
+      <span><b>29 min</b>de leitura</span>
+      <span><b>13</b>capítulos</span>
+      <span><b>26</b>livros comentados</span>
+      <span><b>20+</b>marcas analisadas</span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside>
+    <nav class="toc" aria-label="Sumário">
+      <p>Sumário</p>
+      <ol>
+        <li><a href="#abertura"><i></i>Abertura</a></li>
+        <li><a href="#pressa"><i>1</i>O tempo da pressa</a></li>
+        <li><a href="#marca"><i>2</i>O que é marca</a></li>
+        <li><a href="#mercadoria"><i>3</i>Da mercadoria à marca</a></li>
+        <li><a href="#triade"><i>4</i>A tríade</a></li>
+        <li><a href="#posicionamento"><i>5</i>Posicionamento singular</a></li>
+        <li><a href="#mensagem"><i>6</i>Mensagem clara e atraente</a></li>
+        <li><a href="#ecossistema"><i>7</i>Ecossistema de valor</a></li>
+        <li><a href="#essencia"><i>8</i>Essência e forma</a></li>
+        <li><a href="#coragem"><i>9</i>Coragem</a></li>
+        <li><a href="#esquecem"><i>10</i>Quando as marcas esquecem</a></li>
+        <li><a href="#serra"><i>11</i>A Serra Gaúcha como prova</a></li>
+        <li><a href="#valor"><i>12</i>Marca gera valor</a></li>
+        <li><a href="#principios"><i>13</i>Doze princípios</a></li>
+        <li><a href="#bibliografia"><i></i>Bibliografia comentada</a></li>
+        <li><a href="#referencias"><i></i>Referências</a></li>
+      </ol>
+    </nav>
+  </aside>
+
+  <article>
+    <details class="toc-m">
+      <summary>Sumário</summary>
+      <ol>
+        <li><a href="#abertura"><i></i>Abertura</a></li>
+        <li><a href="#pressa"><i>1</i>O tempo da pressa</a></li>
+        <li><a href="#marca"><i>2</i>O que é marca</a></li>
+        <li><a href="#mercadoria"><i>3</i>Da mercadoria à marca</a></li>
+        <li><a href="#triade"><i>4</i>A tríade</a></li>
+        <li><a href="#posicionamento"><i>5</i>Posicionamento singular</a></li>
+        <li><a href="#mensagem"><i>6</i>Mensagem clara e atraente</a></li>
+        <li><a href="#ecossistema"><i>7</i>Ecossistema de valor</a></li>
+        <li><a href="#essencia"><i>8</i>Essência e forma</a></li>
+        <li><a href="#coragem"><i>9</i>Coragem</a></li>
+        <li><a href="#esquecem"><i>10</i>Quando as marcas esquecem</a></li>
+        <li><a href="#serra"><i>11</i>A Serra Gaúcha como prova</a></li>
+        <li><a href="#valor"><i>12</i>Marca gera valor</a></li>
+        <li><a href="#principios"><i>13</i>Doze princípios</a></li>
+        <li><a href="#bibliografia"><i></i>Bibliografia comentada</a></li>
+        <li><a href="#referencias"><i></i>Referências</a></li>
+      </ol>
+    </details>
+
+    <section id="abertura" class="opening" data-toc="Abertura" data-n="">
+      <p class="big">Marca não se fabrica. <span>Se cultiva.</span></p>
+      <p>Vivemos o tempo da pressa. Marcas que mudam de discurso a cada trimestre, correm atrás da próxima trend e estão em todos os canais sem ficar na memória de ninguém. Nós recusamos esse jogo. Acreditamos que marca não se fabrica, se cultiva: com decisões coerentes, tomadas todos os dias com cuidado e constância, até virar aquilo que fica gravado nas pessoas muito depois que o anúncio acaba.</p>
+      <p>Resistir ao tempo não é apenas durar. É ter coragem de ir contra o status quo do seu momento, escolher uma posição e sustentá-la mesmo quando ela ainda parece estranha. São essas marcas que continuam vivas quando as tendências passam.</p>
+      <p>Este texto reúne o que aprendemos em mais de 100 projetos e o que dizem os autores que mais estudaram o assunto, de Peter Drucker a David Aaker e Jim Collins. Ele segue o caminho da nossa tríade: o que é marca, como ela deixa de ser mercadoria, como se posiciona, como fala, onde vive e o que precisa proteger para durar. No fim, estão os doze princípios que usamos nos projetos, a bibliografia comentada e todas as referências.</p>
+    </section>
+
+    <section id="pressa" data-toc="O tempo da pressa" data-n="1">
+      <div class="chap">Capítulo 1</div>
+      <h2>O tempo da pressa</h2>
+      <p>Métricas diárias, campanhas de uma semana, a trend que precisa ser aproveitada hoje. A pressa é compreensível: o resultado de curto prazo aparece rápido no painel, e o de longo prazo demora a aparecer. O problema é que ela costuma sair cara.</p>
+      <p>Em 2013, os pesquisadores Les Binet e Peter Field analisaram 996 campanhas inscritas no prêmio de eficácia do IPA, o instituto britânico das agências de publicidade, entre 1980 e 2010<sup><a href="#r5" aria-label="Referência 5">5</a></sup><sup><a href="#r68" aria-label="Referência 68">68</a></sup>. A conclusão virou referência mundial: a melhor divisão de investimento ficou em torno de 60% para construção de marca e 40% para ativação de vendas. O relatório alertava que o mercado caminhava para um precipício ao olhar só para métricas de curto prazo<sup><a href="#r69" aria-label="Referência 69">69</a></sup>.</p>
+      <p>Cinco anos depois, os autores voltaram aos dados<sup><a href="#r6" aria-label="Referência 6">6</a></sup>. A divisão ideal quase não mudou, 62:38. Mas a fatia de campanhas de curto prazo tinha crescido, e o número de campanhas com efeitos de negócio muito grandes tinha caído<sup><a href="#r69" aria-label="Referência 69">69</a></sup>.</p>
+      <div class="stats">
+        <div><b>996</b><span>campanhas analisadas por Binet e Field, de 1980 a 2010</span></div>
+        <div><b>60:40</b><span>divisão de investimento entre marca e ativação que gerou mais resultado</span></div>
+        <div><b>62:38</b><span>a mesma divisão, revista em 2018, com mais dados da era digital</span></div>
+      </div>
+      <p>Jim Collins encontrou o mesmo padrão olhando para a gestão. As empresas que passaram de boas a excelentes não tiveram um momento mágico: empurraram um volante pesado, volta após volta, até ele ganhar impulso. As empresas de comparação pulavam de programa em programa, mudavam de direção o tempo todo e nunca acumulavam força. Collins chamou esse padrão de ciclo da ruína<sup><a href="#r9" aria-label="Referência 9">9</a></sup><sup><a href="#r66" aria-label="Referência 66">66</a></sup>.</p>
+      <p>Em <em>Great by Choice</em>, escrito com Morten Hansen, ele deu outro nome à mesma disciplina: a marcha das 20 milhas. Empresas que prosperam em ambientes instáveis definem uma meta exigente e a cumprem com consistência, ano após ano, em tempos bons e ruins<sup><a href="#r11" aria-label="Referência 11">11</a></sup><sup><a href="#r66" aria-label="Referência 66">66</a></sup>.</p>
+      <p>Jeff Bezos resumiu a lógica numa conferência em 2012. Mais útil do que perguntar o que vai mudar nos próximos dez anos, disse ele, é perguntar o que não vai mudar, e construir a estratégia em cima disso<sup><a href="#r64" aria-label="Referência 64">64</a></sup>. É uma boa pergunta para qualquer marca: o que, no seu negócio, as pessoas vão continuar querendo daqui a dez anos?</p>
+      <div class="pull"><svg class="sym" aria-hidden="true"><use href="#sym"/></svg><span>Constância não é teimosia. É estratégia, e os dados estão do lado dela.</span></div>
+    </section>
+
+    <section id="marca" data-toc="O que é marca" data-n="2">
+      <div class="chap">Capítulo 2</div>
+      <h2>O que é marca</h2>
+      <p>No nosso manifesto, marca é aquilo que fica gravado nas pessoas muito depois que o anúncio acaba. A frase é poética, mas a definição tem base sólida.</p>
+      <p>David Aaker, professor da Universidade da Califórnia em Berkeley e um dos nomes mais influentes do branding, definiu em 1991 o valor de marca, o <em>brand equity</em>, como um conjunto de ativos ligados ao nome e ao símbolo da marca: reconhecimento, qualidade percebida, associações e lealdade<sup><a href="#r1" aria-label="Referência 1">1</a></sup>. Esses ativos somam valor ao que o produto entrega, ou tiram valor dele. Uma marca é, antes de tudo, um patrimônio.</p>
+      <p>Dois anos depois, Kevin Lane Keller mostrou de onde vem esse patrimônio: do conhecimento que o cliente tem da marca<sup><a href="#r20" aria-label="Referência 20">20</a></sup>. Quanto mais ela é lembrada e reconhecida, e quanto mais fortes, favoráveis e únicas são as associações que desperta, mais as pessoas respondem a ela. Sem memória, não há marca. Há só produto.</p>
+      <p>Keller depois organizou essas ideias numa pirâmide de construção de marca, que começa na lembrança e termina na ressonância: o ponto em que o cliente sente que tem uma relação ativa com a marca<sup><a href="#r21" aria-label="Referência 21">21</a></sup>.</p>
+      <p>O Ehrenberg-Bass Institute, liderado por Byron Sharp, chegou ao mesmo ponto pelos dados de compra. Marcas crescem quando são lembradas em mais situações de compra, o que Sharp chama de disponibilidade mental, e quando são fáceis de comprar, a disponibilidade física<sup><a href="#r30" aria-label="Referência 30">30</a></sup>. Jenni Romaniuk, do mesmo instituto, mostrou que cores, formas, símbolos e sons próprios funcionam como atalhos para essa memória: são os ativos distintivos de uma marca<sup><a href="#r29" aria-label="Referência 29">29</a></sup>. Uma das leis mais antigas desse grupo de pesquisa, o duplo risco, mostra por que isso importa: marcas pequenas sofrem duas vezes, porque têm menos compradores e esses compradores são um pouco menos fiéis<sup><a href="#r13" aria-label="Referência 13">13</a></sup>.</p>
+      <p>A psicologia explica o mecanismo. Em 1968, Robert Zajonc mostrou que a simples exposição repetida a algo aumenta a preferência por ele<sup><a href="#r35" aria-label="Referência 35">35</a></sup>. Décadas depois, Daniel Kahneman mostrou que boa parte das nossas decisões é rápida e intuitiva, e favorece aquilo que vem fácil à mente<sup><a href="#r17" aria-label="Referência 17">17</a></sup>. Quem já está na memória sai na frente.</p>
+      <div class="note">
+        <h4>Quatro jeitos de dizer a mesma coisa</h4>
+        <dl>
+          <dt>Aaker</dt><dd>Marca é um conjunto de ativos que soma valor ao produto.</dd>
+          <dt>Keller</dt><dd>Marca é o conhecimento que o cliente guarda sobre ela.</dd>
+          <dt>Sharp</dt><dd>Marca é estar na cabeça e ao alcance na hora da compra.</dd>
+          <dt>Cooltivo</dt><dd>Marca é tudo isso, cultivado com coerência ao longo do tempo.</dd>
+        </dl>
+      </div>
+      <h3>Marca a serviço do negócio</h3>
+      <p>Peter Drucker, o pensador que praticamente inventou a administração moderna, escreveu em 1954 que existe uma única definição válida para o propósito de uma empresa: criar um cliente. Por isso, dizia ele, toda empresa tem duas funções básicas, e só duas: marketing e inovação<sup><a href="#r12" aria-label="Referência 12">12</a></sup><sup><a href="#r67" aria-label="Referência 67">67</a></sup>.</p>
+      <p>A consequência é direta. Marca não é verniz sobre o negócio, nem um departamento que cuida do logo. É o jeito como a empresa cria e mantém clientes ao longo do tempo. A inovação mantém a marca viva; o marketing a mantém na memória. É por isso que dizemos que construímos marca, conteúdo e comunicação a serviço do negócio.</p>
+    </section>
+
+    <section id="mercadoria" data-toc="Da mercadoria à marca" data-n="3">
+      <div class="chap">Capítulo 3</div>
+      <h2>Da mercadoria à marca</h2>
+      <p>Uma mercadoria compete por preço. Uma marca compete por significado. O caminho de uma para a outra raramente passa por mudar o produto: passa por dar a ele uma ideia que as pessoas reconhecem, lembram e escolhem. Quatro histórias mostram como isso acontece.</p>
+      <div class="cg">
+        <div class="cc">
+          <span class="yr">1962</span>
+          <h4>Havaianas</h4>
+          <p>Lançada pela Alpargatas, a sandália de borracha ficou associada ao público de baixa renda nos anos 1980 e 1990, o que ameaçou sua presença nas lojas. Na década de 1990, novas cores, modelos e celebridades, sob o slogan "todo mundo usa", mudaram o significado sem mudar o produto<sup><a href="#r59" aria-label="Referência 59">59</a></sup>. Hoje são cerca de 200 milhões de pares por ano<sup><a href="#r60" aria-label="Referência 60">60</a></sup>.</p>
+          <p class="lic">O produto ficou igual. O que ele dizia sobre quem usa mudou.</p>
+        </div>
+        <div class="cc">
+          <span class="yr">1870</span>
+          <h4>Granado</h4>
+          <p>Aberta no Rio de Janeiro por um farmacêutico português, recebeu de Dom Pedro II, em 1880, o título de Farmácia Oficial da Família Imperial. Comprada em 1994 por Christopher Freeman, transformou a herança em marca: comprou a Phebo em 2004, abriu loja em Paris em 2017 e em Nova York em 2024<sup><a href="#r56" aria-label="Referência 56">56</a></sup>.</p>
+          <p class="lic">A história, bem contada, virou o diferencial.</p>
+        </div>
+        <div class="cc">
+          <span class="yr">1900</span>
+          <h4>Michelin</h4>
+          <p>Os irmãos André e Édouard Michelin lançaram um guia gratuito para estimular viagens de carro numa França que tinha menos de 3 mil automóveis. O guia passou a ser pago em 1922 e ganhou as estrelas em 1926<sup><a href="#r43" aria-label="Referência 43">43</a></sup>. Uma fabricante de pneus virou a principal referência gastronômica do mundo.</p>
+          <p class="lic">O valor criado ao redor do produto pode ser maior que o próprio produto.</p>
+        </div>
+        <div class="cc">
+          <span class="yr">1837</span>
+          <h4>Hermès</h4>
+          <p>Começou em Paris como uma oficina de arreios para cavalos. O produto mudou por completo, mas o ofício ficou: as bolsas são feitas à mão, sem linha de montagem, e alguns processos levam até seis anos para serem dominados<sup><a href="#r45" aria-label="Referência 45">45</a></sup>.</p>
+          <p class="lic">O que se vende muda. O jeito de fazer, não.</p>
+        </div>
+      </div>
+      <p>Nas quatro histórias, o produto mudou pouco, ou mudou de tudo, e mesmo assim a marca seguiu reconhecível. O que sustentou cada uma foi uma ideia clara sobre o que ela representa. É por essa ideia que começa todo trabalho de marca, e é dela que tratam os próximos capítulos.</p>
+    </section>
+
+    <section id="triade" data-toc="A tríade" data-n="4">
+      <div class="chap">Capítulo 4</div>
+      <h2>A tríade da construção de marca</h2>
+      <p>Toda marca forte que estudamos resolveu três questões: que posição ocupa, o que diz e onde vive. Organizamos essas três escolhas numa tríade. No centro, o resultado de acertar as três: uma marca que gera valor para o negócio.</p>
+      <figure class="tri-fig">
+        <svg viewBox="-40 -40 600 520" role="img" aria-label="Tríade da construção de marca: posicionamento singular, mensagem e ecossistema, com a marca no centro gerando valor">
+          <path class="ed" d="M260 96L62 390L458 390Z"/>
+          <circle class="dt" cx="260" cy="96" r="11"/><circle class="dt" cx="62" cy="390" r="11"/><circle class="dt" cx="458" cy="390" r="11"/>
+          <text class="n" x="260" y="-14" text-anchor="middle">01</text><text class="t" x="260" y="12" text-anchor="middle">POSICIONAMENTO</text><text class="t" x="260" y="36" text-anchor="middle">SINGULAR</text><text class="s" x="260" y="60" text-anchor="middle">verdadeiro · diferente · relevante</text>
+          <text class="n" x="62" y="426" text-anchor="middle">02</text><text class="t" x="62" y="452" text-anchor="middle">MENSAGEM</text><text class="s" x="62" y="474" text-anchor="middle">clara · atraente</text>
+          <text class="n" x="458" y="426" text-anchor="middle">03</text><text class="t" x="458" y="452" text-anchor="middle">ECOSSISTEMA</text><text class="s" x="458" y="474" text-anchor="middle">canais · conteúdo · comunicação</text>
+          <text class="core" x="260" y="296" text-anchor="middle">MARCA</text><text class="cs" x="260" y="322" text-anchor="middle">gera valor</text>
+        </svg>
+        <figcaption>Cada vértice é uma escolha. O valor só aparece no centro quando as três trabalham juntas.</figcaption>
+      </figure>
+      <p>A tríade conversa com os dois modelos de medição de marca mais usados no mundo. A Kantar avalia se uma marca é significativa, diferente e saliente, ou seja, se atende a necessidades reais, se é percebida como única e se vem à mente na hora da compra<sup><a href="#r18" aria-label="Referência 18">18</a></sup>. O BrandAsset Valuator, criado pela Young &amp; Rubicam, mede diferenciação, relevância, estima e conhecimento, e chama de vitalidade a soma das duas primeiras<sup><a href="#r34" aria-label="Referência 34">34</a></sup>.</p>
+      <p>O nosso posicionamento singular usa dois desses critérios, diferente e relevante, e acrescenta um terceiro que os modelos não medem: verdadeiro. Uma posição pode ser diferente e relevante por um tempo sem ser verdadeira. Mas promessa que a empresa não sustenta na prática não atravessa o tempo. A saliência, por sua vez, não aparece como critério porque é resultado: ser lembrado na hora da compra é o que a mensagem e o ecossistema produzem quando trabalham juntos, por anos.</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Elemento</th><th>O que significa</th><th>Base teórica</th><th>Quem fez</th></tr></thead>
+          <tbody>
+            <tr><td>Verdadeiro</td><td>A posição nasce do que a empresa é e faz</td><td>Ideologia central (Collins e Porras); identidade (Aaker; Kapferer)</td><td>Volvo, Hermès</td></tr>
+            <tr><td>Diferente</td><td>Uma escolha que ninguém mais ocupa, com renúncias claras</td><td>Posicionamento (Ries e Trout); estratégia (Porter)</td><td>Volkswagen, Apple</td></tr>
+            <tr><td>Relevante</td><td>A posição importa para quem compra, hoje</td><td>Relevância (Aaker); significativa (Kantar)</td><td>Havaianas, Natura</td></tr>
+            <tr><td>Mensagem clara</td><td>Uma ideia simples, fácil de lembrar e repetir</td><td>Ideias que grudam (Heath e Heath)</td><td>Nike</td></tr>
+            <tr><td>Mensagem atraente</td><td>Emoção e criatividade que fazem a ideia ser notada</td><td>Eficácia emocional (Binet e Field)</td><td>Apple, Patagonia</td></tr>
+            <tr><td>Ecossistema</td><td>Canais, conteúdo e comunidade ao redor do produto</td><td>Disponibilidade (Sharp); comunidades (Muniz e O'Guinn)</td><td>Michelin, Harley-Davidson, Sicredi</td></tr>
+            <tr><td>Marca gera valor</td><td>Preço premium, preferência e longevidade</td><td>Brand equity (Aaker; Keller)</td><td>Apple</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="posicionamento" data-toc="Posicionamento singular" data-n="5">
+      <div class="chap">Capítulo 5</div>
+      <h2>Posicionamento singular</h2>
+      <p>Em 1972, dois publicitários americanos, Al Ries e Jack Trout, publicaram uma série de artigos que mudaria o marketing. Nove anos depois, ela virou o livro <em>Positioning</em><sup><a href="#r27" aria-label="Referência 27">27</a></sup>. A ideia central era simples: o posicionamento não acontece no produto, acontece na mente do cliente. Num mercado saturado de mensagens, vence quem ocupa uma posição simples, clara e sua.</p>
+      <p>Michael Porter, de Harvard, completou o raciocínio em 1996, num dos artigos mais citados da história da estratégia<sup><a href="#r26" aria-label="Referência 26">26</a></sup>. Ele mostrou que copiar as melhores práticas dos concorrentes deixa todo mundo igual. Estratégia, para Porter, é escolher um jeito diferente de competir, e isso exige renúncias: decidir o que não fazer.</p>
+      <p>Jim Collins chamou essa escolha de conceito do porco-espinho, inspirado numa fábula grega: a raposa sabe muitas coisas, o porco-espinho sabe uma coisa grande. As empresas que deram o salto encontraram a interseção entre aquilo que as apaixona profundamente, aquilo em que podem ser as melhores do mundo e aquilo que move seu motor econômico<sup><a href="#r9" aria-label="Referência 9">9</a></sup><sup><a href="#r66" aria-label="Referência 66">66</a></sup>. David Aaker levou a ideia ao extremo em <em>Brand Relevance</em>: as maiores vitórias vêm de criar uma subcategoria nova, em que os concorrentes simplesmente deixam de ser relevantes<sup><a href="#r3" aria-label="Referência 3">3</a></sup>. Marty Neumeier e Youngme Moon chegaram ao mesmo ponto por outros caminhos: num mercado em que todos melhoram as mesmas coisas, se destaca quem escolhe ser radicalmente diferente<sup><a href="#r25" aria-label="Referência 25">25</a></sup><sup><a href="#r23" aria-label="Referência 23">23</a></sup>.</p>
+      <p>Para nós, um posicionamento só é singular quando passa em três testes ao mesmo tempo.</p>
+      <h3>Verdadeiro: a Volvo e a segurança</h3>
+      <p>Simon Sinek popularizou a ideia de que as pessoas se ligam ao porquê de uma empresa, e não só ao que ela vende<sup><a href="#r31" aria-label="Referência 31">31</a></sup>. A Volvo é um dos melhores exemplos de um porquê sustentado na prática. Os fundadores da Volvo, Gustaf Larson e Assar Gabrielsson, definiram que, como carros são dirigidos por pessoas, o princípio por trás de tudo o que a empresa faz é, e deve continuar sendo, a segurança<sup><a href="#r40" aria-label="Referência 40">40</a></sup>. Em 1959, o engenheiro Nils Bohlin criou o cinto de três pontos, e a Volvo abriu a patente para as outras montadoras "no interesse da segurança"<sup><a href="#r41" aria-label="Referência 41">41</a></sup>. A empresa estima que o cinto já salvou mais de um milhão de vidas<sup><a href="#r40" aria-label="Referência 40">40</a></sup>.</p>
+      <p>Abrir a patente custou exclusividade. Em troca, comprou décadas de credibilidade. Posicionamento verdadeiro é o que a empresa faz, não o que ela diz.</p>
+      <h3>Diferente: o Fusca que pensou pequeno</h3>
+      <p>Em 1959, a indústria americana vendia carros grandes com anúncios de fantasia, e o Fusca ainda carregava a associação com a Alemanha nazista. A agência DDB, de Bill Bernbach, respondeu com "Think Small": o carro pequeno no meio de uma página quase vazia, um texto honesto e bem-humorado. Em 1999, a revista Advertising Age elegeu a campanha a melhor do século XX nos Estados Unidos<sup><a href="#r44" aria-label="Referência 44">44</a></sup>.</p>
+      <p>A Volkswagen não escondeu a diferença. Assumiu e fez dela a posição.</p>
+      <h3>Relevante: a Natura e o seu tempo</h3>
+      <p>Fundada em 1969 por Antônio Luiz Seabra, a Natura construiu a marca sobre a relação com a biodiversidade brasileira e a venda direta, adotada em 1974<sup><a href="#r61" aria-label="Referência 61">61</a></sup>. Em 2014, tornou-se, segundo a própria empresa, a primeira companhia de capital aberto do mundo a receber o selo de Empresa B<sup><a href="#r62" aria-label="Referência 62">62</a></sup>. A posição fazia sentido para um consumidor que passou a perguntar de onde vêm os produtos que compra.</p>
+      <div class="pull"><svg class="sym" aria-hidden="true"><use href="#sym"/></svg><span>Sem renúncia não há posição. Há só uma lista de qualidades que qualquer concorrente poderia assinar.</span></div>
+    </section>
+
+    <section id="mensagem" data-toc="Mensagem clara e atraente" data-n="6">
+      <div class="chap">Capítulo 6</div>
+      <h2>Mensagem clara e atraente</h2>
+      <p>Uma posição só existe se as pessoas a entendem. A mensagem é o que leva o posicionamento da sala de reunião para a cabeça do cliente, e ela precisa de duas qualidades que raramente andam juntas.</p>
+      <p><strong>Clara</strong> é a mensagem que cabe numa frase e pode ser repetida por qualquer pessoa. Chip e Dan Heath estudaram por que algumas ideias grudam e outras somem, e encontraram um padrão: as ideias que ficam são simples, inesperadas, concretas, críveis, emocionais e contadas como histórias<sup><a href="#r15" aria-label="Referência 15">15</a></sup>.</p>
+      <p><strong>Atraente</strong> é a mensagem que faz a pessoa querer prestar atenção. Os dados de Binet e Field mostram que campanhas emocionais foram quase duas vezes mais propensas a gerar crescimento de lucro no longo prazo do que as racionais, e que campanhas que viram assunto, as de fama, geraram os maiores ganhos<sup><a href="#r5" aria-label="Referência 5">5</a></sup><sup><a href="#r68" aria-label="Referência 68">68</a></sup>.</p>
+      <h3>Nike: três palavras por quase 40 anos</h3>
+      <p>A Nike nasceu como Blue Ribbon Sports em 1964; a marca Nike e o swoosh surgiram em 1971. Em 1988, a Wieden+Kennedy criou "Just Do It". Nos dez anos seguintes, a participação da Nike no mercado norte-americano de calçados esportivos foi de 18% para 43%, e as vendas globais passaram de US$ 877 milhões para US$ 9,2 bilhões<sup><a href="#r38" aria-label="Referência 38">38</a></sup>. A frase segue em uso até hoje. A história de como a marca nasceu está em <em>Shoe Dog</em>, as memórias do fundador Phil Knight<sup><a href="#r22" aria-label="Referência 22">22</a></sup>.</p>
+      <div class="stats">
+        <div><b>18% → 43%</b><span>participação da Nike nos calçados esportivos nos EUA, de 1988 a 1998</span></div>
+        <div><b>US$ 9,2 bi</b><span>vendas globais da Nike em 1998, contra US$ 877 milhões em 1988</span></div>
+        <div><b>2x</b><span>chance de crescimento de lucro no longo prazo das campanhas emocionais</span></div>
+      </div>
+      <h3>Apple: dizer quem é antes de provar</h3>
+      <p>Em 1997, com a Apple em crise, Steve Jobs recusou o slogan "We're back" porque, nas palavras dele, a empresa ainda não estava de volta. A TBWA\Chiat\Day criou "Think different" e o filme "Crazy Ones", com 17 figuras que mudaram o século XX. A campanha ganhou o Emmy de 1998 e o Grand Effie de 2000, e restaurou a aura contracultural da marca antes mesmo do iMac chegar às lojas<sup><a href="#r36" aria-label="Referência 36">36</a></sup>.</p>
+      <p>A Apple declarou seus valores antes de ter os produtos para prová-los. Depois, os produtos cumpriram a promessa. Clareza e atração, juntas, transformaram uma empresa em crise numa ideia.</p>
+    </section>
+
+    <section id="ecossistema" data-toc="Ecossistema de valor" data-n="7">
+      <div class="chap">Capítulo 7</div>
+      <h2>Ecossistema de valor</h2>
+      <p>Nenhuma marca vive só de anúncio. Ela vive nos lugares onde a pessoa a encontra, no que aprende com ela e nas relações que constrói ao redor dela. Chamamos esse conjunto de ecossistema: canais, conteúdo e comunicação trabalhando para criar relação, e não só alcance.</p>
+      <p>A disponibilidade física, de Sharp, é a parte mais concreta: estar à venda onde e quando a decisão acontece<sup><a href="#r30" aria-label="Referência 30">30</a></sup>. Mas a parte mais difícil de copiar é a relação. A pesquisadora Susan Fournier mostrou em 1998 que as pessoas se relacionam com marcas como parceiras de uma relação, com história, confiança e compromisso<sup><a href="#r14" aria-label="Referência 14">14</a></sup>. Albert Muniz e Thomas O'Guinn descreveram as comunidades de marca: grupos com senso de pertencimento, rituais e tradições próprios e responsabilidade mútua<sup><a href="#r24" aria-label="Referência 24">24</a></sup>.</p>
+      <p>O pesquisador Douglas Holt foi além e explicou por que algumas marcas viram ícones: elas oferecem histórias que ajudam as pessoas a lidar com as tensões culturais do seu tempo<sup><a href="#r16" aria-label="Referência 16">16</a></sup>. Nesse ponto, a marca deixa de ser fornecedora e passa a fazer parte da identidade de quem a usa.</p>
+      <div class="cg">
+        <div class="cc">
+          <span class="yr">1983</span>
+          <h4>Harley-Davidson</h4>
+          <p>A marca criou o Harley Owners Group para ligar empresa, funcionários e clientes. O grupo passou de um milhão de membros e é creditado por ajudar a recuperar as vendas<sup><a href="#r48" aria-label="Referência 48">48</a></sup>.</p>
+          <p class="lic">Concorrentes copiam a moto. Não copiam o pertencimento.</p>
+        </div>
+        <div class="cc">
+          <span class="yr">1902</span>
+          <h4>Sicredi</h4>
+          <p>O modelo cooperativo é um ecossistema por definição: os associados são, ao mesmo tempo, donos e clientes. A primeira cooperativa de crédito da América Latina nasceu assim, em Nova Petrópolis, e segue funcionando<sup><a href="#r51" aria-label="Referência 51">51</a></sup>.</p>
+          <p class="lic">Quando o cliente faz parte, a marca vira comunidade.</p>
+        </div>
+      </div>
+      <p>O Guia Michelin, que vimos no capítulo 3, é o exemplo mais antigo de conteúdo como ecossistema: mais de 120 anos de valor criado ao redor de um pneu<sup><a href="#r43" aria-label="Referência 43">43</a></sup>. É a mesma lógica que usamos quando planejamos a presença digital de uma marca: conteúdo que tenha valor por si só, e não apenas espaço para anunciar.</p>
+    </section>
+
+    <section id="essencia" data-toc="Essência e forma" data-n="8">
+      <div class="chap">Capítulo 8</div>
+      <h2>Essência e forma</h2>
+      <p>Em 1994, Jim Collins e Jerry Porras publicaram o resultado de seis anos de pesquisa sobre empresas que atravessaram gerações<sup><a href="#r8" aria-label="Referência 8">8</a></sup><sup><a href="#r70" aria-label="Referência 70">70</a></sup>. Eles compararam 18 empresas visionárias com concorrentes da mesma época e do mesmo setor. De 1926 a 1990, as visionárias superaram o mercado de ações em 15 vezes; as de comparação, em 2 vezes.</p>
+      <div class="stats">
+        <div><b>18</b><span>empresas visionárias estudadas, cada uma pareada com uma concorrente</span></div>
+        <div><b>15x</b><span>desempenho das visionárias frente ao mercado de ações, de 1926 a 1990</span></div>
+        <div><b>2x</b><span>desempenho das empresas de comparação no mesmo período</span></div>
+      </div>
+      <p>A diferença não estava em um produto genial ou num líder carismático. Estava numa combinação aparentemente contraditória: preservar o núcleo e estimular o progresso. As empresas duradouras mantinham valores e propósito fixos e deixavam todo o resto aberto à mudança. Collins e Porras também mostraram que elas construíam relógios em vez de apenas dizer as horas: instituições que funcionam além de um líder.</p>
+      <p>Aaker levou a ideia para a marca em <em>Building Strong Brands</em>: toda identidade tem um núcleo, que permanece, e uma camada estendida, que se adapta<sup><a href="#r2" aria-label="Referência 2">2</a></sup>. Jean-Noël Kapferer descreveu a identidade como um prisma de seis faces, do aspecto físico à autoimagem de quem compra, que precisam continuar reconhecíveis mesmo quando a forma muda<sup><a href="#r19" aria-label="Referência 19">19</a></sup>.</p>
+      <h3>LEGO: quando a forma se espalha, voltar ao núcleo</h3>
+      <p>Fundada em 1932 por Ole Kirk Christiansen, a LEGO tirou o nome da expressão dinamarquesa "leg godt", brincar bem. Depois de se espalhar por parques temáticos e outros negócios, teve déficit de 1,4 bilhão de coroas em 2003 e prejuízo de 1,9 bilhão em 2004, com quase mil demissões<sup><a href="#r42" aria-label="Referência 42">42</a></sup>. A virada veio de volta ao núcleo: a empresa vendeu os parques, refocou no brinquedo central e lucrou 702 milhões de coroas já em 2005. No primeiro semestre de 2015, tornou-se a maior fabricante de brinquedos do mundo em receita<sup><a href="#r42" aria-label="Referência 42">42</a></sup>. A história é contada em detalhe em <em>Brick by Brick</em><sup><a href="#r28" aria-label="Referência 28">28</a></sup>.</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Marca</th><th>Essência que ficou</th><th>Forma que mudou</th></tr></thead>
+          <tbody>
+            <tr><td>Hermès, 1837</td><td>Ofício artesanal e controle da família</td><td>De arreios para bolsas, lenços e moda</td></tr>
+            <tr><td>LEGO, 1932</td><td>Brincar bem, o bloco como sistema</td><td>Filmes, jogos e parques, que foram vendidos para voltar ao bloco</td></tr>
+            <tr><td>Volvo, 1927</td><td>Segurança como princípio dos fundadores</td><td>Do cinto de três pontos aos sistemas atuais</td></tr>
+            <tr><td>Michelin, 1889</td><td>Mobilidade e confiança</td><td>Pneus, guias, mapas e estrelas gastronômicas</td></tr>
+            <tr><td>Sicredi, 1902</td><td>Cooperar para crescer junto</td><td>De caixa rural a instituição financeira em 25 estados</td></tr>
+            <tr><td>Havaianas, 1962</td><td>Sandália simples, brasileira, para todos</td><td>De produto popular a item de moda global</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>O que já durou tende a durar</h3>
+      <p>Nassim Taleb deu nome a um efeito curioso em <em>Antifragile</em>: para coisas que não perecem, como ideias e livros, cada ano de sobrevivência aumenta a expectativa de vida que ainda resta. Um livro que está em catálogo há 40 anos tende a continuar por mais 40<sup><a href="#r32" aria-label="Referência 32">32</a></sup><sup><a href="#r65" aria-label="Referência 65">65</a></sup>. É o efeito Lindy. Uma marca que preservou seu núcleo por décadas acumulou mais do que memória: acumulou prova de que merece continuar.</p>
+      <div class="pull"><svg class="sym" aria-hidden="true"><use href="#sym"/></svg><span>A essência se protege. A forma se renova para continuar relevante.</span></div>
+    </section>
+
+    <section id="coragem" data-toc="Coragem" data-n="9">
+      <div class="chap">Capítulo 9</div>
+      <h2>Coragem: resistir não é só durar</h2>
+      <p>Há marcas que duram por inércia, e há marcas que resistem ao tempo. A diferença é coragem. As posições que atravessam gerações costumam nascer contra o padrão do seu momento, quando ainda parecem estranhas.</p>
+      <p>O Fusca pensou pequeno quando todos pensavam grande. A Apple preferiu celebrar quem pensa diferente a dizer que estava de volta. Em 2018, nos 30 anos de "Just Do It", a Nike colocou o jogador Colin Kaepernick no centro da campanha "Dream Crazy"; houve boicote nas redes, e mesmo assim a ação foi considerada bem-sucedida junto ao público da marca<sup><a href="#r38" aria-label="Referência 38">38</a></sup>. Uma posição firme aceita perder quem não é o seu público.</p>
+      <h3>Patagonia: pedir para não comprar</h3>
+      <p>Yvon Chouinard fundou a Patagonia em 1973 e, desde 1985, a empresa destina 1% das vendas a causas ambientais<sup><a href="#r46" aria-label="Referência 46">46</a></sup>. Na Black Friday de 2011, publicou no New York Times um anúncio com o título "Don't Buy This Jacket", pedindo que as pessoas pensassem duas vezes antes de comprar o que não precisavam<sup><a href="#r47" aria-label="Referência 47">47</a></sup>. Em 2022, Chouinard transferiu o controle da empresa para um fundo e uma organização dedicados a combater a crise climática<sup><a href="#r46" aria-label="Referência 46">46</a></sup>. Sua filosofia está em <em>Let My People Go Surfing</em><sup><a href="#r7" aria-label="Referência 7">7</a></sup>.</p>
+      <p>Quando a marca age contra o próprio interesse imediato para cumprir o que diz, a coerência vira o melhor argumento de venda. É por isso que coragem é o primeiro dos três valores da Cooltivo, ao lado de clareza e criatividade.</p>
+      <div class="pull"><svg class="sym" aria-hidden="true"><use href="#sym"/></svg><span>Coragem é escolher a posição antes que ela seja óbvia, e sustentá-la quando ainda parece estranha.</span></div>
+    </section>
+
+    <section id="esquecem" data-toc="Quando as marcas esquecem" data-n="10">
+      <div class="chap">Capítulo 10</div>
+      <h2>Quando as marcas esquecem</h2>
+      <p>Os fracassos mais citados do branding têm a mesma raiz: a empresa trocou o que as pessoas reconheciam, ou deixou de mudar o que precisava mudar. Três histórias cobrem os dois erros.</p>
+      <div class="cg">
+        <div class="cc">
+          <span class="yr">1985</span>
+          <h4>New Coke: trocar a essência</h4>
+          <p>Com a participação caindo de cerca de 60% no pós-guerra para menos de 24% em 1983, a Coca-Cola mudou a fórmula. O novo sabor venceu os testes cegos, mas a empresa recebeu mais de 40 mil ligações e cartas de protesto. A fórmula original voltou 79 dias depois<sup><a href="#r39" aria-label="Referência 39">39</a></sup>.</p>
+          <p class="lic">O produto venceu o teste. Perdeu para a memória.</p>
+        </div>
+        <div class="cc">
+          <span class="yr">2009</span>
+          <h4>Tropicana: trocar a forma de uma vez</h4>
+          <p>A nova embalagem custou mais de US$ 50 milhões com a campanha. As vendas caíram cerca de 20% em dois meses, e a empresa anunciou a volta da embalagem antiga em seis semanas<sup><a href="#r50" aria-label="Referência 50">50</a></sup>.</p>
+          <p class="lic">Quem apaga os sinais de reconhecimento some da gôndola.</p>
+        </div>
+        <div class="cc wide">
+          <span class="yr">1975 · 2012</span>
+          <h4>Kodak: não mudar a forma</h4>
+          <p>Um engenheiro da própria Kodak, Steven Sasson, criou o primeiro protótipo de câmera digital portátil em 1975. A empresa não fez da invenção o seu futuro e pediu recuperação judicial em janeiro de 2012, saindo dela no ano seguinte como uma empresa de imagem para negócios<sup><a href="#r49" aria-label="Referência 49">49</a></sup>.</p>
+          <p class="lic">Proteger a essência não é congelar a forma.</p>
+        </div>
+      </div>
+      <p>Jim Collins descreveu em <em>How the Mighty Fall</em> os cinco estágios pelos quais empresas líderes caem<sup><a href="#r10" aria-label="Referência 10">10</a></sup><sup><a href="#r66" aria-label="Referência 66">66</a></sup>. A segunda coluna da tabela é a nossa leitura de como cada estágio aparece numa marca.</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Estágio, segundo Collins</th><th>Como aparece numa marca</th></tr></thead>
+          <tbody>
+            <tr><td>1. Arrogância nascida do sucesso</td><td>A empresa acha que a preferência é garantida e para de investir em memória</td></tr>
+            <tr><td>2. Busca indisciplinada por mais</td><td>Extensões e novos públicos que diluem o que a marca significa</td></tr>
+            <tr><td>3. Negação de risco e perigo</td><td>Sinais de perda de relevância explicados como problema do mercado</td></tr>
+            <tr><td>4. Busca desesperada por salvação</td><td>Rebranding radical, slogan novo a cada ano, a campanha milagrosa</td></tr>
+            <tr><td>5. Rendição à irrelevância ou à morte</td><td>A marca vira commodity, é vendida ou desaparece</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="serra" data-toc="A Serra Gaúcha como prova" data-n="11">
+      <div class="chap">Capítulo 11</div>
+      <h2>A Serra Gaúcha como prova</h2>
+      <p>A metáfora do cultivo não é só poética para nós. Na região onde a Cooltivo nasceu, marcas centenárias convivem com a gente no dia a dia, e quase todas têm em comum o controle familiar ou cooperativo, a constância e a relação próxima com a comunidade.</p>
+      <div class="cg">
+        <div class="cc">
+          <span class="yr">1902</span>
+          <h4>Sicredi, Nova Petrópolis</h4>
+          <p>O padre suíço Theodor Amstad e 19 pequenos produtores criaram a Caixa Rural de Nova Petrópolis, a primeira cooperativa de crédito da América Latina. Ela funciona até hoje como Sicredi Pioneira RS. A marca Sicredi foi adotada em 1992 e hoje está em 25 estados e no Distrito Federal, com mais de 5 milhões de pessoas<sup><a href="#r51" aria-label="Referência 51">51</a></sup>.</p>
+          <p class="lic">A essência de cooperar atravessou mais de um século.</p>
+        </div>
+        <div class="cc">
+          <span class="yr">1911</span>
+          <h4>Tramontina, Carlos Barbosa</h4>
+          <p>Fundada por Valentin Tramontina, filho de imigrantes italianos, segue familiar mais de cem anos depois. Tem cerca de 10 mil funcionários, mais de 22 mil itens, oito fábricas e vendas em cerca de 120 países<sup><a href="#r52" aria-label="Referência 52">52</a></sup>.</p>
+          <p class="lic">Qualidade constante transformou um item de compra rotineira em marca.</p>
+        </div>
+        <div class="cc">
+          <span class="yr">1912</span>
+          <h4>Santa Clara, Carlos Barbosa</h4>
+          <p>A cooperativa completou 110 anos em 2022<sup><a href="#r53" aria-label="Referência 53">53</a></sup> e é descrita como a mais antiga cooperativa de laticínios em atividade no Brasil. Reúne quase 5 mil famílias associadas<sup><a href="#r54" aria-label="Referência 54">54</a></sup>.</p>
+          <p class="lic">Tradição se renova com projetos novos, como o Plantando o Bem.</p>
+        </div>
+        <div class="cc">
+          <span class="yr">1931</span>
+          <h4>Aurora, Bento Gonçalves</h4>
+          <p>Fundada por 16 famílias produtoras de uva, a Cooperativa Vinícola Aurora reúne hoje cerca de 1.100 famílias e faturou o recorde de R$ 874 milhões em 2025<sup><a href="#r55" aria-label="Referência 55">55</a></sup>.</p>
+          <p class="lic">Dezesseis famílias viraram a maior vinícola do Brasil.</p>
+        </div>
+      </div>
+      <h3>Marcas que atravessaram gerações</h3>
+      <p>A linha do tempo reúne as marcas citadas neste texto pelo ano de fundação. As quatro da Serra Gaúcha nasceram num intervalo de apenas 29 anos, entre 1902 e 1931, e seguem ativas.</p>
+      <ol class="timeline">
+        <li><span class="y">1837</span><span class="w"><b>Hermès</b><small>Paris. De arreios para cavalos a bolsas e moda, sem abrir mão do artesanato.</small></span></li>
+        <li><span class="y">1846</span><span class="w"><b>Ypióca</b><small>Maranguape (CE). Gerida pela mesma família por gerações até a venda para a Diageo, em 2012<sup><a href="#r58" aria-label="Referência 58">58</a></sup>.</small></span></li>
+        <li><span class="y">1870</span><span class="w"><b>Granado</b><small>Rio de Janeiro. De farmácia imperial a lojas em Paris e Nova York.</small></span></li>
+        <li><span class="y">1880</span><span class="w"><b>Hering</b><small>Blumenau (SC). Os dois peixes do logo representam os irmãos fundadores<sup><a href="#r57" aria-label="Referência 57">57</a></sup>.</small></span></li>
+        <li><span class="y">1886</span><span class="w"><b>Coca-Cola</b><small>Atlanta. A marca que provou que o significado vale mais que a fórmula.</small></span></li>
+        <li><span class="y">1889</span><span class="w"><b>Michelin</b><small>Clermont-Ferrand. Do pneu ao guia que define a gastronomia mundial.</small></span></li>
+        <li><span class="y">1899</span><span class="w"><b>Klabin</b><small>Começou com material de escritório e virou uma das maiores produtoras de papel e celulose do mundo<sup><a href="#r63" aria-label="Referência 63">63</a></sup>.</small></span></li>
+        <li class="serra"><span class="y">1902</span><span class="w"><b>Sicredi</b><small>Nova Petrópolis. A primeira cooperativa de crédito da América Latina.</small></span></li>
+        <li><span class="y">1903</span><span class="w"><b>Harley-Davidson</b><small>Milwaukee. Uma comunidade com mais de um milhão de membros.</small></span></li>
+        <li class="serra"><span class="y">1911</span><span class="w"><b>Tramontina</b><small>Carlos Barbosa. Familiar e presente em cerca de 120 países.</small></span></li>
+        <li class="serra"><span class="y">1912</span><span class="w"><b>Santa Clara</b><small>Carlos Barbosa. A mais antiga cooperativa de laticínios em atividade no Brasil.</small></span></li>
+        <li><span class="y">1927</span><span class="w"><b>Volvo</b><small>Gotemburgo. Segurança como princípio desde os fundadores.</small></span></li>
+        <li class="serra"><span class="y">1931</span><span class="w"><b>Aurora</b><small>Bento Gonçalves. De 16 famílias à maior vinícola do Brasil.</small></span></li>
+        <li><span class="y">1932</span><span class="w"><b>LEGO</b><small>Billund. Voltou ao bloco para virar a maior fabricante de brinquedos do mundo.</small></span></li>
+        <li><span class="y">1962</span><span class="w"><b>Havaianas</b><small>Alpargatas. Mudou o significado sem mudar o produto.</small></span></li>
+        <li><span class="y">1964</span><span class="w"><b>Nike</b><small>Nasceu como Blue Ribbon Sports. "Just Do It" desde 1988.</small></span></li>
+        <li><span class="y">1969</span><span class="w"><b>Natura</b><small>São Paulo. Biodiversidade brasileira como posicionamento.</small></span></li>
+        <li><span class="y">1973</span><span class="w"><b>Patagonia</b><small>Califórnia. Pediu para não comprar e ganhou confiança.</small></span></li>
+        <li><span class="y">1976</span><span class="w"><b>Apple</b><small>Califórnia. A marca mais valiosa do mundo pelo 13º ano seguido em 2025.</small></span></li>
+      </ol>
+    </section>
+
+    <section id="valor" data-toc="Marca gera valor" data-n="12">
+      <div class="chap">Capítulo 12</div>
+      <h2>Marca gera valor</h2>
+      <p>No centro da tríade está o resultado: uma marca que gera valor para o negócio. Esse valor aparece em números.</p>
+      <p>A Kantar mostra que marcas que são ao mesmo tempo significativas, diferentes e salientes capturam mais volume, cobram preço premium e têm mais potencial de crescer. As pessoas pagam mais por marcas que veem como significativamente diferentes: 37% a mais entre consumidores guiados por marca, e 14% a mais até entre os guiados por preço<sup><a href="#r18" aria-label="Referência 18">18</a></sup>.</p>
+      <div class="stats">
+        <div><b>+37%</b><span>a mais pagos por marcas significativamente diferentes, entre quem escolhe por marca</span></div>
+        <div><b>+14%</b><span>a mais pagos pelas mesmas marcas, mesmo entre quem escolhe por preço</span></div>
+        <div><b>US$ 470,9 bi</b><span>valor da marca Apple em 2025, a mais valiosa do mundo pelo 13º ano seguido</span></div>
+      </div>
+      <p>O ranking da Interbrand de 2025 colocou a Apple no topo pelo 13º ano seguido, com a marca avaliada em US$ 470,9 bilhões, à frente de Microsoft, Amazon, Google e Samsung<sup><a href="#r37" aria-label="Referência 37">37</a></sup>. E as empresas visionárias de Collins e Porras, que preservaram o núcleo por décadas, superaram o mercado em 15 vezes<sup><a href="#r8" aria-label="Referência 8">8</a></sup>.</p>
+      <p>Para a maioria das empresas que atendemos, o valor não aparece em ranking global. Aparece em coisas mais próximas: um preço que o cliente aceita sem pedir desconto, a preferência na hora da cotação, o talento que quer trabalhar ali, o negócio que passa para a próxima geração. É esse valor que o cultivo constrói.</p>
+    </section>
+
+    <section id="principios" data-toc="Doze princípios" data-n="13">
+      <div class="chap">Capítulo 13</div>
+      <h2>Doze princípios para cultivar uma marca</h2>
+      <p>David Aaker reuniu os seus vinte princípios de construção de marca em <em>Aaker on Brands</em><sup><a href="#r4" aria-label="Referência 4">4</a></sup>. Os nossos são doze: tudo o que está neste texto, transformado em decisões que levamos para os projetos da Cooltivo.</p>
+      <div class="princ">
+        <div class="pr"><span class="n">01</span><h4>Separe essência de forma antes de mudar qualquer coisa</h4><p>A essência se protege; a forma se renova. LEGO e New Coke mostram os dois lados.</p></div>
+        <div class="pr"><span class="n">02</span><h4>Escolha uma posição e renuncie ao resto</h4><p>Sem renúncia, não há posição. Porter, Ries e Trout.</p></div>
+        <div class="pr"><span class="n">03</span><h4>Teste a posição com três perguntas</h4><p>É verdadeira? É diferente? É relevante para quem compra hoje?</p></div>
+        <div class="pr"><span class="n">04</span><h4>Diga uma coisa só, do mesmo jeito, por muito tempo</h4><p>Repetição coerente constrói memória. A Nike diz "Just Do It" desde 1988.</p></div>
+        <div class="pr"><span class="n">05</span><h4>Proteja os ativos distintivos</h4><p>Cor, símbolo, som e personagem são atalhos de memória. Os peixes da Hering estão lá desde 1880.</p></div>
+        <div class="pr"><span class="n">06</span><h4>Invista no longo prazo sem abandonar o curto</h4><p>A referência é algo perto de 60% em marca e 40% em ativação.</p></div>
+        <div class="pr"><span class="n">07</span><h4>Emocione antes de explicar</h4><p>Campanhas emocionais geram mais lucro no longo prazo do que as racionais.</p></div>
+        <div class="pr"><span class="n">08</span><h4>Faça a marca agir como fala</h4><p>A prova vale mais que a promessa: a patente aberta da Volvo, o anúncio da Patagonia.</p></div>
+        <div class="pr"><span class="n">09</span><h4>Crie valor ao redor do produto</h4><p>Conteúdo, serviço e comunidade formam o ecossistema. Michelin, Harley-Davidson, Sicredi.</p></div>
+        <div class="pr"><span class="n">10</span><h4>Tenha coragem de parecer estranho antes de parecer óbvio</h4><p>As posições que duram costumam começar contra o padrão.</p></div>
+        <div class="pr"><span class="n">11</span><h4>Meça a marca, não só a campanha</h4><p>Lembrança, diferenciação, relevância e preço premium mostram se o cultivo funciona.</p></div>
+        <div class="pr"><span class="n">12</span><h4>Proteja quem decide</h4><p>Governança que preserva o núcleo protege a marca: Hermès, Tramontina, as cooperativas da Serra.</p></div>
+      </div>
+    </section>
+
+    <section id="bibliografia" class="bib" data-toc="Bibliografia comentada" data-n="">
+      <div class="chap">Para ir além</div>
+      <h2>Bibliografia comentada</h2>
+      <p>Vinte e seis livros sustentam esta tese. Separamos em três níveis: os essenciais formam a base; os complementares aprofundam cada capítulo; os de cases contam as histórias por dentro. Quando existe edição brasileira que confirmamos, ela aparece entre parênteses.</p>
+      <h3>Essenciais</h3>
+      <div class="bg">
+        <div class="bk"><b>Managing Brand Equity</b><em>David Aaker, 1991</em><span>Marca é um conjunto de ativos: reconhecimento, qualidade percebida, associações e lealdade.</span></div>
+        <div class="bk"><b>Building Strong Brands</b><em>David Aaker, 1996</em><span>Toda identidade tem um núcleo que fica e uma camada que se adapta.</span></div>
+        <div class="bk"><b>The Practice of Management</b><em>Peter Drucker, 1954</em><span>O propósito do negócio é criar um cliente; as funções básicas são marketing e inovação.</span></div>
+        <div class="bk"><b>Built to Last (Feitas para durar)</b><em>Jim Collins e Jerry Porras, 1994</em><span>Empresas duradouras preservam o núcleo e estimulam o progresso.</span></div>
+        <div class="bk"><b>Good to Great (Empresas feitas para vencer)</b><em>Jim Collins, 2001</em><span>O conceito do porco-espinho e o volante que ganha impulso volta após volta.</span></div>
+        <div class="bk"><b>Strategic Brand Management</b><em>Kevin Lane Keller, 1998</em><span>Valor de marca baseado no cliente e a pirâmide de ressonância.</span></div>
+        <div class="bk"><b>How Brands Grow</b><em>Byron Sharp, 2010</em><span>Marcas crescem por disponibilidade mental e física.</span></div>
+        <div class="bk"><b>The Long and the Short of It</b><em>Les Binet e Peter Field, 2013</em><span>Cerca de 60% em marca e 40% em ativação; emoção gera mais lucro no longo prazo.</span></div>
+        <div class="bk"><b>Positioning</b><em>Al Ries e Jack Trout, 1981</em><span>O posicionamento acontece na mente do cliente.</span></div>
+      </div>
+      <h3>Complementares</h3>
+      <div class="bg">
+        <div class="bk"><b>Brand Relevance</b><em>David Aaker, 2011</em><span>As maiores vitórias vêm de criar subcategorias em que os concorrentes ficam irrelevantes.</span></div>
+        <div class="bk"><b>Aaker on Brands (Aaker on Branding)</b><em>David Aaker, 2014</em><span>Vinte princípios práticos de construção de marca.</span></div>
+        <div class="bk"><b>How the Mighty Fall (Como as gigantes caem)</b><em>Jim Collins, 2009</em><span>Os cinco estágios do declínio de empresas líderes.</span></div>
+        <div class="bk"><b>Great by Choice (Vencedoras por opção)</b><em>Jim Collins e Morten Hansen, 2011</em><span>A marcha das 20 milhas: desempenho consistente em ambientes instáveis.</span></div>
+        <div class="bk"><b>Building Distinctive Brand Assets</b><em>Jenni Romaniuk, 2018</em><span>Cores, formas e símbolos como atalhos de memória.</span></div>
+        <div class="bk"><b>The New Strategic Brand Management</b><em>Jean-Noël Kapferer, 1992</em><span>O prisma de identidade de seis faces.</span></div>
+        <div class="bk"><b>How Brands Become Icons</b><em>Douglas Holt, 2004</em><span>Marcas viram ícones quando respondem às tensões culturais do seu tempo.</span></div>
+        <div class="bk"><b>Zag</b><em>Marty Neumeier, 2006</em><span>Diferenciação radical num mercado de iguais.</span></div>
+        <div class="bk"><b>Different</b><em>Youngme Moon, 2010</em><span>Como escapar do rebanho competitivo.</span></div>
+        <div class="bk"><b>Made to Stick</b><em>Chip Heath e Dan Heath, 2007</em><span>Por que algumas ideias grudam e outras não.</span></div>
+        <div class="bk"><b>Start with Why</b><em>Simon Sinek, 2009</em><span>Comunicar a partir do porquê.</span></div>
+        <div class="bk"><b>Antifragile</b><em>Nassim Taleb, 2012</em><span>O efeito Lindy: o que já durou tende a durar.</span></div>
+        <div class="bk"><b>Thinking, Fast and Slow</b><em>Daniel Kahneman, 2011</em><span>Decisões rápidas e atalhos mentais.</span></div>
+        <div class="bk"><b>As marcas no divã</b><em>Jaime Troiano, 2009</em><span>Um olhar brasileiro de um dos pioneiros do branding no país.</span></div>
+      </div>
+      <h3>Cases contados por dentro</h3>
+      <div class="bg">
+        <div class="bk"><b>Let My People Go Surfing</b><em>Yvon Chouinard, 2005</em><span>A filosofia de negócio da Patagonia.</span></div>
+        <div class="bk"><b>Brick by Brick</b><em>David Robertson e Bill Breen, 2013</em><span>Como a LEGO voltou ao núcleo e virou líder mundial.</span></div>
+        <div class="bk"><b>Shoe Dog</b><em>Phil Knight, 2016</em><span>A história da Nike contada pelo fundador.</span></div>
+      </div>
+    </section>
+
+    <section id="referencias" class="refs" data-toc="Referências" data-n="">
+      <div class="chap">Fontes</div>
+      <h2>Referências</h2>
+      <p>As referências seguem a ABNT. Os números entre os parágrafos levam a cada fonte; as fontes on-line foram consultadas em 12 de outubro de 2026.</p>
+      <h3>Livros e artigos</h3>
+      <ol>
+        <li id="r1">AAKER, David A. <em>Managing brand equity</em>: capitalizing on the value of a brand name. New York: Free Press, 1991.</li>
+        <li id="r2">AAKER, David A. <em>Building strong brands</em>. New York: Free Press, 1996.</li>
+        <li id="r3">AAKER, David A. <em>Brand relevance</em>: making competitors irrelevant. San Francisco: Jossey-Bass, 2011.</li>
+        <li id="r4">AAKER, David A. <em>Aaker on brands</em>: 20 principles that drive success. New York: Morgan James, 2014.</li>
+        <li id="r5">BINET, Les; FIELD, Peter. <em>The long and the short of it</em>: balancing short and long-term marketing strategies. London: IPA, 2013.</li>
+        <li id="r6">BINET, Les; FIELD, Peter. <em>Effectiveness in context</em>. London: IPA, 2018.</li>
+        <li id="r7">CHOUINARD, Yvon. <em>Let my people go surfing</em>. New York: Penguin Press, 2005.</li>
+        <li id="r8">COLLINS, James C.; PORRAS, Jerry I. <em>Built to last</em>: successful habits of visionary companies. New York: HarperBusiness, 1994.</li>
+        <li id="r9">COLLINS, Jim. <em>Good to great</em>. New York: HarperBusiness, 2001.</li>
+        <li id="r10">COLLINS, Jim. <em>How the mighty fall</em>. New York: HarperCollins, 2009.</li>
+        <li id="r11">COLLINS, Jim; HANSEN, Morten T. <em>Great by choice</em>. New York: HarperBusiness, 2011.</li>
+        <li id="r12">DRUCKER, Peter F. <em>The practice of management</em>. New York: Harper &amp; Row, 1954.</li>
+        <li id="r13">EHRENBERG, Andrew; GOODHARDT, Gerald; BARWISE, Patrick. Double jeopardy revisited. <em>Journal of Marketing</em>, v. 54, n. 3, p. 82-91, 1990.</li>
+        <li id="r14">FOURNIER, Susan. Consumers and their brands: developing relationship theory in consumer research. <em>Journal of Consumer Research</em>, v. 24, n. 4, p. 343-373, 1998.</li>
+        <li id="r15">HEATH, Chip; HEATH, Dan. <em>Made to stick</em>. New York: Random House, 2007.</li>
+        <li id="r16">HOLT, Douglas B. <em>How brands become icons</em>: the principles of cultural branding. Boston: Harvard Business School Press, 2004.</li>
+        <li id="r17">KAHNEMAN, Daniel. <em>Thinking, fast and slow</em>. New York: Farrar, Straus and Giroux, 2011.</li>
+        <li id="r18">KANTAR. <em>Why and how should you measure brand equity?</em> Disponível em: <a href="https://www.kantar.com/north-america/inspiration/brands/why-and-how-should-you-measure-brand-equity" target="_blank" rel="noopener">kantar.com</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r19">KAPFERER, Jean-Noël. <em>The new strategic brand management</em>. 5. ed. London: Kogan Page, 2012.</li>
+        <li id="r20">KELLER, Kevin Lane. Conceptualizing, measuring, and managing customer-based brand equity. <em>Journal of Marketing</em>, v. 57, n. 1, p. 1-22, 1993. Disponível em: <a href="https://journals.sagepub.com/doi/10.1177/002224299305700101" target="_blank" rel="noopener">doi.org/10.1177/002224299305700101</a>.</li>
+        <li id="r21">KELLER, Kevin Lane. <em>Strategic brand management</em>. Upper Saddle River: Prentice Hall, 1998.</li>
+        <li id="r22">KNIGHT, Phil. <em>Shoe dog</em>. New York: Scribner, 2016.</li>
+        <li id="r23">MOON, Youngme. <em>Different</em>: escaping the competitive herd. New York: Crown Business, 2010.</li>
+        <li id="r24">MUNIZ JR., Albert M.; O'GUINN, Thomas C. Brand community. <em>Journal of Consumer Research</em>, v. 27, n. 4, p. 412-432, 2001.</li>
+        <li id="r25">NEUMEIER, Marty. <em>Zag</em>. Berkeley: New Riders, 2006.</li>
+        <li id="r26">PORTER, Michael E. What is strategy? <em>Harvard Business Review</em>, v. 74, n. 6, p. 61-78, 1996.</li>
+        <li id="r27">RIES, Al; TROUT, Jack. <em>Positioning</em>: the battle for your mind. New York: McGraw-Hill, 1981.</li>
+        <li id="r28">ROBERTSON, David; BREEN, Bill. <em>Brick by brick</em>. New York: Crown Business, 2013.</li>
+        <li id="r29">ROMANIUK, Jenni. <em>Building distinctive brand assets</em>. Melbourne: Oxford University Press, 2018.</li>
+        <li id="r30">SHARP, Byron. <em>How brands grow</em>. South Melbourne: Oxford University Press, 2010.</li>
+        <li id="r31">SINEK, Simon. <em>Start with why</em>. New York: Portfolio, 2009.</li>
+        <li id="r32">TALEB, Nassim Nicholas. <em>Antifragile</em>: things that gain from disorder. New York: Random House, 2012.</li>
+        <li id="r33">TROIANO, Jaime. <em>As marcas no divã</em>. São Paulo: Globo, 2009.</li>
+        <li id="r34">WARC. <em>Brand asset valuator (BAV)</em>. Disponível em: <a href="https://www.warc.com/en/article/brand-asset-valuator-(bav)-3a80ac5d7b5f48f6bc00c52b20d03c84" target="_blank" rel="noopener">warc.com</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r35">ZAJONC, Robert B. Attitudinal effects of mere exposure. <em>Journal of Personality and Social Psychology</em>, v. 9, n. 2, pt. 2, p. 1-27, 1968.</li>
+      </ol>
+      <h3>Fontes dos cases e dados</h3>
+      <ol start="36">
+        <li id="r36">THINK different. In: WIKIPEDIA. Disponível em: <a href="https://en.wikipedia.org/wiki/Think_different" target="_blank" rel="noopener">en.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r37">MACTRAST. Apple world’s most valuable brand for 13th consecutive year. Out. 2025. Disponível em: <a href="https://www.mactrast.com/2025/10/apple-worlds-most-valuable-brand-for-13th-consecutive-year/amp/" target="_blank" rel="noopener">mactrast.com</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r38">JUST Do It. In: WIKIPEDIA. Disponível em: <a href="https://en.wikipedia.org/wiki/Just_Do_It" target="_blank" rel="noopener">en.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r39">NEW Coke. In: WIKIPEDIA. Disponível em: <a href="https://en.wikipedia.org/wiki/New_Coke" target="_blank" rel="noopener">en.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r40">VOLVO CARS. Safety heritage. Disponível em: <a href="https://volvocars.com/us/safety/heritage" target="_blank" rel="noopener">volvocars.com</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r41">THREE-POINT seat belt. In: WIKIPEDIA. Disponível em: <a href="https://en.wikipedia.org/wiki/Three-point_seat_belt" target="_blank" rel="noopener">en.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r42">THE LEGO Group. In: WIKIPEDIA. Disponível em: <a href="https://en.wikipedia.org/wiki/The_Lego_Group" target="_blank" rel="noopener">en.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r43">MICHELIN Guide. In: WIKIPEDIA. Disponível em: <a href="https://en.wikipedia.org/wiki/Michelin_Guide" target="_blank" rel="noopener">en.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r44">THINK Small. In: WIKIPEDIA. Disponível em: <a href="https://en.wikipedia.org/wiki/Think_Small" target="_blank" rel="noopener">en.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r45">HERMÈS. In: WIKIPEDIA. Disponível em: <a href="https://en.wikipedia.org/wiki/Herm%C3%A8s" target="_blank" rel="noopener">en.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r46">PATAGONIA, Inc. In: WIKIPEDIA. Disponível em: <a href="https://en.wikipedia.org/wiki/Patagonia,_Inc." target="_blank" rel="noopener">en.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r47">PATAGONIA. Don’t buy this jacket, Black Friday and the New York Times. 25 nov. 2011. Disponível em: <a href="https://www.patagonia.com.au/blogs/stories/dont-buy-this-jacket" target="_blank" rel="noopener">patagonia.com.au</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r48">HARLEY Owners Group. In: WIKIPEDIA. Disponível em: <a href="https://en.wikipedia.org/wiki/Harley_Owners_Group" target="_blank" rel="noopener">en.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r49">KODAK. In: WIKIPEDIA. Disponível em: <a href="https://en.wikipedia.org/wiki/Kodak" target="_blank" rel="noopener">en.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r50">THE BRANDING JOURNAL. What to learn from Tropicana’s packaging redesign failure? Maio 2015. Disponível em: <a href="https://www.thebrandingjournal.com/2015/05/what-to-learn-from-tropicanas-packaging-redesign-failure/" target="_blank" rel="noopener">thebrandingjournal.com</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r51">SICREDI. Trajetória do Sicredi. Disponível em: <a href="https://www.sicredi.com.br/site/blog/institucional/trajetoria-do-sicredi/" target="_blank" rel="noopener">sicredi.com.br</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r52">TRAMONTINA. In: WIKIPEDIA. Disponível em: <a href="https://en.wikipedia.org/wiki/Tramontina" target="_blank" rel="noopener">en.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r53">MUNDOCOOP. Cooperativa Santa Clara: 110 anos e o projeto Plantando o Bem. 2022. Disponível em: <a href="https://mundocoop.com.br/?p=179988" target="_blank" rel="noopener">mundocoop.com.br</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r54">JORNAL DO COMÉRCIO. Cooperativa Santa Clara espera atingir faturamento de R$ 3 bilhões em 2026. Jul. 2026. Disponível em: <a href="https://www.jornaldocomercio.com/especiais/cooperativismo/2026/07/1254729-cooperativa-santa-clara-espera-atingir-faturamento-de-rs-3-bilhoes-em-2026.html" target="_blank" rel="noopener">jornaldocomercio.com</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r55">MUNDOCOOP. Cooperativa Vinícola Aurora completa 95 anos com faturamento recorde de R$ 874 milhões. 2026. Disponível em: <a href="https://mundocoop.com.br/conteudodemarca/cooperativa-vinicola-aurora-completa-95-anos-com-faturamento-recorde-de-r-874-milhoes/" target="_blank" rel="noopener">mundocoop.com.br</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r56">CASA Granado. In: WIKIPÉDIA. Disponível em: <a href="https://pt.wikipedia.org/wiki/Casa_Granado" target="_blank" rel="noopener">pt.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r57">CIA. Hering. In: WIKIPÉDIA. Disponível em: <a href="https://pt.wikipedia.org/wiki/Cia._Hering" target="_blank" rel="noopener">pt.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r58">YPIÓCA. In: WIKIPÉDIA. Disponível em: <a href="https://pt.wikipedia.org/wiki/Ypi%C3%B3ca" target="_blank" rel="noopener">pt.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r59">HISTÓRIA DO MUNDO. História das Havaianas. Disponível em: <a href="https://www.historiadomundo.com.br/amp/idade-contemporanea/historia-das-havaianas.htm" target="_blank" rel="noopener">historiadomundo.com.br</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r60">HAVAIANAS. In: WIKIPEDIA. Disponível em: <a href="https://en.wikipedia.org/wiki/Havaianas" target="_blank" rel="noopener">en.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r61">NATURA &amp; Co. In: WIKIPEDIA. Disponível em: <a href="https://en.wikipedia.org/wiki/Natura_%26_Co" target="_blank" rel="noopener">en.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r62">ECYCLE. Natura celebra 10 anos como Empresa B e é certificada pela quarta vez consecutiva. 2024. Disponível em: <a href="https://www.ecycle.com.br/natura-celebra-10-anos-como-empresa-b-e-e-certificada-pela-quarta-vez-consecutiva/" target="_blank" rel="noopener">ecycle.com.br</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r63">MERCADO &amp; CONSUMO. Marcas brasileiras com mais de cem anos fazem aposta na inovação. 11 out. 2021. Disponível em: <a href="https://mercadoeconsumo.com.br/11/10/2021/destaque-do-dia/marcas-brasileiras-com-mais-de-cem-anos-fazem-aposta-na-inovacao/" target="_blank" rel="noopener">mercadoeconsumo.com.br</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r64">TECHCRUNCH. Amazon founder Jeff Bezos talks AWS, innovation, customer service and space travel at re:Invent. 29 nov. 2012. Disponível em: <a href="https://techcrunch.com/2012/11/29/amazon-founder-jeff-bezos-talks-aws-innovation-customer-service-space-travel-at-re-invent" target="_blank" rel="noopener">techcrunch.com</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r65">LINDY effect. In: WIKIPEDIA. Disponível em: <a href="https://en.wikipedia.org/wiki/Lindy_effect" target="_blank" rel="noopener">en.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r66">COLLINS, Jim. Concepts: the hedgehog concept, the flywheel, twenty mile march, five stages of decline. Disponível em: <a href="https://www.jimcollins.com/concepts/the-hedgehog-concept.html" target="_blank" rel="noopener">jimcollins.com</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r67">HESS, Whitney. The purpose of a business is to create a customer. 13 ago. 2012. Disponível em: <a href="https://whitneyhess.com/blog/2012/08/13/the-purpose-of-a-business-is-to-create-a-customer/" target="_blank" rel="noopener">whitneyhess.com</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r68">MURRELL, Alex. Les Binet and Peter Field: The Long and the Short of It (resumo). Disponível em: <a href="https://www.alexmurrell.co.uk/summaries/les-binet-and-peter-field-the-long-and-the-short-of-it" target="_blank" rel="noopener">alexmurrell.co.uk</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r69">IPA. The next chapter for The Long and The Short of It. 13 set. 2023. Disponível em: <a href="https://ipa.co.uk/knowledge/ipa-blog/the-next-chapter-for-the-long-and-the-short-of-it/" target="_blank" rel="noopener">ipa.co.uk</a>. Acesso em: 12 out. 2026.</li>
+        <li id="r70">BUILT to Last: Successful Habits of Visionary Companies. In: WIKIPEDIA. Disponível em: <a href="https://en.wikipedia.org/wiki/Built_to_Last:_Successful_Habits_of_Visionary_Companies" target="_blank" rel="noopener">en.wikipedia.org</a>. Acesso em: 12 out. 2026.</li>
+      </ol>
+      <p class="updated">Texto da Cooltivo Estúdio, outubro de 2026. Viu algum dado que mudou? Escreva para <a href="mailto:kaue@cooltivo.com.br">kaue@cooltivo.com.br</a>.</p>
+    </section>
+  </article>
+</div>
+
+<section class="cta" id="contato">
+  <svg class="bg-sym sym" aria-hidden="true"><use href="#sym"/></svg>
+  <div class="wrap">
+    <div class="inner">
+      <div class="eyebrow"><svg class="sym" style="height:14px;width:19px"><use href="#sym"/></svg>Vamos conversar</div>
+      <h2>Qual marca vamos <span>cultivar</span> juntos?</h2>
+      <p class="lead">Conte o momento do seu negócio. A gente começa entendendo o contexto.</p>
+      <div class="btns">
+        <a class="btn btn-soft" href="index.html#contato">Falar com a Cooltivo <svg><use href="#arr"/></svg></a>
+        <a class="btn btn-line-inv" href="index.html#cases">Ver nossos cases</a>
+      </div>
+    </div>
+    <div class="contact">
+      <a href="mailto:kaue@cooltivo.com.br"><small>E-mail</small><span>kaue@cooltivo.com.br</span></a>
+      <a href="https://wa.me/5554991000102" target="_blank" rel="noopener"><small>WhatsApp</small><span>(54) 9.9100-0102</span></a>
+      <div><small>Onde estamos</small><span>Made in Serra Gaúcha</span></div>
+    </div>
+  </div>
+  <footer>
+    <div class="wrap">
+      <a class="brand" href="index.html"><svg class="sym"><use href="#sym"/></svg><b>cooltivo</b><span>estúdio</span></a>
+      <div class="sig"><svg class="sym"><use href="#sym"/></svg>NOTHING GREAT<br>IS MADE ALONE</div>
+      <div class="links"><a href="https://www.instagram.com/cooltivoestudio/" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/kauegrasnievicz/" target="_blank" rel="noopener">LinkedIn</a><span>© 2026 Cooltivo</span></div>
+    </div>
+  </footer>
+</section>
+
+<script>
+/* Nav sólida depois da capa e barra de leitura */
+(function(){
+  const nav=document.getElementById('nav'),hero=document.getElementById('topo'),bar=document.getElementById('progress'),art=document.querySelector('article');
+  let busy=false;
+  const upd=()=>{busy=false;nav.classList.toggle('solid',scrollY>hero.offsetHeight-80);
+    const r=art.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.5-r.top)/r.height));bar.style.transform=`scaleX(${p.toFixed(4)})`;};
+  upd();addEventListener('scroll',()=>{if(!busy){busy=true;requestAnimationFrame(upd)}},{passive:true});addEventListener('resize',upd);
+})();
+/* Sumário: marca o capítulo em leitura */
+(function(){
+  const links=[...document.querySelectorAll('.toc a')];if(!links.length||!('IntersectionObserver' in window))return;
+  const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.remove('on'));const a=map.get(e.target.id);if(a)a.classList.add('on')}})},{rootMargin:'-35% 0px -60% 0px'});
+  document.querySelectorAll('article > section[id]').forEach(s=>io.observe(s));
+  document.querySelectorAll('.toc-m a').forEach(a=>a.addEventListener('click',()=>a.closest('details').removeAttribute('open')));
+})();
+</script>
+</body>
+</html>
