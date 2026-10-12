@@ -79,11 +79,23 @@ nav .btn{padding:11px 20px;font-size:14px}
 .story .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;filter:grayscale(1) contrast(1.05)}
 .story .ph .cap{position:absolute;left:0;right:0;bottom:0;padding:26px;color:var(--cream);background:linear-gradient(transparent,rgba(36,80,58,.94));font-size:14px}
 .story .ph .cap b{display:block;font-size:20px;font-weight:700}
+.slides-wrap{margin:0;min-width:0}
+.slides{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/5;max-width:100%;background:var(--green)}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s ease}
+.slides img.on{opacity:1}
+.slides-wrap figcaption{display:flex;align-items:center;gap:12px;margin-top:20px;font-family:var(--font-display);font-weight:800;font-size:26px;letter-spacing:-.03em;color:var(--green)}
+.slides-wrap figcaption .sym{height:22px;width:30px;color:var(--orange);flex:none}
+.quote{margin:22px 0 26px}
+.quote p{font-family:var(--font-display);font-weight:800;font-size:40px;line-height:1.05;letter-spacing:-.035em;color:var(--green);text-wrap:balance}
+.quote cite{display:block;margin-top:14px;font-style:normal;font-weight:700;font-size:15px;letter-spacing:.04em}
+.quote cite a,.story a.name{color:var(--orange);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+.quote cite a:hover,.story a.name:hover{color:var(--green)}
+.story h3.about{font-size:15px;font-family:var(--font);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:30px 0 10px}
 .story h2{color:var(--green);margin:20px 0 28px}
 .story p+p{margin-top:18px}
-.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border-top:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:36px;border-top:1px solid var(--line)}
 .facts div{padding:22px 18px 0 0}
-.facts b{display:block;font-family:var(--font-display);font-size:52px;font-weight:800;color:var(--orange);line-height:1;letter-spacing:-.04em}
+.facts b{display:block;font-family:var(--font-display);font-size:44px;font-weight:800;color:var(--orange);line-height:1;letter-spacing:-.04em}
 .facts span{font-size:14px;color:var(--muted);font-weight:500;display:block;margin-top:8px;line-height:1.35}
 .story .links{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
 .btn-li{background:var(--green);color:var(--cream)}
@@ -262,7 +274,10 @@ footer .links a:hover{color:var(--orange)}
   h2,.pilares h2,.way h2,.network h2,.services h2,.cases h2,.insta h2{font-size:44px}
   .story,.pilares,.way,.network,.services,.cases,.insta{padding-block:80px}
   .story .grid,.network .grid,.way .head,.pilares .head{grid-template-columns:1fr;gap:36px}
-  .facts,.cs,.tabs,.sv{grid-template-columns:minmax(0,1fr)}
+  .cs,.tabs,.sv{grid-template-columns:minmax(0,1fr)}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .quote p{font-size:30px}
+  .slides-wrap figcaption{font-size:21px}
   .tabs{gap:60px;margin-top:70px}
   .tab{min-height:auto}.tab h3{margin-top:34px;font-size:40px}
   .c{min-height:auto}.c h3{margin-top:36px;font-size:44px}
@@ -345,22 +360,24 @@ footer .links a:hover{color:var(--orange)}
 <!-- HISTÓRIA -->
 <section class="story" id="historia">
   <div class="wrap grid">
-    <div class="ph">
-      <img src="img/kaue.jpg" alt="Kauê Grasnievicz conduzindo workshop">
-      <div class="cap"><b>Kauê Grasnievicz</b>Fundador e diretor de estratégia</div>
-    </div>
+    <figure class="slides-wrap">
+      <div class="slides" id="slides"><img src="img/historia/h1.jpg" alt="Time Cooltivo e parceiros em gravação" class=on><img src="img/historia/h2.jpg" alt="Kauê Grasnievicz apresentando desk research em workshop"><img src="img/historia/h3.jpg" alt="Produção audiovisual em vinhedo"><img src="img/historia/h4.jpg" alt="Kauê Grasnievicz em imersão na Soprano"><img src="img/historia/h5.jpg" alt="Time Cooltivo trabalhando no jardim"></div>
+      <figcaption><svg class="sym"><use href="#sym"/></svg>Nada grande é feito sozinho</figcaption>
+    </figure>
     <div>
       <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Nossa história</div>
-      <h2>Comunicação muda negócios. E pessoas.</h2>
-      <p class="lead">Acreditamos que a comunicação é uma das ferramentas mais poderosas para impactar pessoas, negócios e a sociedade. Por isso trabalhamos com ela todos os dias: para ajudar a construir marcas que resistem ao tempo.</p>
-      <p>A Cooltivo foi fundada por Kauê Grasnievicz, estrategista com mais de 10 anos de marketing e especialista em marca e comunicação. Antes do estúdio, foi gerente de marketing da rede Dall'Onder Hotéis e líder de digital da agência Avalanche.</p>
+      <blockquote class="quote">
+        <p>“A comunicação é uma das ferramentas mais poderosas para transformar pessoas, sociedade e negócios.”</p>
+        <cite><a href="https://www.linkedin.com/in/kauegrasnievicz/" target="_blank" rel="noopener">Kauê Grasnievicz</a></cite>
+      </blockquote>
+      <p class="lead">Por isso trabalhamos com ela todos os dias: para ajudar a construir marcas que resistem ao tempo. E resistir ao tempo não quer dizer apenas durar muito. Quer dizer ter coragem de ir contra o status quo do seu momento.</p>
+      <h3 class="about">Sobre Kauê Grasnievicz</h3>
+      <p>A Cooltivo foi fundada por <a class="name" href="https://www.linkedin.com/in/kauegrasnievicz/" target="_blank" rel="noopener">Kauê Grasnievicz</a>, estrategista com mais de 10 anos de marketing e especialista em marca e comunicação. Antes do estúdio, foi gerente de marketing da rede Dall'Onder Hotéis e líder de digital da agência Avalanche.</p>
       <div class="facts">
         <div><b>100+</b><span>projetos nos últimos 6 anos</span></div>
         <div><b>6</b><span>anos de estúdio na Serra Gaúcha</span></div>
-        <div><b>10+</b><span>anos de experiência do fundador em marketing</span></div>
-      </div>
-      <div class="links">
-        <a class="btn btn-li" href="https://www.linkedin.com/in/kauegrasnievicz/" target="_blank" rel="noopener"><svg class="li"><use href="#li"/></svg>Kauê no LinkedIn</a>
+        <div><b>10+</b><span>anos de experiência</span></div>
+        <div><b>20+</b><span>parceiros no ecossistema</span></div>
       </div>
     </div>
   </div>
@@ -653,6 +670,12 @@ footer .links a:hover{color:var(--orange)}
   upd();
 })();
 
+/* Slideshow da história: troca a cada 1s */
+(function(){
+  const imgs=[...document.querySelectorAll('#slides img')];if(imgs.length<2)return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  let i=0;setInterval(()=>{imgs[i].classList.remove('on');i=(i+1)%imgs.length;imgs[i].classList.add('on')},1000);
+})();
 /* Esconde vídeos da faixa que ainda não foram enviados */
 (function(){
   const row=document.getElementById('reels');if(!row)return;
