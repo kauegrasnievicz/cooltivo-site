@@ -119,13 +119,24 @@ nav .btn{padding:11px 20px;font-size:14px}
 .btn-li .li{width:16px;height:16px}
 
 /* PILARES */
+.tese-frases{position:relative;height:420vh;background:var(--green);color:var(--cream)}
+.tf-sticky{position:sticky;top:0;height:100vh;height:100svh;min-height:520px;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.tf-stage{position:relative;width:100%;height:60%;min-height:300px}
+.tese-frases .ph{position:absolute;left:40px;right:40px;top:50%;transform:translateY(-50%);margin:0;font-family:var(--font-display);font-weight:800;font-size:clamp(40px,6.4vw,96px);line-height:.98;letter-spacing:-.05em;color:var(--cream);text-wrap:balance;max-width:14ch}
+.tese-frases .ph .hl{color:var(--green-soft)}
+.tese-frases .wd{display:inline-block;opacity:0;transform:translateY(45%);transition:opacity .55s ease,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--d) * 70ms)}
+.tese-frases .ph.on .wd{opacity:1;transform:none}
+.tese-frases .ph.past .wd{opacity:0;transform:translateY(-35%);transition-delay:0s;transition-duration:.35s}
+.tese-frases.static .wd{opacity:1;transform:none}
+.tf-prog{position:absolute;left:0;right:0;bottom:32px;display:flex;gap:6px;align-items:center}
+.tf-prog span{width:34px;height:3px;border-radius:9px;background:rgba(249,243,227,.25);overflow:hidden;position:relative}
+.tf-prog span i{position:absolute;inset:0;background:var(--green-soft);transform-origin:left;transform:scaleX(0)}
+.tf-prog small{margin-left:10px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(249,243,227,.7)}
+.pilares.pilares-cont{padding-top:0}
+.pilares .manif-2{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:70px;border-top:1px solid rgba(249,243,227,.2);padding-top:44px}
+.pilares .manif-2 p+p{margin-top:0}
 .pilares{background:var(--green);color:var(--cream);padding:130px 0;position:relative;overflow:hidden}
 .pilares .bg-sym{position:absolute;right:-240px;top:60px;height:620px;width:850px;color:var(--cream);opacity:.05}
-.pilares>.wrap{position:relative;z-index:1}
-.pilares .stem{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
-.pilares .stem .line{fill:none;stroke:var(--green-soft);stroke-width:2;stroke-linecap:round}
-.pilares .stem .seed{fill:var(--green-soft)}
-.pilares .stem .leaf{fill:var(--green-soft);transition:transform .5s cubic-bezier(.3,1.5,.5,1),opacity .3s}
 .pilares .head{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;position:relative}
 .pilares h2{font-size:76px;letter-spacing:-.05em}
 .pilares .manif p{font-size:21px;line-height:1.55;color:rgba(249,243,227,.92)}
@@ -377,7 +388,7 @@ footer .links{display:flex;gap:24px;font-weight:600;flex-wrap:wrap}
 footer .links a{text-decoration:none}
 footer .links a:hover{color:var(--orange)}
 
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.capa video{display:none}.ct-hint::after{animation:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tese-frases .wd{transition:none}.capa video{display:none}.ct-hint::after{animation:none}}
 
 /* MOBILE */
 @media (max-width:900px){
@@ -398,8 +409,9 @@ footer .links a:hover{color:var(--orange)}
   .quote p{font-size:30px}
   .slides-wrap figcaption{font-size:21px}
   .tabs{gap:60px;margin-top:70px}
-  .pilares>.wrap{padding-left:38px}
-  .pilares .triade .tgrid{gap:96px}
+  .tese-frases .ph{left:20px;right:20px;font-size:46px}
+  .tf-prog span{width:24px}
+  .pilares .manif-2{grid-template-columns:1fr;gap:16px;padding-top:32px}
   .triade{margin-top:70px;padding-top:50px}
   .triade .tgrid{grid-template-columns:minmax(0,1fr);gap:34px}
   .triade h3{font-size:36px}
@@ -535,16 +547,23 @@ footer .links a:hover{color:var(--orange)}
 </section>
 
 <!-- PILARES -->
-<section class="pilares" id="tese">
+<section class="tese-frases" id="tese" aria-label="Nossa tese">
+  <div class="tf-sticky">
+    <div class="wrap tf-stage">
+      <p class="ph">Vivemos o tempo da pressa.</p>
+      <p class="ph">Marcas que mudam de discurso a cada trimestre.</p>
+      <p class="ph">Que correm atrás da próxima trend.</p>
+      <p class="ph">Nós recusamos esse jogo.</p>
+      <h2 class="ph">Marca não se fabrica. <span class="hl">Se cultiva.</span></h2>
+    </div>
+    <div class="wrap tf-prog" aria-hidden="true"><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><span><i></i></span><small>Nossa tese</small></div>
+  </div>
+</section>
+<section class="pilares pilares-cont" id="manifesto">
   <svg class="bg-sym sym"><use href="#sym"/></svg>
-  <svg class="stem" aria-hidden="true"><path class="line" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/><circle class="seed" r="6"/><g class="leaves"></g></svg>
   <div class="wrap">
     <div class="head">
-      <div>
-        <div class="eyebrow">Nossa tese</div>
-        <h2 style="margin-top:20px">Marca não se fabrica. <span class="hl">Se cultiva.</span></h2>
-      </div>
-      <div class="manif">
+      <div class="manif manif-2">
         <p>Vivemos o tempo da pressa. Marcas que mudam de discurso a cada trimestre, correm atrás da próxima trend e estão em todos os canais sem ficar na memória de ninguém. Nós recusamos esse jogo. Acreditamos que marca não se fabrica, se cultiva: com decisões coerentes, tomadas todos os dias com cuidado e constância, até virar aquilo que fica gravado nas pessoas muito depois que o anúncio acaba.</p>
         <p>Resistir ao tempo não é apenas durar. É ter coragem de ir contra o status quo do seu momento, escolher uma posição e sustentá-la mesmo quando ela ainda parece estranha. São essas marcas que continuam vivas quando as tendências passam. Por isso pensamos o agora com os olhos no longo prazo, ao lado de quem sabe que marca é o ativo mais duradouro de um negócio.</p>
       </div>
@@ -953,49 +972,32 @@ fill('row1',L);
   const v=document.getElementById('v3c'),b=document.getElementById('p3c');if(!v)return;
   b.onclick=()=>{v.controls=true;v.parentElement.classList.add('playing');v.play().catch(()=>{})};
 })();
-/* Tese: um broto nasce embaixo do título, cresce com a rolagem e, ao chegar na tríade, o triângulo se desenha */
+/* Tese: frases do manifesto em sequência, com a seção fixa na tela */
 (function(){
-  const sec=document.getElementById('tese'),t=sec&&sec.querySelector('.tri'),svg=sec&&sec.querySelector('.stem');if(!t||!svg)return;
-  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const path=svg.querySelector('.line'),seed=svg.querySelector('.seed'),lg=svg.querySelector('.leaves'),h2=sec.querySelector('.head h2'),NS='http://www.w3.org/2000/svg';
+  const sec=document.getElementById('tese');if(!sec||!sec.classList.contains('tese-frases'))return;
+  const ph=[...sec.querySelectorAll('.ph')],bars=[...sec.querySelectorAll('.tf-prog i')];
+  const split=el=>{const out=[];[...el.childNodes].forEach(n=>{if(n.nodeType===3){const f=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(t=>{if(!t)return;if(/^\s+$/.test(t)){f.appendChild(document.createTextNode(t))}else{const w=document.createElement('span');w.className='wd';w.textContent=t;f.appendChild(w);out.push(w)}});n.replaceWith(f)}else if(n.nodeType===1){out.push(...split(n))}});return out};
+  ph.forEach(p=>split(p).forEach((w,i)=>w.style.setProperty('--d',i)));
   const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
-  const r0=t.getBoundingClientRect(),already=r0.top<innerHeight*.8&&r0.bottom>0;
-  let leaves=[],sy=0,ey=1,done=reduce||already;
-  if(!done)t.classList.add('pre');
-  const grow=()=>{if(done)return;done=true;t.classList.remove('pre');t.classList.add('go')};
-  function layout(){
-    const sr=sec.getBoundingClientRect(),hr=h2.getBoundingClientRect(),tr=t.getBoundingClientRect(),vb=t.viewBox.baseVal,k=tr.width/vb.width;
-    const mob=sec.clientWidth<900;
-    const ex=tr.left-sr.left+(260-vb.x)*k,eyy=tr.top-sr.top+(-46-vb.y)*k;
-    const sx=mob?16:hr.left-sr.left+4,syy=hr.bottom-sr.top+30,dy=eyy-syy;
-    const d=mob?`M${sx} ${syy} L${sx} ${eyy-72} C${sx} ${eyy-24} ${ex} ${eyy-56} ${ex} ${eyy}`
-               :`M${sx} ${syy} C${sx} ${syy+dy*.55} ${ex} ${eyy-dy*.5} ${ex} ${eyy}`;
-    svg.setAttribute('viewBox',`0 0 ${sec.clientWidth} ${sec.clientHeight}`);
-    path.setAttribute('d',d);seed.setAttribute('cx',sx);seed.setAttribute('cy',syy);
-    sy=syy;ey=eyy;const len=path.getTotalLength();
-    lg.innerHTML='';leaves=[];
-    [.14,.28,.42,.56,.7,.84].forEach((f,i)=>{
-      const p=path.getPointAtLength(len*f),q=path.getPointAtLength(Math.min(len,len*f+2));
-      const side=mob?1:(i%2?1:-1),rot=Math.atan2(q.y-p.y,q.x-p.x)*180/Math.PI+side*(mob?-48:48)*(mob&&i%2?-1:1);
-      const g=document.createElementNS(NS,'g');g.setAttribute('transform',`translate(${p.x.toFixed(1)} ${p.y.toFixed(1)}) rotate(${rot.toFixed(1)})${mob?' scale(.75)':''}`);
-      const l=document.createElementNS(NS,'path');l.setAttribute('class','leaf');l.setAttribute('d','M0 0C7 -9 19 -9 26 0C19 9 7 9 0 0Z');l.style.transformOrigin='0px 0px';
-      g.appendChild(l);lg.appendChild(g);leaves.push({el:l,f});
-    });
-    update();
-  }
+  let cur=-1,busy=false;
   function update(){
-    const r=sec.getBoundingClientRect();
-    const p=(reduce||already)?1:clamp((innerHeight*.72-(r.top+sy))/Math.max(1,ey-sy));
-    path.setAttribute('stroke-dashoffset',(1-p).toFixed(4));
-    leaves.forEach(o=>{const on=p>=o.f;o.el.style.transform=on?'scale(1)':'scale(0)';o.el.style.opacity=on?1:0});
-    if(p>=.985)grow();
+    busy=false;
+    const r=sec.getBoundingClientRect(),p=clamp(-r.top/Math.max(1,r.height-innerHeight)),n=ph.length,x=p*n*1.02,idx=Math.min(n-1,Math.floor(x));
+    bars.forEach((b,i)=>b.style.transform=`scaleX(${clamp(x-i).toFixed(3)})`);
+    if(idx!==cur){cur=idx;ph.forEach((el,i)=>{el.classList.toggle('on',i===idx);el.classList.toggle('past',i<idx)})}
   }
-  let busy=false;
-  layout();
-  if(document.fonts)document.fonts.ready.then(layout);
-  addEventListener('resize',layout);
-  addEventListener('load',layout);
-  addEventListener('scroll',()=>{if(!busy){busy=true;requestAnimationFrame(()=>{busy=false;update()})}},{passive:true});
+  update();
+  addEventListener('resize',update);
+  addEventListener('scroll',()=>{if(!busy){busy=true;requestAnimationFrame(update)}},{passive:true});
+})();
+/* Tríade: os pontos se conectam quando a seção aparece */
+(function(){
+  const t=document.querySelector('.tri');if(!t||!('IntersectionObserver' in window))return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const r=t.getBoundingClientRect();if(r.top<innerHeight*.8&&r.bottom>0)return;
+  t.classList.add('pre');
+  const io=new IntersectionObserver(es=>{if(es[0].isIntersecting){t.classList.remove('pre');t.classList.add('go');io.disconnect()}},{threshold:.45});
+  io.observe(t);
 })();
 /* Atalho das entregas para o formulário + WhatsApp fixo */
 (function(){
