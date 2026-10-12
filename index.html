@@ -121,6 +121,11 @@ nav .btn{padding:11px 20px;font-size:14px}
 /* PILARES */
 .pilares{background:var(--green);color:var(--cream);padding:130px 0;position:relative;overflow:hidden}
 .pilares .bg-sym{position:absolute;right:-240px;top:60px;height:620px;width:850px;color:var(--cream);opacity:.05}
+.pilares>.wrap{position:relative;z-index:1}
+.pilares .stem{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
+.pilares .stem .line{fill:none;stroke:var(--green-soft);stroke-width:2;stroke-linecap:round}
+.pilares .stem .seed{fill:var(--green-soft)}
+.pilares .stem .leaf{fill:var(--green-soft);transition:transform .5s cubic-bezier(.3,1.5,.5,1),opacity .3s}
 .pilares .head{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;position:relative}
 .pilares h2{font-size:76px;letter-spacing:-.05em}
 .pilares .manif p{font-size:21px;line-height:1.55;color:rgba(249,243,227,.92)}
@@ -393,6 +398,8 @@ footer .links a:hover{color:var(--orange)}
   .quote p{font-size:30px}
   .slides-wrap figcaption{font-size:21px}
   .tabs{gap:60px;margin-top:70px}
+  .pilares>.wrap{padding-left:38px}
+  .pilares .triade .tgrid{gap:96px}
   .triade{margin-top:70px;padding-top:50px}
   .triade .tgrid{grid-template-columns:minmax(0,1fr);gap:34px}
   .triade h3{font-size:36px}
@@ -530,6 +537,7 @@ footer .links a:hover{color:var(--orange)}
 <!-- PILARES -->
 <section class="pilares" id="tese">
   <svg class="bg-sym sym"><use href="#sym"/></svg>
+  <svg class="stem" aria-hidden="true"><path class="line" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/><circle class="seed" r="6"/><g class="leaves"></g></svg>
   <div class="wrap">
     <div class="head">
       <div>
@@ -945,14 +953,49 @@ fill('row1',L);
   const v=document.getElementById('v3c'),b=document.getElementById('p3c');if(!v)return;
   b.onclick=()=>{v.controls=true;v.parentElement.classList.add('playing');v.play().catch(()=>{})};
 })();
-/* Tríade: os pontos se conectam quando a seção aparece */
+/* Tese: um broto nasce embaixo do título, cresce com a rolagem e, ao chegar na tríade, o triângulo se desenha */
 (function(){
-  const t=document.querySelector('.tri');if(!t||!('IntersectionObserver' in window))return;
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  const r=t.getBoundingClientRect();if(r.top<innerHeight*.8&&r.bottom>0)return;
-  t.classList.add('pre');
-  const io=new IntersectionObserver(es=>{if(es[0].isIntersecting){t.classList.remove('pre');t.classList.add('go');io.disconnect()}},{threshold:.45});
-  io.observe(t);
+  const sec=document.getElementById('tese'),t=sec&&sec.querySelector('.tri'),svg=sec&&sec.querySelector('.stem');if(!t||!svg)return;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const path=svg.querySelector('.line'),seed=svg.querySelector('.seed'),lg=svg.querySelector('.leaves'),h2=sec.querySelector('.head h2'),NS='http://www.w3.org/2000/svg';
+  const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+  const r0=t.getBoundingClientRect(),already=r0.top<innerHeight*.8&&r0.bottom>0;
+  let leaves=[],sy=0,ey=1,done=reduce||already;
+  if(!done)t.classList.add('pre');
+  const grow=()=>{if(done)return;done=true;t.classList.remove('pre');t.classList.add('go')};
+  function layout(){
+    const sr=sec.getBoundingClientRect(),hr=h2.getBoundingClientRect(),tr=t.getBoundingClientRect(),vb=t.viewBox.baseVal,k=tr.width/vb.width;
+    const mob=sec.clientWidth<900;
+    const ex=tr.left-sr.left+(260-vb.x)*k,eyy=tr.top-sr.top+(-46-vb.y)*k;
+    const sx=mob?16:hr.left-sr.left+4,syy=hr.bottom-sr.top+30,dy=eyy-syy;
+    const d=mob?`M${sx} ${syy} L${sx} ${eyy-72} C${sx} ${eyy-24} ${ex} ${eyy-56} ${ex} ${eyy}`
+               :`M${sx} ${syy} C${sx} ${syy+dy*.55} ${ex} ${eyy-dy*.5} ${ex} ${eyy}`;
+    svg.setAttribute('viewBox',`0 0 ${sec.clientWidth} ${sec.clientHeight}`);
+    path.setAttribute('d',d);seed.setAttribute('cx',sx);seed.setAttribute('cy',syy);
+    sy=syy;ey=eyy;const len=path.getTotalLength();
+    lg.innerHTML='';leaves=[];
+    [.14,.28,.42,.56,.7,.84].forEach((f,i)=>{
+      const p=path.getPointAtLength(len*f),q=path.getPointAtLength(Math.min(len,len*f+2));
+      const side=mob?1:(i%2?1:-1),rot=Math.atan2(q.y-p.y,q.x-p.x)*180/Math.PI+side*(mob?-48:48)*(mob&&i%2?-1:1);
+      const g=document.createElementNS(NS,'g');g.setAttribute('transform',`translate(${p.x.toFixed(1)} ${p.y.toFixed(1)}) rotate(${rot.toFixed(1)})${mob?' scale(.75)':''}`);
+      const l=document.createElementNS(NS,'path');l.setAttribute('class','leaf');l.setAttribute('d','M0 0C7 -9 19 -9 26 0C19 9 7 9 0 0Z');l.style.transformOrigin='0px 0px';
+      g.appendChild(l);lg.appendChild(g);leaves.push({el:l,f});
+    });
+    update();
+  }
+  function update(){
+    const r=sec.getBoundingClientRect();
+    const p=(reduce||already)?1:clamp((innerHeight*.72-(r.top+sy))/Math.max(1,ey-sy));
+    path.setAttribute('stroke-dashoffset',(1-p).toFixed(4));
+    leaves.forEach(o=>{const on=p>=o.f;o.el.style.transform=on?'scale(1)':'scale(0)';o.el.style.opacity=on?1:0});
+    if(p>=.985)grow();
+  }
+  let busy=false;
+  layout();
+  if(document.fonts)document.fonts.ready.then(layout);
+  addEventListener('resize',layout);
+  addEventListener('load',layout);
+  addEventListener('scroll',()=>{if(!busy){busy=true;requestAnimationFrame(()=>{busy=false;update()})}},{passive:true});
 })();
 /* Atalho das entregas para o formulário + WhatsApp fixo */
 (function(){
