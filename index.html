@@ -646,6 +646,7 @@ footer .links a:hover{color:var(--orange)}
 (function(){
   const r=document.getElementById('reels');if(!r)return;
   const step=()=>r.querySelector('.reel').getBoundingClientRect().width+18;
+  const fit=()=>{const c=document.querySelector('.insta .ctrl');if(c)c.style.display=r.scrollWidth>r.clientWidth+4?'':'none'};fit();addEventListener('resize',fit);
   document.getElementById('rnext').onclick=()=>r.scrollBy({left:step()*2,behavior:'smooth'});
   document.getElementById('rprev').onclick=()=>r.scrollBy({left:-step()*2,behavior:'smooth'});
   let down=false,sx=0,sl=0,moved=false;
