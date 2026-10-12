@@ -130,7 +130,7 @@ nav .btn{padding:11px 20px;font-size:14px}
 .logo-item{flex:none;height:30px;width:110px;margin:0 20px;display:flex;align-items:center;justify-content:center}
 .logo-item .lg{max-width:100%;max-height:24px;width:auto;height:auto;opacity:.45;filter:grayscale(1);transition:opacity .3s}
 .logo-item:hover .lg,.logo-item:hover .wm{opacity:.9}
-.lg-cfl,.lg-dsf,.lg-santa-clara{max-height:30px!important}.lg-soprano,.lg-comabe{max-height:16px!important}.lg-sicredi,.lg-cinex{max-height:20px!important}.lg-sicredi,.lg-introduce,.lg-planeta-agua{opacity:.7!important}
+.lg-cfl,.lg-dsf,.lg-santa-clara{max-height:30px!important}.lg-vallontano,.lg-garbo{max-height:36px!important;opacity:.6!important}.lg-mrp,.lg-obispa{max-height:16px!important}.lg-soprano,.lg-comabe{max-height:16px!important}.lg-sicredi,.lg-cinex{max-height:20px!important}.lg-sicredi,.lg-introduce,.lg-planeta-agua{opacity:.7!important}
 .wm{font-weight:700;color:#222;opacity:.45;white-space:nowrap;text-align:center;line-height:1;transform:scale(.6)}
 
 /* TRÍADE */
@@ -828,8 +828,8 @@ footer .links a:hover{color:var(--orange)}
 (function(){
 const L=[
  ['sicredi','Sicredi'],['santa-clara','Santa Clara'],['zen','Zen Design'],['soprano','Soprano'],['cinex','Cinex'],['introduce','Introduce'],['cfl','CFL Construtora'],
- [null,'Vida Farmácias','vida'],['planeta-agua','Planeta Água'],['neomot','Neomot'],[null,'Obispa','obispa'],
- ['comabe','Comabe'],['dsf','DSF Advogados'],['souto-correa','Souto Correa Advogados']
+ ['planeta-agua','Planeta Água'],['neomot','Neomot'],['obispa','Obispa'],
+ ['vallontano','Vallontano'],['garbo','Garbo Enologia Criativa'],['comabe','Comabe'],['dsf','DSF Advogados'],['souto-correa','Souto Correa Advogados'],['mrp','MRP Construtora','svg']
 ];
 /* Wordmarks provisórios: trocar por logos oficiais (PNG em /logos com o mesmo nome) */
 const WM={
@@ -837,7 +837,7 @@ const WM={
  obispa:'<div class="wm" style="font-size:32px;font-weight:800;letter-spacing:-.03em">obispa</div>',
 };
 function item(l){
-  if(l[0]) return `<div class="logo-item" title="${l[1]}"><img class="lg lg-${l[0]}" src="logos/${l[0]}.png" alt="${l[1]}"></div>`;
+  if(l[0]) return `<div class="logo-item" title="${l[1]}"><img class="lg lg-${l[0]}" src="logos/${l[0]}.${l[2]||'png'}" alt="${l[1]}"></div>`;
   return `<div class="logo-item" title="${l[1]}">${WM[l[2]]}</div>`;
 }
 const fill=(id,arr)=>{const h=arr.map(item).join('');document.getElementById(id).innerHTML=h+h;};
