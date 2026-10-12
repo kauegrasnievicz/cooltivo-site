@@ -118,6 +118,25 @@ nav .btn{padding:11px 20px;font-size:14px}
 .tab h3{font-size:48px;color:var(--green);margin:56px 0 14px}
 .tab p{font-size:17px;line-height:1.5;color:var(--ink)}
 
+/* CLIENTES */
+.clients{padding:80px 0 84px;background:var(--white);border-bottom:1px solid var(--line)}
+.clients .chead{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:44px}
+.clients .chead p{font-family:var(--font-display);font-weight:800;font-size:28px;letter-spacing:-.03em;color:var(--green);line-height:1.1}
+.clients .chead span{font-size:15px;color:var(--muted);max-width:360px}
+.marquee{overflow:hidden;position:relative;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee+.marquee{margin-top:30px}
+.track{display:flex;width:max-content;animation:scroll 60s linear infinite}
+.marquee.rev .track{animation-direction:reverse;animation-duration:70s}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.track{animation:none}}
+.logo-item{flex:none;height:64px;width:190px;margin:0 22px;display:flex;align-items:center;justify-content:center}
+.logo-item .lg{max-width:100%;max-height:48px;width:auto;height:auto;opacity:.55;filter:grayscale(1);transition:opacity .3s}
+.logo-item:hover .lg,.logo-item:hover .wm{opacity:1}
+.lg-cfl,.lg-dsf,.lg-santa-clara{max-height:60px!important}.lg-soprano,.lg-comabe{max-height:32px!important}.lg-sicredi,.lg-cinex{max-height:42px!important}.lg-sicredi,.lg-introduce,.lg-planeta-agua{opacity:.85!important}
+.wm{font-weight:700;color:#222;opacity:.55;white-space:nowrap;text-align:center;line-height:1}
+.wm small{display:block;font-size:10px;letter-spacing:.32em;font-weight:500;margin-top:6px}
+
 /* TRÍADE */
 .triade{margin-top:110px;padding-top:80px;border-top:1px solid rgba(249,243,227,.2);position:relative}
 .triade .tgrid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
@@ -354,7 +373,11 @@ footer .links a:hover{color:var(--orange)}
   .triade .tgrid{grid-template-columns:minmax(0,1fr);gap:34px}
   .triade h3{font-size:36px}
   .tsum{font-size:18px}
-  .tri .s{display:none}
+  .tri .s:not(.keep){display:none}
+  .clients{padding:56px 0 60px}
+  .clients .chead{flex-direction:column;align-items:start;gap:10px}
+  .clients .chead p{font-size:22px}
+  .logo-item{width:130px;height:50px;margin:0 14px}
   .tab{min-height:auto}.tab h3{margin-top:34px;font-size:40px}
   .mplay span{width:58px;height:58px}
   .mplay{font-size:0;gap:0}
@@ -439,6 +462,13 @@ footer .links a:hover{color:var(--orange)}
   </div>
 </header>
 
+<!-- CLIENTES -->
+<section class="clients" id="clientes" aria-label="Clientes que já atendemos">
+  <div class="wrap chead"><p>Marcas que já cultivamos.</p><span>Mais de 100 projetos nos últimos 6 anos, da cooperativa centenária à startup de tecnologia.</span></div>
+  <div class="marquee"><div class="track" id="row1"></div></div>
+  <div class="marquee rev"><div class="track" id="row2"></div></div>
+</section>
+
 <!-- HISTÓRIA -->
 <section class="story" id="historia">
   <div class="wrap grid">
@@ -487,7 +517,7 @@ footer .links a:hover{color:var(--orange)}
           <h3 style="margin-top:18px">A tríade da construção <span class="hl">de marca.</span></h3>
           <p class="tsum">Marca forte nasce de um posicionamento singular, ganha voz com uma mensagem clara e cresce num ecossistema de canais e conteúdo.</p>
         </div>
-        <svg class="tri" viewBox="-40 0 600 480" role="img" aria-label="Tríade da construção de marca: posicionamento singular, mensagem e ecossistema, com a marca no centro">
+        <svg class="tri" viewBox="-40 -40 600 520" role="img" aria-label="Tríade da construção de marca: posicionamento singular, mensagem e ecossistema, com a marca no centro">
           <line class="guide g1" x1="260" y1="96" x2="260" y2="250" pathLength="1"/>
           <line class="guide g2" x1="62" y1="390" x2="200" y2="318" pathLength="1"/>
           <line class="guide g3" x1="458" y1="390" x2="320" y2="318" pathLength="1"/>
@@ -496,8 +526,8 @@ footer .links a:hover{color:var(--orange)}
           <line class="edge e3" x1="458" y1="390" x2="260" y2="96" pathLength="1"/>
           <circle class="halo h1" cx="260" cy="96" r="11"/><circle class="halo h2" cx="62" cy="390" r="11"/><circle class="halo h3" cx="458" cy="390" r="11"/>
           <circle class="dot d1" cx="260" cy="96" r="11"/><circle class="dot d2" cx="62" cy="390" r="11"/><circle class="dot d3" cx="458" cy="390" r="11"/>
-          <g class="lb l1"><text class="n" x="260" y="22" text-anchor="middle">01</text><text class="t" x="260" y="48" text-anchor="middle">POSICIONAMENTO</text><text class="t" x="260" y="72" text-anchor="middle">SINGULAR</text></g>
-          <g class="lb l2"><text class="n" x="62" y="426" text-anchor="middle">02</text><text class="t" x="62" y="452" text-anchor="middle">MENSAGEM</text><text class="s" x="62" y="474" text-anchor="middle">clara · relevante · atraente</text></g>
+          <g class="lb l1"><text class="n" x="260" y="-14" text-anchor="middle">01</text><text class="t" x="260" y="12" text-anchor="middle">POSICIONAMENTO</text><text class="t" x="260" y="36" text-anchor="middle">SINGULAR</text><text class="s keep" x="260" y="60" text-anchor="middle">verdadeiro · diferente · relevante</text></g>
+          <g class="lb l2"><text class="n" x="62" y="426" text-anchor="middle">02</text><text class="t" x="62" y="452" text-anchor="middle">MENSAGEM</text><text class="s keep" x="62" y="474" text-anchor="middle">clara · atraente</text></g>
           <g class="lb l3"><text class="n" x="458" y="426" text-anchor="middle">03</text><text class="t" x="458" y="452" text-anchor="middle">ECOSSISTEMA</text><text class="s" x="458" y="474" text-anchor="middle">canais · conteúdo · comunicação</text></g>
           <g class="lb core-g"><text class="core" x="260" y="296" text-anchor="middle">MARCA</text><text class="cs" x="260" y="322" text-anchor="middle">gera valor</text></g>
         </svg>
@@ -798,6 +828,30 @@ footer .links a:hover{color:var(--orange)}
   upd();
 })();
 
+/* Faixa de clientes */
+(function(){
+const L=[
+ ['sicredi','Sicredi'],['santa-clara','Santa Clara'],['zen','Zen Design'],['soprano','Soprano'],['cinex','Cinex'],['introduce','Introduce'],['cfl','CFL Construtora'],
+ [null,'Vida Farmácias','vida'],['planeta-agua','Planeta Água'],[null,'Vallontano','vallontano'],[null,'Garbo','garbo'],['neomot','Neomot'],[null,'Obispa','obispa'],
+ ['comabe','Comabe'],['dsf','DSF Advogados'],['souto-correa','Souto Correa Advogados'],[null,'Martini','martini'],[null,'Mesal','mesal'],[null,'MRP','mrp']
+];
+/* Wordmarks provisórios: trocar por logos oficiais (PNG em /logos com o mesmo nome) */
+const WM={
+ vida:'<div class="wm" style="font-size:28px;font-weight:800">vida<span style="font-weight:400"> farmácias</span></div>',
+ vallontano:'<div class="wm" style="font-family:Georgia,serif;font-size:27px;letter-spacing:.12em;font-weight:400">VALLONTANO</div>',
+ garbo:'<div class="wm" style="font-family:Georgia,serif;font-style:italic;font-size:34px;font-weight:400">Garbo<small style="font-style:normal;font-family:var(--font)">ENOLOGIA CRIATIVA</small></div>',
+ obispa:'<div class="wm" style="font-size:32px;font-weight:800;letter-spacing:-.03em">obispa</div>',
+ martini:'<div class="wm" style="font-family:Georgia,serif;font-size:26px;letter-spacing:.18em;font-weight:400">MARTINI<small>ADVOGADOS</small></div>',
+ mesal:'<div class="wm" style="font-size:32px;font-weight:800;letter-spacing:.06em">MESAL</div>',
+ mrp:'<div class="wm" style="font-size:36px;font-weight:800;letter-spacing:-.02em">MRP<small>CONSTRUTORA</small></div>'
+};
+function item(l){
+  if(l[0]) return `<div class="logo-item" title="${l[1]}"><img class="lg lg-${l[0]}" src="logos/${l[0]}.png" alt="${l[1]}"></div>`;
+  return `<div class="logo-item" title="${l[1]}">${WM[l[2]]}</div>`;
+}
+const fill=(id,arr)=>{const h=arr.map(item).join('');document.getElementById(id).innerHTML=h+h;};
+fill('row1',L.slice(0,10));fill('row2',L.slice(10));
+})();
 /* Vídeo do método 3C's */
 (function(){
   const v=document.getElementById('v3c'),b=document.getElementById('p3c');if(!v)return;
