@@ -42,7 +42,7 @@ h2{font-size:64px}
 .btn:hover{transform:translateY(-2px)}
 .btn svg{width:13px;height:13px;flex:none}
 .btn-orange{background:var(--orange);color:var(--btn-fg)}
-.capa,.pilares,.cases,.insta,.cta,.c,.s.dark,nav:not(.solid){--orange:var(--green-soft);--btn-fg:var(--green-strong)}
+.capa,.pilares,.cases,.insta,.cta,.c,nav:not(.solid){--orange:var(--green-soft);--btn-fg:var(--green-strong)}
 .btn-ghost{border:1.5px solid currentColor;color:var(--green);background:transparent}
 .btn-cream{background:var(--white);color:var(--green-strong)}
 .btn-line-inv{border:1.5px solid rgba(249,243,227,.6);color:var(--cream);background:transparent}
@@ -236,27 +236,30 @@ nav .btn{padding:11px 20px;font-size:14px}
 .network .note .sym{height:22px;width:30px;color:var(--orange);flex:none}
 
 /* ENTREGAS */
-.services{background:var(--green-mist);padding:130px 0}
+.services{background:var(--white);padding:130px 0}
 .services .head{display:flex;justify-content:space-between;align-items:end;margin-bottom:54px;gap:40px}
 .services h2{color:var(--green);font-size:64px;letter-spacing:-.045em}
 .services .head p{max-width:400px;color:var(--muted);font-size:17px}
 .sv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.s{background:var(--white);border-radius:26px;padding:38px 38px 34px;display:flex;flex-direction:column;border:1px solid var(--line)}
+.s{background:var(--green-mist);border-radius:26px;padding:38px 38px 34px;display:flex;flex-direction:column;border:1px solid transparent;transition:background .35s ease,color .35s ease,transform .35s ease}
 .s .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:46px;gap:10px;flex-wrap:wrap}
 .chips2{display:flex;gap:8px}
-.chip{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:var(--green);color:var(--cream)}
+.chip{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:var(--green);color:var(--cream);transition:background .35s,color .35s}
 .chip.rec{background:var(--green-soft);color:var(--green-strong)}
-.s .dur{font-size:14px;font-weight:600;color:var(--muted)}
-.s h3{font-size:42px;color:var(--green);margin-bottom:14px;letter-spacing:-.04em}
-.s .what{font-size:18px;font-weight:600;color:var(--ink);margin-bottom:22px;max-width:480px}
-.s ul{list-style:none;border-top:1px solid var(--line);margin-top:auto}
-.s li{padding:11px 0;border-bottom:1px solid var(--line);font-size:16px;display:flex;gap:12px;align-items:center}
-.s li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange);flex:none}
-.s.dark{background:var(--green);border-color:var(--green)}
-.s.dark h3,.s.dark .what{color:var(--cream)}
-.s.dark .dur{color:rgba(249,243,227,.75)}
-.s.dark ul,.s.dark li{border-color:rgba(249,243,227,.2);color:var(--cream)}
-.s.dark .chip{background:var(--cream);color:var(--green)}
+.s .dur{font-size:14px;font-weight:600;color:var(--muted);transition:color .35s}
+.s h3{font-size:42px;color:var(--green);margin-bottom:14px;letter-spacing:-.04em;transition:color .35s}
+.s .what{font-size:18px;font-weight:600;color:var(--ink);margin-bottom:22px;max-width:480px;transition:color .35s}
+.s ul{list-style:none;border-top:1px solid var(--line);margin-top:auto;transition:border-color .35s}
+.s li{padding:11px 0;border-bottom:1px solid var(--line);font-size:16px;display:flex;gap:12px;align-items:center;transition:border-color .35s,color .35s}
+.s li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);flex:none;transition:background .35s}
+.s:hover,.s:focus-within{background:var(--green-strong);transform:translateY(-4px)}
+.s:hover h3,.s:hover .what{color:var(--cream)}
+.s:hover .dur{color:rgba(249,243,227,.7)}
+.s:hover ul,.s:hover li{border-color:rgba(249,243,227,.2);color:var(--cream)}
+.s:hover li::before{background:var(--green-soft)}
+.s:hover .chip{background:var(--cream);color:var(--green-strong)}
+.s:hover .chip.rec{background:var(--green-soft);color:var(--green-strong)}
+@media (prefers-reduced-motion:reduce){.s{transition:none}.s:hover{transform:none}}
 
 /* INSTAGRAM / VÍDEOS */
 .insta{padding:130px 0 120px;background:var(--green-strong);color:var(--cream);overflow:hidden}
@@ -677,7 +680,7 @@ footer .links a:hover{color:var(--orange)}
       <p>Projetos pontuais para destravar decisões e contratos recorrentes para sustentar a construção da marca ao longo do tempo.</p>
     </div>
     <div class="sv">
-      <div class="s dark"><div class="top"><span class="chips2"><span class="chip">Pontual</span></span><span class="dur">6 a 8 semanas</span></div><h3>Posicionamento</h3><p class="what">Construímos marcas com propósito, claras sobre quem são, o que defendem e como querem ser lembradas.</p><ul><li>Diagnóstico</li><li>Workshop de co-criação</li><li>Criação da plataforma de marca</li></ul></div>
+      <div class="s"><div class="top"><span class="chips2"><span class="chip">Pontual</span></span><span class="dur">6 a 8 semanas</span></div><h3>Posicionamento</h3><p class="what">Construímos marcas com propósito, claras sobre quem são, o que defendem e como querem ser lembradas.</p><ul><li>Diagnóstico</li><li>Workshop de co-criação</li><li>Criação da plataforma de marca</li></ul></div>
       <div class="s"><div class="top"><span class="chips2"><span class="chip rec">Recorrente</span></span><span class="dur">Contratos de 6 a 12 meses</span></div><h3>Presença digital</h3><p class="what">Planejamos e conduzimos a comunicação da marca no digital, com consistência mês a mês.</p><ul><li>Planejamento de presença digital</li><li>Produção de conteúdo</li><li>Estratégia e gestão de canais</li></ul></div>
       <div class="s"><div class="top"><span class="chips2"><span class="chip">Pontual</span></span><span class="dur">4 semanas</span></div><h3>Estratégia de canais</h3><p class="what">Diagnóstico da presença digital atual e direcionamento claro de onde estar, com qual papel e com qual mensagem.</p><ul><li>Diagnóstico de canais e dados</li><li>Papel de cada canal</li><li>Direcionamento estratégico</li></ul></div>
       <div class="s"><div class="top"><span class="chips2"><span class="chip">Pontual</span><span class="chip rec">Recorrente</span></span><span class="dur">Formato flexível</span></div><h3>Consultoria de marketing</h3><p class="what">Conexão profunda com o negócio e acompanhamento estratégico para planejar o marketing a partir dos objetivos da empresa.</p><ul><li>Planejamento estratégico de marketing</li><li>Encontros semanais de acompanhamento</li><li>Imersões com liderança e time</li></ul></div>
