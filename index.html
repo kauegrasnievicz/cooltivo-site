@@ -269,6 +269,22 @@ nav .btn{padding:11px 20px;font-size:14px}
 .cta .inner{text-align:center;max-width:1000px;margin:0 auto;position:relative}
 .cta h2{font-size:104px;line-height:.92;letter-spacing:-.05em}
 .cta .lead{margin:28px auto 40px;max-width:640px;opacity:.95}
+.lead-form{max-width:860px;margin:0 auto;text-align:left;background:rgba(249,243,227,.06);border:1px solid rgba(249,243,227,.18);border-radius:26px;padding:34px}
+.fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px}
+.f{display:flex;flex-direction:column;gap:8px;min-width:0}
+.f.full{grid-column:1/-1}
+.f span{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-soft)}
+.f em{font-style:normal;text-transform:none;letter-spacing:0;font-weight:500;opacity:.8}
+.f input,.f select,.f textarea{font:500 16px var(--font);color:var(--cream);background:rgba(18,36,26,.35);border:1.5px solid rgba(249,243,227,.22);border-radius:14px;padding:14px 16px;width:100%;outline:none;transition:border-color .2s,background .2s;appearance:none;-webkit-appearance:none}
+.f select{background-image:linear-gradient(45deg,transparent 50%,var(--cream) 50%),linear-gradient(135deg,var(--cream) 50%,transparent 50%);background-position:calc(100% - 22px) 52%,calc(100% - 16px) 52%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
+.f select option{color:#17261d;background:#fff}
+.f textarea{resize:vertical;min-height:62px}
+.f input::placeholder,.f textarea::placeholder{color:rgba(249,243,227,.45)}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--green-soft);background:rgba(18,36,26,.55)}
+.f .bad,.f input.bad,.f select.bad{border-color:#f0b4a0}
+.ferr{margin-top:16px;color:#f6c9b9;font-size:14px;font-weight:600}
+.fsend{margin-top:24px;font-size:17px;padding:19px 30px}
+.fnote{margin-top:12px;font-size:13px;color:rgba(249,243,227,.65)}
 .cta .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .cta .btn{font-size:17px;padding:19px 30px}
 .cta .bg-sym{position:absolute;left:-290px;top:60px;height:300px;width:411px;color:var(--green-soft)}
@@ -331,6 +347,8 @@ footer .links a:hover{color:var(--orange)}
   .insta .head{flex-direction:column;align-items:start;gap:18px}
   .cta{padding-top:90px}
   .cta h2{font-size:54px}
+  .lead-form{padding:22px 18px}
+  .fgrid{grid-template-columns:minmax(0,1fr)}
   .cta .arr,.cta .bg-sym{display:none}
   .contact{grid-template-columns:1fr;margin-top:60px}
   .contact>*+*{border-left:0;padding-left:0;border-top:1px solid var(--line-inv)}
@@ -690,10 +708,36 @@ footer .links a:hover{color:var(--orange)}
       <div class="eyebrow" style="justify-content:center">Vamos conversar</div>
       <h2 style="margin-top:22px">Qual marca vamos <span class="hl">cultivar</span> juntos?</h2>
       <p class="lead">Conte o momento do seu negócio. A gente começa entendendo o contexto.</p>
-      <div class="btns">
-        <a class="btn btn-orange" href="https://wa.me/5554991000102" target="_blank" rel="noopener">Chamar no WhatsApp <svg><use href="#arr"/></svg></a>
-        <a class="btn btn-cream" href="mailto:kaue@cooltivo.com.br">Enviar um e-mail</a>
-      </div>
+      <form class="lead-form" id="leadForm" novalidate>
+        <div class="fgrid">
+          <label class="f"><span>Nome</span><input id="f-nome" name="nome" type="text" autocomplete="name" required placeholder="Seu nome"></label>
+          <label class="f"><span>Empresa</span><input id="f-empresa" name="empresa" type="text" autocomplete="organization" required placeholder="Nome da empresa"></label>
+          <label class="f"><span>Cargo</span><input id="f-cargo" name="cargo" type="text" autocomplete="organization-title" required placeholder="Ex.: sócio, diretor de marketing"></label>
+          <label class="f"><span>E-mail</span><input id="f-email" name="email" type="email" autocomplete="email" required placeholder="voce@empresa.com.br"></label>
+          <label class="f"><span>Faturamento anual da empresa</span>
+            <select id="f-fat" name="faturamento" required>
+              <option value="" disabled selected>Selecione</option>
+              <option>Até R$ 1 milhão</option>
+              <option>De R$ 1 a 5 milhões</option>
+              <option>De R$ 5 a 20 milhões</option>
+              <option>De R$ 20 a 100 milhões</option>
+              <option>Acima de R$ 100 milhões</option>
+            </select></label>
+          <label class="f"><span>O que você procura?</span>
+            <select id="f-int" name="interesse" required>
+              <option value="" disabled selected>Selecione</option>
+              <option>Posicionamento de marca</option>
+              <option>Presença digital</option>
+              <option>Estratégia de canais</option>
+              <option>Consultoria de marketing</option>
+              <option>Ainda não sei, quero conversar</option>
+            </select></label>
+          <label class="f full"><span>Conte em uma frase o momento do seu negócio <em>(opcional)</em></span><textarea id="f-msg" name="mensagem" rows="2" placeholder="Ex.: vamos lançar uma nova linha e queremos reposicionar a marca"></textarea></label>
+        </div>
+        <p class="ferr" id="fErr" role="alert" hidden>Preencha nome, empresa, cargo, e-mail, faturamento e o que você procura para continuar.</p>
+        <button class="btn btn-orange fsend" type="submit">Continuar no WhatsApp <svg><use href="#arr"/></svg></button>
+        <p class="fnote">Ao enviar, abrimos o WhatsApp com a sua mensagem pronta. É só tocar em enviar.</p>
+      </form>
     </div>
     <div class="contact">
       <a href="mailto:kaue@cooltivo.com.br"><small>E-mail</small><span>kaue@cooltivo.com.br</span></a>
@@ -735,6 +779,23 @@ footer .links a:hover{color:var(--orange)}
   upd();
 })();
 
+/* Formulário de contato: monta a mensagem e abre o WhatsApp */
+(function(){
+  const f=document.getElementById('leadForm');if(!f)return;
+  const ids=['f-nome','f-empresa','f-cargo','f-email','f-fat','f-int'];
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    let ok=true;
+    ids.forEach(id=>{const el=document.getElementById(id);const v=el.value.trim();const bad=!v||(el.type==='email'&&!/^\S+@\S+\.\S+$/.test(v));el.classList.toggle('bad',bad);if(bad)ok=false;});
+    document.getElementById('fErr').hidden=ok;
+    if(!ok){const first=f.querySelector('.bad');if(first)first.focus();return;}
+    const g=id=>document.getElementById(id).value.trim();
+    let t=`Olá, Cooltivo! Vim pelo site.\n\n*Nome:* ${g('f-nome')}\n*Empresa:* ${g('f-empresa')}\n*Cargo:* ${g('f-cargo')}\n*E-mail:* ${g('f-email')}\n*Faturamento anual:* ${g('f-fat')}\n*Procuro:* ${g('f-int')}`;
+    if(g('f-msg'))t+=`\n\n*Momento do negócio:* ${g('f-msg')}`;
+    const url='https://wa.me/5554991000102?text='+encodeURIComponent(t);
+    const w=window.open(url,'_blank');if(w){try{w.opener=null}catch(_){}}else location.href=url;
+  });
+})();
 /* Slideshow da história: troca a cada 1s */
 (function(){
   const imgs=[...document.querySelectorAll('#slides img')];if(imgs.length<2)return;
