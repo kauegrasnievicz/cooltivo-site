@@ -42,6 +42,9 @@ h2{font-size:64px}
 .btn:hover{transform:translateY(-2px)}
 .btn svg{width:13px;height:13px;flex:none}
 .btn-orange{background:var(--orange);color:var(--btn-fg)}
+.btn-orange:hover{background:var(--green-strong);color:#fff}
+.capa .btn-orange:hover,nav:not(.solid) .btn-orange:hover,.cta .btn-orange:hover,.insta .btn-orange:hover,.pilares .btn-orange:hover,.cases .btn-orange:hover{background:#fff;color:var(--green-strong)}
+.btn-line-inv:hover{background:#fff;color:var(--green-strong);border-color:#fff}
 .capa,.pilares,.cases,.insta,.cta,.c,nav:not(.solid){--orange:var(--green-soft);--btn-fg:var(--green-strong)}
 .btn-ghost{border:1.5px solid currentColor;color:var(--green);background:transparent}
 .btn-cream{background:var(--white);color:var(--green-strong)}
@@ -54,7 +57,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
 .brand .sym{height:28px;width:38px}
 .brand b{font-family:var(--font-display);font-weight:800;font-size:22px;letter-spacing:-.03em}
-.brand span{font-size:13px;font-weight:500;opacity:.75}
+.brand span{font-size:10px;font-weight:600;letter-spacing:.04em;opacity:.8;align-self:flex-start;margin:5px 0 0 -10px;line-height:1}
 nav ul{display:flex;gap:30px;list-style:none;font-weight:600;font-size:15px}
 nav ul a{text-decoration:none;color:inherit;opacity:.92}
 nav ul a:hover{opacity:1;color:var(--orange)}
@@ -438,7 +441,6 @@ footer .links a:hover{color:var(--orange)}
   <video autoplay muted loop playsinline preload="auto" poster="video/capa-poster.jpg" aria-hidden="true"><source src="video/capa.mp4" type="video/mp4"></video>
   <div class="inner">
     <div class="wrap">
-      <svg class="mark sym"><use href="#sym"/></svg>
       <h1>Cultivamos marcas que resistem <span class="hl">ao tempo.</span></h1>
       <p class="lead">Estúdio de estratégia e criatividade Made in Serra Gaúcha. Construímos marca, conteúdo e comunicação a serviço do negócio.</p>
       <div class="ctas">
