@@ -223,7 +223,7 @@ nav .btn{padding:11px 20px;font-size:14px}
 .case .brandname{display:flex;align-items:center;gap:12px;min-height:34px}
 .case .brandname em{font-style:normal;font-size:16px;font-weight:700;opacity:.85}
 .clogo{height:30px;width:auto;max-width:170px;object-fit:contain;filter:brightness(0) invert(1);opacity:.92}
-.cl-santa-clara,.cl-garbo,.cl-vallontano{height:44px}.cl-soprano{height:20px}.cl-zen{height:28px}
+.cl-santa-clara,.cl-garbo,.cl-vallontano{height:44px}.cl-soprano{height:20px}.cl-dsf{height:46px}.cl-zen{height:28px}
 
 .case .seg{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(249,243,227,.7);text-align:right}
 .case h3{font-size:44px;line-height:1;letter-spacing:-.04em;margin:44px 0 18px}
@@ -316,6 +316,7 @@ nav .btn{padding:11px 20px;font-size:14px}
 .player{position:fixed;inset:0;z-index:60;background:rgba(10,20,14,.94);display:none;align-items:center;justify-content:center;padding:24px}
 .player.open{display:flex}
 .player .box{position:relative;height:min(86vh,860px);aspect-ratio:9/16;max-width:100%;border-radius:22px;overflow:hidden;background:#000}
+.player .box.wide{height:auto;width:min(92vw,calc(86vh * 16 / 9),1400px);aspect-ratio:16/9}
 .player video{width:100%;height:100%;object-fit:contain;background:#000}
 .player .close{position:absolute;top:18px;right:18px;width:48px;height:48px;border-radius:50%;border:0;background:var(--cream);color:var(--green-ink);font-size:24px;line-height:1;cursor:pointer}
 .player .ig{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);color:var(--cream);font-size:14px;font-weight:700;text-decoration:none;display:flex;gap:8px;align-items:center;opacity:.85}
@@ -633,14 +634,14 @@ footer .links a:hover{color:var(--orange)}
 
     <article class="case">
       <div class="txt">
-        <div class="meta"><span class="brandname">Vino Verace</span><span class="seg">E-commerce · Vinhos premium</span></div>
-        <h3>De R$ 20 mil para R$ 627 mil no mês.</h3>
-        <p>Um e-commerce com mais de 1.000 rótulos de 30 países precisava crescer sem competir só por preço. Deixamos de tratar a marca como uma loja que vive de conteúdo de terceiros e criamos uma cultura de comunicação focada em valor de marca, integrada a campanhas mensais em Google Ads, Meta Ads, e-mail, WhatsApp e CRM.</p>
-        <div class="nums"><div><b>R$ 627 mil</b><span>de faturamento em um único mês</span></div><div><b>1.000+</b><span>rótulos de 30 países</span></div></div>
-        <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>Impulse Company</b></span></div>
-        <div class="chips"><span>Consultoria de marketing</span><span>Presença e performance</span><span>Direção criativa</span></div>
+        <div class="meta"><span class="brandname"><img class="clogo cl-dsf" src="logos/dsf.png" alt="DSF Advogados"></span><span class="seg">Advocacia · Posicionamento digital</span></div>
+        <h3>Recorde em geração de leads e posicionamento digital.</h3>
+        <p>Entre os 3 escritórios mais lembrados e admirados do Rio Grande do Sul, a DSF Advogados precisava levar essa reputação para o digital e transformá-la em novos negócios. Criamos verticais de conteúdo a partir das expertises do escritório, dando voz aos especialistas de cada área de atuação.</p>
+        <div class="nums"><div><b>Top 3</b><span>entre os escritórios mais lembrados e admirados do RS</span></div><div><b>Recorde</b><span>em geração de leads</span></div></div>
+        <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>Impulse Company e Berrô Strategy</b></span></div>
+        <div class="chips"><span>Posicionamento digital</span><span>Verticais de conteúdo</span><span>Geração de leads</span></div>
       </div>
-      <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/vino-verace.jpg" aria-label="Vino Verace"><source src="video/cases/vino-verace.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/vino-verace.mp4" data-ig="https://www.instagram.com/p/DN1TI1sZil0/"><svg><use href="#play"/></svg>Assistir com som</button></div>
+      <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/dsf.jpg" aria-label="Filme da DSF Advogados"><source src="video/cases/dsf.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/dsf.mp4" data-wide data-ig="https://www.instagram.com/cooltivoestudio/"><svg><use href="#play"/></svg>Assistir com som</button></div>
     </article>
 
     <article class="case">
@@ -678,6 +679,18 @@ footer .links a:hover{color:var(--orange)}
         <div class="chips"><span>Posicionamento</span><span>Presença digital</span><span>Direção criativa</span></div>
       </div>
       <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/vallontano.jpg" aria-label="Filme da Vallontano"><source src="video/cases/vallontano.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/vallontano.mp4" data-ig="https://www.instagram.com/p/DdcB5r1lZyP/"><svg><use href="#play"/></svg>Assistir com som</button></div>
+    </article>
+
+    <article class="case">
+      <div class="txt">
+        <div class="meta"><span class="brandname">Vino Verace</span><span class="seg">E-commerce · Vinhos premium</span></div>
+        <h3>De R$ 20 mil para R$ 672 mil no mês.</h3>
+        <p>Um e-commerce com mais de 1.000 rótulos de 30 países precisava crescer sem competir só por preço. Deixamos de tratar a marca como uma loja que vive de conteúdo de terceiros e criamos uma cultura de comunicação focada em valor de marca, integrada a campanhas mensais em Google Ads, Meta Ads, e-mail, WhatsApp e CRM.</p>
+        <div class="nums"><div><b>R$ 672 mil</b><span>de faturamento em um único mês</span></div><div><b>1.000+</b><span>rótulos de 30 países</span></div></div>
+        <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>Impulse Company</b></span></div>
+        <div class="chips"><span>Consultoria de marketing</span><span>Presença e performance</span><span>Direção criativa</span></div>
+      </div>
+      <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/vino-verace.jpg" aria-label="Vino Verace"><source src="video/cases/vino-verace.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/vino-verace.mp4" data-ig="https://www.instagram.com/p/DN1TI1sZil0/"><svg><use href="#play"/></svg>Assistir com som</button></div>
     </article>
   </div>
   <div class="wrap"><div class="hint"><svg style="width:14px;height:14px"><use href="#chev"/></svg>Arraste para o lado para ver todos os cases</div></div>
@@ -926,9 +939,9 @@ fill('row1',L);
 /* Player em tela cheia, com som */
 (function(){
   const pl=document.getElementById('player'),pv=document.getElementById('pvideo'),ig=document.getElementById('pig');
-  const open=(src,link)=>{pv.src=src;ig.href=link||'https://www.instagram.com/cooltivoestudio/';pl.classList.add('open');document.body.style.overflow='hidden';pv.play().catch(()=>{});document.getElementById('pclose').focus();};
+  const open=(src,link,wide)=>{pl.querySelector('.box').classList.toggle('wide',!!wide);pv.src=src;ig.href=link||'https://www.instagram.com/cooltivoestudio/';pl.classList.add('open');document.body.style.overflow='hidden';pv.play().catch(()=>{});document.getElementById('pclose').focus();};
   const close=()=>{pv.pause();pv.removeAttribute('src');pv.load();pl.classList.remove('open');document.body.style.overflow='';};
-  document.addEventListener('click',e=>{const t=e.target.closest('[data-play]');if(t){e.preventDefault();open(t.dataset.play,t.dataset.ig)}});
+  document.addEventListener('click',e=>{const t=e.target.closest('[data-play]');if(t){e.preventDefault();open(t.dataset.play,t.dataset.ig,t.hasAttribute('data-wide'))}});
   document.getElementById('pclose').onclick=close;
   pl.addEventListener('click',e=>{if(e.target===pl)close()});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&pl.classList.contains('open'))close()});
