@@ -163,6 +163,15 @@ nav .btn{padding:11px 20px;font-size:14px}
 .way{padding:130px 0;background:var(--cream)}
 .way .head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:60px}
 .way h2{font-size:72px;color:var(--green);letter-spacing:-.045em}
+.mvid{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:16/9;background:var(--green-strong);max-width:100%}
+.mvid video{width:100%;height:100%;object-fit:cover;display:block}
+.mplay{position:absolute;inset:0;border:0;background:linear-gradient(180deg,rgba(14,14,14,.05),rgba(14,14,14,.45));color:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;font:700 17px var(--font);cursor:pointer;transition:background .3s}
+.mplay span{width:96px;height:96px;border-radius:50%;background:var(--green);display:grid;place-items:center;transition:transform .3s}
+.mplay span svg{width:30px;height:30px;margin-left:5px;color:var(--white)}
+.mplay:hover span{transform:scale(1.08)}
+.mvid.playing .mplay{display:none}
+.c3{display:flex;justify-content:space-between;gap:16px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line);font-size:15px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;flex-wrap:wrap}
+.c3 b{color:var(--green);font-family:var(--font-display);font-weight:800;font-size:22px;letter-spacing:-.02em;text-transform:none}
 .cs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .c{background:var(--green-strong);color:var(--white);border-radius:26px;padding:34px 32px 36px;position:relative;overflow:hidden;min-height:400px;display:flex;flex-direction:column}
 .c:nth-child(2){background:var(--green)}
@@ -344,6 +353,9 @@ footer .links a:hover{color:var(--orange)}
   .tsum{font-size:18px}
   .tri .s{display:none}
   .tab{min-height:auto}.tab h3{margin-top:34px;font-size:40px}
+  .mplay span{width:58px;height:58px}
+  .mplay{font-size:0;gap:0}
+  .c3{flex-direction:column;gap:8px}
   .c{min-height:auto}.c h3{margin-top:36px;font-size:44px}
   .cases .head,.services .head{flex-direction:column;align-items:start;gap:18px}
   .track-cases{scroll-padding-left:20px;padding-inline:20px}
@@ -390,6 +402,7 @@ footer .links a:hover{color:var(--orange)}
     <ul>
       <li><a href="#historia">Nossa história</a></li>
       <li><a href="#tese">Nossa tese</a></li>
+      <li><a href="#jeito">Método</a></li>
       <li><a href="#cases">Cases</a></li>
       <li><a href="#entregas">Entregas</a></li>
       <li><a href="#conteudos">Conteúdos</a></li>
@@ -496,15 +509,15 @@ footer .links a:hover{color:var(--orange)}
     <div class="head">
       <div>
         <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Nosso jeito</div>
-        <h2 style="margin-top:18px">Os 3 C's da <span class="hl">Cooltivo.</span></h2>
+        <h2 style="margin-top:18px">Conheça o método <span class="hl">3C's.</span></h2>
       </div>
-      <p class="lead">Um método simples e rigoroso: entender antes de criar, decidir junto com quem conhece o negócio e executar com excelência.</p>
+      <p class="lead">O nosso jeito de fazer: entender antes de criar, decidir junto e executar com excelência.</p>
     </div>
-    <div class="cs">
-      <div class="c"><svg class="ico"><use href="#arr"/></svg><span class="n">01</span><h3>Context</h3><div class="q">Entender antes de criar.</div><hr><p>Imersão no negócio, pesquisa, entrevistas em profundidade, desk research e mapeamento de canais e dados.</p></div>
-      <div class="c"><svg class="ico sym"><use href="#sym"/></svg><span class="n">02</span><h3>Concept</h3><div class="q">Decidir junto.</div><hr><p>Workshops e construção colaborativa para definir o conceito, o posicionamento e a estratégia de comunicação.</p></div>
-      <div class="c"><svg class="ico"><use href="#arr"/></svg><span class="n">03</span><h3>Craft</h3><div class="q">Fazer bem feito.</div><hr><p>Desenvolvimento dos materiais de comunicação, com o especialista certo em cada entrega.</p></div>
+    <div class="mvid">
+      <video id="v3c" playsinline preload="metadata" poster="video/metodo-3cs.jpg"><source src="video/metodo-3cs.mp4" type="video/mp4"></video>
+      <button class="mplay" type="button" id="p3c" aria-label="Assistir ao vídeo do método 3C's"><span><svg><use href="#play"/></svg></span>Assistir ao método</button>
     </div>
+    <div class="c3"><span>01 · <b>Context</b></span><span>02 · <b>Concept</b></span><span>03 · <b>Craft</b></span></div>
   </div>
 </section>
 
@@ -782,6 +795,11 @@ footer .links a:hover{color:var(--orange)}
   upd();
 })();
 
+/* Vídeo do método 3C's */
+(function(){
+  const v=document.getElementById('v3c'),b=document.getElementById('p3c');if(!v)return;
+  b.onclick=()=>{v.controls=true;v.parentElement.classList.add('playing');v.play().catch(()=>{})};
+})();
 /* Tríade: os pontos se conectam quando a seção aparece */
 (function(){
   const t=document.querySelector('.tri');if(!t||!('IntersectionObserver' in window))return;
