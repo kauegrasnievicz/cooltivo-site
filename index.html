@@ -118,6 +118,30 @@ nav .btn{padding:11px 20px;font-size:14px}
 .tab h3{font-size:48px;color:var(--green);margin:56px 0 14px}
 .tab p{font-size:17px;line-height:1.5;color:var(--ink)}
 
+/* TRÍADE */
+.triade{margin-top:110px;padding-top:70px;border-top:1px solid rgba(249,243,227,.2);position:relative}
+.triade .thead{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:56px}
+.triade h3{font-size:52px;letter-spacing:-.045em;line-height:1}
+.triade .thead p{font-size:19px;color:rgba(249,243,227,.85);max-width:520px}
+.triade .tgrid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}
+.tri{width:100%;max-width:520px;height:auto;display:block;margin:0 auto;overflow:visible}
+.tri .edge{stroke:var(--cream);stroke-width:2;fill:none}
+.tri .guide{stroke:rgba(249,243,227,.35);stroke-width:1.5;stroke-dasharray:5 6}
+.tri .dot{fill:var(--green-soft)}
+.tri .n{font:700 15px var(--font);fill:var(--green-soft);letter-spacing:.08em}
+.tri .t{font:800 21px var(--font-display);fill:var(--cream);letter-spacing:.04em}
+.tri .s{font:500 15px var(--font);fill:rgba(249,243,227,.75)}
+.tri .core{font:900 38px var(--font-display);fill:var(--cream);letter-spacing:-.02em}
+.tri .cs{font:600 16px var(--font);fill:var(--green-soft)}
+.tlist{display:flex;flex-direction:column;gap:0}
+.tblock{padding:28px 0;border-top:1px solid rgba(249,243,227,.18)}
+.tblock:first-child{border-top:0;padding-top:0}
+.tblock h4{display:flex;align-items:baseline;gap:14px;font-family:var(--font-display);font-weight:800;font-size:26px;letter-spacing:-.03em;margin-bottom:16px;line-height:1.1}
+.tblock h4 span{font:700 13px var(--font);color:var(--green-soft);letter-spacing:.08em}
+.tblock dl{display:grid;grid-template-columns:120px minmax(0,1fr);gap:10px 20px;margin:0}
+.tblock dt{font-weight:700;font-size:15px;color:var(--cream)}
+.tblock dd{margin:0;font-size:15px;line-height:1.5;color:rgba(249,243,227,.82)}
+
 /* JEITO */
 .way{padding:130px 0;background:var(--cream)}
 .way .head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:60px}
@@ -281,6 +305,14 @@ footer .links a:hover{color:var(--orange)}
   .quote p{font-size:30px}
   .slides-wrap figcaption{font-size:21px}
   .tabs{gap:60px;margin-top:70px}
+  .triade{margin-top:70px;padding-top:50px}
+  .triade .thead,.triade .tgrid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .triade h3{font-size:36px}
+  .tblock dl{grid-template-columns:minmax(0,1fr);gap:2px 0}
+  .tblock dd{margin-bottom:10px}
+  .tblock h4{font-size:21px}
+  .tri .s{display:none}
+  .tri{max-width:100%}
   .tab{min-height:auto}.tab h3{margin-top:34px;font-size:40px}
   .c{min-height:auto}.c h3{margin-top:36px;font-size:44px}
   .cases .head,.services .head{flex-direction:column;align-items:start;gap:18px}
@@ -400,6 +432,40 @@ footer .links a:hover{color:var(--orange)}
       </div>
     </div>
     
+    <div class="triade">
+      <div class="thead">
+        <div>
+          <div class="eyebrow">Nossa tese na prática</div>
+          <h3 style="margin-top:18px">A tríade da construção <span class="hl">de marca.</span></h3>
+        </div>
+        <p>Três frentes, interligadas, que transformam marca em valor. É assim que cultivamos marcas que resistem ao tempo.</p>
+      </div>
+      <div class="tgrid">
+        <svg class="tri" viewBox="-30 0 580 480" role="img" aria-label="Tríade da construção de marca: posicionamento singular, mensagem e ecossistema, com a marca no centro">
+          <line class="guide" x1="260" y1="96" x2="260" y2="250"/>
+          <line class="guide" x1="62" y1="390" x2="200" y2="318"/>
+          <line class="guide" x1="458" y1="390" x2="320" y2="318"/>
+          <polygon class="edge" points="260,96 62,390 458,390"/>
+          <circle class="dot" cx="260" cy="96" r="11"/><circle class="dot" cx="62" cy="390" r="11"/><circle class="dot" cx="458" cy="390" r="11"/>
+          <text class="n" x="260" y="22" text-anchor="middle">01</text>
+          <text class="t" x="260" y="48" text-anchor="middle">POSICIONAMENTO</text>
+          <text class="t" x="260" y="70" text-anchor="middle">SINGULAR</text>
+          <text class="core" x="260" y="296" text-anchor="middle">MARCA</text>
+          <text class="cs" x="260" y="320" text-anchor="middle">gera valor</text>
+          <text class="n" x="62" y="424" text-anchor="middle">02</text>
+          <text class="t" x="62" y="448" text-anchor="middle">MENSAGEM</text>
+          <text class="s" x="62" y="468" text-anchor="middle">clara · relevante · atraente</text>
+          <text class="n" x="458" y="424" text-anchor="middle">03</text>
+          <text class="t" x="458" y="448" text-anchor="middle">ECOSSISTEMA</text>
+          <text class="s" x="458" y="468" text-anchor="middle">canais · conteúdo · comunicação</text>
+        </svg>
+        <div class="tlist">
+          <div class="tblock"><h4><span>01</span>Posicionamento singular</h4><dl><dt>Vocação</dt><dd>Clareza do que a marca e o negócio nasceram para ser.</dd><dt>Mercado</dt><dd>O jogo que a categoria joga e onde dá para ser diferente e distintivo.</dd><dt>Cliente</dt><dd>O porquê dele: por que escolhe você na categoria, o problema externo, interno e filosófico que você resolve, de forma racional e emocional.</dd></dl></div>
+          <div class="tblock"><h4><span>02</span>Mensagem clara, relevante e atraente</h4><dl><dt>Base</dt><dd>Público, posicionamento e o que te diferencia do mercado.</dd><dt>Narrativa</dt><dd>O cliente é o herói. A marca é o guia, nunca o herói.</dd><dt>Clara</dt><dd>É decifrada nos primeiros segundos.</dd><dt>Relevante</dt><dd>Fala direto com quem precisa ouvir.</dd><dt>Atraente</dt><dd>Deixa claro por que é a melhor solução ou oportunidade para essa pessoa.</dd></dl></div>
+          <div class="tblock"><h4><span>03</span>Ecossistema de canais, conteúdo e comunicação</h4><dl><dt>Canais</dt><dd>Multicanal, comunidade, conteúdo e experiência de marca comunicando tudo isso.</dd><dt>Objetivo</dt><dd>Pertencimento, associação e preferência de marca.</dd></dl></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
