@@ -432,7 +432,7 @@ footer .links a:hover{color:var(--orange)}
         <div class="meta"><span class="brandname">Santa Clara</span><span class="seg">Cooperativa · Programa Plantando o Bem</span></div>
         <h3>Das hortas abandonadas ao 1º Concurso de Sustentabilidade Criativa.</h3>
         <p>O Plantando o Bem leva educação alimentar e hortas orgânicas a escolas do interior gaúcho, com cartilhas e teatro. Só que as hortas acabavam abandonadas depois da implantação. Nosso desafio foi reinventar o programa, e assim nasceu o primeiro concurso de sustentabilidade criativa, em que os próprios alunos criam e tocam projetos sustentáveis.</p>
-        <div class="nums"><div><b>58</b><span>projetos inscritos</span></div><div><b>R$ 50 mil+</b><span>em prêmios</span></div></div>
+        <div class="nums"><div><b>58</b><span>projetos inscritos</span></div><div><b>R$ 35 mil</b><span>em prêmios para alunos e professores</span></div></div>
         <div class="chips"><span>Conceito</span><span>Gestão de projetos</span><span>Comunicação</span><span>Direção criativa</span></div>
       </div>
       <div class="vis"><div class="award"><span class="medal">TOP</span><span>Top de Marketing ADVB/RS 2024</span></div><video data-auto muted loop playsinline preload="none" poster="video/cases/santa-clara.jpg" aria-label="Plantando o Bem, Santa Clara"><source src="video/cases/santa-clara.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/santa-clara.mp4" data-ig="https://www.instagram.com/p/C1-NUVQs1nO/"><svg><use href="#play"/></svg>Assistir com som</button></div>
@@ -454,7 +454,7 @@ footer .links a:hover{color:var(--orange)}
         <div class="meta"><span class="brandname">Soprano</span><span class="seg">Indústria · Presença digital</span></div>
         <h3>Uma gigante da indústria mais nativa no digital.</h3>
         <p>O desafio foi levar o novo posicionamento da Soprano para o digital, com uma comunicação que coloca as histórias à frente dos produtos: as pessoas, os bastidores e quem usa a marca no dia a dia. O resultado foi um crescimento exponencial de engajamento.</p>
-        <div style="height:26px"></div>
+        <div class="nums"><div><b>Histórias</b><span>à frente dos produtos</span></div><div><b>Pessoas</b><span>como protagonistas da marca</span></div></div>
         <div class="chips"><span>Posicionamento</span><span>Presença digital</span><span>Produção de conteúdo</span></div>
       </div>
       <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/soprano-digital.jpg" aria-label="Conteúdo da Soprano"><source src="video/cases/soprano-digital.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/soprano-digital.mp4" data-ig="https://www.instagram.com/p/DdRaOx4Ae9v/"><svg><use href="#play"/></svg>Assistir com som</button></div>
@@ -640,6 +640,13 @@ footer .links a:hover{color:var(--orange)}
   upd();
 })();
 
+/* Esconde vídeos da faixa que ainda não foram enviados */
+(function(){
+  const row=document.getElementById('reels');if(!row)return;
+  const check=()=>{if(!row.querySelector('.reel')){row.style.display='none';const c=document.querySelector('.insta .ctrl');if(c)c.style.display='none'}};
+  row.querySelectorAll('.reel').forEach(b=>{const v=b.querySelector('video');const src=v.querySelector('source').src;
+    fetch(src,{method:'HEAD'}).then(r=>{if(!r.ok){b.remove();check()}}).catch(()=>{});});
+})();
 /* Arrastar a faixa de vídeos */
 (function(){
   const r=document.getElementById('reels');if(!r)return;
