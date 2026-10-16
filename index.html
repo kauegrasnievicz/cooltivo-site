@@ -170,15 +170,15 @@ nav .btn{padding:11px 20px;font-size:14px}
 .crow{display:flex;align-items:center;gap:32px;max-width:var(--wrap);margin:0 auto;padding-inline:40px}
 .clabel{flex:none;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .marquee{flex:1;min-width:0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.track{display:flex;align-items:center;width:max-content;animation:scroll 55s linear infinite}
+.track{display:flex;align-items:center;width:max-content;animation:scroll 80s linear infinite}
 .marquee:hover .track{animation-play-state:paused}
 @keyframes scroll{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.track{animation:none}}
-.logo-item{flex:none;height:40px;width:140px;margin:0 24px;display:flex;align-items:center;justify-content:center}
-.logo-item .lg{max-width:100%;max-height:32px;width:auto;height:auto;opacity:.45;filter:grayscale(1);transition:opacity .3s}
-.logo-item:hover .lg,.logo-item:hover .wm{opacity:.9}
-.lg-cfl,.lg-dsf,.lg-santa-clara{max-height:40px!important}.lg-vallontano,.lg-garbo{max-height:46px!important;opacity:.6!important}.lg-mrp,.lg-obispa{max-height:21px!important}.lg-soprano,.lg-comabe{max-height:21px!important}.lg-sicredi,.lg-cinex{max-height:27px!important}.lg-sicredi,.lg-introduce,.lg-planeta-agua{opacity:.7!important}
-.wm{font-weight:700;color:#222;opacity:.45;white-space:nowrap;text-align:center;line-height:1;transform:scale(.6)}
+/* Logos da faixa: silhuetas na mesma cor (logos/faixa) e tamanho por peso visual (largura/altura no script) */
+.clients{--s:1}
+.logo-item{flex:none;height:52px;margin:0 28px;display:flex;align-items:center;justify-content:center}
+.logo-item .lg{display:block;width:calc(var(--w) * var(--s) * 1px);height:calc(var(--h) * var(--s) * 1px);max-width:none;opacity:.55;transition:opacity .3s}
+.logo-item:hover .lg{opacity:.95}
 
 /* TRÍADE */
 .triade{margin-top:110px;padding-top:80px;border-top:1px solid rgba(249,243,227,.2);position:relative}
@@ -439,7 +439,8 @@ footer .links a:hover{color:var(--orange)}
   .wa-fab.hide{opacity:0;transform:scale(.8);pointer-events:none}
   .crow{padding-inline:20px;flex-direction:column;align-items:start;gap:14px}
   .marquee{width:100%}
-  .logo-item{width:110px;height:36px;margin:0 16px}
+  .clients{--s:.78}
+  .logo-item{height:42px;margin:0 20px}
   .tab{min-height:auto}.tab h3{margin-top:34px;font-size:40px}
   .mplay span{width:58px;height:58px}
   .mplay{font-size:0;gap:0}
@@ -973,19 +974,35 @@ footer .links a:hover{color:var(--orange)}
 
 /* Faixa de clientes */
 (function(){
+/* [arquivo em logos/faixa, nome, largura, altura]: tamanhos calculados por peso visual (área x densidade) */
 const L=[
- ['sicredi','Sicredi'],['santa-clara','Santa Clara'],['zen','Zen Design'],['soprano','Soprano'],['cinex','Cinex'],['introduce','Introduce'],['cfl','CFL Construtora'],
- ['planeta-agua','Planeta Água'],['neomot','Neomot'],['obispa','Obispa'],
- ['vallontano','Vallontano'],['garbo','Garbo Enologia Criativa'],['comabe','Comabe'],['dsf','DSF Advogados'],['souto-correa','Souto Correa Advogados'],['mrp','MRP Construtora','svg']
+ ['sicredi','Sicredi',119,29],
+ ['santa-clara','Santa Clara',81,41],
+ ['zen','Zen Design',96,35],
+ ['soprano','Soprano',117,18],
+ ['tramarin','Tramarin',101,49],
+ ['cinex','Cinex',104,28],
+ ['introduce','Introduce',100,37],
+ ['ampf','AMPF',68,47],
+ ['cfl','CFL Construtora',71,32],
+ ['planeta-agua','Planeta Água',87,36],
+ ['grau','Grau',112,21],
+ ['neomot','Neomot',105,32],
+ ['obispa','Obispa',119,20],
+ ['marca-quadrado','',37,37],
+ ['vallontano','Vallontano',71,48],
+ ['garbo','Garbo Enologia Criativa',54,49],
+ ['tazza','Tazza Enologia Autoral',92,36],
+ ['tubastico','Tubástico',139,19],
+ ['comabe','Comabe',97,18],
+ ['dsf','DSF Advogados',83,44],
+ ['marca-v','',36,41],
+ ['souto-correa','Souto Correa Advogados',116,35],
+ ['mrp','MRP Construtora',98,20]
 ];
-/* Wordmarks provisórios: trocar por logos oficiais (PNG em /logos com o mesmo nome) */
-const WM={
- vida:'<div class="wm" style="font-size:28px;font-weight:800">vida<span style="font-weight:400"> farmácias</span></div>',
- obispa:'<div class="wm" style="font-size:32px;font-weight:800;letter-spacing:-.03em">obispa</div>',
-};
 function item(l){
-  if(l[0]) return `<div class="logo-item" title="${l[1]}"><img class="lg lg-${l[0]}" src="logos/${l[0]}.${l[2]||'png'}" alt="${l[1]}"></div>`;
-  return `<div class="logo-item" title="${l[1]}">${WM[l[2]]}</div>`;
+  const t=l[1]?` title="${l[1]}"`:'';
+  return `<div class="logo-item"${t}><img class="lg" src="logos/faixa/${l[0]}.png" alt="${l[1]}" width="${l[2]}" height="${l[3]}" style="--w:${l[2]};--h:${l[3]}" decoding="async"></div>`;
 }
 const fill=(id,arr)=>{const h=arr.map(item).join('');document.getElementById(id).innerHTML=h+h;};
 fill('row1',L);
