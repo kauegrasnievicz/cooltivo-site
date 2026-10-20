@@ -247,9 +247,9 @@ nav .btn{padding:11px 20px;font-size:14px}
 .c .ico{position:absolute;right:28px;top:28px;height:26px;width:36px;color:var(--orange)}
 
 /* CASES */
-.cases{background:var(--green-strong);color:var(--cream);padding:120px 0 110px;overflow:hidden}
-.cases .head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:50px}
-.cases h2{font-size:72px;letter-spacing:-.05em}
+.cases{background:var(--green-strong);color:var(--cream);padding:96px 0 84px;overflow:hidden}
+.cases .head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:32px}
+.cases h2{font-size:60px;letter-spacing:-.05em}
 .cases .head p{max-width:400px;color:rgba(249,243,227,.75);font-size:17px}
 .ctrl{display:flex;align-items:center;gap:14px}
 .ctrl button{width:52px;height:52px;border-radius:50%;border:1.5px solid rgba(249,243,227,.4);background:transparent;color:var(--cream);cursor:pointer;display:grid;place-items:center;transition:.2s}
@@ -260,8 +260,8 @@ nav .btn{padding:11px 20px;font-size:14px}
 .track-cases::-webkit-scrollbar{display:none}
 .track-cases.drag{cursor:grabbing;scroll-snap-type:none}
 .track-cases.drag *{pointer-events:none;user-select:none}
-.case{flex:none;width:min(1060px,86vw);scroll-snap-align:start;display:grid;grid-template-columns:1.25fr .75fr;background:var(--green);border-radius:28px;overflow:hidden;min-height:560px}
-.case .txt{padding:44px 44px 40px;display:flex;flex-direction:column;min-width:0}
+.case{flex:none;width:min(1060px,86vw);scroll-snap-align:start;display:grid;grid-template-columns:1.25fr .75fr;background:var(--green);border-radius:28px;overflow:hidden;min-height:0}
+.case .txt{padding:34px 40px 32px;display:flex;flex-direction:column;min-width:0}
 .case .meta{display:flex;justify-content:space-between;align-items:center;gap:16px}
 .case .brandname{font-family:var(--font-display);font-weight:800;font-size:22px;letter-spacing:-.02em}
 .case .brandname{display:flex;align-items:center;gap:12px;min-height:34px}
@@ -270,10 +270,10 @@ nav .btn{padding:11px 20px;font-size:14px}
 .cl-santa-clara,.cl-garbo,.cl-vallontano{height:44px}.cl-soprano{height:20px}.cl-dsf{height:46px}.cl-tazza{height:46px}.cl-zen{height:28px}
 
 .case .seg{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(249,243,227,.7);text-align:right}
-.case h3{font-size:44px;line-height:1;letter-spacing:-.04em;margin:44px 0 18px}
-.case p{font-size:16px;line-height:1.55;color:rgba(249,243,227,.88)}
-.case .nums{display:flex;gap:34px;margin:28px 0 26px;flex-wrap:wrap}
-.case .nums b{display:block;font-family:var(--font-display);font-weight:800;font-size:38px;color:var(--orange);letter-spacing:-.03em;line-height:1}
+.case h3{font-size:36px;line-height:1.02;letter-spacing:-.04em;margin:26px 0 14px}
+.case p{font-size:15.5px;line-height:1.55;color:rgba(249,243,227,.88)}
+.case .nums{display:flex;gap:34px;margin:20px 0 18px;flex-wrap:wrap}
+.case .nums b{display:block;font-family:var(--font-display);font-weight:800;font-size:32px;color:var(--orange);letter-spacing:-.03em;line-height:1}
 .case .nums span{font-size:13px;color:rgba(249,243,227,.75);display:block;margin-top:6px;max-width:170px;line-height:1.3}
 .case .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
 .case .chips span{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:rgba(249,243,227,.12);color:var(--cream)}
@@ -285,10 +285,20 @@ nav .btn{padding:11px 20px;font-size:14px}
 .watch{position:absolute;right:16px;bottom:16px;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:0;background:rgba(18,36,26,.72);backdrop-filter:blur(6px);color:var(--cream);font:700 13px/1 var(--font);cursor:pointer}
 .watch svg{width:12px;height:12px}
 .watch:hover{background:var(--white);color:var(--green-strong)}
-.collab{display:flex;align-items:center;gap:12px;margin:0 0 18px;padding:10px 14px 10px 10px;border:1.5px solid rgba(249,243,227,.22);border-radius:16px;width:fit-content;max-width:100%}
+.collab{display:flex;align-items:center;gap:12px;margin:0 0 16px;padding:10px 14px 10px 10px;border:1.5px solid rgba(249,243,227,.22);border-radius:16px;width:fit-content;max-width:100%}
 .collab .sym{height:26px;width:36px;color:var(--orange);flex:none}
 .collab small{display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(249,243,227,.6)}
 .collab b{display:block;font-size:14px;font-weight:700;color:var(--cream);line-height:1.25}
+@media (min-width:901px) and (max-height:820px){.cases{padding:72px 0 64px}.cases h2{font-size:46px}.cases .head{margin-bottom:20px}.case .txt{padding:26px 34px 24px}.case h3{font-size:30px;margin:16px 0 10px}.case p{font-size:15px;line-height:1.5}.case .nums{margin:12px 0 12px}.case .nums b{font-size:28px}.collab{margin-bottom:12px;padding:8px 12px 8px 8px}.case .chips span{padding:6px 10px;font-size:11px}}
+/* Setas laterais sobre o carrossel: sempre à vista enquanto o card está na tela */
+.cases-stage{position:relative}
+.side-arrow{position:absolute;top:calc(50% - 13px);z-index:5;width:58px;height:58px;margin-top:-29px;border-radius:50%;border:0;background:var(--cream);color:var(--green-strong);display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:opacity .25s,transform .2s,background .2s}
+.side-arrow:hover{background:var(--white);transform:scale(1.06)}
+.side-arrow svg{width:18px;height:18px}
+.side-arrow.prev{left:max(12px,calc((100vw - var(--wrap))/2 + 12px))}
+.side-arrow.next{right:max(12px,calc((100vw - var(--wrap))/2 + 12px))}
+.side-arrow.off{opacity:0;pointer-events:none}
+@media (max-width:900px){.side-arrow{display:none}}
 .cases .hint{margin-top:18px;font-size:13px;color:rgba(249,243,227,.6);display:flex;gap:8px;align-items:center}
 
 /* REDE */
@@ -370,7 +380,7 @@ nav .btn{padding:11px 20px;font-size:14px}
 .cta{background:var(--green);color:var(--cream);padding:130px 0 0;position:relative;overflow:hidden}
 .cta .inner{text-align:center;max-width:1000px;margin:0 auto;position:relative}
 .cta h2{font-size:104px;line-height:.92;letter-spacing:-.05em}
-.cta .lead{margin:28px auto 40px;max-width:640px;opacity:.95}
+.cta .lead{margin:28px auto 40px;max-width:640px;opacity:.95;text-wrap:balance}
 .lead-form{max-width:860px;margin:0 auto;text-align:left;background:rgba(249,243,227,.06);border:1px solid rgba(249,243,227,.18);border-radius:26px;padding:34px}
 .fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px}
 .f{display:flex;flex-direction:column;gap:8px;min-width:0}
@@ -449,6 +459,7 @@ footer .links a:hover{color:var(--orange)}
   .cases .head,.services .head{flex-direction:column;align-items:start;gap:18px}
   .track-cases{scroll-padding-left:20px;padding-inline:20px}
   .case{grid-template-columns:1fr;width:86vw;min-height:0}
+  .track-cases{align-items:flex-start}
   .case .vis{order:-1;min-height:0;aspect-ratio:4/3}
   .case .vis.stat{aspect-ratio:auto;min-height:220px}
   .case .vis.stat b{font-size:56px}
@@ -600,6 +611,9 @@ footer .links a:hover{color:var(--orange)}
       <button type="button" id="next" aria-label="Próximo case"><svg><use href="#chev"/></svg></button>
     </div>
   </div>
+  <div class="cases-stage">
+  <button type="button" class="side-arrow prev off" id="sprev" aria-label="Case anterior"><svg style="transform:scaleX(-1)"><use href="#chev"/></svg></button>
+  <button type="button" class="side-arrow next" id="snext" aria-label="Próximo case"><svg><use href="#chev"/></svg></button>
   <div class="track-cases" id="track" tabindex="0" aria-label="Cases, arraste para o lado">
 
     <article class="case">
@@ -654,8 +668,8 @@ footer .links a:hover{color:var(--orange)}
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-soprano" src="logos/soprano.png" alt="Soprano"></span><span class="seg">Indústria · Presença digital</span></div>
         <h3>Uma gigante da indústria mais nativa no digital.</h3>
-        <p>O desafio foi levar o novo posicionamento da Soprano para o digital, com uma comunicação que coloca as histórias à frente dos produtos: as pessoas, os bastidores e quem usa a marca no dia a dia. O resultado foi um crescimento exponencial de engajamento.</p>
-        <div class="nums"><div><b>Histórias</b><span>à frente dos produtos</span></div><div><b>Pessoas</b><span>como protagonistas da marca</span></div></div>
+        <p>O desafio foi levar o novo posicionamento da Soprano para o digital, com uma comunicação que coloca as histórias à frente dos produtos: as pessoas, os bastidores e quem usa a marca no dia a dia. O resultado foi um crescimento de 257% no engajamento.</p>
+        <div class="nums"><div><b>+257%</b><span>de crescimento no engajamento</span></div><div><b>Pessoas</b><span>como protagonistas da marca</span></div></div>
         <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>Fabu Design e Vitral Filmes</b></span></div>
         <div class="chips"><span>Posicionamento</span><span>Presença digital</span><span>Produção de conteúdo</span></div>
       </div>
@@ -689,12 +703,12 @@ footer .links a:hover{color:var(--orange)}
     <article class="case">
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-garbo" src="logos/garbo.png" alt="Garbo Enologia Criativa"></span><span class="seg">Vinícola · Serra Gaúcha</span></div>
-        <h3>Histórias que vão além do rótulo.</h3>
-        <p>Ajudamos uma das vinícolas mais criativas do Brasil a se posicionar de maneira única nas redes sociais, com direcionamento criativo e uma operação de conteúdo eficiente.</p>
-        <div style="height:24px"></div>
-        
+        <h3>Um clube de vinhos que virou comunidade de marca.</h3>
+        <p>Criamos a estratégia de mídia e de conteúdo orgânico do clube de vinhos de uma das vinícolas mais criativas do Brasil. Mais do que vender assinaturas, o conteúdo construiu uma comunidade em torno da marca e transformou o clube em um motor de clientes apaixonados.</p>
+        <div class="nums"><div><b>R$ 700 mil+</b><span>de receita anual gerada pelo clube de vinhos</span></div><div><b>Comunidade</b><span>de clientes apaixonados pela marca</span></div></div>
+
         <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>Alba Arte</b></span></div>
-        <div class="chips"><span>Posicionamento nas redes</span><span>Direção criativa</span><span>Operação de conteúdo</span></div>
+        <div class="chips"><span>Estratégia de mídia</span><span>Conteúdo orgânico</span><span>Comunidade de marca</span><span>Direção criativa</span></div>
       </div>
       <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/garbo.jpg" aria-label="Filme da Garbo Enologia Criativa"><source src="video/cases/garbo.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/garbo.mp4" data-ig="https://www.instagram.com/reel/DMiEqAKq_YA/"><svg><use href="#play"/></svg>Assistir com som</button></div>
     </article>
@@ -734,6 +748,7 @@ footer .links a:hover{color:var(--orange)}
       </div>
       <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/vino-verace.jpg" aria-label="Vino Verace"><source src="video/cases/vino-verace.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/vino-verace.mp4" data-ig="https://www.instagram.com/p/DN1TI1sZil0/"><svg><use href="#play"/></svg>Assistir com som</button></div>
     </article>
+  </div>
   </div>
   <div class="wrap"><div class="hint"><svg style="width:14px;height:14px"><use href="#chev"/></svg>Arraste para o lado para ver todos os cases</div></div>
 </section>
@@ -815,8 +830,8 @@ footer .links a:hover{color:var(--orange)}
   <div class="wrap">
     <div class="inner">
       <div class="eyebrow" style="justify-content:center">Vamos conversar</div>
-      <h2 style="margin-top:22px">Qual marca vamos <span class="hl">cultivar</span> juntos?</h2>
-      <p class="lead">Conte o momento do seu negócio. A gente começa entendendo o contexto.</p>
+      <h2 style="margin-top:22px">Vamos <span class="hl">cultivar</span> sua marca?</h2>
+      <p class="lead">Conte o momento do seu negócio. Conte conosco para crescer.</p>
       <form class="lead-form" id="leadForm" novalidate>
         <div class="fgrid">
           <label class="f"><span>Nome</span><input id="f-nome" name="nome" type="text" autocomplete="name" required placeholder="Seu nome"></label>
@@ -910,10 +925,12 @@ footer .links a:hover{color:var(--orange)}
   const pad=n=>String(n).padStart(2,'0');
   const step=()=>cards[0].getBoundingClientRect().width+22;
   const idx=()=>Math.min(cards.length-1,Math.round(t.scrollLeft/step()));
-  const upd=()=>{cnt.textContent=pad(idx()+1)+' / '+pad(cards.length)};
+  const sp=document.getElementById('sprev'),sn=document.getElementById('snext');
+  const upd=()=>{const i=idx();cnt.textContent=pad(i+1)+' / '+pad(cards.length);if(sp){sp.classList.toggle('off',i<=0);sn.classList.toggle('off',i>=cards.length-1)}};
   t.addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});
   document.getElementById('next').onclick=()=>t.scrollTo({left:Math.min(idx()+1,cards.length-1)*step(),behavior:'smooth'});
   document.getElementById('prev').onclick=()=>t.scrollTo({left:Math.max(idx()-1,0)*step(),behavior:'smooth'});
+  if(sp){sp.onclick=()=>document.getElementById('prev').click();sn.onclick=()=>document.getElementById('next').click()}
   t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();document.getElementById('next').click()}if(e.key==='ArrowLeft'){e.preventDefault();document.getElementById('prev').click()}});
   let down=false,sx=0,sl=0,moved=false;
   t.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;down=true;moved=false;sx=e.clientX;sl=t.scrollLeft;});
