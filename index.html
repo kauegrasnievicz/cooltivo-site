@@ -260,8 +260,8 @@ nav .btn{padding:11px 20px;font-size:14px}
 .track-cases::-webkit-scrollbar{display:none}
 .track-cases.drag{cursor:grabbing;scroll-snap-type:none}
 .track-cases.drag *{pointer-events:none;user-select:none}
-.case{flex:none;width:min(1060px,86vw);scroll-snap-align:start;display:grid;grid-template-columns:1.25fr .75fr;background:var(--green);border-radius:28px;overflow:hidden;min-height:0}
-.case .txt{padding:34px 40px 32px;display:flex;flex-direction:column;min-width:0}
+.case{flex:none;width:min(1120px,86vw);scroll-snap-align:start;display:grid;grid-template-columns:1.25fr .75fr;background:var(--green);border-radius:28px;overflow:hidden;min-height:0}
+.case .txt{padding:42px 46px 38px;display:flex;flex-direction:column;min-width:0}
 .case .meta{display:flex;justify-content:space-between;align-items:center;gap:16px}
 .case .brandname{font-family:var(--font-display);font-weight:800;font-size:22px;letter-spacing:-.02em}
 .case .brandname{display:flex;align-items:center;gap:12px;min-height:34px}
@@ -270,10 +270,10 @@ nav .btn{padding:11px 20px;font-size:14px}
 .cl-santa-clara,.cl-garbo,.cl-vallontano{height:44px}.cl-soprano{height:20px}.cl-dsf{height:46px}.cl-tazza{height:46px}.cl-zen{height:28px}
 
 .case .seg{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(249,243,227,.7);text-align:right}
-.case h3{font-size:36px;line-height:1.02;letter-spacing:-.04em;margin:26px 0 14px}
-.case p{font-size:15.5px;line-height:1.55;color:rgba(249,243,227,.88)}
-.case .nums{display:flex;gap:34px;margin:20px 0 18px;flex-wrap:wrap}
-.case .nums b{display:block;font-family:var(--font-display);font-weight:800;font-size:32px;color:var(--orange);letter-spacing:-.03em;line-height:1}
+.case h3{font-size:44px;line-height:1;letter-spacing:-.04em;margin:30px 0 16px}
+.case p{font-size:18px;line-height:1.5;max-width:56ch;color:rgba(249,243,227,.88)}
+.case .nums{display:flex;gap:40px;margin:24px 0 22px;flex-wrap:wrap}
+.case .nums b{display:block;font-family:var(--font-display);font-weight:800;font-size:40px;color:var(--orange);letter-spacing:-.03em;line-height:1}
 .case .nums span{font-size:13px;color:rgba(249,243,227,.75);display:block;margin-top:6px;max-width:170px;line-height:1.3}
 .case .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
 .case .chips span{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:rgba(249,243,227,.12);color:var(--cream)}
@@ -289,7 +289,7 @@ nav .btn{padding:11px 20px;font-size:14px}
 .collab .sym{height:26px;width:36px;color:var(--orange);flex:none}
 .collab small{display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(249,243,227,.6)}
 .collab b{display:block;font-size:14px;font-weight:700;color:var(--cream);line-height:1.25}
-@media (min-width:901px) and (max-height:820px){.cases{padding:72px 0 64px}.cases h2{font-size:46px}.cases .head{margin-bottom:20px}.case .txt{padding:26px 34px 24px}.case h3{font-size:30px;margin:16px 0 10px}.case p{font-size:15px;line-height:1.5}.case .nums{margin:12px 0 12px}.case .nums b{font-size:28px}.collab{margin-bottom:12px;padding:8px 12px 8px 8px}.case .chips span{padding:6px 10px;font-size:11px}}
+@media (min-width:901px) and (max-height:820px){.cases{padding:72px 0 64px}.cases h2{font-size:46px}.cases .head{margin-bottom:20px}.case .txt{padding:28px 40px 26px}.case h3{font-size:36px;margin:16px 0 10px}.case p{font-size:17px;line-height:1.45}.case .nums{margin:14px 0 12px}.case .nums b{font-size:34px}.collab{margin-bottom:12px;padding:8px 12px 8px 8px}.case .chips span{padding:6px 10px;font-size:11px}}
 /* Setas laterais sobre o carrossel: sempre à vista enquanto o card está na tela */
 .cases-stage{position:relative}
 .side-arrow{position:absolute;top:calc(50% - 13px);z-index:5;width:58px;height:58px;margin-top:-29px;border-radius:50%;border:0;background:var(--cream);color:var(--green-strong);display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:opacity .25s,transform .2s,background .2s}
@@ -620,10 +620,10 @@ footer .links a:hover{color:var(--orange)}
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-introduce" src="logos/introduce.png" alt="Introduce"></span><span class="seg">Tecnologia · Cibersegurança B2B</span></div>
         <h3>Recorde de faturamento e um canal de crescimento exponencial.</h3>
-        <p>O desafio era ganhar escala, autoridade e previsibilidade comercial em um mercado técnico e competitivo. Criamos o posicionamento, estruturamos a performance digital e atuamos com consultoria estratégica, conectando marca, conteúdo e geração de demanda.</p>
+        <p>Uma empresa de cibersegurança B2B precisava de escala e previsibilidade comercial. Criamos o posicionamento e conectamos marca, conteúdo e performance para gerar demanda.</p>
         <div class="nums"><div><b>2 anos</b><span>seguidos de recorde de faturamento</span></div><div><b>1.500+</b><span>membros na comunidade Guardiões Digitais</span></div></div>
         <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>Vitral Filmes, Produtora Balsa e Impulse Company</b></span></div>
-        <div class="chips"><span>Consultoria de marketing</span><span>Gestão de projetos</span><span>Presença e performance</span><span>Direção criativa</span></div>
+        <div class="chips"><span>Consultoria de marketing</span><span>Presença e performance</span><span>Direção criativa</span></div>
       </div>
       <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/introduce.jpg" aria-label="Evento Guardiões Digitais da Introduce"><source src="video/cases/introduce.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/introduce.mp4" data-ig="https://www.instagram.com/p/DWZwsjIEgHx/"><svg><use href="#play"/></svg>Assistir com som</button></div>
     </article>
@@ -632,10 +632,10 @@ footer .links a:hover{color:var(--orange)}
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-santa-clara" src="logos/santa-clara.png" alt="Santa Clara"></span><span class="seg">Cooperativa · Programa Plantando o Bem</span></div>
         <h3>1º Concurso de Sustentabilidade Criativa.</h3>
-        <p>O Plantando o Bem leva educação alimentar e hortas orgânicas a escolas do interior gaúcho, com cartilhas e teatro. Só que as hortas não tinham continuidade depois da implantação. Nosso desafio foi reinventar o programa, e assim nasceu o primeiro concurso de sustentabilidade criativa, em que os próprios alunos criam e tocam projetos sustentáveis.</p>
+        <p>As hortas do programa Plantando o Bem não tinham continuidade nas escolas. Reinventamos o programa com um concurso em que os próprios alunos criam e tocam projetos sustentáveis.</p>
         <div class="nums"><div><b>58</b><span>projetos inscritos</span></div><div><b>R$ 35 mil</b><span>em prêmios para alunos e professores</span></div></div>
         <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>Marlon Vieira</b></span></div>
-        <div class="chips"><span>Conceito</span><span>Gestão de projetos</span><span>Comunicação</span><span>Direção criativa</span></div>
+        <div class="chips"><span>Conceito</span><span>Comunicação</span><span>Direção criativa</span></div>
       </div>
       <div class="vis"><div class="award"><span class="medal">TOP</span><span>Top de Marketing ADVB/RS 2024</span></div><video data-auto muted loop playsinline preload="none" poster="video/cases/santa-clara.jpg" aria-label="Plantando o Bem, Santa Clara"><source src="video/cases/santa-clara.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/santa-clara.mp4" data-ig="https://www.instagram.com/p/C1-NUVQs1nO/"><svg><use href="#play"/></svg>Assistir com som</button></div>
     </article>
@@ -644,7 +644,7 @@ footer .links a:hover{color:var(--orange)}
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-zen" src="logos/zen.png" alt="Zen Design"></span><span class="seg">Indústria · Design para a casa</span></div>
         <h3>Uma marca brasileira no Salone del Mobile de Milão.</h3>
-        <p>Levamos a Zen Design pela primeira vez a Milão, no Salone del Mobile 2025, com o lançamento de uma linha exclusiva para pets. A Zen Pet Collection nasce como extensão de um lifestyle em que o pet também expressa quem somos e como vivemos.</p>
+        <p>Levamos a Zen Design pela primeira vez ao Salone del Mobile, em Milão, para lançar a Zen Pet Collection, uma linha exclusiva para pets.</p>
         <div class="nums"><div><b>1ª vez</b><span>da marca em Milão</span></div><div><b>2025</b><span>lançamento da Zen Pet Collection</span></div></div>
         <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>David Schwab</b></span></div>
         <div class="chips"><span>Direção criativa</span><span>Lançamento</span><span>Conteúdo</span></div>
@@ -655,11 +655,11 @@ footer .links a:hover{color:var(--orange)}
     <article class="case">
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-neomot" src="logos/neomot.png" alt="Neomot"></span><span class="seg">Tecnologia · Prédios inteligentes</span></div>
-        <h3>Muito além do elevador: um ecossistema para prédios inteligentes.</h3>
-        <p>Reconhecida por elevadores, a Neomot precisava mostrar ao mercado que ia além disso e oferecia uma visão de ecossistema de tecnologia para prédios inteligentes. Unimos um time de especialistas e, depois da imersão e do diagnóstico, conduzimos o workshop de posicionamento, a direção criativa e o refresh da identidade. Também entregamos o plano de go-to-market para levar a nova mensagem ao mercado.</p>
+        <h3>Muito além do elevador.</h3>
+        <p>Conhecida por elevadores, a Neomot precisava ser vista como um ecossistema de tecnologia. Conduzimos imersão, workshop de posicionamento, refresh da identidade e plano de go-to-market.</p>
         <div class="nums"><div><b>Imersão</b><span>diagnóstico e workshop de posicionamento</span></div><div><b>GTM</b><span>plano de go-to-market</span></div></div>
         <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>Marlon Vieira, Luis Fernando Menti, Sérgio Smidt, Claudia Schroeder e Studio Mateus Araújo</b></span></div>
-        <div class="chips"><span>Reposicionamento</span><span>Workshop</span><span>Identidade visual</span><span>Go-to-market</span></div>
+        <div class="chips"><span>Reposicionamento</span><span>Identidade visual</span><span>Go-to-market</span></div>
       </div>
       <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/neomot.jpg" aria-label="Filme institucional da Neomot"><source src="video/cases/neomot.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/neomot.mp4" data-ig="https://www.instagram.com/cooltivoestudio/"><svg><use href="#play"/></svg>Assistir com som</button></div>
     </article>
@@ -668,7 +668,7 @@ footer .links a:hover{color:var(--orange)}
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-soprano" src="logos/soprano.png" alt="Soprano"></span><span class="seg">Indústria · Presença digital</span></div>
         <h3>Uma gigante da indústria mais nativa no digital.</h3>
-        <p>O desafio foi levar o novo posicionamento da Soprano para o digital, com uma comunicação que coloca as histórias à frente dos produtos: as pessoas, os bastidores e quem usa a marca no dia a dia. O resultado foi um crescimento de 257% no engajamento.</p>
+        <p>Levamos o novo posicionamento da Soprano para o digital, com as pessoas à frente dos produtos: bastidores, equipe e quem usa a marca no dia a dia.</p>
         <div class="nums"><div><b>+257%</b><span>de crescimento no engajamento</span></div><div><b>Pessoas</b><span>como protagonistas da marca</span></div></div>
         <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>Fabu Design e Vitral Filmes</b></span></div>
         <div class="chips"><span>Posicionamento</span><span>Presença digital</span><span>Produção de conteúdo</span></div>
@@ -680,7 +680,7 @@ footer .links a:hover{color:var(--orange)}
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-dsf" src="logos/dsf.png" alt="DSF Advogados"></span><span class="seg">Advocacia · Posicionamento digital</span></div>
         <h3>Recorde em geração de leads e posicionamento digital.</h3>
-        <p>Entre os 3 escritórios mais lembrados e admirados do Rio Grande do Sul, a DSF Advogados precisava levar essa reputação para o digital e transformá-la em novos negócios. Criamos verticais de conteúdo a partir das expertises do escritório, dando voz aos especialistas de cada área de atuação.</p>
+        <p>Um dos escritórios mais admirados do RS precisava transformar reputação em negócios no digital. Criamos verticais de conteúdo que dão voz aos especialistas de cada área.</p>
         <div class="nums"><div><b>Top 3</b><span>entre os escritórios mais lembrados e admirados do RS</span></div><div><b>Recorde</b><span>em geração de leads</span></div></div>
         <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>Impulse Company e Berrô Strategy</b></span></div>
         <div class="chips"><span>Posicionamento digital</span><span>Verticais de conteúdo</span><span>Geração de leads</span></div>
@@ -692,7 +692,7 @@ footer .links a:hover{color:var(--orange)}
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-zen" src="logos/zen.png" alt="Zen Design"><em>+ Ana Hickmann</em></span><span class="seg">Indústria · Expo Revestir</span></div>
         <h3>Sua Casa Veste Zen: moda e arquitetura no mesmo lugar.</h3>
-        <p>Com o conceito de posicionamento Sua Casa Veste Zen, que conecta a inspiração da moda à arquitetura, levamos a campanha estrelada por Ana Hickmann até a Expo Revestir e transformamos a presença da marca em uma experiência de marca e de conteúdo.</p>
+        <p>O conceito Sua Casa Veste Zen conecta moda e arquitetura. Levamos a campanha com Ana Hickmann à Expo Revestir e transformamos a presença na feira em experiência e conteúdo.</p>
         <div class="nums"><div><b>Ana Hickmann</b><span>rosto da campanha</span></div><div><b>Expo Revestir</b><span>experiência de marca e conteúdo</span></div></div>
         
         <div class="chips"><span>Posicionamento</span><span>Campanha</span><span>Experiência de marca</span></div>
@@ -704,11 +704,11 @@ footer .links a:hover{color:var(--orange)}
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-garbo" src="logos/garbo.png" alt="Garbo Enologia Criativa"></span><span class="seg">Vinícola · Serra Gaúcha</span></div>
         <h3>Um clube de vinhos que virou comunidade de marca.</h3>
-        <p>Criamos a estratégia de mídia e de conteúdo orgânico do clube de vinhos de uma das vinícolas mais criativas do Brasil. Mais do que vender assinaturas, o conteúdo construiu uma comunidade em torno da marca e transformou o clube em um motor de clientes apaixonados.</p>
+        <p>Criamos a estratégia de mídia e conteúdo orgânico do clube de vinhos da Garbo, que virou uma comunidade de marca e um motor de clientes apaixonados.</p>
         <div class="nums"><div><b>R$ 700 mil+</b><span>de receita anual gerada pelo clube de vinhos</span></div><div><b>Comunidade</b><span>de clientes apaixonados pela marca</span></div></div>
 
         <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>Alba Arte</b></span></div>
-        <div class="chips"><span>Estratégia de mídia</span><span>Conteúdo orgânico</span><span>Comunidade de marca</span><span>Direção criativa</span></div>
+        <div class="chips"><span>Estratégia de mídia</span><span>Conteúdo orgânico</span><span>Comunidade de marca</span></div>
       </div>
       <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/garbo.jpg" aria-label="Filme da Garbo Enologia Criativa"><source src="video/cases/garbo.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/garbo.mp4" data-ig="https://www.instagram.com/reel/DMiEqAKq_YA/"><svg><use href="#play"/></svg>Assistir com som</button></div>
     </article>
@@ -717,7 +717,7 @@ footer .links a:hover{color:var(--orange)}
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-vallontano" src="logos/vallontano.png" alt="Vallontano"></span><span class="seg">Vinícola · Serra Gaúcha</span></div>
         <h3>Uma imagem à altura do vinho.</h3>
-        <p>Construímos a estratégia de posicionamento da comunicação e do conteúdo da Vallontano e fazemos a gestão da presença digital da marca. Nas produções, a direção criativa e de arte é nossa, o que garante um acervo de imagens consistente para usar em todos os canais.</p>
+        <p>Definimos o posicionamento da comunicação e cuidamos da presença digital da Vallontano. Com direção criativa própria, cada produção gera imagens consistentes para todos os canais.</p>
         <div class="nums"><div><b>Foto + filme</b><span>em uma única produção</span></div></div>
         <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>Vitral Filmes e Alba Arte</b></span></div>
         <div class="chips"><span>Posicionamento</span><span>Presença digital</span><span>Direção criativa</span></div>
@@ -730,7 +730,7 @@ footer .links a:hover{color:var(--orange)}
       <div class="txt">
         <div class="meta"><span class="brandname">Vino Verace</span><span class="seg">E-commerce · Vinhos premium</span></div>
         <h3>De R$ 20 mil para R$ 672 mil no mês.</h3>
-        <p>Um e-commerce com mais de 1.000 rótulos de 30 países precisava crescer sem competir só por preço. Deixamos de tratar a marca como uma loja que vive de conteúdo de terceiros e criamos uma cultura de comunicação focada em valor de marca, integrada a campanhas mensais em Google Ads, Meta Ads, e-mail, WhatsApp e CRM.</p>
+        <p>Um e-commerce de vinhos precisava crescer sem competir só por preço. Criamos uma comunicação focada em valor de marca, integrada a campanhas em Google, Meta, e-mail, WhatsApp e CRM.</p>
         <div class="nums"><div><b>R$ 672 mil</b><span>de faturamento em um único mês</span></div><div><b>1.000+</b><span>rótulos de 30 países</span></div></div>
         <div class="collab"><svg class="sym"><use href="#sym"/></svg><span><small>Collab · Ecossistema Cooltivo</small><b>Impulse Company e Balsa Produtora</b></span></div>
         <div class="chips"><span>Consultoria de marketing</span><span>Presença e performance</span><span>Direção criativa</span></div>
