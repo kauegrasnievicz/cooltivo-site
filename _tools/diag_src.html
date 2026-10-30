@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Diagnóstico de marca · Cooltivo Estúdio</title>
+<meta name="description" content="Responda ao diagnóstico de marca da Cooltivo: passado, presente e futuro do seu negócio, em cerca de 10 minutos.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="img/favicon.svg">
+<link rel="stylesheet" href="cases/cases.css">
+<style>
+/* Diagnóstico: uma pergunta por tela, avançando conforme a pessoa responde */
+html,body{height:100%}
+body{background:var(--green-strong);color:var(--cream);overflow-x:hidden}
+.dg-top{position:fixed;left:0;right:0;top:0;z-index:10;padding-top:env(safe-area-inset-top,0px);background:linear-gradient(var(--green-strong) 70%,rgba(29,58,42,0))}
+.dg-top .wrap{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.dg-sec{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-soft);text-align:right}
+.dg-sec b{color:var(--cream);font-weight:700}
+.dg-bar{position:fixed;left:0;right:0;top:calc(76px + env(safe-area-inset-top,0px));height:3px;background:rgba(249,243,227,.12);z-index:10}
+.dg-bar i{display:block;height:100%;width:0;background:var(--green-soft);transition:width .5s ease}
+main.dg{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:120px 0 120px}
+main.dg .wrap{width:100%}
+.q{max-width:820px;animation:qin .45s cubic-bezier(.2,.7,.2,1) both}
+.q.back{animation-name:qinb}
+@keyframes qin{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes qinb{from{opacity:0;transform:translateY(-28px)}to{opacity:1;transform:none}}
+.q .num{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--green-soft);margin-bottom:16px}
+.q .num svg{width:12px;height:12px}
+.q h1,.q h2{font-size:clamp(30px,4vw,54px);line-height:1.04;letter-spacing:-.04em}
+.q h1 span,.q h2 span{color:var(--green-soft)}
+.q .help{font-size:clamp(17px,1.6vw,20px);line-height:1.5;color:rgba(249,243,227,.78);margin-top:16px;max-width:38em}
+.q .field{margin-top:34px}
+.q input[type=text],.q input[type=email],.q input[type=tel],.q textarea{width:100%;font:500 clamp(20px,2.2vw,28px)/1.35 var(--font);color:var(--cream);background:transparent;border:0;border-bottom:2px solid rgba(249,243,227,.35);padding:10px 0;outline:none;resize:none;transition:border-color .2s}
+.q textarea{min-height:120px}
+.q input::placeholder,.q textarea::placeholder{color:rgba(249,243,227,.35)}
+.q input:focus,.q textarea:focus{border-color:var(--green-soft)}
+.opts{display:grid;gap:10px;margin-top:30px;max-width:620px}
+.opts.cols{grid-template-columns:repeat(2,minmax(0,1fr));max-width:820px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;font:600 18px/1.3 var(--font);color:var(--cream);background:rgba(249,243,227,.07);border:1.5px solid rgba(249,243,227,.25);border-radius:14px;padding:13px 16px;cursor:pointer;transition:background .15s,border-color .15s,transform .15s}
+.opt:hover{background:rgba(249,243,227,.13);border-color:rgba(249,243,227,.5)}
+.opt .k{flex:none;width:28px;height:28px;border-radius:7px;border:1.5px solid rgba(249,243,227,.4);display:grid;place-items:center;font-size:13px;font-weight:800}
+.opt[aria-pressed="true"]{background:var(--green-soft);color:var(--green-strong);border-color:var(--green-soft)}
+.opt[aria-pressed="true"] .k{background:var(--green-strong);color:var(--cream);border-color:var(--green-strong)}
+.opt.flash{transform:scale(.98)}
+.scale{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.scale .opt{width:56px;height:56px;justify-content:center;padding:0;font-size:19px}
+.scale-l{display:flex;justify-content:space-between;max-width:640px;margin-top:10px;font-size:13px;color:rgba(249,243,227,.6)}
+.other{margin-top:12px;max-width:620px}
+.other input{font-size:18px!important}
+.act{display:flex;align-items:center;gap:16px;margin-top:34px;flex-wrap:wrap}
+.act .btn{background:var(--green-soft);color:var(--green-strong)}
+.act .btn:hover{background:#fff}
+.act .hint{font-size:14px;color:rgba(249,243,227,.6)}
+.act .hint kbd{font:700 12px var(--font);border:1px solid rgba(249,243,227,.4);border-radius:5px;padding:2px 6px}
+.err{margin-top:14px;font-size:15px;font-weight:600;color:#f3b4a6}
+.nav-q{position:fixed;right:max(20px,env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:10;display:flex;gap:6px}
+.nav-q button{width:46px;height:46px;border-radius:12px;border:1.5px solid rgba(249,243,227,.35);background:rgba(29,58,42,.8);color:var(--cream);cursor:pointer;display:grid;place-items:center}
+.nav-q button:hover:not(:disabled){background:var(--cream);color:var(--green-strong)}
+.nav-q button:disabled{opacity:.3;cursor:default}
+.nav-q svg{width:14px;height:14px}
+.parts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:40px;max-width:820px}
+.parts div{border-top:2px solid var(--green-soft);padding-top:12px}
+.parts b{display:block;font-family:var(--font-display);font-size:20px;letter-spacing:-.02em}
+.parts span{font-size:14px;color:rgba(249,243,227,.7)}
+.sec-intro .tag{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-soft);border:1px solid rgba(169,200,179,.5);border-radius:999px;padding:6px 12px;margin-bottom:22px}
+.done .send{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.done .btn-line-inv{padding:16px 24px}
+.sum{margin-top:40px;max-width:820px;border-top:1px solid var(--line-inv)}
+.sum details{border-bottom:1px solid var(--line-inv)}
+.sum summary{cursor:pointer;padding:18px 0;font-weight:700;font-size:16px;color:var(--green-soft)}
+.sum pre{white-space:pre-wrap;font:15px/1.6 var(--font);color:rgba(249,243,227,.85);padding-bottom:20px}
+.ok{margin-top:16px;font-size:14px;color:var(--green-soft);min-height:1.2em}
+@media (max-width:700px){
+  .opts.cols{grid-template-columns:minmax(0,1fr)}
+  .parts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .scale .opt{width:44px;height:44px;font-size:16px}
+  .act .hint{display:none}
+  main.dg{align-items:flex-start;padding-top:110px}
+  .opt{font-size:16px}
+}
+</style>
+</head>
+<body>
+SVGDEFS
+<header class="dg-top"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="Cooltivo Estúdio, página inicial"><svg class="sym"><use href="#sym"/></svg><b>cooltivo</b><span>estúdio</span></a>
+  <div class="dg-sec" id="sec" aria-live="polite"></div>
+</div></header>
+<div class="dg-bar" aria-hidden="true"><i id="bar"></i></div>
+<main class="dg"><div class="wrap" id="stage"></div></main>
+<div class="nav-q"><button type="button" id="prevQ" aria-label="Pergunta anterior"><svg style="transform:rotate(-90deg)"><use href="#chev"/></svg></button><button type="button" id="nextQ" aria-label="Próxima pergunta"><svg style="transform:rotate(90deg)"><use href="#chev"/></svg></button></div>
+
+<script>
+/* ---------- Roteiro do diagnóstico ---------- */
+const SECS={sobre:'Sobre você',passado:'Passado · valores',presente:'Presente · dores',futuro:'Futuro · visão',mkt:'Marketing hoje',fim:'Contato'};
+const Q=[
+ {t:'intro'},
+ {t:'section',s:'sobre',title:'Primeiro, <span>quem é você</span> e a empresa.',help:'Algumas perguntas rápidas para contextualizar.'},
+ {id:'nome',s:'sobre',t:'text',title:'Qual é o seu nome?',ph:'Seu nome',req:1},
+ {id:'cargo',s:'sobre',t:'text',title:'E o seu cargo na empresa, {nome}?',ph:'Ex.: sócio, diretor, gerente de marketing',req:1},
+ {id:'empresa',s:'sobre',t:'text',title:'Qual é o nome da empresa?',ph:'Nome da empresa',req:1},
+ {id:'segmento',s:'sobre',t:'choice',title:'Em qual segmento a {empresa} atua?',opts:['Indústria','Agronegócio','Varejo e e-commerce','Vinícola, alimentos e bebidas','Serviços B2B','Saúde','Construção e imobiliário','Outro'],other:1,req:1},
+ {id:'tempo',s:'sobre',t:'choice',title:'Há quanto tempo a empresa existe?',opts:['Menos de 3 anos','De 3 a 10 anos','De 10 a 30 anos','Mais de 30 anos'],req:1},
+ {id:'porte',s:'sobre',t:'choice',title:'Quantas pessoas trabalham na empresa?',opts:['Até 10','De 11 a 50','De 51 a 200','Mais de 200'],req:1},
+ {id:'fat',s:'sobre',t:'choice',title:'Qual é o faturamento anual?',help:'Serve só para dimensionarmos a conversa.',opts:['Até R$ 1 milhão','De R$ 1 a 5 milhões','De R$ 5 a 10 milhões','De R$ 10 a 25 milhões','Acima de R$ 25 milhões','Prefiro não informar'],req:1},
+
+ {t:'section',s:'passado',tag:'Parte 1 de 4 · Passado',title:'De onde a {empresa} <span>vem.</span>',help:'Marcas que resistem ao tempo sabem o que não pode mudar. Vamos começar pela origem e pelos valores.'},
+ {id:'origem',s:'passado',t:'long',title:'Como a empresa nasceu?',help:'Quem fundou, por quê, e o que existia de especial no começo.',ph:'Conte a história com suas palavras',req:1},
+ {id:'valores',s:'passado',t:'multi',max:3,title:'Quais valores trouxeram a empresa até aqui?',help:'Escolha até 3.',opts:['Qualidade','Tradição e família','Inovação','Atendimento próximo','Confiança','Preço justo','Sustentabilidade','Coragem','Trabalho duro','Outro'],other:1,req:1},
+ {id:'orgulho',s:'passado',t:'long',title:'Uma conquista de que vocês se orgulham.',ph:'Um marco, um cliente, um momento',req:0},
+ {id:'essencia',s:'passado',t:'long',title:'O que nunca pode mudar na {empresa}, mesmo que tudo mude?',help:'Essa resposta costuma revelar a essência da marca.',ph:'O que precisa ser preservado',req:1},
+
+ {t:'section',s:'presente',tag:'Parte 2 de 4 · Presente',title:'O que <span>trava</span> o crescimento hoje.',help:'Sem filtro: quanto mais clara a dor, melhor o diagnóstico.'},
+ {id:'dores',s:'presente',t:'multi',max:3,title:'Quais são as principais dores do negócio hoje?',help:'Escolha até 3.',opts:['Guerra de preço','Clientes não percebem o nosso valor','Marca pouco conhecida','Vendas imprevisíveis','Dificuldade de atrair clientes novos','Comunicação inconsistente','Marca desatualizada','Time comercial sem argumentos','Dependência de poucos clientes','Outra'],other:1,cols:1,req:1},
+ {id:'trava',s:'presente',t:'long',title:'Com suas palavras: o que mais trava o crescimento hoje?',ph:'Descreva o principal problema',req:1},
+ {id:'porque',s:'presente',t:'long',title:'Por que um cliente escolhe a {empresa} hoje?',ph:'O motivo real, na visão de quem compra',req:1},
+ {id:'concorrentes',s:'presente',t:'long',title:'Quem são os principais concorrentes, e por que alguém escolheria eles?',ph:'Nomes e motivos',req:0},
+ {id:'nota_marca',s:'presente',t:'scale',title:'De 0 a 10, o quanto a marca de hoje representa o que a empresa é de verdade?',lo:'Nada a ver',hi:'Representa muito bem',req:1},
+
+ {t:'section',s:'futuro',tag:'Parte 3 de 4 · Futuro',title:'Para onde a {empresa} <span>quer ir.</span>',help:'A marca de hoje precisa abrir caminho para o negócio de amanhã.'},
+ {id:'visao',s:'futuro',t:'long',title:'Onde você quer que a empresa esteja daqui a 5 anos?',ph:'Tamanho, mercados, reputação, o que for importante',req:1},
+ {id:'objetivo',s:'futuro',t:'choice',title:'Qual é o principal objetivo para os próximos 12 meses?',opts:['Crescer as vendas','Entrar em novos mercados','Lançar um produto ou uma nova marca','Reposicionar a marca','Sair da guerra de preço e aumentar a margem','Profissionalizar o marketing','Preparar a próxima geração (sucessão)','Outro'],other:1,cols:1,req:1},
+ {id:'lembrada',s:'futuro',t:'text',title:'Em 3 palavras, como você quer que a marca seja lembrada?',ph:'Ex.: confiável, inovadora, próxima',req:1},
+ {id:'sucesso',s:'futuro',t:'long',title:'Daqui a um ano, o que precisa ter acontecido para você dizer que valeu a pena?',ph:'Um resultado concreto',req:1},
+
+ {t:'section',s:'mkt',tag:'Parte 4 de 4 · Marketing hoje',title:'Como a marca é <span>cuidada hoje.</span>',help:'Para entender o ponto de partida e o investimento atual em marketing, comunicação e marca.'},
+ {id:'quem',s:'mkt',t:'choice',title:'Quem cuida do marketing hoje?',opts:['Ninguém dedicado','Eu mesmo, junto com outras funções','Um time interno','Agência ou freelancers','Time interno e agência'],req:1},
+ {id:'invest',s:'mkt',t:'choice',title:'Quanto a empresa investe por mês em marketing hoje?',help:'Somando equipe, agência, produção e mídia.',opts:['Até R$ 5 mil','De R$ 5 a 15 mil','De R$ 15 a 30 mil','De R$ 30 a 60 mil','Acima de R$ 60 mil','Não sei dizer'],req:1},
+ {id:'canais',s:'mkt',t:'multi',title:'Quais canais a empresa usa hoje?',help:'Marque todos que se aplicam.',opts:['Instagram','LinkedIn','Site','Google Ads','Meta Ads','E-mail marketing','WhatsApp ou CRM','Feiras e eventos','Imprensa','Representantes ou força de vendas','Nenhum'],cols:1,req:1},
+ {id:'materiais',s:'mkt',t:'multi',title:'O que já existe de marca?',help:'Marque todos que se aplicam.',opts:['Logo','Manual de identidade visual','Posicionamento ou plataforma de marca definida','Site atualizado','Banco de fotos e vídeos próprios','Apresentação institucional','Nenhum desses'],cols:1,req:1},
+ {id:'nota_mkt',s:'mkt',t:'scale',title:'De 0 a 10, como você avalia os resultados do marketing hoje?',lo:'Muito ruins',hi:'Excelentes',req:1},
+ {id:'invest_futuro',s:'mkt',t:'choice',title:'Quanto você pretende investir na construção da marca nos próximos 12 meses?',opts:['Até R$ 30 mil','De R$ 30 a 80 mil','De R$ 80 a 150 mil','Acima de R$ 150 mil','Ainda não defini'],req:1},
+ {id:'quando',s:'mkt',t:'choice',title:'Quando você quer começar?',opts:['Agora, é prioridade','Nos próximos 3 meses','Em 3 a 6 meses','Ainda estou explorando'],req:1},
+
+ {t:'section',s:'fim',title:'Quase lá, <span>{nome}.</span>',help:'Para onde enviamos o diagnóstico e marcamos a reunião de 45 minutos?'},
+ {id:'whats',s:'fim',t:'tel',title:'Qual é o seu WhatsApp?',ph:'(54) 9 0000-0000',req:1},
+ {id:'email',s:'fim',t:'email',title:'E o seu e-mail?',ph:'nome@empresa.com.br',req:1},
+ {t:'done'}
+];
+
+/* ---------- Estado (salvo neste navegador para não perder respostas) ---------- */
+const KEY='cooltivo-diagnostico-v1';
+let A={},i=0;
+try{const s=JSON.parse(localStorage.getItem(KEY)||'{}');A=s.A||{};i=Math.min(s.i||0,Q.length-1)}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify({A,i}))}catch(e){}};
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fill=t=>t.replace(/\{(\w+)\}/g,(_,k)=>esc((A[k]||'').toString().trim()||({nome:'',empresa:'sua empresa'}[k]??'')).trim()).replace(/,\s*\?/,'?').replace(/\s+\?/,'?').replace(/\s+\./,'.');
+const stage=document.getElementById('stage'),bar=document.getElementById('bar'),sec=document.getElementById('sec');
+const answerable=Q.filter(q=>q.id);
+const L='ABCDEFGHIJKLMNOP';
+
+function render(dir){
+  const q=Q[i];
+  const done=answerable.filter(x=>A[x.id]!==undefined&&A[x.id]!==''&&!(Array.isArray(A[x.id])&&!A[x.id].length)).length;
+  bar.style.width=(q.t==='done'?100:Math.round(done/answerable.length*100))+'%';
+  sec.innerHTML=q.s?`<b>${SECS[q.s]}</b>`:'';
+  document.getElementById('prevQ').disabled=i===0;
+  document.getElementById('nextQ').disabled=q.t==='done';
+  let h='';
+  const n=q.id?answerable.indexOf(q)+1:0;
+  const head=!q.title?'':`<div class="num">${n}<svg><use href="#arr"/></svg><span style="opacity:.6">de ${answerable.length}</span></div><h2>${fill(q.title)}</h2>${q.help?`<p class="help">${fill(q.help)}</p>`:''}`;
+  if(q.t==='intro'){
+    h=`<div class="q"><div class="num">Diagnóstico de marca · cerca de 10 minutos</div><h1>Vamos entender a sua marca: <span>passado, presente e futuro.</span></h1>
+      <p class="help">Este diagnóstico prepara a nossa reunião de 45 minutos. Com ele, chegamos entendendo o momento da sua marca e os movimentos necessários para ela crescer.</p>
+      <div class="parts"><div><b>Passado</b><span>Origem e valores</span></div><div><b>Presente</b><span>Dores e desafios</span></div><div><b>Futuro</b><span>Visão e objetivos</span></div><div><b>Marketing hoje</b><span>Ponto de partida</span></div></div>
+      <div class="act"><button class="btn" type="button" data-next>${Object.keys(A).length?'Continuar de onde parei':'Começar'} <svg><use href="#arr"/></svg></button><span class="hint">ou aperte <kbd>Enter ↵</kbd></span></div></div>`;
+  }else if(q.t==='section'){
+    h=`<div class="q sec-intro">${q.tag?`<span class="tag">${q.tag}</span>`:''}<h1>${fill(q.title)}</h1>${q.help?`<p class="help">${fill(q.help)}</p>`:''}
+      <div class="act"><button class="btn" type="button" data-next>Continuar <svg><use href="#arr"/></svg></button><span class="hint">ou aperte <kbd>Enter ↵</kbd></span></div></div>`;
+  }else if(['text','long','tel','email'].includes(q.t)){
+    const v=esc(A[q.id]||'');
+    const inp=q.t==='long'?`<textarea id="inp" rows="3" placeholder="${q.ph||''}">${v}</textarea>`:`<input id="inp" type="${q.t==='text'?'text':q.t}" placeholder="${q.ph||''}" value="${v}" autocomplete="${{nome:'name',empresa:'organization',whats:'tel',email:'email',cargo:'organization-title'}[q.id]||'off'}">`;
+    h=`<div class="q">${head}<div class="field">${inp}</div><p class="err" id="err" hidden></p>
+      <div class="act"><button class="btn" type="button" data-next>OK <svg><use href="#arr"/></svg></button><span class="hint">${q.t==='long'?'<kbd>Shift</kbd> + <kbd>Enter ↵</kbd> para quebrar linha':'aperte <kbd>Enter ↵</kbd>'}</span></div></div>`;
+  }else if(q.t==='choice'||q.t==='multi'){
+    const sel=q.t==='multi'?(A[q.id]||[]):[A[q.id]];
+    const opts=q.opts.map((o,k)=>`<button type="button" class="opt" data-o="${esc(o)}" aria-pressed="${sel.includes(o)}"><span class="k">${L[k]}</span>${esc(o)}</button>`).join('');
+    const oth=q.other?`<div class="other" ${sel.some(s=>/^Outr[oa]$/.test(s))?'':'hidden'} id="othW"><input id="oth" type="text" placeholder="Qual?" value="${esc(A[q.id+'_outro']||'')}"></div>`:'';
+    h=`<div class="q">${head}<div class="opts ${q.cols?'cols':''}">${opts}</div>${oth}<p class="err" id="err" hidden></p>
+      ${q.t==='multi'||q.other?`<div class="act"><button class="btn" type="button" data-next>OK <svg><use href="#arr"/></svg></button><span class="hint">aperte <kbd>Enter ↵</kbd></span></div>`:''}</div>`;
+  }else if(q.t==='scale'){
+    const opts=[...Array(11).keys()].map(k=>`<button type="button" class="opt" data-o="${k}" aria-pressed="${A[q.id]===k}">${k}</button>`).join('');
+    h=`<div class="q">${head}<div class="scale">${opts}</div><div class="scale-l"><span>${q.lo}</span><span>${q.hi}</span></div><p class="err" id="err" hidden></p></div>`;
+  }else if(q.t==='done'){
+    const r=report();
+    h=`<div class="q done"><div class="num">Diagnóstico concluído</div><h1>Obrigado, <span>${esc(A.nome||'')}</span>!</h1>
+      <p class="help">Agora é só enviar o diagnóstico para a Cooltivo. Com ele em mãos, marcamos a reunião de 45 minutos para entender o momento da ${esc(A.empresa||'sua marca')} e os movimentos necessários.</p>
+      <div class="send"><a class="btn btn-soft" id="sendW" href="https://wa.me/5554991000102?text=${encodeURIComponent(r)}" target="_blank" rel="noopener">Enviar pelo WhatsApp <svg><use href="#arr"/></svg></a>
+      <a class="btn btn-line-inv" href="mailto:kaue@cooltivo.com.br?subject=${encodeURIComponent('Diagnóstico de marca · '+(A.empresa||''))}&body=${encodeURIComponent(r)}">Enviar por e-mail</a>
+      <button class="btn btn-line-inv" type="button" id="copy">Copiar respostas</button></div>
+      <p class="ok" id="ok"></p>
+      <div class="sum"><details><summary>Ver minhas respostas</summary><pre>${esc(r.replace(/\*/g,''))}</pre></details></div>
+      <div class="act"><button class="btn btn-line-inv" type="button" id="restart" style="padding:12px 18px;font-size:14px">Começar um novo diagnóstico</button></div></div>`;
+  }
+  stage.innerHTML=h;
+  const qe=stage.querySelector('.q');if(dir<0)qe.classList.add('back');
+  const inp=document.getElementById('inp');if(inp){inp.focus();if(inp.tagName==='TEXTAREA'){inp.selectionStart=inp.value.length;grow(inp);inp.addEventListener('input',()=>grow(inp))}}
+  stage.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',next));
+  stage.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>pick(b)));
+  const oth=document.getElementById('oth');if(oth)oth.addEventListener('input',()=>{A[q.id+'_outro']=oth.value;save()});
+  if(q.t==='done'){
+    document.getElementById('copy').onclick=()=>{const t=report();(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>ok('Respostas copiadas.')).catch(()=>{const d=stage.querySelector('details');d.open=true;const sel=getSelection(),rg=document.createRange();rg.selectNodeContents(stage.querySelector('pre'));sel.removeAllRanges();sel.addRange(rg);ok('Selecionei as respostas: use Ctrl+C ou Cmd+C para copiar.')})};
+    document.getElementById('restart').onclick=()=>{A={};i=0;save();render(-1)};
+  }
+  window.scrollTo(0,0);
+}
+const ok=t=>{document.getElementById('ok').textContent=t};
+const grow=t=>{t.style.height='auto';t.style.height=Math.max(120,t.scrollHeight)+'px'};
+function err(t){const e=document.getElementById('err');if(e){e.textContent=t;e.hidden=false}}
+function pick(b){
+  const q=Q[i],o=b.dataset.o;
+  if(q.t==='scale'){A[q.id]=+o;save();stage.querySelectorAll('.opt').forEach(x=>x.setAttribute('aria-pressed',x===b));b.classList.add('flash');setTimeout(next,260);return}
+  if(q.t==='choice'){
+    A[q.id]=o;save();stage.querySelectorAll('.opt').forEach(x=>x.setAttribute('aria-pressed',x===b));
+    const w=document.getElementById('othW');
+    if(q.other&&/^Outr[oa]$/.test(o)){w.hidden=false;document.getElementById('oth').focus();return}
+    if(w)w.hidden=true;
+    b.classList.add('flash');setTimeout(next,260);return}
+  let s=A[q.id]||[];
+  if(s.includes(o))s=s.filter(x=>x!==o);
+  else{
+    if(/^Nenhum/.test(o))s=[o];else{s=s.filter(x=>!/^Nenhum/.test(x));if(q.max&&s.length>=q.max){err(`Escolha no máximo ${q.max}. Desmarque uma para trocar.`);return}s.push(o)}
+  }
+  A[q.id]=s;save();
+  stage.querySelectorAll('.opt').forEach(x=>x.setAttribute('aria-pressed',s.includes(x.dataset.o)));
+  const w=document.getElementById('othW');if(w){w.hidden=!s.some(x=>/^Outr[oa]$/.test(x));if(!w.hidden&&/^Outr[oa]$/.test(o))document.getElementById('oth').focus()}
+  const e=document.getElementById('err');if(e)e.hidden=true;
+}
+function valid(){
+  const q=Q[i];if(!q.id)return true;
+  const inp=document.getElementById('inp');
+  if(inp){A[q.id]=inp.value.trim();save()}
+  const v=A[q.id];
+  if(q.req&&(v===undefined||v===''||(Array.isArray(v)&&!v.length))){err(q.t==='multi'||q.t==='choice'||q.t==='scale'?'Escolha uma opção para continuar.':'Responda para continuar.');return false}
+  if(q.t==='email'&&!/^\S+@\S+\.\S+$/.test(v)){err('Confira o e-mail: parece incompleto.');return false}
+  if(q.t==='tel'&&v.replace(/\D/g,'').length<10){err('Confira o número com DDD.');return false}
+  return true;
+}
+function next(){if(!valid())return;if(i<Q.length-1){i++;save();render(1)}}
+function prev(){if(i>0){const inp=document.getElementById('inp');if(inp&&Q[i].id){A[Q[i].id]=inp.value.trim()}i--;save();render(-1)}}
+document.getElementById('prevQ').onclick=prev;
+document.getElementById('nextQ').onclick=next;
+document.addEventListener('keydown',e=>{
+  const q=Q[i];
+  if(e.key==='Enter'&&!e.shiftKey&&!e.isComposing){if(e.target.classList&&e.target.classList.contains('opt')){e.preventDefault();next();return}if(e.target.tagName==='BUTTON'||e.target.tagName==='A')return;e.preventDefault();next();return}
+  if((q.t==='choice'||q.t==='multi')&&!/INPUT|TEXTAREA/.test(e.target.tagName)&&e.key.length===1){
+    const k=L.indexOf(e.key.toUpperCase());const b=stage.querySelectorAll('.opt')[k];if(b)pick(b)}
+  if(q.t==='scale'&&!/INPUT|TEXTAREA/.test(e.target.tagName)&&/^[0-9]$/.test(e.key)){const b=stage.querySelectorAll('.opt')[+e.key];if(b)pick(b)}
+});
+
+/* ---------- Relatório: respostas organizadas + leitura inicial ---------- */
+function val(id){const q=Q.find(x=>x.id===id),v=A[id];if(v===undefined||v===''||(Array.isArray(v)&&!v.length))return '—';
+  let t=Array.isArray(v)?v.join(', '):String(v);const o=(A[id+'_outro']||'').trim();if(o)t=t.replace(/\bOutr[oa]\b/,'Outro: '+o);return q&&q.t==='scale'?t+'/10':t}
+function reading(){
+  const dores=A.dores||[],mat=A.materiais||[],can=A.canais||[];
+  const notaM=+(A.nota_marca??5),notaK=+(A.nota_mkt??5);
+  let s=0;
+  s+=notaM*3; s+=notaK*2;
+  s+=Math.min(4,mat.filter(x=>!/^Nenhum/.test(x)).length)*5;
+  s+=({'Ninguém dedicado':0,'Eu mesmo, junto com outras funções':3,'Agência ou freelancers':6,'Um time interno':7,'Time interno e agência':10}[A.quem]||0);
+  s+=Math.min(5,can.filter(x=>x!=='Nenhum').length)*2;
+  const idx=Math.round(Math.min(100,s/0.9));
+  const f=[];
+  const has=(arr,...k)=>k.some(x=>arr.includes(x));
+  if(has(dores,'Guerra de preço','Clientes não percebem o nosso valor','Marca desatualizada','Time comercial sem argumentos')||!mat.includes('Posicionamento ou plataforma de marca definida')||notaM<=6||['Reposicionar a marca','Sair da guerra de preço e aumentar a margem','Lançar um produto ou uma nova marca'].includes(A.objetivo))
+    f.push('Posicionamento (pontual, 6 a 8 semanas): diagnóstico, workshop de co-criação e plataforma de marca');
+  if(has(dores,'Marca pouco conhecida','Comunicação inconsistente','Dificuldade de atrair clientes novos')||can.length<=2||can.includes('Nenhum'))
+    f.push('Presença digital (recorrente, 6 a 12 meses): planejamento, produção de conteúdo e gestão de canais');
+  if(can.length>=4&&notaK<=6||A.invest==='Não sei dizer')
+    f.push('Estratégia de canais (pontual, 4 semanas): papel de cada canal e direcionamento estratégico');
+  if(['Ninguém dedicado','Eu mesmo, junto com outras funções'].includes(A.quem)||A.objetivo==='Profissionalizar o marketing'||has(dores,'Vendas imprevisíveis','Dependência de poucos clientes'))
+    f.push('Consultoria de marketing (formato flexível): planejamento estratégico e acompanhamento semanal');
+  if(!f.length)f.push('Posicionamento como ponto de partida, para confirmar a base antes de ampliar a comunicação');
+  const temp=({'Agora, é prioridade':'alta','Nos próximos 3 meses':'média','Em 3 a 6 meses':'média','Ainda estou explorando':'baixa'}[A.quando]||'—');
+  return {idx,f,temp};
+}
+function report(){
+  const r=reading();
+  const L2=(t,id)=>`*${t}:* ${val(id)}`;
+  return [
+`Olá, Cooltivo! Respondi o diagnóstico de marca e quero agendar a reunião de 45 minutos.`,
+``,
+`*DIAGNÓSTICO DE MARCA · ${(A.empresa||'').toUpperCase()}*`,
+``,
+`*SOBRE*`,L2('Nome','nome'),L2('Cargo','cargo'),L2('Empresa','empresa'),L2('Segmento','segmento'),L2('Tempo de empresa','tempo'),L2('Pessoas','porte'),L2('Faturamento anual','fat'),
+``,
+`*PASSADO · VALORES*`,L2('Como nasceu','origem'),L2('Valores','valores'),L2('Conquista','orgulho'),L2('O que nunca pode mudar','essencia'),
+``,
+`*PRESENTE · DORES*`,L2('Principais dores','dores'),L2('O que mais trava','trava'),L2('Por que escolhem a empresa','porque'),L2('Concorrentes','concorrentes'),L2('A marca representa a empresa','nota_marca'),
+``,
+`*FUTURO · VISÃO*`,L2('Em 5 anos','visao'),L2('Objetivo em 12 meses','objetivo'),L2('Como quer ser lembrada','lembrada'),L2('Sucesso em 1 ano','sucesso'),
+``,
+`*MARKETING HOJE*`,L2('Quem cuida','quem'),L2('Investimento mensal','invest'),L2('Canais','canais'),L2('Materiais de marca','materiais'),L2('Resultados do marketing','nota_mkt'),L2('Investimento em marca (12 meses)','invest_futuro'),L2('Quando quer começar','quando'),
+``,
+`*CONTATO*`,L2('WhatsApp','whats'),L2('E-mail','email'),
+``,
+`*LEITURA INICIAL (automática, para a Cooltivo)*`,
+`Índice de maturidade de marca: ${r.idx}/100`,
+`Urgência: ${r.temp}`,
+`Frentes a explorar na reunião:`,
+...r.f.map(x=>'• '+x)
+].join('\n');
+}
+render(0);
+</script>
+</body>
+</html>
