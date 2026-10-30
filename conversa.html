@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Vamos cultivar sua marca? · Cooltivo Estúdio</title>
-<meta name="description" content="Branding e comunicação digital para empresas que querem crescer sem competir só por preço. Conte o momento do seu negócio e receba um plano para a sua marca.">
+<meta name="description" content="Branding e comunicação digital para empresas que querem crescer sem competir só por preço. Agende uma reunião de diagnóstico de 45 minutos para entender o momento da sua marca e os movimentos necessários.">
 <link rel="icon" href="img/favicon.svg">
 <link rel="stylesheet" href="cases/cases.css">
 <style>
@@ -103,7 +103,7 @@ form.lf{background:var(--cream);color:var(--ink);border-radius:28px;padding:34px
     <div class="lp-eyebrow"><svg class="sym"><use href="#sym"/></svg>Branding e comunicação digital · Made in Serra Gaúcha</div>
     <h1>Sua marca pode vender mais, valer mais e <span>durar mais.</span></h1>
     <p class="sum">Estratégia, branding e comunicação digital para empresas que querem crescer sem competir só por preço. Do posicionamento ao conteúdo que gera demanda.</p>
-    <a class="btn btn-soft" href="#form">Quero um plano para a minha marca <svg><use href="#arr"/></svg></a>
+    <a class="btn btn-soft" href="#form">Agendar diagnóstico de 45 min <svg><use href="#arr"/></svg></a>
     <div class="lp-proof">
       <div><b>100+</b><span>projetos nos últimos 6 anos</span></div>
       <div><b>20+</b><span>parceiros no ecossistema</span></div>
@@ -139,9 +139,9 @@ form.lf{background:var(--cream);color:var(--ink);border-radius:28px;padding:34px
   <div class="wrap grid">
     <div class="side">
       <div class="lp-eyebrow"><svg class="sym"><use href="#sym"/></svg>Vamos conversar</div>
-      <h2 style="margin-top:20px">Vamos <span>cultivar</span> sua marca?</h2>
-      <p>Preencha o formulário e conte o momento do seu negócio. A gente começa entendendo o contexto.</p>
-      <ol><li>Você envia o formulário e a conversa abre no nosso WhatsApp.</li><li>Agendamos uma conversa com o Kauê, estrategista e cofundador.</li><li>Você recebe um plano com os próximos passos para a sua marca.</li></ol>
+      <h2 style="margin-top:20px">Agende um <span>diagnóstico</span> da sua marca.</h2>
+      <p>Uma reunião de diagnóstico de <b>45 minutos</b> para entender o momento atual da sua marca e os movimentos necessários para ela crescer.</p>
+      <ol><li>Você preenche o formulário e a conversa abre no nosso WhatsApp.</li><li>Marcamos a reunião de diagnóstico, de 45 minutos, com o Kauê, estrategista e cofundador.</li><li>Entendemos o momento atual da sua marca e mostramos os movimentos necessários.</li></ol>
     </div>
     <form class="lf" id="lpForm" novalidate>
       <div><label for="l-nome">Nome</label><input id="l-nome" autocomplete="name" required></div>
@@ -152,8 +152,8 @@ form.lf{background:var(--cream);color:var(--ink);border-radius:28px;padding:34px
       <div><label for="l-seg">Segmento</label><select id="l-seg" required><option value="">Selecione</option><option>Indústria</option><option>Agronegócio</option><option>Varejo e e-commerce</option><option>Vinícola, alimentos e bebidas</option><option>Serviços B2B</option><option>Outro</option></select></div>
       <div class="full"><label for="l-int">O que você procura?</label><select id="l-int" required><option value="">Selecione</option><option>Posicionamento e branding</option><option>Comunicação digital e conteúdo</option><option>Os dois</option><option>Ainda não sei, quero conversar</option></select></div>
       <p class="err" id="lErr" hidden>Preencha todos os campos para continuar.</p>
-      <button class="btn" type="submit">Quero conversar com a Cooltivo <svg><use href="#arr"/></svg></button>
-      <p class="note">Ao enviar, a conversa abre no WhatsApp com as suas respostas.</p>
+      <button class="btn" type="submit">Agendar meu diagnóstico <svg><use href="#arr"/></svg></button>
+      <p class="note">Ao enviar, a conversa abre no WhatsApp para combinarmos o melhor horário.</p>
     </form>
   </div>
 </section>
@@ -168,7 +168,7 @@ form.lf{background:var(--cream);color:var(--ink);border-radius:28px;padding:34px
     ids.forEach(id=>{const el=document.getElementById(id),v=el.value.trim(),bad=!v||(el.type==='email'&&!/^\S+@\S+\.\S+$/.test(v));el.classList.toggle('bad',bad);if(bad)ok=false});
     document.getElementById('lErr').hidden=ok;if(!ok){f.querySelector('.bad').focus();return}
     const g=id=>document.getElementById(id).value.trim();
-    const t=`Olá, Cooltivo! Quero um plano para a minha marca.\n\n*Nome:* ${g('l-nome')}\n*WhatsApp:* ${g('l-whats')}\n*E-mail:* ${g('l-email')}\n*Empresa:* ${g('l-empresa')}\n*Faturamento anual:* ${g('l-fat')}\n*Segmento:* ${g('l-seg')}\n*Procuro:* ${g('l-int')}`;
+    const t=`Olá, Cooltivo! Quero agendar a reunião de diagnóstico de 45 minutos.\n\n*Nome:* ${g('l-nome')}\n*WhatsApp:* ${g('l-whats')}\n*E-mail:* ${g('l-email')}\n*Empresa:* ${g('l-empresa')}\n*Faturamento anual:* ${g('l-fat')}\n*Segmento:* ${g('l-seg')}\n*Procuro:* ${g('l-int')}`;
     const url='https://wa.me/5554991000102?text='+encodeURIComponent(t);
     const w=window.open(url,'_blank');if(w){try{w.opener=null}catch(_){}}else location.href=url;
   });
