@@ -7,13 +7,28 @@ Para trocar as fotos da galeria, substitua img/cases/<slug>-1.jpg, -2.jpg e -3.j
 (hoje são quadros tirados dos vídeos de cada case) e rode o script de novo, se mudar o texto.
 A pasta _tools não é publicada no site.
 """
-import html, os, re
+import html, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import seo
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'cases')
 os.makedirs(OUT, exist_ok=True)
 
 # ---------------------------------------------------------------- conteúdo
+SEO = {
+ 'introduce': ('Introduce · Posicionamento e marketing B2B | Case Cooltivo', 'Case Introduce: posicionamento de marca, performance digital e consultoria de marketing em cibersegurança B2B. Dois anos de recorde de faturamento.'),
+ 'soprano': ('Soprano · Posicionamento e presença digital | Case Cooltivo', 'Case Soprano: o novo posicionamento da indústria gaúcha levado ao digital, com as pessoas à frente dos produtos. Mais de 400% de crescimento no engajamento.'),
+ 'santa-clara': ('Santa Clara · Programa Plantando o Bem | Case Cooltivo', 'Case Santa Clara: conceito, comunicação e direção criativa do programa Plantando o Bem, em que os alunos criam e tocam projetos sustentáveis.'),
+ 'zen-design-milao': ('Zen Design em Milão · Zen Pet Collection | Case Cooltivo', 'Case Zen Design: direção criativa e conteúdo da primeira participação da marca gaúcha em Milão, no lançamento da Zen Pet Collection.'),
+ 'dsf-advogados': ('DSF Advogados · Marketing jurídico digital | Case Cooltivo', 'Case DSF Advogados: verticais de conteúdo e posicionamento digital que levaram a reputação de um dos escritórios mais admirados do RS para o digital.'),
+ 'neomot': ('Neomot · Reposicionamento de marca | Case Cooltivo', 'Case Neomot: reposicionamento, identidade visual e go-to-market de uma marca de elevadores que virou ecossistema de tecnologia para prédios inteligentes.'),
+ 'zen-design-expo-revestir': ('Zen Design + Ana Hickmann · Expo Revestir | Case Cooltivo', 'Case Zen Design: a campanha com Ana Hickmann levada à Expo Revestir como experiência de marca, estande e produção de conteúdo.'),
+ 'garbo': ('Garbo · Clube de vinhos e comunidade de marca | Case Cooltivo', 'Case Garbo Enologia Criativa: estratégia de mídia e conteúdo orgânico que transformou o clube de vinhos da vinícola da Serra Gaúcha em comunidade de marca.'),
+ 'vallontano': ('Vallontano · Comunicação para vinícola | Case Cooltivo', 'Case Vallontano: posicionamento da comunicação, presença digital e produções com direção criativa própria para a vinícola do Vale dos Vinhedos.'),
+ 'vino-verace': ('Vino Verace · Marketing para e-commerce de vinhos | Case Cooltivo', 'Case Vino Verace: comunicação focada em valor de marca para um e-commerce de vinhos premium crescer sem competir só por preço.'),
+}
+
 CASES = [
  dict(slug='introduce', name='Introduce', logo=('introduce.png', 30), seg='Tecnologia · Cibersegurança B2B',
   title='Recorde de faturamento e um canal de crescimento exponencial.',
@@ -131,6 +146,7 @@ HEAD = '''<!doctype html>
 <meta name="description" content="{desc}">
 <link rel="icon" href="../img/favicon.svg">
 <link rel="stylesheet" href="cases.css">
+{seo}
 </head>
 <body>
 ''' + DEFS + '''
@@ -165,7 +181,7 @@ FOOT = '''
     <div class="contact">
       <a href="mailto:kaue@cooltivo.com.br"><small>E-mail</small><span>kaue@cooltivo.com.br</span></a>
       <a href="https://wa.me/5554991000102" target="_blank" rel="noopener"><small>WhatsApp</small><span>(54) 9.9100-0102</span></a>
-      <div><small>Onde estamos</small><span>Made in Serra Gaúcha</span></div>
+      <div><small>Onde estamos</small><span>Gramado · Serra Gaúcha (RS). Atendemos Caxias do Sul, Bento Gonçalves e região.</span></div>
     </div>
   </div>
   <footer>
@@ -284,7 +300,19 @@ def case_page(i, c):
   </div>
 </a>
 '''
-    head = HEAD.format(title=e(f'{c["name"]} · Case Cooltivo'), desc=e(c['summary']))
+    t, d = SEO.get(c['slug'], (f'{c["name"]} · Case Cooltivo', c['summary']))
+    path = '/cases/' + c['slug']
+    work = {'@context': 'https://schema.org', '@type': 'CreativeWork', 'name': f'Case {c["name"]}: {c["title"]}',
+            'headline': c['title'], 'description': d, 'url': seo.BASE + path, 'inLanguage': 'pt-BR',
+            'image': seo.BASE + '/img/og/' + c['slug'] + '.jpg', 'creator': {'@id': seo.ORG_ID},
+            'publisher': {'@id': seo.ORG_ID}, 'keywords': ', '.join(c['chips']),
+            'about': {'@type': 'Organization', 'name': c['name']}}
+    if c.get('about_url'):
+        work['about']['url'] = c['about_url']
+    if c.get('about'):
+        work['about']['description'] = c['about']
+    sch = [work, seo.crumbs([('Cooltivo', '/'), ('Cases', '/cases/'), (c['name'], path)])]
+    head = HEAD.format(title=e(t), desc=e(d), seo=seo.head(path, t, d, c['slug'] + '.jpg', 'article', sch))
     return head + body + FOOT
 
 
@@ -294,7 +322,7 @@ def index_page():
         a, b = c['nums'][0]
         cards.append(f'''
     <a class="cc" href="{c['slug']}.html">
-      <span class="cc-img"><img src="../video/cases/{c['video']}.jpg" alt="" loading="lazy"></span>
+      <span class="cc-img"><img src="../video/cases/{c['video']}.jpg" alt="Case {e(c['name'])}: {e(c['title'])}" loading="lazy"></span>
       <span class="cc-body">
         <span class="ch-brand">{logo_html(c)}<span class="seg">{e(c['seg'])}</span></span>
         <span class="cc-t">{e(c['title'])}</span>
@@ -314,7 +342,11 @@ def index_page():
 <main class="cgrid wrap">{''.join(cards)}
 </main>
 '''
-    head = HEAD.format(title='Cases · Cooltivo Estúdio', desc='Cases da Cooltivo: o desafio, a estratégia e o resultado de marcas que cultivamos.')
+    t = 'Cases de branding e marketing · Cooltivo Estúdio'
+    d = 'Cases de branding, posicionamento e comunicação da Cooltivo com marcas do RS: Introduce, Soprano, Santa Clara, Zen Design, DSF Advogados, Neomot e mais.'
+    lst = {'@context': 'https://schema.org', '@type': 'CollectionPage', 'name': t, 'description': d, 'url': seo.BASE + '/cases/',
+           'publisher': {'@id': seo.ORG_ID}, 'hasPart': [{'@type': 'CreativeWork', 'name': 'Case ' + c['name'], 'url': seo.BASE + '/cases/' + c['slug']} for c in CASES]}
+    head = HEAD.format(title=e(t), desc=e(d), seo=seo.head('/cases/', t, d, 'cases.jpg', 'website', [lst, seo.crumbs([('Cooltivo', '/'), ('Cases', '/cases/')])]))
     return head + body + FOOT
 
 

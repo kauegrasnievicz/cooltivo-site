@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cooltivo Estúdio · Cultivamos marcas que resistem ao tempo</title>
-<meta name="description" content="Estúdio de estratégia e criatividade da Serra Gaúcha. Mais de 100 projetos em 6 anos construindo marcas que resistem ao tempo.">
+<title>Cooltivo Estúdio · Branding e estratégia de marca na Serra Gaúcha</title>
+<meta name="description" content="Estúdio de branding e estratégia de marca da Serra Gaúcha. Posicionamento, comunicação e presença digital para empresas de Caxias do Sul, Bento Gonçalves e RS.">
 <link rel="icon" href="img/favicon.svg">
 <style>
 /* Fonte provisória: Helvetica Neue onde existir (Mac/iOS); Inter (incluída) no restante. */
-@font-face{font-family:"Inter Local";src:url(fonts/Inter-Regular.otf);font-weight:400;font-display:swap}
-@font-face{font-family:"Inter Local";src:url(fonts/Inter-Medium.otf);font-weight:500;font-display:swap}
-@font-face{font-family:"Inter Local";src:url(fonts/Inter-SemiBold.otf);font-weight:600;font-display:swap}
-@font-face{font-family:"Inter Local";src:url(fonts/Inter-Bold.otf);font-weight:700;font-display:swap}
-@font-face{font-family:"Inter Display Local";src:url(fonts/InterDisplay-Bold.otf);font-weight:700;font-display:swap}
-@font-face{font-family:"Inter Display Local";src:url(fonts/InterDisplay-ExtraBold.otf);font-weight:800;font-display:swap}
-@font-face{font-family:"Inter Display Local";src:url(fonts/InterDisplay-Black.otf);font-weight:900;font-display:swap}
+@font-face{font-family:"Inter Local";src:url(fonts/Inter-Regular.woff2) format("woff2"),url(fonts/Inter-Regular.otf) format("opentype");font-weight:400;font-display:swap}
+@font-face{font-family:"Inter Local";src:url(fonts/Inter-Medium.woff2) format("woff2"),url(fonts/Inter-Medium.otf) format("opentype");font-weight:500;font-display:swap}
+@font-face{font-family:"Inter Local";src:url(fonts/Inter-SemiBold.woff2) format("woff2"),url(fonts/Inter-SemiBold.otf) format("opentype");font-weight:600;font-display:swap}
+@font-face{font-family:"Inter Local";src:url(fonts/Inter-Bold.woff2) format("woff2"),url(fonts/Inter-Bold.otf) format("opentype");font-weight:700;font-display:swap}
+@font-face{font-family:"Inter Display Local";src:url(fonts/InterDisplay-Bold.woff2) format("woff2"),url(fonts/InterDisplay-Bold.otf) format("opentype");font-weight:700;font-display:swap}
+@font-face{font-family:"Inter Display Local";src:url(fonts/InterDisplay-ExtraBold.woff2) format("woff2"),url(fonts/InterDisplay-ExtraBold.otf) format("opentype");font-weight:800;font-display:swap}
+@font-face{font-family:"Inter Display Local";src:url(fonts/InterDisplay-Black.woff2) format("woff2"),url(fonts/InterDisplay-Black.otf) format("opentype");font-weight:900;font-display:swap}
 :root{
   color-scheme:light;
   --font:"Helvetica Neue",Helvetica,"Inter Local",Arial,sans-serif;
@@ -176,6 +176,7 @@ nav .btn{padding:11px 20px;font-size:14px}
 @media (prefers-reduced-motion:reduce){.track{animation:none}}
 /* Logos da faixa: silhuetas na mesma cor (logos/faixa) e tamanho por peso visual (largura/altura no script) */
 .clients{--s:1}
+.sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .logo-item{flex:none;height:52px;margin:0 28px;display:flex;align-items:center;justify-content:center}
 .logo-item .lg{display:block;width:calc(var(--w) * var(--s) * 1px);height:calc(var(--h) * var(--s) * 1px);max-width:none;opacity:.55;transition:opacity .3s}
 .logo-item:hover .lg{opacity:.95}
@@ -491,6 +492,26 @@ footer .links a:hover{color:var(--orange)}
   footer .wrap{flex-direction:column;align-items:start}
 }
 </style>
+<!-- seo -->
+<link rel="canonical" href="https://cooltivo.com.br/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="geo.region" content="BR-RS"><meta name="geo.placename" content="Gramado, Serra Gaúcha">
+<meta name="theme-color" content="#24503a">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cooltivo Estúdio">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://cooltivo.com.br/">
+<meta property="og:title" content="Cooltivo Estúdio · Branding e estratégia de marca na Serra Gaúcha">
+<meta property="og:description" content="Estúdio de branding e estratégia de marca da Serra Gaúcha. Posicionamento, comunicação e presença digital para empresas de Caxias do Sul, Bento Gonçalves e RS.">
+<meta property="og:image" content="https://cooltivo.com.br/img/og/home.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cooltivo Estúdio · Branding e estratégia de marca na Serra Gaúcha">
+<meta name="twitter:description" content="Estúdio de branding e estratégia de marca da Serra Gaúcha. Posicionamento, comunicação e presença digital para empresas de Caxias do Sul, Bento Gonçalves e RS.">
+<meta name="twitter:image" content="https://cooltivo.com.br/img/og/home.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://cooltivo.com.br/#org","name":"Cooltivo Estúdio","alternateName":"Cooltivo","description":"Estúdio de branding, estratégia de marca e comunicação da Serra Gaúcha. Posicionamento, presença digital, estratégia de canais e consultoria de marketing para empresas de Caxias do Sul, Bento Gonçalves e do Rio Grande do Sul.","slogan":"Cultivamos marcas que resistem ao tempo.","url":"https://cooltivo.com.br/","logo":"https://cooltivo.com.br/img/favicon.svg","image":"https://cooltivo.com.br/img/og/home.jpg","email":"kaue@cooltivo.com.br","telephone":"+55 54 99100-0102","priceRange":"$$","address":{"@type":"PostalAddress","addressLocality":"Gramado","addressRegion":"RS","addressCountry":"BR"},"areaServed":[{"@type":"City","name":"Caxias do Sul"},{"@type":"City","name":"Bento Gonçalves"},{"@type":"City","name":"Gramado"},{"@type":"Place","name":"Serra Gaúcha"},{"@type":"State","name":"Rio Grande do Sul"}],"founder":{"@type":"Person","name":"Kauê Grasnievicz","jobTitle":"Cofundador e diretor de estratégia","sameAs":["https://www.linkedin.com/in/kauegrasnievicz/"]},"sameAs":["https://www.instagram.com/cooltivoestudio/"],"knowsAbout":["Branding","Posicionamento de marca","Estratégia de marca","Comunicação","Marketing digital","Produção de conteúdo","Direção criativa"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Serviços da Cooltivo","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Posicionamento de marca","description":"Projeto de 6 a 8 semanas para definir essência, diferenciação e narrativa da marca."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Presença digital","description":"Estratégia, conteúdo e gestão dos canais digitais da marca, de 6 a 12 meses."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Estratégia de canais","description":"Plano de 4 semanas para definir canais, mensagens e investimento de comunicação."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Consultoria de marketing","description":"Acompanhamento estratégico de marketing e marca, em formato flexível."}}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://cooltivo.com.br/#site","name":"Cooltivo Estúdio","url":"https://cooltivo.com.br/","inLanguage":"pt-BR","publisher":{"@id":"https://cooltivo.com.br/#org"}}</script>
+<!-- /seo -->
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -521,7 +542,7 @@ footer .links a:hover{color:var(--orange)}
 <!-- CAPA -->
 <header class="capa tempo" id="topo">
  <div class="ct-sticky">
-  <img class="poster" src="video/capa-poster.jpg" alt="">
+  <img class="poster" src="video/capa-poster.jpg" alt="Cooltivo Estúdio, branding e estratégia de marca na Serra Gaúcha">
   <video autoplay muted loop playsinline preload="auto" poster="video/capa-poster.jpg" aria-hidden="true"><source src="video/capa.mp4" type="video/mp4"></video>
   <div class="ct-shade"></div>
   <svg class="ct-svg" aria-hidden="true">
@@ -552,6 +573,7 @@ footer .links a:hover{color:var(--orange)}
 <section class="clients" id="clientes" aria-label="Marcas que já cultivamos">
   <div class="crow">
     <span class="clabel">Marcas que já cultivamos</span>
+    <p class="sr">Algumas das empresas do Rio Grande do Sul e do Brasil atendidas pela Cooltivo: Sicredi, Santa Clara, Zen Design, Soprano, Obispa, Cinex, Introduce, Planeta Água, CFL Construtora, Neomot, DSF Advogados, Souto Correa Advogados, MRP Construtora, Comabe, AMPF, Grau, Vallontano, Garbo Enologia Criativa, Tazza Enologia Autoral, Tubástico e Tramarin.</p>
     <div class="marquee"><div class="track" id="row1"></div></div>
   </div>
 </section>
@@ -870,7 +892,7 @@ footer .links a:hover{color:var(--orange)}
     <div class="contact">
       <a href="mailto:kaue@cooltivo.com.br"><small>E-mail</small><span>kaue@cooltivo.com.br</span></a>
       <a href="https://wa.me/5554991000102" target="_blank" rel="noopener"><small>WhatsApp</small><span>(54) 9.9100-0102</span></a>
-      <div><small>Onde estamos</small><span>Made in Serra Gaúcha</span></div>
+      <div><small>Onde estamos</small><span>Gramado · Serra Gaúcha (RS). Atendemos Caxias do Sul, Bento Gonçalves e região.</span></div>
     </div>
   </div>
   <footer>
