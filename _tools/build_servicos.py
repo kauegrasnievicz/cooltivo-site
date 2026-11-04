@@ -82,6 +82,7 @@ S = [
   seo_d='Consultoria de marketing conduzida por Kauê Grasnievicz, estrategista com mais de 10 anos de marketing, para empresas de Caxias do Sul, Bento Gonçalves e do RS.',
   h1='Um estrategista sentado na mesa, pensando o marketing com você.',
   intro='A consultoria de marketing da Cooltivo é conduzida pessoalmente por Kauê Grasnievicz, cofundador e diretor de estratégia do estúdio. Ele mergulha no negócio, senta com os sócios e com o time e acompanha de perto o plano de marketing, construído a partir dos objetivos da empresa.',
+  hero_video='capa',
   num2=('10+ anos', 'de marketing de quem conduz a consultoria'),
   lead=dict(name='Kauê Grasnievicz', role='Cofundador e diretor de estratégia da Cooltivo', img='../img/historia/h2.jpg',
     alt='Kauê Grasnievicz conduzindo um workshop de estratégia',
@@ -153,6 +154,12 @@ def page(s):
     </div>
   </div>
 </section>'''
+    hv, hv_cls = '', ' wide'
+    if s.get('hero_video'):
+        v = s['hero_video']
+        hv_cls = ' sv-hero'
+        hv = f'''
+    <figure class="sv-vid"><video autoplay muted loop playsinline preload="metadata" poster="../video/{v}-poster.jpg" aria-hidden="true"><source src="../video/{v}.mp4" type="video/mp4"></video></figure>'''
     names = ['Context', 'Concept', 'Craft']
     c3 = ''.join(f'<div class="c3c"><span>0{i + 1}</span><h3>{names[i]}</h3><p>{e(t)}</p></div>' for i, t in enumerate(s['c3']))
     rec = ''.join(f'<li><b>{e(a)}</b><span>{e(b)}</span></li>' for a, b in s['recebe'])
@@ -163,7 +170,7 @@ def page(s):
     body = f'''
 <header class="ch" id="topo">
   <svg class="bg-sym sym" aria-hidden="true"><use href="#sym"/></svg>
-  <div class="wrap ch-grid wide">
+  <div class="wrap ch-grid{hv_cls}">
     <div class="ch-txt">
       <a class="back" href="../index.html#entregas"><svg style="transform:scaleX(-1)"><use href="#chev"/></svg>Todos os serviços</a>
       <div class="ch-brand"><span class="seg">{e(s['name'])} · {e(s['tipo'])}</span></div>
@@ -171,7 +178,7 @@ def page(s):
       <p class="sum">{e(s['intro'])}</p>
       <div class="btns sv-btns"><a class="btn btn-soft" href="../conversa.html">Agendar diagnóstico de 45 min <svg><use href="#arr"/></svg></a><a class="btn btn-line-inv" href="{wa}" target="_blank" rel="noopener">Falar no WhatsApp</a></div>
       <div class="nums"><div><b>{e(s['dur'])}</b><span>{e(s['tipo'])}</span></div><div><b>{e(n2[0])}</b><span>{e(n2[1])}</span></div></div>
-    </div>
+    </div>{hv}
   </div>
 </header>
 {lead}
