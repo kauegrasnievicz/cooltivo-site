@@ -84,6 +84,12 @@ nav.solid .btn:hover{background:var(--green-strong);color:#fff}
 .ch-vid.playing .watch,.ch-vid.playing .ig{display:none}
 
 /* FICHA */
+.sobre{background:var(--white,#fff);border-bottom:1px solid var(--line)}
+.sobre .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:40px;padding-block:44px;align-items:start}
+.sobre h2{margin:0;font-size:26px;line-height:1.15;letter-spacing:-.02em;color:var(--ink)}
+.sobre h2 small{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+.sobre p{margin:0;font-size:18px;line-height:1.6;color:var(--ink);max-width:68ch}
+@media (max-width:760px){.sobre .wrap{grid-template-columns:1fr;gap:14px;padding-block:32px}.sobre p{font-size:16px}}
 .ficha{background:var(--cream);border-bottom:1px solid var(--line)}
 .ficha .wrap{display:grid;grid-template-columns:1fr 1.2fr 1.6fr 1.4fr;gap:0}
 .ficha .wrap>div{padding:30px 26px 30px 0;min-width:0}

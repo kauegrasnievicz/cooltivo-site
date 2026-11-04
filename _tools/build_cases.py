@@ -29,6 +29,8 @@ SEO = {
  'vino-verace': ('Vino Verace · Marketing para e-commerce de vinhos | Case Cooltivo', 'Case Vino Verace: comunicação focada em valor de marca para um e-commerce de vinhos premium crescer sem competir só por preço.'),
 }
 
+ABOUT = {'introduce': 'A Introduce é uma empresa de segurança da informação e transformação digital de Caxias do Sul (RS). Assessora empresas em governança, maturidade digital e proteção de ativos críticos, e criou a Guardiões Digitais, comunidade de profissionais de cibersegurança com mais de 1.500 membros, que realiza o Encontro Guardiões Digitais.', 'soprano': 'Fundada em 1954 em Farroupilha, na Serra Gaúcha, a Soprano é uma das grandes indústrias do Rio Grande do Sul. Produz mais de 4.000 itens em quatro frentes (fechaduras e ferragens, materiais elétricos, componentes para móveis e utilidades térmicas), tem cerca de 1.000 colaboradores e uma estrutura própria em Xangai há mais de duas décadas.', 'santa-clara': 'Fundada em 1911 em Carlos Barbosa, na Serra Gaúcha, a Cooperativa Santa Clara é considerada a mais antiga cooperativa de laticínios em atividade no Brasil. Reúne cerca de 5.000 famílias associadas e mais de 2.300 colaboradores, com unidades industriais em Getúlio Vargas e Casca, e é referência em leite, queijos e derivados no RS.', 'zen-design-milao': 'Fundada em 2004 em Bento Gonçalves (RS), a Zen Design é uma marca brasileira de puxadores e acessórios de alto padrão para arquitetura e interiores. Une matérias-primas naturais, trabalho artesanal e design contemporâneo, com coleções autorais apresentadas em feiras como a Expo Revestir, em São Paulo, e em Milão.', 'dsf-advogados': 'Com quase cinco décadas de história, a Dupont Spiller Fadanelli Advogados tem escritórios em Porto Alegre, Caxias do Sul, Bento Gonçalves, Florianópolis e São Paulo, além de correspondentes no Brasil e no exterior. Em 2021, foi eleita o escritório jurídico mais lembrado e preferido no prêmio Marcas de Quem Decide, do Jornal do Comércio.', 'neomot': 'A Neomot é uma empresa de elevadores e tecnologia para edifícios inteligentes de Caxias do Sul (RS), fundada e liderada por Gustavo Zolet. Além de elevadores e quadros de comando, desenvolve o Cubo, que recupera energia, o software Zeus, que monitora o prédio, a assistente virtual Anna e o app Neo, com o qual o morador chama o elevador e reserva áreas comuns.', 'garbo': 'A Garbo Enologia Criativa nasceu em Bento Gonçalves (RS) há cerca de dez anos, pelas mãos dos enólogos Andrei Bellé, Guilherme Caio e Jhonatan Marini. É conhecida pela "enologia criativa": cortes autorais, amadurecimento em madeiras brasileiras e exóticas e castas pouco usuais. Tem loja na rota Caminhos de Pedra e o clube de vinhos Experientia.', 'vallontano': 'Fundada em 1999, a Vallontano Vinhos Nobres é uma vinícola familiar de Bento Gonçalves, no Vale dos Vinhedos, sob o comando e a direção de Ana Paula Valduga e com o enólogo Luís Henrique Zanini. Produz vinhos e espumantes em pequena escala, como o Vallontano Reserva Merlot e o espumante LaToller, e recebe visitantes para degustações na Serra Gaúcha.', 'vino-verace': 'Fundada em 2020, a Vino Verace é uma curadoria especializada de vinhos com loja online. Trabalha com pequenos produtores, produções limitadas e rótulos de mais de 30 países, da Serra Gaúcha a regiões menos óbvias do Velho e do Novo Mundo. Mais de 100 mil garrafas já passaram pela sua curadoria, com atendimento de sommeliers e a Confraria da Vino Verace, de degustações guiadas.', 'zen-design-expo-revestir': 'Fundada em 2004 em Bento Gonçalves (RS), a Zen Design é uma marca brasileira de puxadores e acessórios de alto padrão para arquitetura e interiores. Une matérias-primas naturais, trabalho artesanal e design contemporâneo, com coleções autorais apresentadas em feiras como a Expo Revestir, em São Paulo, e em Milão.'}
+
 CASES = [
  dict(slug='introduce', name='Introduce', logo=('introduce.png', 30), seg='Tecnologia · Cibersegurança B2B',
   title='Recorde de faturamento e um canal de crescimento exponencial.',
@@ -181,7 +183,7 @@ FOOT = '''
     <div class="contact">
       <a href="mailto:kaue@cooltivo.com.br"><small>E-mail</small><span>kaue@cooltivo.com.br</span></a>
       <a href="https://wa.me/5554991000102" target="_blank" rel="noopener"><small>WhatsApp</small><span>(54) 9.9100-0102</span></a>
-      <div><small>Onde estamos</small><span>Gramado · Serra Gaúcha (RS). Atendemos Caxias do Sul, Bento Gonçalves e região.</span></div>
+      <div><small>Onde estamos</small><span>Made in Serra Gaúcha (RS)</span></div>
     </div>
   </div>
   <footer>
@@ -232,6 +234,9 @@ def case_page(i, c):
     collab = (f'<div><small>Collab · Ecossistema Cooltivo</small><b>{e(c["collab"])}</b></div>' if c.get('collab') else '')
     gal_cls = 'h' if wide else 'v'
     gallery = ''.join(f'<figure><img src="../img/cases/{c["slug"]}-{k}.jpg" alt="Bastidores do case {e(c["name"])}, imagem {k}" loading="lazy"></figure>' for k in (1, 2, 3))
+    ab = ABOUT.get(c['slug'])
+    short = c['name'].split(' ')[0] if c['slug'] in ('garbo', 'dsf-advogados') else c['name']
+    sobre = (f'<section class="sobre" aria-label="Sobre a {e(c["name"])}"><div class="wrap"><h2><small>Quem é</small>Sobre a {e(short)}</h2><p>{e(ab)}</p></div></section>') if ab else ''
     fizemos = ''.join(f'<li>{e(x)}</li>' for x in c['fizemos'])
     body = f'''
 <header class="ch" id="topo">
@@ -260,6 +265,7 @@ def case_page(i, c):
     {collab}
   </div>
 </section>
+{sobre}
 
 <main class="story wrap">
   <section class="st" id="desafio">
@@ -302,6 +308,7 @@ def case_page(i, c):
 '''
     t, d = SEO.get(c['slug'], (f'{c["name"]} · Case Cooltivo', c['summary']))
     path = '/cases/' + c['slug']
+    c = dict(c, about=c.get('about') or ABOUT.get(c['slug']))
     work = {'@context': 'https://schema.org', '@type': 'CreativeWork', 'name': f'Case {c["name"]}: {c["title"]}',
             'headline': c['title'], 'description': d, 'url': seo.BASE + path, 'inLanguage': 'pt-BR',
             'image': seo.BASE + '/img/og/' + c['slug'] + '.jpg', 'creator': {'@id': seo.ORG_ID},
