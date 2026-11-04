@@ -78,22 +78,30 @@ S = [
        ('O que a empresa precisa liberar?', 'Acesso aos canais e às ferramentas de dados que a empresa usa, para o diagnóstico partir de números reais.'),
        SERRA, START]),
  dict(slug='consultoria-de-marketing', name='Consultoria de marketing', tipo='Pontual ou recorrente', dur='Formato flexível',
-  seo_t='Consultoria de marketing em Caxias do Sul e Serra Gaúcha · Cooltivo',
-  seo_d='Acompanhamento estratégico para planejar o marketing a partir dos objetivos da empresa. Para empresas de Caxias do Sul, Bento Gonçalves e do RS.',
-  h1='Alguém de fora, sentado na mesa, pensando o marketing com você.',
-  intro='Conexão profunda com o negócio e acompanhamento estratégico para planejar o marketing a partir dos objetivos da empresa. Para empresas que têm um time de marketing pequeno, ou nenhum, e precisam de direção.',
+  seo_t='Consultoria de marketing com Kauê Grasnievicz · Cooltivo · Serra Gaúcha',
+  seo_d='Consultoria de marketing conduzida por Kauê Grasnievicz, estrategista com mais de 10 anos de marketing, para empresas de Caxias do Sul, Bento Gonçalves e do RS.',
+  h1='Um estrategista sentado na mesa, pensando o marketing com você.',
+  intro='A consultoria de marketing da Cooltivo é conduzida pessoalmente por Kauê Grasnievicz, cofundador e diretor de estratégia do estúdio. Ele mergulha no negócio, senta com os sócios e com o time e acompanha de perto o plano de marketing, construído a partir dos objetivos da empresa.',
+  num2=('10+ anos', 'de marketing de quem conduz a consultoria'),
+  lead=dict(name='Kauê Grasnievicz', role='Cofundador e diretor de estratégia da Cooltivo', img='../img/historia/h2.jpg',
+    alt='Kauê Grasnievicz conduzindo um workshop de estratégia',
+    bio=['Kauê é estrategista, com mais de 10 anos de marketing e especialista em marca e comunicação. Antes de cofundar a Cooltivo, foi gerente de marketing de uma grande rede hoteleira e líder de digital de uma agência de comunicação que atendia grandes marcas gaúchas.',
+         'Já trabalhou com marcas como Sicredi, Santa Clara, Soprano, Zen Design e Casa Valduga. Na consultoria, ele ocupa a cadeira de quem pensa o marketing junto com a liderança: participa das decisões, orienta o time e responde pelo plano.'],
+    quote='A comunicação é uma das ferramentas mais poderosas para transformar pessoas, sociedade e negócios.',
+    link='https://www.linkedin.com/in/kauegrasnievicz/'),
   quando=['A empresa não tem um líder de marketing.',
           'O time de marketing executa, mas falta direção.',
           'As decisões de marketing são tomadas no improviso.',
           'A empresa vive um momento de crescimento, sucessão ou mudança de mercado.'],
-  c3=['A gente faz uma imersão no negócio, nos números e no time.',
-      'A gente monta o plano estratégico de marketing, com metas ligadas aos objetivos da empresa.',
-      'A gente acompanha toda semana para o plano sair do papel.'],
-  recebe=[('Planejamento estratégico de marketing', 'O plano de marketing da empresa, com prioridades, metas e investimento, construído a partir dos objetivos do negócio.'),
-          ('Encontros semanais de acompanhamento', 'Uma conversa por semana com a liderança e o time para decidir, ajustar e destravar.'),
-          ('Imersões com liderança e time', 'Encontros de trabalho para alinhar a empresa inteira em torno da marca e do plano.')],
+  c3=['Kauê faz uma imersão no negócio, nos números e no time, conversando com sócios, liderança e clientes.',
+      'Kauê monta junto com a liderança o plano estratégico de marketing, com metas ligadas aos objetivos da empresa.',
+      'Kauê acompanha toda semana, com o time e com os parceiros, para o plano sair do papel.'],
+  recebe=[('Planejamento estratégico de marketing', 'O plano de marketing da empresa, com prioridades, metas e investimento, construído por Kauê a partir dos objetivos do negócio.'),
+          ('Encontros semanais com Kauê', 'Uma conversa por semana com a liderança e o time para decidir, ajustar e destravar.'),
+          ('Imersões com liderança e time', 'Encontros de trabalho conduzidos por Kauê para alinhar a empresa inteira em torno da marca e do plano.')],
   cases=['introduce', 'vino-verace'],
-  faq=[('A consultoria é pontual ou recorrente?', 'Os dois. A gente monta o formato com você: uma imersão pontual ou um acompanhamento contínuo.'),
+  faq=[('Quem conduz a consultoria?', 'Kauê Grasnievicz, cofundador e diretor de estratégia da Cooltivo, conduz pessoalmente cada consultoria, com o apoio do time do estúdio quando o plano pede execução.'),
+       ('A consultoria é pontual ou recorrente?', 'Os dois. A gente monta o formato com você: uma imersão pontual ou um acompanhamento contínuo.'),
        ('Para que tamanho de empresa faz sentido?', 'Para empresas médias e grandes que querem tratar o marketing como parte da estratégia do negócio.'),
        SERRA, START]),
 ]
@@ -126,6 +134,25 @@ def page(s):
     others = ''.join(f'<a href="{o["slug"]}.html"><small>{e(o["tipo"])} · {e(o["dur"])}</small><b>{e(o["name"])}</b></a>' for o in S if o is not s)
     path = '/servicos/' + s['slug']
     faq = ''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in s['faq'])
+    n2 = s.get('num2', ("3C's", 'Context, Concept e Craft'))
+    L = s.get('lead')
+    lead = ''
+    if L:
+        bio = ''.join(f'<p>{e(x)}</p>' for x in L['bio'])
+        lead = f'''
+<section class="lead-sec" aria-label="Quem conduz a consultoria">
+  <div class="wrap lead-grid">
+    <figure class="lead-img"><img src="{L['img']}" alt="{e(L['alt'])}" loading="lazy"></figure>
+    <div class="lead-txt">
+      <small>Quem conduz</small>
+      <h2>{e(L['name'])}</h2>
+      <p class="lead-role">{e(L['role'])}</p>
+      {bio}
+      <blockquote>“{e(L['quote'])}”</blockquote>
+      <a class="lead-link" href="{L['link']}" target="_blank" rel="noopener">Conheça Kauê no LinkedIn <svg><use href="#arr"/></svg></a>
+    </div>
+  </div>
+</section>'''
     names = ['Context', 'Concept', 'Craft']
     c3 = ''.join(f'<div class="c3c"><span>0{i + 1}</span><h3>{names[i]}</h3><p>{e(t)}</p></div>' for i, t in enumerate(s['c3']))
     rec = ''.join(f'<li><b>{e(a)}</b><span>{e(b)}</span></li>' for a, b in s['recebe'])
@@ -143,11 +170,11 @@ def page(s):
       <h1>{e(s['h1'])}</h1>
       <p class="sum">{e(s['intro'])}</p>
       <div class="btns sv-btns"><a class="btn btn-soft" href="../conversa.html">Agendar diagnóstico de 45 min <svg><use href="#arr"/></svg></a><a class="btn btn-line-inv" href="{wa}" target="_blank" rel="noopener">Falar no WhatsApp</a></div>
-      <div class="nums"><div><b>{e(s['dur'])}</b><span>{e(s['tipo'])}</span></div><div><b>3C's</b><span>Context, Concept e Craft</span></div></div>
+      <div class="nums"><div><b>{e(s['dur'])}</b><span>{e(s['tipo'])}</span></div><div><b>{e(n2[0])}</b><span>{e(n2[1])}</span></div></div>
     </div>
   </div>
 </header>
-
+{lead}
 <main class="story wrap">
   <section class="st">
     <div class="st-lab"><i>01</i>Quando faz sentido</div>
@@ -189,6 +216,8 @@ def page(s):
                               {'@type': 'Place', 'name': 'Serra Gaúcha'}, {'@type': 'State', 'name': 'Rio Grande do Sul'}],
                'hasOfferCatalog': {'@type': 'OfferCatalog', 'name': 'O que você recebe', 'itemListElement': [
                    {'@type': 'Offer', 'itemOffered': {'@type': 'Service', 'name': a, 'description': b}} for a, b in s['recebe']]}}
+    if L:
+        service['provider'] = [{'@id': seo.ORG_ID}, {'@type': 'Person', 'name': L['name'], 'jobTitle': L['role'], 'sameAs': [L['link']], 'worksFor': {'@id': seo.ORG_ID}}]
     faqld = {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [
         {'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in s['faq']]}
     sch = [service, faqld, seo.crumbs([('Cooltivo', '/'), ('Serviços', '/#entregas'), (s['name'], path)])]
