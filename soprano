@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Soprano Presença Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;900&display=swap">
+<style>
+/* Layout: identidade Soprano (brandbook 2023). Faixa azul com grafismo da marca na abertura e no fechamento, miolo branco com cards azul-gelo. Os nomes de token antigos foram mantidos e apontam para a paleta Soprano. Visual único e claro, por escolha. */
+:root{
+  --verde:#004B78; --verde-esc:#00385A; --suave:#94CAE8; --creme:#FFFFFF;
+  --azul2:#0077AF; --azul3:#41ABE6;
+  --tinta:#1B2A35; --muted:#566470; --card:#EEF4F9; --linha:#D6E2EB; --bg:#FFFFFF; --laranja:#EAB618;
+  --f:'Source Sans 3','Source Sans Pro',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tinta);font-family:var(--f);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+img,video{max-width:100%;display:block}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.lab{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azul2)}
+h1,h2,h3{margin:0;text-wrap:balance;line-height:1.12}
+h2{font-size:clamp(28px,3.6vw,42px);font-weight:900;color:var(--verde)}
+.sub{color:var(--muted);font-size:16px;margin:10px 0 0;max-width:68ch}
+section{padding-block:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+/* nav */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linha)}
+nav.top .wrap{display:flex;align-items:center;gap:18px;height:56px}
+nav.top .brand{display:flex;align-items:center;gap:8px;font-weight:700;font-size:12px;letter-spacing:.04em;white-space:nowrap}
+nav.top .brand img{width:96px;height:auto}
+nav.top .links{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+nav.top .links::-webkit-scrollbar{display:none}
+nav.top a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;padding:6px 10px;border-radius:999px;white-space:nowrap}
+nav.top a:hover,nav.top a:focus-visible{background:var(--card);color:var(--tinta);outline:none}
+
+/* hero */
+.hero{background:var(--verde);color:var(--creme);padding-block:32px 56px;position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:1}
+.hero .logo{width:170px}
+.hero .toprow{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.hero .toprow span{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--suave)}
+.graf{position:absolute;right:-60px;top:24px;width:min(46vw,560px);height:calc(100% - 24px);pointer-events:none}
+.graf .flag{position:absolute;right:0;top:20px;width:78%;height:70%;background:var(--azul2);border-radius:0 50% 50% 0 / 0 60% 60% 0;opacity:.9}
+.graf .sq{position:absolute;right:62%;bottom:8%;width:120px;height:120px;border-radius:26px;background:var(--azul3);opacity:.85}
+.graf .str{position:absolute;right:50%;top:6%;width:86px;height:86px;border-radius:50%;background:repeating-linear-gradient(90deg,var(--suave) 0 4px,transparent 4px 11px);opacity:.7}
+.graf .bar{position:absolute;right:28%;bottom:20%;width:180px;height:10px;border-radius:10px;background:var(--suave)}
+.hero .graf .flag{opacity:.35}
+.hero .graf .sq,.hero .graf .bar{display:none}
+.hero .graf .str{opacity:.45}
+.nga{display:flex;align-items:center;gap:10px}
+.nga span{font-size:11px;font-weight:700;line-height:1.05;letter-spacing:.02em}
+.nga img{width:30px;height:30px}
+.hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:end;margin-top:96px}
+.hero h1{font-size:clamp(36px,5vw,64px);font-weight:900;letter-spacing:-.01em;text-transform:uppercase;line-height:1.0}
+.hero h1 em{font-style:normal;color:var(--suave)}
+.hero .meta{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.hero .meta img.cool{width:180px}
+.hero .meta p{margin:0;color:#D7E9F5;max-width:46ch;font-size:17px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.14);color:#fff}
+
+/* direção */
+.dir{background:var(--verde);color:var(--creme);padding-top:0}
+.dir .box{border-top:1px solid rgba(169,200,179,.35);padding-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.dir h2{color:var(--creme)} .dir h2 em{font-style:normal;color:var(--suave)}
+.dir p{color:#D7E9F5;margin:0;font-size:17px;line-height:1.7}
+.dir b{color:#fff}
+.principio{margin-top:28px;border-left:2px solid var(--suave);padding-left:18px}
+.principio .lab{color:var(--suave)}
+.principio div:last-child{font-size:20px;font-weight:700;color:var(--creme)}
+
+/* públicos */
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:36px}
+.card{background:var(--card);border-radius:14px;padding:24px;min-width:0}
+.pub .n{font-size:30px;font-weight:900;color:var(--azul2)}
+.pub h3{font-size:20px;margin:10px 0 16px}
+.pub .lab{margin-top:14px}
+.pub p{margin:4px 0 0;font-size:14px}
+.pub p.m{color:var(--muted)}
+.pub{transition:box-shadow .2s ease}
+.pub:hover{box-shadow:0 10px 24px rgba(23,38,29,.08)}
+.pub.pri{background:var(--verde);color:#fff;box-shadow:0 0 0 3px var(--laranja)}
+.pub.pri .n{color:var(--laranja)}
+.pub.pri .lab{color:var(--suave)}
+.pub.pri p.m{color:#fff;font-weight:700;font-size:16px}
+.pub .badge{display:inline-block;margin-top:8px;background:var(--laranja);color:var(--verde);font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.pub.pri h3{margin-top:10px}
+
+/* framework */
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:36px}
+.step{all:unset;cursor:pointer;background:var(--card);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:6px;min-width:0;transition:background .25s ease,color .25s ease}
+.step .n{font-weight:900;color:var(--azul2);font-size:17px}
+.step b{font-size:17px}
+.step .q{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.step[aria-selected="true"]{background:var(--verde);color:var(--creme)}
+.step[aria-selected="true"] .n,.step[aria-selected="true"] .q{color:var(--suave)}
+.step:focus-visible{outline:2px solid var(--laranja);outline-offset:2px}
+.detail{margin-top:14px;background:var(--card);border-radius:14px;padding:26px 28px;display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:start}
+.detail .q{font-size:22px;font-weight:700}
+.detail p{margin:0;font-size:16px;max-width:70ch}
+.detail .tags{margin-top:12px}
+.tag{display:inline-block;font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:999px;background:#fff;color:var(--verde-esc);margin:0 6px 6px 0}
+.result{margin-top:14px;background:var(--verde);color:var(--creme);border-radius:14px;padding:22px 28px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.result .lab{color:var(--suave);margin-right:10px}
+.result strong{font-size:20px}
+.result span.r{font-weight:600}
+
+/* overview */
+.ov .card{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:inherit;transition:transform .2s, box-shadow .2s}
+.ov .card:hover,.ov .card:focus-visible{transform:translateY(-3px);box-shadow:0 10px 24px rgba(23,38,29,.08);outline:none}
+.ov img{width:30px;height:30px;border-radius:7px}
+.ov h3{font-size:18px;margin-top:10px}
+.ov .lab{margin-top:10px}
+.ov p{margin:0;font-size:14px}
+.ov .go{margin-top:auto;padding-top:14px;font-size:13px;font-weight:600}
+.motor{margin-top:14px;background:var(--card);border-radius:14px;padding:16px 22px;font-size:14px}
+.motor .lab{margin-right:10px}
+
+/* canais */
+.tabs{display:flex;gap:8px;margin-top:28px;flex-wrap:wrap}
+.tab{all:unset;cursor:pointer;display:flex;align-items:center;gap:8px;padding:9px 16px 9px 10px;border-radius:999px;background:var(--card);font-weight:600;font-size:14px}
+.tab img{width:22px;height:22px;border-radius:5px}
+.tab[aria-selected="true"]{background:var(--tinta);color:#fff}
+.tab:focus-visible{outline:2px solid var(--laranja);outline-offset:2px}
+.panel{margin-top:18px;display:grid;grid-template-columns:300px minmax(0,1fr);border-radius:18px;overflow:hidden;border:1px solid var(--linha)}
+.side{background:var(--verde);position:relative;overflow:hidden;color:#fff;padding:36px 28px;display:flex;flex-direction:column;justify-content:space-between;min-height:420px}
+.side .big{width:52px;height:52px}
+.side>*{position:relative;z-index:1}
+.side::after{content:"";position:absolute;right:-90px;bottom:-40px;width:260px;height:220px;background:var(--azul2);border-radius:0 50% 50% 0 / 0 60% 60% 0;opacity:.85}
+.side::before{content:"";position:absolute;left:28px;bottom:110px;width:120px;height:8px;border-radius:8px;background:var(--suave);z-index:1}
+.side h3{font-size:44px;font-weight:900;margin-top:14px;color:#fff}
+.side .x{display:flex;align-items:center;gap:10px;margin-top:10px;font-size:18px}
+.side .x img{width:150px}
+.side .big{border-radius:12px;background:#fff;padding:6px}
+.side small{font-size:11px;font-weight:700;letter-spacing:.04em}
+.body{padding:30px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.body .lab{color:var(--c)}
+.body h3{font-size:28px;font-weight:700}
+.body .obj{color:var(--muted);margin:0;font-size:16px}
+.row1{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:12px}
+.row1.h{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
+.media{position:relative;border-radius:12px;overflow:hidden;background:#111;width:200px;aspect-ratio:9/16;max-width:100%}
+.row1.h .media{width:100%;aspect-ratio:16/9}
+.media video,.media img{width:100%;height:100%;object-fit:cover}
+.snd{position:absolute;right:8px;bottom:8px;border:0;cursor:pointer;background:rgba(0,0,0,.6);color:#fff;font:600 12px var(--f);padding:6px 10px;border-radius:999px;margin-bottom:env(safe-area-inset-bottom,0px)}
+.snd:focus-visible{outline:2px solid #fff}
+.c2{background:var(--card);border-radius:12px;padding:18px 20px;min-width:0}
+.c2 ul{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:14px}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.row2.h{grid-template-columns:repeat(3,minmax(0,1fr))}
+.op p{margin:6px 0 0;font-size:14px}
+.pill{display:inline-block;background:var(--c);color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:999px;margin-top:8px}
+.pill+small{color:var(--muted);margin-left:8px;font-size:12px}
+.refs{font-size:12.5px;color:var(--muted)}
+.refs a{color:var(--muted)}
+
+/* rodapé */
+footer{background:var(--verde);color:var(--creme);padding-block:88px 28px;position:relative;overflow:hidden}
+footer .wrap{position:relative;z-index:1}
+footer .flogo{width:min(320px,70%)}
+footer .slogan{margin:16px 0 0;color:#D7E9F5;font-size:20px;font-weight:600;max-width:40ch}
+footer .base{display:flex;align-items:center;gap:18px;margin-top:80px;font-size:13px;flex-wrap:wrap}
+footer .base i{flex:1;height:1px;background:rgba(255,255,255,.4);min-width:40px}
+footer .sig{display:flex;align-items:center;gap:8px}
+footer .sig img.c{width:86px} footer .sig img.f{width:52px}
+.tool{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;background:var(--azul2);color:#fff;border-radius:18px;padding:32px;text-decoration:none;transition:transform .2s, box-shadow .2s}
+.tool:hover,.tool:focus-visible{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,75,120,.25);outline:none}
+.tool h2{color:#fff;margin-top:6px}
+.tool p{margin:10px 0 0;color:#E3F1FA;max-width:64ch;font-size:17px}
+.tool .go{background:#fff;color:var(--verde);font-weight:700;border-radius:999px;padding:12px 20px;white-space:nowrap}
+/* gerador de pauta */
+.gen{background:var(--card);border-radius:18px;padding:28px;margin-top:32px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px}
+.ctrl{display:flex;flex-direction:column;gap:18px;min-width:0}
+.grp .lab{margin-bottom:8px;display:flex;justify-content:space-between}
+.grp .lab small{font-weight:500;text-transform:none;letter-spacing:0;color:var(--muted)}
+.opts{display:flex;flex-wrap:wrap;gap:6px}
+.opt{all:unset;cursor:pointer;font-size:13px;font-weight:600;padding:7px 13px;border-radius:999px;background:#fff;color:var(--tinta);border:1px solid var(--linha);display:inline-flex;align-items:center;gap:6px;transition:background .15s,color .15s,border-color .15s}
+.opt img{width:16px;height:16px;border-radius:4px}
+.opt:hover{border-color:var(--verde)}
+.opt[aria-pressed="true"]{background:var(--verde);color:#fff;border-color:var(--verde)}
+.opt:focus-visible{outline:2px solid var(--laranja);outline-offset:2px}
+.out{background:#fff;border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:14px;min-width:0;border-top:4px solid var(--c,var(--verde))}
+.out .lab{color:var(--c,var(--verde))}
+.out h3{font-size:24px;font-weight:700}
+.out p.d{margin:0;font-size:15px;line-height:1.65}
+.meta2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.meta2 div{background:var(--card);border-radius:10px;padding:10px 12px;font-size:13px}
+.meta2 b{display:block;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.check{font-size:13px;color:var(--verde-esc);background:#E9F1EB;border-radius:10px;padding:10px 12px}
+.acts{display:flex;gap:8px;flex-wrap:wrap}
+.btn{all:unset;cursor:pointer;font-size:13px;font-weight:600;padding:9px 16px;border-radius:999px;background:var(--tinta);color:#fff}
+.btn.sec{background:#fff;color:var(--tinta);border:1px solid var(--linha)}
+.btn:focus-visible{outline:2px solid var(--laranja);outline-offset:2px}
+.toast{font-size:12.5px;color:var(--muted);align-self:center}
+.swap{animation:swap .35s ease}
+@keyframes swap{from{opacity:.25;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* animação: só uma entrada leve na abertura */
+.hero h1,.hero .meta{animation:load .6s ease-out both}
+.hero .meta{animation-delay:.12s}
+@keyframes load{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.hero h1,.hero .meta{animation:none}}
+
+@media (max-width:960px){
+  .gen{grid-template-columns:1fr}
+  .hero-grid,.dir .box{grid-template-columns:1fr}
+  .grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .panel{grid-template-columns:1fr}
+  .side{min-height:0;gap:24px}
+  .detail{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  section{padding-block:52px}
+  .grid4,.steps,.row2,.row2.h,.row1.h{grid-template-columns:1fr}
+  .row1{grid-template-columns:1fr}
+  .media{width:100%;max-width:280px;margin:0 auto}
+  .row1.h .media{max-width:100%}
+  .hero-grid{margin-top:56px}
+}
+</style>
+</head>
+<body>
+
+
+<header class="hero">
+  <div class="graf" aria-hidden="true"><div class="flag"></div><div class="sq"></div><div class="str"></div><div class="bar"></div></div>
+  <div class="wrap">
+    <div class="toprow"><img class="logo" src="assets/soprano_branco.png" alt="Soprano"><span>Executive resume</span></div>
+    <div class="hero-grid">
+      <h1>Estratégia de<br><em>Posicionamento Digital</em></h1>
+      <div class="meta">
+        <p>Canais, conteúdos e operação da Soprano. Uma estratégia e quatro canais, cada um com uma função.</p>
+        <div class="chips"><span class="chip">Instagram</span><span class="chip">YouTube</span><span class="chip">LinkedIn</span><span class="chip">TikTok</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="top" aria-label="Seções">
+  <div class="wrap">
+    <div class="brand"><img src="assets/soprano_azul.png" alt="Soprano"></div>
+    <div class="links">
+      <a href="#direcao">Direção</a><a href="#publicos">Públicos</a><a href="#framework">Framework</a><a href="#visao">Por canal</a><a href="#canais">Canais</a>
+    </div>
+  </div>
+</nav>
+
+<section class="dir" id="direcao">
+  <div class="wrap">
+    <div class="box">
+      <div>
+        <div class="lab" style="color:var(--suave)">Direção estratégica</div>
+        <h2 style="margin-top:10px">Uma comunicação mais viva e humana <em>para quem faz, vende, instala e usa.</em></h2>
+      </div>
+      <div>
+        <p>Nossa missão é gerar engajamento profundo com os públicos da Soprano a partir dos seus negócios: Energia, Acesso e Segurança e Bem-estar. <b>A Soprano é a parceira do dia a dia.</b> O produto não é o protagonista, é a ferramenta de quem faz o trabalho acontecer. Por isso, o conteúdo conta histórias reais, e cada canal mostra um lado dessa parceria.</p>
+        <div class="principio"><div class="lab">Princípio</div><div>Histórias são maiores que produtos.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publicos">
+  <div class="wrap">
+    <div class="lab">Com quem falamos</div>
+    <h2 style="margin-top:8px">Parceira do dia a dia de quem faz, vende, instala e usa</h2>
+    <p class="sub">Quem decide a compra não está comprando um produto: está comprando a garantia de não ter que voltar. O profissional que instala é o nosso público prioritário.</p>
+    <div class="grid4">
+      <div class="card pub"><div class="n">01</div><h3>Quem faz</h3><div class="lab">Quem é</div><p>Colaboradores e lideranças da fábrica.</p><div class="lab">O que a parceria entrega</div><p class="m">Orgulho e pertencimento.</p></div>
+      <div class="card pub"><div class="n">02</div><h3>Quem vende</h3><div class="lab">Quem é</div><p>Lojistas e balconistas no ponto de venda.</p><div class="lab">O que a parceria entrega</div><p class="m">Argumento pronto e produto que não volta.</p></div>
+      <div class="card pub pri"><div class="n">03</div><span class="badge">Público prioritário</span><h3>Quem instala</h3><div class="lab">Quem é</div><p>O profissional: eletricista, marceneiro e chaveiro.</p><div class="lab">O que a parceria entrega</div><p class="m">Ser parceiro no dia a dia.</p></div>
+      <div class="card pub"><div class="n">04</div><h3>Quem usa</h3><div class="lab">Quem é</div><p>Consumidor final, em casa e no trabalho.</p><div class="lab">O que a parceria entrega</div><p class="m">Segurança, tranquilidade e praticidade no dia a dia.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="framework" style="padding-top:0">
+  <div class="wrap">
+    <div class="lab">Como nos conectamos</div>
+    <h2 style="margin-top:8px">Do propósito à história</h2>
+    <p class="sub">Toda peça passa pelos mesmos filtros antes de ir para o ar. Clique em cada etapa.</p>
+    <div class="steps" role="tablist" aria-label="Etapas do framework" id="steps"></div>
+    <div class="detail" id="detail" role="tabpanel"></div>
+    <div class="result"><div><span class="lab">Resultado</span><strong>Histórias reais, com pessoas reais e o produto como ferramenta para viver a vida.</strong></div><span class="r">A marca é parceira, o cliente protagonista.</span></div>
+  </div>
+</section>
+
+<section id="visao" style="padding-top:0">
+  <div class="wrap">
+    <div class="lab">Ecossistema</div>
+    <h2 style="margin-top:8px">Estratégia por canal</h2>
+    <p class="sub">Cada canal tem um papel. Todos puxados pela mesma mensagem.</p>
+    <div class="grid4 ov" id="ov"></div>
+    <div class="motor"><span class="lab">Operação</span>1 diária narrativa · 1 diária técnica · captador interno · 2 a 4 embaixadores · mídia always on no que já performou</div>
+  </div>
+</section>
+
+<section id="canais" style="padding-top:0">
+  <div class="wrap">
+    <div class="lab">Canais</div>
+    <h2 style="margin-top:8px">Estratégia, tática e operação de cada canal</h2>
+    <div class="tabs" role="tablist" aria-label="Canais" id="tabs"></div>
+    <div id="panel"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="graf" aria-hidden="true"><div class="flag"></div><div class="str"></div></div>
+  <div class="wrap">
+    <img class="flogo" src="assets/soprano_branco.png" alt="Soprano">
+    <p class="slogan">Parceira do dia a dia de quem faz, vende, instala e usa.</p>
+    <div class="base"><span>Estratégia de Posicionamento Digital</span><i></i><span class="sig">Desenvolvido por <img class="c" src="assets/ref_cooltivo_fabu.png" alt="Cooltivo"> + <img class="f" src="assets/ref_p35b.png" alt="Fabu"></span></div>
+  </div>
+</footer>
+
+<script>
+const STEPS=[
+ {n:'01',t:'Mensagem',q:'O quê?',p:'Toda peça reforça uma única ideia: a Soprano é a parceira do dia a dia.',tags:['Parceira do dia a dia']},
+ {n:'02',t:'Públicos',q:'Para quem?',p:'Cada conteúdo nasce para um dos quatro públicos da cadeia. O profissional que instala é o público prioritário.',tags:['Quem instala · prioritário','Quem faz','Quem vende','Quem usa']},
+ {n:'03',t:'Canal',q:'Onde e para quê?',p:'Cada rede tem uma função própria, e a peça é pensada para ela.',tags:['Instagram · vitrine','YouTube · técnica','LinkedIn · cultura','TikTok · bastidores e creators']},
+ {n:'04',t:'Editorias',q:'Sobre o quê?',p:'Os temas que a Soprano conta, sempre a partir de pessoas reais.',tags:['História de quem faz','Dia a dia do profissional','Lideranças e visão Soprano','Bastidores da Soprano','Explicações técnicas','Assuntos do momento','Feiras e eventos','Produto na vida','Datas comemorativas']},
+ {n:'05',t:'Formatos',q:'De que jeito?',p:'Formatos nativos e validados em cada plataforma. Os formatos são moldáveis a depender do que está em alta na plataforma.',tags:['POV','Rotina','Daily','React','How to','Comparativo','Gamificação','Série','Trend','Entrevista de rua','Animação','Novelinha','Experimento social','Passo a passo','Datasheet','Linha do tempo']}
+];
+const CH={
+ instagram:{k:'Instagram',c:'var(--azul2)',ic:'ref_ic_insta.png',big:'ref_big_insta_icon.png',pan:'v6_panel_insta.jpg',vid:'v_insta',fun:'A vitrine da Soprano',
+  obj:'O front da comunicação: a parceria do dia a dia vira conversa com quem faz, vende, instala e usa.',
+  ed:['História de quem faz','Dia a dia do profissional','Assuntos do momento','Feiras e eventos','Produto na vida','Datas comemorativas'],
+  fm:['POV','Rotina','Daily','Série','Gamificação','Trend'],
+  op:[['Cadência','3 a 4 posts por semana.'],['Produção','1 diária narrativa + embaixadores.'],['Stories','Eventos, feiras e ativações ao vivo.']],
+  met:['Taxa de engajamento','Comentários qualificados','Envios por alcance','Tempo de visualização'],rede:'Uma rede de narrativa e cultura.',ref:'Stam, Tramontina, Suvinil',ov:'Taxa de engajamento'},
+ youtube:{k:'YouTube',c:'var(--azul2)',ic:'ref_ic_yt.png',big:'ref_big_yt_icon.png',pan:'v6_panel_yt.jpg',vid:'v_yt',h:true,fun:'A base técnica da marca',
+  obj:'Onde o profissional aprende sobre produto, carreira e o universo da profissão, em playlists por produto e por profissional.',
+  ed:['Explicações técnicas','Dia a dia do profissional','História de quem faz','Produto na vida','Feiras e eventos'],
+  fm:['How to','Passo a passo','Comparativo','Datasheet','Série','POV','Experimento social'],
+  op:[['Cadência','1 vídeo longo + 2 a 3 Shorts por semana.'],['Produção','1 diária técnica por mês.'],['Validação','Engenharia revisa antes de publicar.']],
+  met:['Tempo de visualização','CTR','Inscritos','Tráfego de busca'],rede:'Uma rede de profundidade.',ref:'Intelbras, Schneider Electric, Quartzolit',ov:'Tempo de visualização'},
+ linkedin:{k:'LinkedIn',c:'var(--azul2)',ic:'ref_ic_li.png',big:'ref_big_li_icon.png',pan:'v6_panel_li.jpg',img:'v3_li.jpg',fun:'A cultura que atrai talentos',
+  obj:'Mostrar quem trabalha, quem lidera e o que a Soprano constrói além do produto.',
+  ed:['Lideranças e visão Soprano','Bastidores da Soprano','História de quem faz','Feiras e eventos','Datas comemorativas'],
+  fm:['Série','Rotina','Entrevista de rua','Animação','Linha do tempo'],
+  op:[['Cadência','2 posts por semana.'],['Pauta','RH, endomarketing e diária narrativa.']],
+  met:['Taxa de engajamento','Comentários','Seguidores','Candidaturas'],rede:'Uma rede de cultura e conexões.',ref:'WEG, Cimed, Stam',ov:'Taxa de engajamento'},
+ tiktok:{k:'TikTok',c:'var(--azul2)',ic:'ref_ic_tt.png',big:'ref_big_tt_icon.png',pan:'v6_panel_tt.jpg',vid:'v_tiktok',fun:'Bastidores e creators',
+  obj:'Conexão com a nova geração que faz, vende, instala e usa, numa linguagem nativa da plataforma.',
+  ed:['Assuntos do momento','Dia a dia do profissional','Bastidores da Soprano','Produto na vida','História de quem faz'],
+  fm:['Trend','POV','React','Novelinha','Experimento social','Entrevista de rua'],
+  op:[['Cadência','2 a 3 vídeos por semana + conteúdos do Instagram que fazem sentido no TikTok.'],['Captação','Responsável interno, no dia a dia.'],['Cooltivo','Briefing, edição e publicação.']],
+  met:['Visualizações de vídeo','Taxa de conclusão','Comentários','Compartilhamentos'],rede:'Uma rede de alcance.',ref:'Tramontina, Jaisli-Xamax, @eletrica.leao, @eufelipecorreria',ov:'Visualizações de vídeo'}
+};
+const ORDER=['instagram','youtube','linkedin','tiktok'];
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+
+// framework
+let cur=0;
+function renderSteps(){
+  $('#steps').innerHTML=STEPS.map((s,i)=>`<button class="step" role="tab" id="step-${i}" aria-selected="${i===cur}" aria-controls="detail"><span class="n">${s.n}</span><b>${s.t}</b><span class="q">${s.q}</span></button>`).join('');
+  const s=STEPS[cur];
+  $('#detail').innerHTML=`<div class="q">${s.q}</div><div><p>${esc(s.p)}</p><div class="tags">${s.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div></div>`;
+  $('#steps').querySelectorAll('.step').forEach((b,i)=>b.onclick=()=>{cur=i;renderSteps();$('#step-'+i).focus();});
+}
+renderSteps();
+$('#steps').addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){cur=(cur+(e.key==='ArrowRight'?1:STEPS.length-1))%STEPS.length;renderSteps();$('#step-'+cur).focus();e.preventDefault();}});
+
+// overview
+$('#ov').innerHTML=ORDER.map(id=>{const c=CH[id];return `<a class="card" href="#${id}" style="--c:${c.c}"><img src="assets/${c.ic}" alt=""><h3>${c.k}</h3><div class="lab" style="color:${c.c}">Estratégia</div><p>${esc(c.obj)}</p><div class="lab" style="color:${c.c}">Métrica principal</div><p style="color:var(--muted)">${c.ov}. ${c.rede}</p><span class="go" style="color:${c.c}">Ver canal →</span></a>`}).join('');
+
+// canais
+function media(c){
+  if(!c.vid) return `<div class="media"><img src="assets/${c.img}" alt="Colaborador da Soprano na fábrica"></div>`;
+  return `<div class="media"><video src="assets/${c.vid}.mp4" poster="assets/${c.vid}.jpg" autoplay muted loop playsinline preload="metadata"></video><button class="snd" type="button" aria-pressed="false">Ativar som</button></div>`;
+}
+function renderChannel(id){
+  const c=CH[id];
+  $('#tabs').innerHTML=ORDER.map(k=>`<button class="tab" role="tab" id="tab-${k}" aria-selected="${k===id}" data-id="${k}"><img src="assets/${CH[k].ic}" alt="">${CH[k].k}</button>`).join('');
+  $('#tabs').querySelectorAll('.tab').forEach(b=>b.onclick=()=>{select(b.dataset.id,true)});
+  const list=a=>`<ul>${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
+  const op=`<div class="c2 op"><div class="lab">Operação</div>${c.op.map(([a,b])=>`<p><b>${a}</b> ${esc(b)}</p>`).join('')}</div>`;
+  const met=`<div class="c2"><div class="lab">Métricas</div><p style="margin:6px 0 0;font-size:14px;font-weight:700;color:var(--verde)">${c.rede}</p><span class="pill">${c.met[0]}</span><small>principal</small>${list(c.met.slice(1))}</div>`;
+  const ed=`<div class="c2"><div class="lab">Editorias prioritárias</div>${list(c.ed)}</div>`;
+  const fm=`<div class="c2"><div class="lab">Formatos prioritários</div>${list(c.fm)}</div>`;
+  const rows=c.h?`<div class="row1 h">${media(c)}${ed}</div><div class="row2 h">${fm}${op}${met}</div>`
+                :`<div class="row1">${media(c)}${ed}${fm}</div><div class="row2">${op}${met}</div>`;
+  $('#panel').innerHTML=`<div class="panel" role="tabpanel" aria-labelledby="tab-${id}" style="--c:${c.c}">
+    <div class="side"><div><img class="big" src="assets/${c.ic}" alt=""><h3>${c.k}</h3><div class="x">× <img src="assets/ref_x_soprano.png" alt="Soprano"></div></div><small>ESTRATÉGIA DE POSICIONAMENTO DIGITAL</small></div>
+    <div class="body"><div class="lab">Estratégia do canal</div><h3>${c.fun}</h3><p class="obj">${esc(c.obj)}</p>${rows}<div class="refs">Referências: ${esc(c.ref)}</div></div></div>`;
+  const v=$('#panel video'),b=$('#panel .snd');
+  if(v&&b){b.onclick=()=>{v.muted=!v.muted;if(!v.muted){v.currentTime=0;v.play().catch(()=>{});}b.textContent=v.muted?'Ativar som':'Desativar som';b.setAttribute('aria-pressed',String(!v.muted));};}
+}
+function select(id,scroll){
+  if(!CH[id]) id='instagram';
+  renderChannel(id);
+  if(scroll){ if(location.hash!=='#'+id) history.replaceState(null,'','#'+id); $('#canais').scrollIntoView({behavior:'smooth'}); }
+}
+function fromHash(){const h=location.hash.slice(1);if(CH[h]){select(h,false);$('#canais').scrollIntoView();}}
+select(CH[location.hash.slice(1)]?location.hash.slice(1):'instagram',false);
+window.addEventListener('hashchange',fromHash);
+if(CH[location.hash.slice(1)]) setTimeout(()=>$('#canais').scrollIntoView(),50);
+
+</script>
+
+</body>
+</html>
