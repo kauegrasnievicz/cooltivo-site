@@ -283,8 +283,6 @@ function reading(){
     f.push('Posicionamento (pontual, 6 a 8 semanas): diagnóstico, workshop de co-criação e plataforma de marca');
   if(has(dores,'Marca pouco conhecida','Comunicação inconsistente','Dificuldade de atrair clientes novos')||can.length<=2||can.includes('Nenhum'))
     f.push('Presença digital (recorrente, 6 a 12 meses): planejamento, produção de conteúdo e gestão de canais');
-  if(can.length>=4&&notaK<=6||A.invest==='Não sei dizer')
-    f.push('Estratégia de canais (pontual, 4 semanas): papel de cada canal e direcionamento estratégico');
   if(['Ninguém dedicado','Eu mesmo, junto com outras funções'].includes(A.quem)||A.objetivo==='Profissionalizar o marketing'||has(dores,'Vendas imprevisíveis','Dependência de poucos clientes'))
     f.push('Consultoria de marketing (formato flexível): planejamento estratégico e acompanhamento semanal');
   if(!f.length)f.push('Posicionamento como ponto de partida, para confirmar a base antes de ampliar a comunicação');

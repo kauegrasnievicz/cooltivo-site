@@ -57,26 +57,6 @@ S = [
        ('Vocês produzem as fotos e os vídeos?', 'Sim. A gente conduz as produções com direção criativa própria e com parceiros do nosso ecossistema, como a Vitral Filmes.'),
        ('Em quais canais vocês atuam?', 'Nos que fazem sentido para o seu cliente, como Instagram, LinkedIn, YouTube e site. Isso é definido no planejamento.'),
        SERRA, START]),
- dict(slug='estrategia-de-canais', name='Estratégia de canais', tipo='Projeto pontual', dur='4 semanas',
-  seo_t='Estratégia de canais e diagnóstico digital · Cooltivo',
-  seo_d='Em 4 semanas, um diagnóstico da presença digital da sua empresa e um direcionamento claro de onde estar, com qual papel e com qual mensagem.',
-  h1='Onde a sua marca precisa estar, e o que dizer em cada lugar.',
-  intro='Estar em todos os canais custa caro e cansa o time. A gente analisa a presença digital atual da empresa e os dados de cada canal. Em 4 semanas, você tem um direcionamento claro de onde estar, com qual papel e com qual mensagem.',
-  quando=['A empresa está em muitos canais e não sabe qual traz resultado.',
-          'O investimento em marketing cresce e o retorno não aparece.',
-          'Vocês vão contratar uma agência ou montar um time e querem saber o que pedir.',
-          'A empresa vai lançar um produto ou entrar em um mercado novo.'],
-  c3=['A gente faz o diagnóstico dos canais e dos dados: o que existe, o que funciona e o que está parado.',
-      'A gente define junto com vocês o papel de cada canal e a mensagem de cada um.',
-      'A gente entrega o direcionamento em um plano claro, pronto para o seu time ou a sua agência executar.'],
-  recebe=[('Diagnóstico de canais e dados', 'Uma leitura honesta de cada canal da empresa, com números, pontos fortes e o que está travando.'),
-          ('Papel de cada canal', 'O que cada canal precisa fazer pelo negócio: atrair, convencer, vender ou manter o cliente perto.'),
-          ('Direcionamento estratégico', 'As prioridades, as mensagens e os próximos passos, em um plano que o time consegue seguir.')],
-  cases=['introduce', 'dsf-advogados', 'vino-verace'],
-  faq=[('Quanto tempo leva?', '4 semanas, do diagnóstico à entrega do direcionamento.'),
-       ('Vocês executam o plano depois?', 'Pode ser. Muitas empresas seguem com a gente em Presença digital. O plano também serve para o seu time interno ou para outra agência.'),
-       ('O que a empresa precisa liberar?', 'Acesso aos canais e às ferramentas de dados que a empresa usa, para o diagnóstico partir de números reais.'),
-       SERRA, START]),
  dict(slug='consultoria-de-marketing', name='Consultoria de marketing', tipo='Pontual ou recorrente', dur='Formato flexível',
   seo_t='Consultoria de marketing com Kauê Grasnievicz · Cooltivo · Serra Gaúcha',
   seo_d='Consultoria de marketing conduzida por Kauê Grasnievicz, estrategista com mais de 10 anos de marketing, para empresas de Caxias do Sul, Bento Gonçalves e do RS.',
@@ -235,3 +215,11 @@ def page(s):
 for s in S:
     open(os.path.join(OUT, s['slug'] + '.html'), 'w', encoding='utf-8').write(page(s))
 print('ok:', len(S), 'serviços')
+
+# Endereço antigo: Estratégia de canais saiu do site; redireciona para os serviços da home
+open(os.path.join(OUT, 'estrategia-de-canais.html'), 'w', encoding='utf-8').write('''<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Serviços · Cooltivo</title>
+<meta name="robots" content="noindex"><link rel="canonical" href="https://cooltivo.com.br/#entregas">
+<meta http-equiv="refresh" content="0; url=../index.html#entregas"></head>
+<body><a href="../index.html#entregas">Serviços da Cooltivo</a></body></html>
+''')
