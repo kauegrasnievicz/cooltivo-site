@@ -10,6 +10,7 @@ A pasta _tools não é publicada no site.
 import html, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import seo
+import footer_fab
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'cases')
@@ -320,7 +321,7 @@ def case_page(i, c):
         work['about']['description'] = c['about']
     sch = [work, seo.crumbs([('Cooltivo', '/'), ('Cases', '/cases/'), (c['name'], path)])]
     head = HEAD.format(title=e(t), desc=e(d), seo=seo.head(path, t, d, c['slug'] + '.jpg', 'article', sch))
-    return head + body + FOOT
+    return footer_fab.apply(head + body + FOOT, '../', False)
 
 
 def index_page():
@@ -354,7 +355,7 @@ def index_page():
     lst = {'@context': 'https://schema.org', '@type': 'CollectionPage', 'name': t, 'description': d, 'url': seo.BASE + '/cases/',
            'publisher': {'@id': seo.ORG_ID}, 'hasPart': [{'@type': 'CreativeWork', 'name': 'Case ' + c['name'], 'url': seo.BASE + '/cases/' + c['slug']} for c in CASES]}
     head = HEAD.format(title=e(t), desc=e(d), seo=seo.head('/cases/', t, d, 'cases.jpg', 'website', [lst, seo.crumbs([('Cooltivo', '/'), ('Cases', '/cases/')])]))
-    return head + body + FOOT
+    return footer_fab.apply(head + body + FOOT, "../", False)
 
 
 for i, c in enumerate(CASES):

@@ -209,7 +209,7 @@ def page(s):
         {'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in s['faq']]}
     sch = [service, faqld, seo.crumbs([('Cooltivo', '/'), ('Serviços', '/#entregas'), (s['name'], path)])]
     head = bc.HEAD.format(title=e(s['seo_t']), desc=e(s['seo_d']), seo=seo.head(path, s['seo_t'], s['seo_d'], s['slug'] + '.jpg', 'website', sch))
-    return fix(head + body + bc.FOOT)
+    return bc.footer_fab.apply(fix(head + body + bc.FOOT), '../', False)
 
 
 for s in S:
