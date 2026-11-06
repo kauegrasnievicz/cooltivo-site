@@ -150,27 +150,6 @@ def page():
   <div class="wheel-sig"><b>cooltivo</b><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10.6 2h2.8v6.6l4.7-4.7 2 2-4.7 4.7H22v2.8h-6.6l4.7 4.7-2 2-4.7-4.7V22h-2.8v-6.6l-4.7 4.7-2-2 4.7-4.7H2v-2.8h6.6L3.9 5.9l2-2 4.7 4.7z"/></svg>NOTHING GREAT<br>IS MADE ALONE</span></div>
 </section>
 
-<main class="story wrap">
-  <section class="st">
-    <div class="st-lab"><i>01</i>O que a Cooltivo faz</div>
-    <div class="st-body">
-      <p class="big">A Cooltivo é um estúdio de estratégia e criatividade da Serra Gaúcha. A nossa especialidade é construir marcas que resistem ao tempo, e a gente fica no centro do ecossistema, na estratégia e na orquestração.</p>
-      <ul class="rcv">
-        <li><b>Posicionamento</b><span>O lugar que a sua empresa ocupa na cabeça do cliente, a mensagem que só ela pode dizer e onde essa mensagem precisa aparecer.</span></li>
-        <li><b>Presença digital</b><span>Planejamento, produção de conteúdo e gestão dos canais, mês a mês, com a mesma história em tudo.</span></li>
-        <li><b>Consultoria de marketing</b><span>Kauê Grasnievicz na mesa com a liderança, pensando e acompanhando o plano de marketing.</span></li>
-      </ul>
-    </div>
-  </section>
-  <section class="st">
-    <div class="st-lab"><i>02</i>Como o ecossistema funciona</div>
-    <div class="st-body"><p class="big">Para cada projeto, a Cooltivo monta um time sob medida. O método é o mesmo de sempre: Context, Concept e Craft.</p><div class="c3g">{passos}</div></div>
-  </section>
-  <section class="st">
-    <div class="st-lab"><i>03</i>Especialidades</div>
-    <div class="st-body"><p class="big">Uma rede de confiança e excelência em todas as áreas do marketing.</p><div class="eco-areas">{areas}</div></div>
-  </section>
-</main>
 
 <section class="tl-vagas eco-marcas" id="marcas">
   <div class="wrap">
