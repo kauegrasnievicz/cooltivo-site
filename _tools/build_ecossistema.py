@@ -43,7 +43,7 @@ P = [
  dict(nome='Ghost ID Studio', cat=3, papel='Estúdio de branding', desc='Estúdio especializado em identidade visual, naming, sistemas verbais e consultoria de design, inclusive para outros estúdios de branding.', cases=[], site='https://ghostid.cc/'),
  dict(nome='Studio Mateus Araújo', cat=3, papel='Estúdio de comunicação visual', desc='Desde 2011 especializado em branding e design gráfico: cria, assessora e posiciona marcas.', cases=['neomot'], site='https://studiomateusaraujo.com.br/'),
  dict(nome='Cave Design', cat=3, papel='Estúdio de design', desc='', cases=[], site=''),
- dict(nome='Ato Estúdio', cat=3, papel='Estúdio de design', desc='', cases=[], site=''),
+ dict(nome='Tainan Ferrari', cat=3, papel='Caligrafia, lettering e design gráfico · Āto', desc='Calígrafo, letrista e designer gráfico, fundador da Āto. São cerca de 10 anos de experiência com marcas como Grêmio, Salton, Melissa e Renner.', cases=[], site='https://tainanferrari.com/about'),
  dict(nome='Lucas Miotto', cat=4, papel='Tecnologia', desc='', cases=[], site='https://br.linkedin.com/in/lucas-miotto'),
  dict(nome='Triacca', cat=4, papel='Design digital e desenvolvimento de software', desc='Empresa de Bento Gonçalves com mais de 10 anos de experiência em sites, softwares sob medida, e-commerce B2C e B2B, marketplaces e plataformas de enoturismo para vinícolas.', cases=[], site='https://triacca.com.br/'),
  dict(nome='Estratégia Criativa', cat=5, papel='Claudia Schroeder · estratégia criativa e redação',
@@ -127,20 +127,17 @@ def page():
     body = f'''{draft}
 <header class="ch eco-hero" id="topo">
   <svg class="bg-sym sym" aria-hidden="true"><use href="#sym"/></svg>
-  <div class="wrap ch-grid wide">
+  <div class="wrap ch-grid sv-hero">
     <div class="ch-txt">
       <div class="ch-brand"><span class="seg">Ecossistema Cooltivo · Nothing great is made alone</span></div>
       <h1>Nada grande é feito <span>sozinho.</span></h1>
       <p class="sum">Acreditamos que bons projetos nascem de pessoas boas e talentosas, unidas pelo mesmo objetivo. Acreditamos também que cada especialista deve atuar no seu lugar de potência. Por isso, nos últimos 10 anos, construímos um ecossistema que conecta todas as pontas do marketing às necessidades dos negócios que atendemos.</p>
       <div class="btns sv-btns"><a class="btn btn-soft" href="#marcas">Conhecer o ecossistema <svg><use href="#arr"/></svg></a><a class="btn btn-line-inv" href="../conversa.html">Agendar diagnóstico</a></div>
     </div>
+    <figure class="eco-vid"><video autoplay muted loop playsinline preload="metadata" poster="../video/rede-poster.jpg" aria-label="Parceiros do ecossistema Cooltivo"><source src="../video/rede.mp4" type="video/mp4"></video></figure>
   </div>
 </header>
 
-<section class="eco-wheel" aria-label="Parceiros do ecossistema Cooltivo">
-  <div class="mwrap">{wheel()}</div>
-  <div class="wheel-sig"><b>cooltivo</b><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10.6 2h2.8v6.6l4.7-4.7 2 2-4.7 4.7H22v2.8h-6.6l4.7 4.7-2 2-4.7-4.7V22h-2.8v-6.6l-4.7 4.7-2-2 4.7-4.7H2v-2.8h6.6L3.9 5.9l2-2 4.7 4.7z"/></svg>NOTHING GREAT<br>IS MADE ALONE</span></div>
-</section>
 
 
 <section class="tl-vagas eco-marcas" id="marcas">
