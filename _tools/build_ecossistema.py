@@ -17,65 +17,67 @@ CASE_NAME = {c['slug']: (c['name'] + (' + ' + c['extra'] if c.get('extra') else 
 
 # Categorias: (nome, o que a categoria entrega no ecossistema)
 CATS = [
- ('Produtoras audiovisuais', 'Filmes, fotografia e trilhas para campanhas, lançamentos e conteúdo.'),
- ('Mídia e tráfego pago', 'Planejamento e gestão de mídia paga para levar a mensagem certa a quem precisa ouvir.'),
- ('Consultores de negócio', 'Visão de negócio, vendas, growth e marketing ao lado da liderança dos clientes.'),
- ('Design e redação', 'Identidade visual, sistemas de marca, conceito criativo e redação, cada um com a sua assinatura.'),
+ ('Negócios', 'Visão de negócio, vendas, growth e marketing ao lado da liderança dos clientes.'),
+ ('Criativos', 'Filmes, fotografia, identidade visual, sistemas de marca, conceito criativo e redação.'),
  ('Tecnologia', 'Sites, sistemas e integrações para a marca funcionar bem no digital.'),
+ ('Mídia', 'Mídia paga, assessoria de imprensa e conteúdo para levar a mensagem a quem precisa ouvir.'),
 ]
 
 # Parceiros: nome, categoria, papel, descrição (só fatos confirmados), cases (slugs), site
 P = [
- dict(nome='Alba Arte', cat=0, papel='Produtora de filmes, fotografia e música',
+ dict(nome='Alba Arte', cat=1, papel='Produtora de filmes, fotografia e música',
       desc='Produtora de Bento Gonçalves: filmes, fotografia e trilhas originais gravadas em estúdio próprio.',
       cases=['garbo', 'vallontano'], site='https://albaarte.com/'),
- dict(nome='Vitral Filmes', cat=0, papel='Produtora audiovisual',
+ dict(nome='Vitral Filmes', cat=1, papel='Produtora audiovisual',
       desc='Apaixonados por cinema e por contar histórias, levam esse olhar para cada marca que filmam.',
       cases=['introduce', 'soprano', 'vallontano'], site=''),
- dict(nome='Balsa Produtora', cat=0, papel='Produtora audiovisual e estúdio de podcast',
+ dict(nome='Balsa Produtora', cat=1, papel='Produtora audiovisual e estúdio de podcast',
       desc='Médias e grandes produções com foco em eficiência operacional, além de estúdio próprio de podcast.',
       cases=['introduce', 'vino-verace'], site=''),
- dict(nome='Impulse Company', cat=1, papel='Marketing de performance B2B',
+ dict(nome='Impulse Company', cat=3, papel='Marketing de performance B2B',
       desc='Funis de aquisição para vendas complexas, com geração de demanda do tráfego ao fechamento.',
       cases=['introduce', 'dsf-advogados', 'vino-verace'], site='https://impulsecompany.com.br/'),
- dict(nome='Esdras Moreira', cat=2, papel='Consultor de negócios · CEO da Introduce',
+ dict(nome='Dinâmica', cat=3, papel='Assessoria de imprensa e conteúdo',
+      desc='De Caxias do Sul desde 1984: há 40 anos mostra ao mundo a potência e o diferencial das empresas.',
+      cases=[], site='https://dinamicaconteudo.com.br/quem-somos/'),
+ dict(nome='Esdras Moreira', cat=0, papel='Consultor de negócios · CEO da Introduce',
       desc='CEO Mais Inovador de 2025 (Prêmio CCB), fundou 8 negócios e hoje é mentor de founders em escala.',
       cases=[], site='https://www.linkedin.com/in/esdras-moreira'),
- dict(nome='Mauricio Gimenes', cat=2, papel='Consultor de vendas · CSO da Introduce',
+ dict(nome='Mauricio Gimenes', cat=0, papel='Consultor de vendas · CSO da Introduce',
       desc='Cofundador da Introduce, com mais de 10 anos em estratégia comercial, processos, marketing e atendimento.',
       cases=[], site='https://www.linkedin.com/in/mauriciogimenesoficial/'),
- dict(nome='Rodolfo da Costa', cat=2, papel='Inteligência estratégica · Berrô Strategy',
+ dict(nome='Rodolfo da Costa', cat=0, papel='Inteligência estratégica · Berrô Strategy',
       desc='À frente da Berrô Strategy desde 2011, une disciplinas e especialistas em estratégias de marketing.',
       cases=['dsf-advogados'], site='https://berrostrategy.com.br/about/'),
- dict(nome='Marcius Dal Bó', cat=2, papel='Conselheiro independente de marketing',
+ dict(nome='Marcius Dal Bó', cat=0, papel='Conselheiro independente de marketing',
       desc='Mais de 40 anos de marketing; dirigiu marca e comunicação da Grendene, de Melissa a Ipanema.',
       cases=[], site='https://www.linkedin.com/in/marcius-dal-bo'),
- dict(nome='Marlon Vieira', cat=2, papel='Consultor de gestão de marketing',
+ dict(nome='Marlon Vieira', cat=0, papel='Consultor de gestão de marketing',
       desc='Organiza o marketing de indústrias da Serra com quatro palavras: objetivo, número, dono e ritual.',
       cases=['santa-clara', 'neomot'], site=''),
- dict(nome='Luis Fernando Menti', cat=2, papel='Consultor de growth e negócios digitais',
+ dict(nome='Luis Fernando Menti', cat=0, papel='Consultor de growth e negócios digitais',
       desc='Geração de demanda B2B para quem vende com representantes: +R$ 100 mi investidos e 600 clientes.',
       cases=['neomot'], site=''),
- dict(nome='Fabu Design', cat=3, papel='Estúdio de branding e comunicação',
+ dict(nome='Fabu Design', cat=1, papel='Estúdio de branding e comunicação',
       desc='Branding, identidade visual, social media e audiovisual, com as sócias Caroline e Débora desde 2018.',
       cases=['soprano'], site='https://fabudesign.com.br/'),
- dict(nome='Ghost ID Studio', cat=3, papel='Estúdio de branding',
+ dict(nome='Ghost ID Studio', cat=1, papel='Estúdio de branding',
       desc='Identidade visual, naming e sistemas verbais, inclusive para outros estúdios de branding.',
       cases=[], site='https://ghostid.cc/'),
- dict(nome='Studio Mateus Araújo', cat=3, papel='Estúdio de comunicação visual',
+ dict(nome='Studio Mateus Araújo', cat=1, papel='Estúdio de comunicação visual',
       desc='Desde 2011 especializado em branding e design gráfico: cria, assessora e posiciona marcas.',
       cases=['neomot'], site='https://studiomateusaraujo.com.br/'),
- dict(nome='Cave Design', cat=3, papel='Estúdio de design', desc='', cases=[], site=''),
- dict(nome='Tainan Ferrari', cat=3, papel='Caligrafia, lettering e design gráfico · Āto',
+ dict(nome='Cave Design', cat=1, papel='Estúdio de design', desc='', cases=[], site=''),
+ dict(nome='Tainan Ferrari', cat=1, papel='Caligrafia, lettering e design gráfico · Āto',
       desc='Calígrafo, letrista e designer, fundador da Āto, com trabalhos para Grêmio, Salton e Melissa.',
       cases=[], site='https://tainanferrari.com/about'),
- dict(nome='Lucas Miotto', cat=4, papel='Desenvolvimento web',
+ dict(nome='Lucas Miotto', cat=2, papel='Desenvolvimento web',
       desc='Desenvolvedor desde 2015: sites gerenciáveis em WordPress, JavaScript e PHP com Laravel.',
       cases=[], site='https://br.linkedin.com/in/lucas-miotto'),
- dict(nome='Triacca', cat=4, papel='Design digital e desenvolvimento de software',
+ dict(nome='Triacca', cat=2, papel='Design digital e desenvolvimento de software',
       desc='De Bento Gonçalves: sites, software sob medida, e-commerce e plataformas de enoturismo.',
       cases=[], site='https://triacca.com.br/'),
- dict(nome='Estratégia Criativa', cat=3, papel='Claudia Schroeder · estratégia criativa e redação',
+ dict(nome='Estratégia Criativa', cat=1, papel='Claudia Schroeder · estratégia criativa e redação',
       desc='Estratégia criativa, direção de criação e redação, com mais de 30 anos de agência.',
       cases=['neomot'], site='https://www.estrategiacriativa.com.br/'),
 ]
@@ -101,6 +103,9 @@ AST = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="
 ARR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 10.6h11.3l-4.6-4.6 2-2L20.7 12l-8 8-2-2 4.6-4.6H4z"/></svg>'
 
 
+SHORT = {'Alba Arte': 'Audiovisual', 'Vitral Filmes': 'Audiovisual', 'Balsa Produtora': 'Audiovisual', 'Estratégia Criativa': 'Redação', 'Impulse Company': 'Mídia paga', 'Dinâmica': 'Imprensa e conteúdo'}
+
+
 def wheel():
     """Duas faixas de cartões deslizando em sentidos opostos (parceiros + blocos gráficos)."""
     icons = [('ast', AST), ('arr', ARR), ('grad', ARR), ('ast', AST)]
@@ -108,7 +113,7 @@ def wheel():
     def row(ps, start, cls):
         items = ''
         for j, p in enumerate(ps):
-            cat = (['Audiovisual', 'Mídia e tráfego', 'Consultoria', 'Design', 'Tecnologia'][p['cat']] if p['nome'] != 'Estratégia Criativa' else 'Redação')
+            cat = SHORT.get(p['nome'], CATS[p['cat']][0])
             items += f'<span class="mc nm"><i>{e(initials(p["nome"]))}</i><b>{e(p["nome"])}</b><small>{e(cat)}</small></span>'
             k, svg = icons[(j + start) % len(icons)]
             items += f'<span class="mc ic {k}">{svg}</span>'
