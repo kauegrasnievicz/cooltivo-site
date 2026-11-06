@@ -67,7 +67,6 @@ P = [
  dict(nome='Studio Mateus Araújo', cat=1, papel='Estúdio de comunicação visual',
       desc='Desde 2011 especializado em branding e design gráfico: cria, assessora e posiciona marcas.',
       cases=['neomot'], site='https://studiomateusaraujo.com.br/'),
- dict(nome='Cave Design', cat=1, papel='Estúdio de design', desc='', cases=[], site=''),
  dict(nome='Tainan Ferrari', cat=1, papel='Caligrafia, lettering e design gráfico · Āto',
       desc='Calígrafo, letrista e designer, fundador da Āto, com trabalhos para Grêmio, Salton e Melissa.',
       cases=[], site='https://tainanferrari.com/about'),
