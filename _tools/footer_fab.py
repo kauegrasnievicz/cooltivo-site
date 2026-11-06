@@ -6,7 +6,7 @@ PATH = 'M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0
 def fnav(p):
     return (f'<!-- fnav --><div class="wrap fwrap"><div class="fnav">'
             f'<div><small>Serviços</small><a href="{p}servicos/posicionamento-de-marca.html">Posicionamento de marca</a><a href="{p}servicos/presenca-digital.html">Presença digital</a><a href="{p}servicos/consultoria-de-marketing.html">Consultoria de marketing</a></div>'
-            f'<div><small>Cooltivo</small><a href="{p}cases/">Cases</a><a href="{p}conversa.html">Agendar diagnóstico</a><a href="{p}diagnostico-de-marca.html">Diagnóstico de marca</a><a href="{p}tese.html">Nossa tese</a><a href="{p}talentos/">Talentos</a></div>'
+            f'<div><small>Cooltivo</small><a href="{p}cases/">Cases</a><a href="{p}conversa.html">Agendar diagnóstico</a><a href="{p}diagnostico-de-marca.html">Diagnóstico de marca</a><a href="{p}tese.html">Nossa tese</a><a href="{p}ecossistema/">Ecossistema</a><a href="{p}talentos/">Talentos</a></div>'
             f'</div></div><!-- /fnav -->')
 
 FAB = ('<!-- fab --><a class="wa-fab" id="waFab" href="https://wa.me/5554991000102?text=Ol%C3%A1%2C%20Cooltivo!" target="_blank" rel="noopener" aria-label="Falar com a Cooltivo no WhatsApp">'

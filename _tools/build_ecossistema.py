@@ -11,7 +11,7 @@ e = html.escape
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'ecossistema')
 os.makedirs(OUT, exist_ok=True)
-DRAFT = True
+DRAFT = False
 
 CASE_NAME = {c['slug']: (c['name'] + (' + ' + c['extra'] if c.get('extra') else '')) for c in bc.CASES}
 
@@ -203,6 +203,7 @@ def page():
     out = head + body + bc.FOOT
     out = out.replace('href="cases.css"', 'href="../cases/cases.css"')
     out = out.replace('<li><a href="./" aria-current="page">Cases</a></li>', '<li><a href="../cases/">Cases</a></li>')
+    out = out.replace('<li><a href="../ecossistema/">Ecossistema</a></li>', '<li><a href="../ecossistema/" aria-current="page">Ecossistema</a></li>')
     out = out.replace('href="./"', 'href="../cases/"')
     return footer_fab.apply(out, '../', False)
 
