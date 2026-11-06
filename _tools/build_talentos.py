@@ -143,7 +143,6 @@ def page():
     out = head + body + bc.FOOT
     out = out.replace('href="cases.css"', 'href="../cases/cases.css"')
     out = out.replace('<li><a href="./" aria-current="page">Cases</a></li>', '<li><a href="../cases/">Cases</a></li>')
-    out = out.replace('<li><a href="../talentos/">Talentos</a></li>', '<li><a href="../talentos/" aria-current="page">Talentos</a></li>')
     out = out.replace('href="./"', 'href="../cases/"')
     return footer_fab.apply(out, '../', False)
 
