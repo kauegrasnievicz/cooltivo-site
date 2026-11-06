@@ -289,9 +289,50 @@ footer .links a:hover{color:var(--green-soft)}
 
 
 
+/* talentos */
+.btn-dark{background:var(--green);color:var(--cream)}
+.btn-dark:hover{background:var(--green-strong)}
+.tl-hero h1 span{color:var(--green-soft)}
+.tl-photo{margin:0;width:100%;justify-self:end;border-radius:28px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px rgba(0,0,0,.3)}
+.tl-photo img{width:100%;height:100%;object-fit:cover;object-position:40% 50%;display:block}
+.tl-hero .ch-grid.sv-hero{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr)}
+.tl-fotos{padding:0 0 100px}
+.tl-fotos-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px}
+.tl-fotos figure{margin:0;border-radius:24px;overflow:hidden;height:440px}
+.tl-fotos img{width:100%;height:100%;object-fit:cover;display:block}
+.tl-vagas{background:var(--cream);padding:100px 0;border-top:1px solid var(--line)}
+.tl-vagas h2{font-family:var(--font-display);font-weight:800;font-size:clamp(34px,4vw,56px);letter-spacing:-.045em;line-height:1;margin:16px 0 48px;color:var(--ink)}
+.tl-vagas h2 span{color:var(--green)}
+.tl-vagas .eyebrow{display:flex;align-items:center;gap:10px;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+.tl-vagas .eyebrow .sym{height:14px;width:19px}
+.vagas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.vaga{background:#fff;border:1px solid var(--line);border-radius:28px;padding:40px 38px;display:flex;flex-direction:column}
+.vaga-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 11px;border-radius:999px;background:var(--green-mist);color:var(--green)}
+.vaga h3{font-family:var(--font-display);font-weight:800;font-size:clamp(32px,3vw,44px);letter-spacing:-.04em;line-height:1;margin:18px 0 14px;color:var(--ink)}
+.vaga-meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;font-weight:700;color:var(--green)}
+.vaga-lead{font-size:18px;line-height:1.6;color:var(--ink);margin:24px 0 8px}
+.vaga-cols{display:grid;gap:22px;margin:16px 0 30px}
+.vaga h4{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin:0 0 10px}
+.vaga ul{list-style:none;margin:0;padding:0}
+.vaga li{display:flex;gap:12px;align-items:baseline;padding:9px 0;border-top:1px solid var(--line);font-size:16px;line-height:1.5;color:var(--ink)}
+.vaga li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--green-soft);transform:translateY(-2px)}
+.vaga-go{margin-top:auto;align-self:flex-start}
+.tl-f{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 18px}
+.tl-f label{display:flex;flex-direction:column;gap:8px}
+.tl-f label.full,.tl-f button,.tl-f .tl-note{grid-column:1 / -1}
+.tl-f span{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.tl-f input,.tl-f select,.tl-f textarea{font:500 16px/1.4 var(--font);padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--cream);color:var(--ink);width:100%;box-sizing:border-box}
+.tl-f input:focus,.tl-f select:focus,.tl-f textarea:focus{outline:2px solid var(--green-soft);border-color:var(--green)}
+.tl-f .bad{border-color:#b4442c;background:#fbeee9}
+.tl-f button{justify-self:start;border:0;cursor:pointer;font-family:var(--font)}
+.tl-note{font-size:14px;color:var(--muted,#5d6b62);margin:0}
+@media (max-width:900px){.tl-hero .ch-grid.sv-hero{grid-template-columns:1fr;gap:36px}.tl-photo{aspect-ratio:4/3;justify-self:stretch}.tl-fotos-grid,.vagas,.tl-f{grid-template-columns:1fr}.tl-fotos figure{height:auto;aspect-ratio:4/3}.vaga{padding:30px 24px}.tl-vagas{padding:64px 0}.tl-fotos{padding-bottom:64px}}
+/* /talentos */
+
+
 /* fab+fnav */
-footer .fnav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,auto));justify-content:start;gap:18px 88px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid rgba(249,243,227,.18)}
-footer .fnav>div{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 22px}
+footer .fnav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,auto));justify-content:start;align-items:start;gap:18px 88px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid rgba(249,243,227,.18)}
+footer .fnav>div{display:flex;flex-wrap:wrap;align-items:center;align-content:flex-start;gap:8px 22px}
 footer .fnav small{width:100%;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
 footer .fnav a{font-size:15px;font-weight:600;text-decoration:none;opacity:.88}
 footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}

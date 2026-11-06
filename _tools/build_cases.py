@@ -162,6 +162,7 @@ HEAD = '''<!doctype html>
       <li><a href="./" aria-current="page">Cases</a></li>
       <li><a href="../index.html#entregas">Entregas</a></li>
       <li><a href="../index.html#conteudos">Conteúdos</a></li>
+      <li><a href="../talentos/">Talentos</a></li>
     </ul>
     <a class="btn" href="../index.html#contato">Vamos conversar <svg><use href="#arr"/></svg></a>
   </div>

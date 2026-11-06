@@ -6,7 +6,7 @@ PATH = 'M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0
 def fnav(p):
     return (f'<!-- fnav --><div class="wrap fwrap"><div class="fnav">'
             f'<div><small>Serviços</small><a href="{p}servicos/posicionamento-de-marca.html">Posicionamento de marca</a><a href="{p}servicos/presenca-digital.html">Presença digital</a><a href="{p}servicos/consultoria-de-marketing.html">Consultoria de marketing</a></div>'
-            f'<div><small>Cooltivo</small><a href="{p}cases/">Cases</a><a href="{p}conversa.html">Agendar diagnóstico</a><a href="{p}diagnostico-de-marca.html">Diagnóstico de marca</a><a href="{p}tese.html">Nossa tese</a></div>'
+            f'<div><small>Cooltivo</small><a href="{p}cases/">Cases</a><a href="{p}conversa.html">Agendar diagnóstico</a><a href="{p}diagnostico-de-marca.html">Diagnóstico de marca</a><a href="{p}tese.html">Nossa tese</a><a href="{p}talentos/">Talentos</a></div>'
             f'</div></div><!-- /fnav -->')
 
 FAB = ('<!-- fab --><a class="wa-fab" id="waFab" href="https://wa.me/5554991000102?text=Ol%C3%A1%2C%20Cooltivo!" target="_blank" rel="noopener" aria-label="Falar com a Cooltivo no WhatsApp">'
@@ -15,8 +15,8 @@ FAB = ('<!-- fab --><a class="wa-fab" id="waFab" href="https://wa.me/55549910001
        'new IntersectionObserver(function(e){f.classList.toggle("hide",e[0].isIntersecting)},{threshold:.05}).observe(c)})();</script><!-- /fab -->')
 
 CSS = '''/* fab+fnav */
-footer .fnav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,auto));justify-content:start;gap:18px 88px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid rgba(249,243,227,.18)}
-footer .fnav>div{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 22px}
+footer .fnav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,auto));justify-content:start;align-items:start;gap:18px 88px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid rgba(249,243,227,.18)}
+footer .fnav>div{display:flex;flex-wrap:wrap;align-items:center;align-content:flex-start;gap:8px 22px}
 footer .fnav small{width:100%;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
 footer .fnav a{font-size:15px;font-weight:600;text-decoration:none;opacity:.88}
 footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}

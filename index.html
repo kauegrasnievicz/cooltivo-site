@@ -492,8 +492,8 @@ footer .links a:hover{color:var(--orange)}
   footer .wrap{flex-direction:column;align-items:start}
 }
 /* fab+fnav */
-footer .fnav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,auto));justify-content:start;gap:18px 88px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid rgba(249,243,227,.18)}
-footer .fnav>div{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 22px}
+footer .fnav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,auto));justify-content:start;align-items:start;gap:18px 88px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid rgba(249,243,227,.18)}
+footer .fnav>div{display:flex;flex-wrap:wrap;align-items:center;align-content:flex-start;gap:8px 22px}
 footer .fnav small{width:100%;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
 footer .fnav a{font-size:15px;font-weight:600;text-decoration:none;opacity:.88}
 footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
@@ -547,6 +547,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
       <li><a href="#cases">Cases</a></li>
       <li><a href="#entregas">Entregas</a></li>
       <li><a href="#conteudos">Conteúdos</a></li>
+      <li><a href="talentos/">Talentos</a></li>
     </ul>
     <a class="btn btn-orange" href="#contato">Vamos conversar <svg><use href="#arr"/></svg></a>
   </div>
@@ -922,7 +923,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
     </div>
   </div>
   <footer>
-    <!-- fnav --><div class="wrap fwrap"><div class="fnav"><div><small>Serviços</small><a href="servicos/posicionamento-de-marca.html">Posicionamento de marca</a><a href="servicos/presenca-digital.html">Presença digital</a><a href="servicos/consultoria-de-marketing.html">Consultoria de marketing</a></div><div><small>Cooltivo</small><a href="cases/">Cases</a><a href="conversa.html">Agendar diagnóstico</a><a href="diagnostico-de-marca.html">Diagnóstico de marca</a><a href="tese.html">Nossa tese</a></div></div></div><!-- /fnav -->
+    <!-- fnav --><div class="wrap fwrap"><div class="fnav"><div><small>Serviços</small><a href="servicos/posicionamento-de-marca.html">Posicionamento de marca</a><a href="servicos/presenca-digital.html">Presença digital</a><a href="servicos/consultoria-de-marketing.html">Consultoria de marketing</a></div><div><small>Cooltivo</small><a href="cases/">Cases</a><a href="conversa.html">Agendar diagnóstico</a><a href="diagnostico-de-marca.html">Diagnóstico de marca</a><a href="tese.html">Nossa tese</a><a href="talentos/">Talentos</a></div></div></div><!-- /fnav -->
     <div class="wrap">
       <span class="brand"><svg class="sym"><use href="#sym"/></svg><b>cooltivo</b><span>estúdio</span></span>
       <div class="sig"><svg class="sym"><use href="#sym"/></svg>NOTHING GREAT<br>IS MADE ALONE</div>
@@ -1099,6 +1100,8 @@ fill('row1',L);
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&pl.classList.contains('open'))close()});
 })();
 </script>
+
+
 
 
 
