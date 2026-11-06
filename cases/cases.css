@@ -375,8 +375,9 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
 @media (prefers-reduced-motion:reduce){.mtrack{animation:none}}
 .eco-areas{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
 .eco-areas span{font-size:15px;font-weight:600;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--cream);color:var(--ink)}
-.eco-group{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,2.2fr);gap:40px;padding:40px 0;border-top:1px solid var(--line)}
-.eco-gh h3{font-family:var(--font-display);font-weight:800;font-size:28px;letter-spacing:-.03em;line-height:1.05;margin:0 0 10px;color:var(--ink)}
+.eco-group{display:grid;grid-template-columns:1fr;gap:22px;padding:40px 0;border-top:1px solid var(--line)}
+.eco-gh{display:flex;align-items:baseline;gap:8px 24px;flex-wrap:wrap}
+.eco-gh h3{font-family:var(--font-display);font-weight:800;font-size:28px;letter-spacing:-.03em;line-height:1.05;margin:0;color:var(--ink)}
 .eco-gh p{font-size:15px;line-height:1.5;margin:0;color:var(--muted,#5d6b62)}
 .eco-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .eco-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px}
