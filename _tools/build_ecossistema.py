@@ -44,7 +44,7 @@ P = [
  dict(nome='Studio Mateus Araújo', cat=3, papel='Estúdio de comunicação visual', desc='Desde 2011 especializado em branding e design gráfico: cria, assessora e posiciona marcas.', cases=['neomot'], site='https://studiomateusaraujo.com.br/'),
  dict(nome='Cave Design', cat=3, papel='Estúdio de design', desc='', cases=[], site=''),
  dict(nome='Ato Estúdio', cat=3, papel='Estúdio de design', desc='', cases=[], site=''),
- dict(nome='Lucas Miotto', cat=4, papel='Tecnologia', desc='', cases=[], site=''),
+ dict(nome='Lucas Miotto', cat=4, papel='Tecnologia', desc='', cases=[], site='https://br.linkedin.com/in/lucas-miotto'),
  dict(nome='Triacca', cat=4, papel='Design digital e desenvolvimento de software', desc='Empresa de Bento Gonçalves com mais de 10 anos de experiência em sites, softwares sob medida, e-commerce B2C e B2B, marketplaces e plataformas de enoturismo para vinícolas.', cases=[], site='https://triacca.com.br/'),
  dict(nome='Estratégia Criativa', cat=5, papel='Claudia Schroeder · estratégia criativa e redação',
       desc='Consultoria de comunicação e branding de Porto Alegre, comandada por Claudia Schroeder, estrategista criativa, diretora de criação e redatora com mais de 30 anos de agência.',
@@ -68,36 +68,28 @@ def initials(n):
     return (w[0][0] + (w[1][0] if len(w) > 1 else '')).upper()
 
 
+AST = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10.6 2h2.8v6.6l4.7-4.7 2 2-4.7 4.7H22v2.8h-6.6l4.7 4.7-2 2-4.7-4.7V22h-2.8v-6.6l-4.7 4.7-2-2 4.7-4.7H2v-2.8h6.6L3.9 5.9l2-2 4.7 4.7z"/></svg>'
+ARR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 10.6h11.3l-4.6-4.6 2-2L20.7 12l-8 8-2-2 4.6-4.6H4z"/></svg>'
+
+
 def wheel():
-    """Duas rodas de cartões girando em sentidos opostos, como o vídeo dos parceiros."""
-    names = [p['nome'] for p in P]
-    icons = ['ast', 'arr', 'ast', 'grad']
+    """Duas faixas de cartões deslizando em sentidos opostos (parceiros + blocos gráficos)."""
+    icons = [('ast', AST), ('arr', ARR), ('grad', ARR), ('ast', AST)]
 
-    def ring(items, cls):
-        n = len(items)
-        out = ''
-        for i, it in enumerate(items):
-            a = 360 / n * i
-            if it.startswith('@'):
-                kind = it[1:]
-                inner = {'ast': '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M10.6 2h2.8v6.6l4.7-4.7 2 2-4.7 4.7H22v2.8h-6.6l4.7 4.7-2 2-4.7-4.7V22h-2.8v-6.6l-4.7 4.7-2-2 4.7-4.7H2v-2.8h6.6L3.9 5.9l2-2 4.7 4.7z"/></svg>',
-                         'arr': '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 10.6h11.3l-4.6-4.6 2-2L20.7 12l-8 8-2-2 4.6-4.6H4z"/></svg>',
-                         'grad': '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M4 10.6h11.3l-4.6-4.6 2-2L20.7 12l-8 8-2-2 4.6-4.6H4z"/></svg>'}[kind]
-                out += f'<span class="wc ic {kind}" style="--a:{a:.2f}deg">{inner}</span>'
-            else:
-                out += f'<span class="wc nm" style="--a:{a:.2f}deg"><i>{e(initials(it))}</i><b>{e(it)}</b></span>'
-        return f'<div class="ring {cls}">{out}</div>'
+    def row(ps, start, cls):
+        items = ''
+        for j, p in enumerate(ps):
+            cat = ['Audiovisual', 'Mídia e tráfego', 'Consultoria', 'Design', 'Tecnologia', 'Redação'][p['cat']]
+            items += f'<span class="mc nm"><i>{e(initials(p["nome"]))}</i><b>{e(p["nome"])}</b><small>{e(cat)}</small></span>'
+            k, svg = icons[(j + start) % len(icons)]
+            items += f'<span class="mc ic {k}">{svg}</span>'
+        # duas cópias para o loop sem emenda
+        dup = items.replace('class="mc', 'aria-hidden="true" class="mc')
+        return f'<div class="mrow {cls}"><div class="mtrack">{items}{dup}</div></div>'
 
-    outer, inner = [], []
-    for k, n in enumerate(names):
-        (outer if k % 2 == 0 else inner).append(n)
-    def mix(lst, start):
-        res = []
-        for j, n in enumerate(lst):
-            res.append(n)
-            res.append('@' + icons[(j + start) % len(icons)])
-        return res
-    return ring(mix(outer, 0), 'r1') + ring(mix(inner, 1), 'r2')
+    a = [p for k, p in enumerate(P) if k % 2 == 0]
+    b = [p for k, p in enumerate(P) if k % 2 == 1]
+    return row(a, 0, 'm1') + row(b, 1, 'm2')
 
 
 def card(p, k):
@@ -146,7 +138,7 @@ def page():
 </header>
 
 <section class="eco-wheel" aria-label="Parceiros do ecossistema Cooltivo">
-  <div class="wheel">{wheel()}</div>
+  <div class="mwrap">{wheel()}</div>
   <div class="wheel-sig"><b>cooltivo</b><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10.6 2h2.8v6.6l4.7-4.7 2 2-4.7 4.7H22v2.8h-6.6l4.7 4.7-2 2-4.7-4.7V22h-2.8v-6.6l-4.7 4.7-2-2 4.7-4.7H2v-2.8h6.6L3.9 5.9l2-2 4.7 4.7z"/></svg>NOTHING GREAT<br>IS MADE ALONE</span></div>
 </section>
 
