@@ -382,7 +382,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
 .eco-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .eco-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:10px}
 .eco-top{display:flex;align-items:center;gap:14px}
-.eco-mono{flex:none;width:64px;height:64px;border-radius:16px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:19px;letter-spacing:-.02em;color:#fff}
+.eco-mono{flex:none;width:80px;height:80px;border-radius:18px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:19px;letter-spacing:-.02em;color:#fff}
 .eco-mono img{width:100%;height:100%;display:block;object-fit:cover}
 .eco-mono.ph{border-radius:50%;background:var(--mist)}
 .eco-mono.lg{padding:9px}

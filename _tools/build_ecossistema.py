@@ -154,10 +154,10 @@ def media(p, k):
     kind, f, bg = m
     alt = e(p['nome'])
     if kind == 'foto':
-        return f'<span class="eco-mono ph"><img src="../img/eco/{f}" alt="Foto de {alt}" width="64" height="64" loading="lazy"></span>'
+        return f'<span class="eco-mono ph"><img src="../img/eco/{f}" alt="Foto de {alt}" width="80" height="80" loading="lazy"></span>'
     if kind == 'logo-full':
-        return f'<span class="eco-mono lf"><img src="../img/eco/{f}" alt="Logo {alt}" width="64" height="64" loading="lazy"></span>'
-    return f'<span class="eco-mono lg" style="background:{bg}"><img src="../img/eco/{f}" alt="Logo {alt}" width="64" height="64" loading="lazy"></span>'
+        return f'<span class="eco-mono lf"><img src="../img/eco/{f}" alt="Logo {alt}" width="80" height="80" loading="lazy"></span>'
+    return f'<span class="eco-mono lg" style="background:{bg}"><img src="../img/eco/{f}" alt="Logo {alt}" width="80" height="80" loading="lazy"></span>'
 
 
 def card(p, k):
