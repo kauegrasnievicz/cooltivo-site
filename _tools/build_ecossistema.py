@@ -61,7 +61,7 @@ P = [
  dict(nome='Fabu Design', cat=1, papel='Estúdio de branding e comunicação',
       desc='Branding, identidade visual, social media e audiovisual, com as sócias Caroline e Débora desde 2018.',
       cases=['soprano'], site='https://fabudesign.com.br/'),
- dict(nome='Ghost ID Studio', cat=1, papel='Estúdio de branding',
+ dict(nome='Ghost ID Studio', cat=1, papel='Ariel de Carli · estúdio de branding',
       desc='Identidade visual, naming e sistemas verbais, inclusive para outros estúdios de branding.',
       cases=[], site='https://ghostid.cc/'),
  dict(nome='Studio Mateus Araújo', cat=1, papel='Estúdio de comunicação visual',
@@ -80,6 +80,16 @@ P = [
       desc='Estratégia criativa, direção de criação e redação, com mais de 30 anos de agência.',
       cases=['neomot'], site='https://www.estrategiacriativa.com.br/'),
 ]
+
+# Mídia dos cards: nome -> (tipo, arquivo em img/eco/, fundo). tipo: foto (rosto), logo (sobre fundo), logo-full (imagem já quadrada)
+MEDIA = {
+ 'Balsa Produtora': ('logo-full', 'balsa.jpg', ''),
+ 'Impulse Company': ('logo', 'impulse.png', '#0f2a1d'),
+ 'Vitral Filmes': ('logo', 'vitral.png', '#1d1d1b'),
+ 'Dinâmica': ('logo', 'dinamica.svg', '#1d3a2a'),
+ 'Ghost ID Studio': ('foto', 'ghost-id.jpg', ''),
+ 'Estratégia Criativa': ('foto', 'estrategia-criativa.jpg', ''),
+}
 
 AREAS = ['Audiovisual', 'Mídia paga', 'Assessoria de imprensa', 'Redação publicitária', 'Consultoria de negócios', 'Design',
          'Marketing', 'Tecnologia', 'Treinamento comercial e de liderança', 'Análise de dados', 'Growth marketing']
@@ -125,6 +135,19 @@ def wheel():
     return row(a, 0, 'm1') + row(b, 1, 'm2')
 
 
+def media(p, k):
+    m = MEDIA.get(p['nome'])
+    if not m:
+        return f'<span class="eco-mono m{k % 3}">{e(initials(p["nome"]))}</span>'
+    kind, f, bg = m
+    alt = e(p['nome'])
+    if kind == 'foto':
+        return f'<span class="eco-mono ph"><img src="../img/eco/{f}" alt="Foto de {alt}" width="64" height="64" loading="lazy"></span>'
+    if kind == 'logo-full':
+        return f'<span class="eco-mono lf"><img src="../img/eco/{f}" alt="Logo {alt}" width="64" height="64" loading="lazy"></span>'
+    return f'<span class="eco-mono lg" style="background:{bg}"><img src="../img/eco/{f}" alt="Logo {alt}" width="64" height="64" loading="lazy"></span>'
+
+
 def card(p, k):
     cases = ''.join(f'<a href="../cases/{s}.html">{e(CASE_NAME[s])}</a>' for s in p['cases'])
     cases_html = f'<p class="eco-cases"><b>Cases:</b> {cases}</p>' if cases else ''
@@ -132,7 +155,7 @@ def card(p, k):
     desc = f'<p class="eco-faz">{e(p["desc"])}</p>' if p['desc'] else ''
     return f'''
         <article class="eco-card">
-          <div class="eco-top"><span class="eco-mono m{k % 3}">{e(initials(p['nome']))}</span><div><h4>{e(p['nome'])}</h4><p class="eco-esp">{e(p['papel'])}</p></div></div>
+          <div class="eco-top">{media(p, k)}<div><h4>{e(p['nome'])}</h4><p class="eco-esp">{e(p['papel'])}</p></div></div>
           {desc}{cases_html}{site}
         </article>'''
 
