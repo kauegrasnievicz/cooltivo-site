@@ -84,6 +84,10 @@ P = [
 # Mídia dos cards: nome -> (tipo, arquivo em img/eco/, fundo). tipo: foto (rosto), logo (sobre fundo), logo-full (imagem já quadrada)
 MEDIA = {
  'Alba Arte': ('logo', 'alba-arte.jpg', '#fff;border:1px solid #dfe8e1'),
+ 'Esdras Moreira': ('foto', 'esdras-moreira.jpg', ''),
+ 'Mauricio Gimenes': ('foto', 'mauricio-gimenes.jpg', ''),
+ 'Studio Mateus Araújo': ('foto', 'studio-mateus-araujo.jpg', ''),
+ 'Lucas Miotto': ('foto', 'lucas-miotto.jpg', ''),
  'Triacca': ('logo-full', 'triacca.jpg', ''),
  'Balsa Produtora': ('logo-full', 'balsa.jpg', ''),
  'Impulse Company': ('logo', 'impulse.png', '#0f2a1d'),
