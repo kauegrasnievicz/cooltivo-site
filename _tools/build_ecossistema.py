@@ -83,7 +83,7 @@ P = [
 
 # Mídia dos cards: nome -> (tipo, arquivo em img/eco/, fundo). tipo: foto (rosto), logo (sobre fundo), logo-full (imagem já quadrada)
 MEDIA = {
- 'Alba Arte': ('foto', 'alba-arte.jpg', ''),
+ 'Alba Arte': ('logo', 'alba-arte.jpg', '#fff;border:1px solid #dfe8e1'),
  'Fabu Design': ('logo', 'fabu.png', '#fff;border:1px solid #dfe8e1'),
  'Rodolfo da Costa': ('foto', 'rodolfo-da-costa.jpg', ''),
  'Marcius Dal Bó': ('foto', 'marcius-dal-bo.jpg', ''),
