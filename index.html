@@ -504,6 +504,41 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
 @media (max-width:760px){.wa-fab{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:56px;height:56px;padding:0;justify-content:center}.wa-fab span{display:none}.wa-fab svg{width:28px;height:28px}footer .fnav{grid-template-columns:1fr;gap:22px}}
 @media print{.wa-fab{display:none}}
 /* /fab+fnav */
+
+/* metodo horizontal (3Cs) */
+.met{position:relative;height:420vh;background:var(--cream)}
+.met-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding:0 clamp(14px,2vw,28px)}
+.met-cards{position:relative;height:100%}
+.met-card{--off:36px;position:absolute;top:96px;bottom:28px;left:0;width:calc(100% - 2*var(--off));border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr;box-shadow:0 0 0 1px rgba(36,80,58,.12),-18px 0 40px -24px rgba(23,38,29,.35);will-change:transform}
+.met-card.mc1{background:var(--green-mist);color:var(--green-ink)}
+.met-card.mc2{background:var(--green);color:var(--cream)}
+.met-card.mc3{background:var(--green-strong);color:var(--cream)}
+.met-txt{padding:clamp(24px,3.4vw,52px);display:flex;flex-direction:column;min-width:0}
+.met-top{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+.met-card h3{font-family:var(--font-display);font-weight:800;font-size:clamp(56px,9.4vw,150px);line-height:.9;letter-spacing:-.055em;margin:auto 0 18px}
+.met-card h3 i{font-style:normal;opacity:.55}
+.met-card .met-lead{font-size:clamp(17px,1.6vw,22px);line-height:1.4;max-width:34em;font-weight:600}
+.met-card .met-sub{margin-top:10px;max-width:34em;font-size:clamp(15px,1.25vw,17px);line-height:1.5;opacity:.82}
+.met-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.met-tags span{border:1.5px solid currentColor;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700;opacity:.85}
+.met-get{margin-top:18px;display:flex;gap:10px;align-items:baseline;font-size:15px}
+.met-get small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.7}
+.met-get b{font-family:var(--font-display);font-weight:800;font-size:clamp(18px,1.8vw,24px);letter-spacing:-.02em}
+.met-img{position:relative;min-height:0}
+.met-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.met-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.12),transparent 40%)}
+@media (max-width:760px){
+  .met-card{--off:16px;grid-template-columns:1fr;top:84px}
+  .met-img{display:none}
+  .met-card h3{font-size:clamp(52px,17vw,88px)}
+  .met-card .met-sub{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .met{height:auto;padding:70px 0}
+  .met-stage{position:static;height:auto;overflow:visible}
+  .met-cards{display:grid;gap:18px}
+  .met-card{position:relative;top:auto;bottom:auto;width:100%;min-height:440px;transform:none!important}
+}
 </style>
 <!-- seo -->
 <link rel="canonical" href="https://cooltivo.com.br/">
@@ -582,6 +617,72 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
   </div>
  </div>
 </header>
+
+<!-- METODO HORIZONTAL -->
+<section class="met" id="metodo" aria-label="Como a Cooltivo trabalha: método 3C's">
+  <div class="met-stage">
+    <div class="met-cards">
+      <article class="met-card mc1" data-i="0">
+        <div class="met-txt">
+          <div class="met-top"><span>Nosso método · 3C's</span><span>01 / 03</span></div>
+          <h3>Context<i>.</i></h3>
+          <p class="met-lead">Entender antes de criar.</p>
+          <p class="met-sub">Imersão no negócio, no mercado e no momento da marca, com diagnóstico e desk research para decidir com base no que é real.</p>
+          <div class="met-tags"><span>Imersão</span><span>Diagnóstico</span><span>Desk research</span></div>
+          <p class="met-get"><small>Você recebe</small><b>Posicionamento único</b></p>
+        </div>
+        <div class="met-img"><img src="img/historia/h4.jpg" alt="Kauê Grasnievicz em imersão na Soprano" loading="lazy"></div>
+      </article>
+      <article class="met-card mc2" data-i="1">
+        <div class="met-txt">
+          <div class="met-top"><span>Nosso método · 3C's</span><span>02 / 03</span></div>
+          <h3>Concept<i>.</i></h3>
+          <p class="met-lead">Decidir junto.</p>
+          <p class="met-sub">Um workshop de co-criação com quem decide define a essência, a diferenciação e a narrativa da marca.</p>
+          <div class="met-tags"><span>Workshop</span><span>Plataforma de marca</span><span>Narrativa</span></div>
+          <p class="met-get"><small>Você recebe</small><b>Mensagem clara</b></p>
+        </div>
+        <div class="met-img"><img src="img/historia/h6.jpg" alt="Workshop de posicionamento da Cooltivo com o Mapa das alternativas" loading="lazy"></div>
+      </article>
+      <article class="met-card mc3" data-i="2">
+        <div class="met-txt">
+          <div class="met-top"><span>Nosso método · 3C's</span><span>03 / 03</span></div>
+          <h3>Craft<i>.</i></h3>
+          <p class="met-lead">Executar com excelência.</p>
+          <p class="met-sub">Identidade, conteúdo e canais saem do mesmo plano, com o ecossistema Cooltivo orquestrando cada frente.</p>
+          <div class="met-tags"><span>Identidade</span><span>Conteúdo</span><span>Canais</span></div>
+          <p class="met-get"><small>Você recebe</small><b>Ecossistema de conteúdo</b></p>
+        </div>
+        <div class="met-img"><img src="img/historia/h3.jpg" alt="Produção audiovisual em vinhedo" loading="lazy"></div>
+      </article>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var sec=document.getElementById("metodo");if(!sec)return;
+    if(window.matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+    var cards=[].slice.call(sec.querySelectorAll(".met-card")),n=cards.length,ticking=false;
+    function ease(t){return 1-Math.pow(1-t,3)}
+    function clamp(v){return v<0?0:v>1?1:v}
+    function upd(){
+      ticking=false;
+      var r=sec.getBoundingClientRect(),vh=window.innerHeight,total=r.height-vh,p=total>0?clamp(-r.top/total):0;
+      var off=parseFloat(getComputedStyle(cards[0]).getPropertyValue("--off"))||36,segs=n-1,span=.82/segs,start=.06;
+      cards.forEach(function(c,i){
+        var base=i*off,x;
+        if(i===0){x=0}else{
+          var t=clamp((p-(start+(i-1)*span))/(span*.9));
+          var w=c.parentNode.clientWidth;
+          x=base+(1-ease(t))*(w-base+30);
+        }
+        c.style.transform="translate3d("+x+"px,0,0)";
+      });
+    }
+    function req(){if(!ticking){ticking=true;requestAnimationFrame(upd)}}
+    window.addEventListener("scroll",req,{passive:true});window.addEventListener("resize",req);upd();
+  })();
+  </script>
+</section>
 
 <!-- CLIENTES -->
 <section class="clients" id="clientes" aria-label="Marcas que já cultivamos">
