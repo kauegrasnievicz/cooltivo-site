@@ -88,6 +88,7 @@ MEDIA = {
  'Rodolfo da Costa': ('foto', 'rodolfo-da-costa.jpg', ''),
  'Marcius Dal Bó': ('foto', 'marcius-dal-bo.jpg', ''),
  'Luis Fernando Menti': ('foto', 'luis-fernando-menti.jpg', ''),
+ 'Marlon Vieira': ('foto', 'marlon-vieira.jpg', ''),
  'Tainan Ferrari': ('foto', 'tainan-ferrari.jpg', ''),
  'Esdras Moreira': ('foto', 'esdras-moreira.jpg', ''),
  'Mauricio Gimenes': ('foto', 'mauricio-gimenes.jpg', ''),
