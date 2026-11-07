@@ -58,7 +58,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:7
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
 .brand .sym{height:28px;width:38px}
 .brand b{font-family:var(--font-display);font-weight:800;font-size:22px;letter-spacing:-.03em}
-.brand span{font-size:10px;font-weight:600;letter-spacing:.04em;opacity:.8;align-self:flex-start;margin:5px 0 0 -10px;line-height:1}
+.brand span{font-size:13px;font-weight:600;letter-spacing:.04em;opacity:.8;align-self:flex-start;margin:5px 0 0 -10px;line-height:1}
 nav ul{display:flex;gap:30px;list-style:none;font-weight:600;font-size:15px}
 nav ul a{text-decoration:none;color:inherit;opacity:.92}
 nav ul a:hover{opacity:1;color:var(--orange)}
@@ -81,7 +81,7 @@ nav .btn{padding:11px 20px;font-size:14px}
 .ct-word{font-family:var(--font-display);font-weight:900;letter-spacing:-.04em}
 .ct-top{position:absolute;z-index:3;left:24px;right:24px;margin:0;text-align:center;transform:translateY(-100%);font-family:var(--font-display);font-weight:800;font-size:clamp(20px,2.6vw,38px);letter-spacing:-.03em;line-height:1.05;color:var(--cream);text-wrap:balance}
 .capa.tempo .inner{z-index:4;opacity:0;pointer-events:none}
-.ct-hint{position:absolute;z-index:5;left:50%;bottom:24px;transform:translateX(-50%);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);display:flex;flex-direction:column;align-items:center;gap:8px}
+.ct-hint{position:absolute;z-index:5;left:50%;bottom:24px;transform:translateX(-50%);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);display:flex;flex-direction:column;align-items:center;gap:8px}
 .ct-hint::after{content:"";width:1.5px;height:34px;background:linear-gradient(var(--cream),transparent);animation:ctdrip 1.8s ease-in-out infinite}
 @keyframes ctdrip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 .capa .bar{position:relative;z-index:2;border-top:1px solid var(--line-inv)}
@@ -145,7 +145,7 @@ nav .btn{padding:11px 20px;font-size:14px}
 .tf-prog{position:absolute;left:0;right:0;bottom:32px;display:flex;gap:6px;align-items:center}
 .tf-prog span{width:34px;height:3px;border-radius:9px;background:rgba(249,243,227,.25);overflow:hidden;position:relative}
 .tf-prog span i{position:absolute;inset:0;background:var(--green-soft);transform-origin:left;transform:scaleX(0)}
-.tf-prog small{margin-left:10px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(249,243,227,.7)}
+.tf-prog small{margin-left:10px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(249,243,227,.7)}
 .pilares.pilares-cont{padding-top:0}
 .pilares .manif-2{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:70px;border-top:1px solid rgba(249,243,227,.2);padding-top:44px}
 .pilares .manif.manif-2 p+p{margin-top:0}
@@ -168,7 +168,7 @@ nav .btn{padding:11px 20px;font-size:14px}
 /* CLIENTES */
 .clients{padding:36px 0;background:var(--white);border-bottom:1px solid var(--line)}
 .crow{display:flex;align-items:center;gap:32px;max-width:var(--wrap);margin:0 auto;padding-inline:40px}
-.clabel{flex:none;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.clabel{flex:none;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .marquee{flex:1;min-width:0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .track{display:flex;align-items:center;width:max-content;animation:scroll 80s linear infinite}
 .marquee:hover .track{animation-play-state:paused}
@@ -270,17 +270,18 @@ nav .btn{padding:11px 20px;font-size:14px}
 .clogo{height:30px;width:auto;max-width:170px;object-fit:contain;filter:brightness(0) invert(1);opacity:.92}
 .cl-santa-clara,.cl-garbo,.cl-vallontano{height:44px}.cl-soprano{height:20px}.cl-dsf{height:46px}.cl-tazza{height:46px}.cl-zen{height:28px}
 
-.case .seg{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(249,243,227,.7);text-align:right}
-.case h3{font-size:44px;line-height:1;letter-spacing:-.04em;margin:30px 0 16px}
+.case .seg{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(249,243,227,.7);text-align:right}
+.case .who{margin:22px 0 0;font-size:14px;line-height:1.45;color:rgba(249,243,227,.82);max-width:34em}.case .who b{color:#dcebe1;text-transform:uppercase;letter-spacing:.1em;font-size:13px;margin-right:6px}
+.case h3{font-size:44px;line-height:1;letter-spacing:-.04em;margin:18px 0 16px}
 .case p{font-size:18px;line-height:1.5;max-width:56ch;color:rgba(249,243,227,.88)}
 .case .nums{display:flex;gap:40px;margin:24px 0 22px;flex-wrap:wrap}
 .case .nums b{display:block;font-family:var(--font-display);font-weight:800;font-size:40px;color:var(--orange);letter-spacing:-.03em;line-height:1}
 .case .nums span{font-size:13px;color:rgba(249,243,227,.75);display:block;margin-top:6px;max-width:170px;line-height:1.3}
 .case .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
-.case .chips span{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:rgba(249,243,227,.12);color:var(--cream)}
+.case .chips span{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:rgba(249,243,227,.12);color:var(--cream)}
 .case .vis{position:relative;min-height:100%;background:var(--green-deep);overflow:hidden}
 .case .vis img,.case .vis video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.case .vis .award{position:absolute;left:18px;top:18px;z-index:2;background:var(--white);color:var(--green);border-radius:16px;padding:10px 14px;display:flex;gap:10px;align-items:center;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.2;max-width:230px}
+.case .vis .award{position:absolute;left:18px;top:18px;z-index:2;background:var(--white);color:var(--green);border-radius:16px;padding:10px 14px;display:flex;gap:10px;align-items:center;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.2;max-width:230px}
 .case .vis .award img{position:static;width:44px;height:44px;object-fit:contain;flex:none}
 .case .vis .award .medal{width:40px;height:40px;border-radius:50%;background:var(--green);color:var(--white);display:grid;place-items:center;font-family:var(--font-display);font-weight:900;font-size:13px;flex:none;letter-spacing:0}
 .watch{position:absolute;right:16px;bottom:16px;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:0;background:rgba(18,36,26,.72);backdrop-filter:blur(6px);color:var(--cream);font:700 13px/1 var(--font);cursor:pointer}
@@ -288,9 +289,9 @@ nav .btn{padding:11px 20px;font-size:14px}
 .watch:hover{background:var(--white);color:var(--green-strong)}
 .collab{display:flex;align-items:center;gap:12px;margin:0 0 16px;padding:10px 14px 10px 10px;border:1.5px solid rgba(249,243,227,.22);border-radius:16px;width:fit-content;max-width:100%}
 .collab .sym{height:26px;width:36px;color:var(--orange);flex:none}
-.collab small{display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(249,243,227,.6)}
+.collab small{display:block;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(249,243,227,.6)}
 .collab b{display:block;font-size:14px;font-weight:700;color:var(--cream);line-height:1.25}
-@media (min-width:901px) and (max-height:820px){.cases{padding:72px 0 64px}.cases h2{font-size:46px}.cases .head{margin-bottom:20px}.case .txt{padding:28px 40px 26px}.case h3{font-size:36px;margin:16px 0 10px}.case p{font-size:17px;line-height:1.45}.case .nums{margin:14px 0 12px}.case .nums b{font-size:34px}.collab{margin-bottom:12px;padding:8px 12px 8px 8px}.case .chips span{padding:6px 10px;font-size:11px}}
+@media (min-width:901px) and (max-height:820px){.cases{padding:72px 0 64px}.cases h2{font-size:46px}.cases .head{margin-bottom:20px}.case .txt{padding:28px 40px 26px}.case h3{font-size:36px;margin:16px 0 10px}.case p{font-size:17px;line-height:1.45}.case .nums{margin:14px 0 12px}.case .nums b{font-size:34px}.collab{margin-bottom:12px;padding:8px 12px 8px 8px}.case .chips span{padding:6px 10px;font-size:13px}}
 /* Setas laterais sobre o carrossel: sempre à vista enquanto o card está na tela */
 .case-more{display:inline-flex;align-items:center;gap:8px;margin-top:16px;width:fit-content;font-size:14px;font-weight:700;color:var(--green-soft);text-decoration:none;border-bottom:1px solid rgba(169,200,179,.4);padding-bottom:3px;transition:color .2s,border-color .2s}
 .case-more svg{width:10px;height:10px}
@@ -328,12 +329,12 @@ nav .btn{padding:11px 20px;font-size:14px}
 .services .head p{max-width:400px;color:var(--muted);font-size:17px}
 .sv{border-top:1px solid var(--line)}
 .s{display:grid;grid-template-columns:70px minmax(0,1.1fr) minmax(0,1.5fr) auto;gap:32px;align-items:start;padding:40px 28px;border-bottom:1px solid var(--line);border-radius:0;transition:background .35s ease,color .35s ease,border-radius .35s ease}
-.s-n{font-family:var(--font-display);font-weight:800;font-size:36px;letter-spacing:-.04em;line-height:1;color:var(--green-soft);transition:color .35s}
+.s-n{font-family:var(--font-display);font-weight:800;font-size:36px;letter-spacing:-.04em;line-height:1;color:#5f8f72;transition:color .35s}
 .s h3{font-size:40px;line-height:1.02;letter-spacing:-.04em;margin:0 0 16px;color:var(--green);transition:color .35s}
 .s h3 a{color:inherit;text-decoration:none}
 .s-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
 .chips2{display:flex;gap:8px}
-.chip{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border-radius:999px;background:var(--green);color:var(--cream);transition:background .35s,color .35s}
+.chip{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border-radius:999px;background:var(--green);color:var(--cream);transition:background .35s,color .35s}
 .chip.rec{background:var(--green-soft);color:var(--green-strong)}
 .s .dur{font-size:14px;font-weight:600;color:var(--muted);transition:color .35s}
 .s .what{font-size:18px;font-weight:600;line-height:1.45;color:var(--ink);margin:4px 0 16px;max-width:520px;transition:color .35s}
@@ -372,7 +373,7 @@ nav .btn{padding:11px 20px;font-size:14px}
 .reel:hover{transform:scale(1.04);box-shadow:0 24px 50px rgba(0,0,0,.35);z-index:2}
 .reel .info{position:absolute;left:18px;right:18px;bottom:18px;z-index:2}
 .reel .info b{display:block;font-family:var(--font-display);font-weight:800;font-size:19px;letter-spacing:-.02em;line-height:1.15}
-.reel .info span{display:block;font-size:12px;font-weight:600;opacity:.75;margin-top:6px}
+.reel .info span{display:block;font-size:13px;font-weight:600;opacity:.75;margin-top:6px}
 .reel .pbtn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:62px;height:62px;border-radius:50%;background:rgba(249,243,227,.18);backdrop-filter:blur(6px);display:grid;place-items:center;transition:opacity .25s}
 .reel .pbtn svg{width:22px;height:22px;margin-left:3px}
 .reel:hover .pbtn{opacity:0}
@@ -397,7 +398,7 @@ nav .btn{padding:11px 20px;font-size:14px}
 .fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px}
 .f{display:flex;flex-direction:column;gap:8px;min-width:0}
 .f.full{grid-column:1/-1}
-.f span{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-soft)}
+.f span{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-soft)}
 .f em{font-style:normal;text-transform:none;letter-spacing:0;font-weight:500;opacity:.8}
 .f input,.f select,.f textarea{font:500 16px var(--font);color:var(--cream);background:rgba(18,36,26,.35);border:1.5px solid rgba(249,243,227,.22);border-radius:14px;padding:14px 16px;width:100%;outline:none;transition:border-color .2s,background .2s;appearance:none;-webkit-appearance:none}
 .f select{background-image:linear-gradient(45deg,transparent 50%,var(--cream) 50%),linear-gradient(135deg,var(--cream) 50%,transparent 50%);background-position:calc(100% - 22px) 52%,calc(100% - 16px) 52%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
@@ -416,11 +417,11 @@ nav .btn{padding:11px 20px;font-size:14px}
 .contact{display:grid;grid-template-columns:repeat(3,1fr);margin-top:90px;border-top:1px solid var(--line-inv);border-bottom:1px solid var(--line-inv)}
 .contact>*{padding:30px 0;text-decoration:none;display:block;min-width:0}
 .contact>*+*{border-left:1px solid var(--line-inv);padding-left:32px}
-.contact small{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:6px}
+.contact small{display:block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:6px}
 .contact span{font-family:var(--font-display);font-size:26px;font-weight:800;letter-spacing:-.03em;overflow-wrap:anywhere}
 footer{padding:30px 0 calc(40px + env(safe-area-inset-bottom,0px))}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;font-size:14px;gap:20px}
-footer .sig{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.06em;font-size:12px;line-height:1.2}
+footer .sig{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.06em;font-size:13px;line-height:1.2}
 footer .sig .sym{height:18px;width:25px;color:var(--orange)}
 footer .links{display:flex;gap:24px;font-weight:600;flex-wrap:wrap}
 footer .links a{text-decoration:none}
@@ -436,7 +437,7 @@ footer .links a:hover{color:var(--orange)}
   nav .wrap{height:66px}
   .capa .inner{padding-top:110px}
   .capa .mark{height:44px;width:60px;margin-bottom:24px}
-  .capa .bar .wrap{height:auto;padding-block:18px;flex-wrap:wrap;gap:10px 18px;font-size:11px}
+  .capa .bar .wrap{height:auto;padding-block:18px;flex-wrap:wrap;gap:10px 18px;font-size:13px}
   h2,.pilares h2,.way h2,.network h2,.services h2,.cases h2,.insta h2{font-size:44px}
   .story,.pilares,.way,.network,.services,.cases,.insta{padding-block:80px}
   .story h2.belief{font-size:40px}
@@ -491,6 +492,10 @@ footer .links a:hover{color:var(--orange)}
   .contact span{font-size:22px}
   footer .wrap{flex-direction:column;align-items:start}
 }
+
+@media (max-width:760px){nav .btn .nl{display:none}}
+/* contraste: texto pequeno sobre verde */
+.cta .eyebrow,.cta .f span,.cta .f em,.cta small{color:#dcebe1}
 /* fab+fnav */
 footer .fnav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,auto));justify-content:start;align-items:start;gap:18px 88px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid rgba(249,243,227,.18)}
 footer .fnav>div{display:flex;flex-wrap:wrap;align-items:center;align-content:flex-start;gap:8px 22px}
@@ -504,41 +509,6 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
 @media (max-width:760px){.wa-fab{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:56px;height:56px;padding:0;justify-content:center}.wa-fab span{display:none}.wa-fab svg{width:28px;height:28px}footer .fnav{grid-template-columns:1fr;gap:22px}}
 @media print{.wa-fab{display:none}}
 /* /fab+fnav */
-
-/* metodo horizontal (3Cs) */
-.met{position:relative;height:420vh;background:var(--cream)}
-.met-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;padding:0 clamp(14px,2vw,28px)}
-.met-cards{position:relative;height:100%}
-.met-card{--off:36px;position:absolute;top:96px;bottom:28px;left:0;width:calc(100% - 2*var(--off));border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr;box-shadow:0 0 0 1px rgba(36,80,58,.12),-18px 0 40px -24px rgba(23,38,29,.35);will-change:transform}
-.met-card.mc1{background:var(--green-mist);color:var(--green-ink)}
-.met-card.mc2{background:var(--green);color:var(--cream)}
-.met-card.mc3{background:var(--green-strong);color:var(--cream)}
-.met-txt{padding:clamp(24px,3.4vw,52px);display:flex;flex-direction:column;min-width:0}
-.met-top{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
-.met-card h3{font-family:var(--font-display);font-weight:800;font-size:clamp(56px,9.4vw,150px);line-height:.9;letter-spacing:-.055em;margin:auto 0 18px}
-.met-card h3 i{font-style:normal;opacity:.55}
-.met-card .met-lead{font-size:clamp(17px,1.6vw,22px);line-height:1.4;max-width:34em;font-weight:600}
-.met-card .met-sub{margin-top:10px;max-width:34em;font-size:clamp(15px,1.25vw,17px);line-height:1.5;opacity:.82}
-.met-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.met-tags span{border:1.5px solid currentColor;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700;opacity:.85}
-.met-get{margin-top:18px;display:flex;gap:10px;align-items:baseline;font-size:15px}
-.met-get small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.7}
-.met-get b{font-family:var(--font-display);font-weight:800;font-size:clamp(18px,1.8vw,24px);letter-spacing:-.02em}
-.met-img{position:relative;min-height:0}
-.met-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.met-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.12),transparent 40%)}
-@media (max-width:760px){
-  .met-card{--off:16px;grid-template-columns:1fr;top:84px}
-  .met-img{display:none}
-  .met-card h3{font-size:clamp(52px,17vw,88px)}
-  .met-card .met-sub{display:none}
-}
-@media (prefers-reduced-motion:reduce){
-  .met{height:auto;padding:70px 0}
-  .met-stage{position:static;height:auto;overflow:visible}
-  .met-cards{display:grid;gap:18px}
-  .met-card{position:relative;top:auto;bottom:auto;width:100%;min-height:440px;transform:none!important}
-}
 </style>
 <!-- seo -->
 <link rel="canonical" href="https://cooltivo.com.br/">
@@ -577,14 +547,14 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
   <div class="wrap">
     <a class="brand" href="#topo" aria-label="Cooltivo Estúdio, voltar ao topo"><svg class="sym"><use href="#sym"/></svg><b>cooltivo</b><span>estúdio</span></a>
     <ul>
+      <li><a href="#cases">Cases</a></li>
       <li><a href="#historia">Nossa história</a></li>
       <li><a href="#jeito">Método</a></li>
-      <li><a href="#cases">Cases</a></li>
-      <li><a href="#entregas">Entregas</a></li>
+      <li><a href="#entregas">Serviços</a></li>
       <li><a href="#conteudos">Conteúdos</a></li>
       <li><a href="ecossistema/">Ecossistema</a></li>
     </ul>
-    <a class="btn btn-orange" href="#contato">Vamos conversar <svg><use href="#arr"/></svg></a>
+    <a class="btn btn-orange" href="#contato"><span>Conversar<span class="nl"> sobre minha marca</span></span> <svg><use href="#arr"/></svg></a>
   </div>
 </nav>
 
@@ -609,9 +579,10 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
   <div class="inner">
     <div class="wrap">
       <h1>Cultivamos marcas que resistem <span class="hl">ao tempo.</span></h1>
+      <p class="lead">Para seu negócio valer mais, vender mais e durar mais.</p>
       <div class="ctas">
         <a class="btn btn-orange" href="#cases">Ver resultados <svg><use href="#arr"/></svg></a>
-        <a class="btn btn-line-inv" href="#contato">Vamos conversar</a>
+        <a class="btn btn-line-inv" href="#contato">Conversar sobre minha marca</a>
       </div>
     </div>
   </div>
@@ -627,125 +598,11 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
   </div>
 </section>
 
-<!-- HISTÓRIA -->
-<section class="story" id="historia">
-  <div class="wrap grid">
-    <figure class="slides-wrap">
-      <div class="slides" id="slides"><img src="img/historia/h6.jpg" alt="Workshop de posicionamento da Cooltivo com o Mapa das alternativas" class=on><img src="img/historia/h1.jpg" alt="Time Cooltivo e parceiros em gravação"><img src="img/historia/h2.jpg" alt="Kauê Grasnievicz apresentando desk research em workshop"><img src="img/historia/h3.jpg" alt="Produção audiovisual em vinhedo"><img src="img/historia/h4.jpg" alt="Kauê Grasnievicz em imersão na Soprano"><img src="img/historia/h5.jpg" alt="Time Cooltivo trabalhando no jardim"></div>
-    </figure>
-    <div>
-      <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Nossa história · Estúdio de branding da Serra Gaúcha</div>
-      <h2 class="belief">Resistir ao tempo não é apenas durar. <span class="hl">É ter coragem de se manter fiel a sua essência.</span></h2>
-      <p class="lead">É escolher uma posição e sustentá-la mesmo quando ela ainda parece estranha. São essas marcas que continuam vivas quando as tendências passam.</p>
-      <p class="lead lead-2">Por isso pensamos o agora com os olhos no longo prazo, ao lado de quem sabe que marca é o ativo mais duradouro de um negócio. É isso que fazemos todos os dias: ajudamos a construir marcas que resistem ao tempo.</p>
-      <h3 class="about">No que acreditamos</h3>
-      <ul class="beliefs">
-        <li><svg class="sym"><use href="#sym"/></svg><span><b>Marca é ativo de negócio.</b> Ela gera valor, e deve ser construída e cuidada como tal.</span></li>
-        <li><svg class="sym"><use href="#sym"/></svg><span><b>Longo prazo e visão.</b> O agora importa, mas sempre com os olhos no que vai durar.</span></li>
-        <li><svg class="sym"><use href="#sym"/></svg><span><b>Decisões diárias que falam a língua dos negócios,</b> com criatividade, clareza e coragem.</span></li>
-      </ul>
-      <div class="origin">
-        <h3 class="about">Sobre Kauê Grasnievicz</h3>
-        <p>A Cooltivo foi cofundada por <a class="name" href="https://www.linkedin.com/in/kauegrasnievicz/" target="_blank" rel="noopener">Kauê Grasnievicz</a>, estrategista com mais de 10 anos de marketing e especialista em marca e comunicação. Antes do estúdio, foi gerente de marketing de uma grande rede hoteleira e líder de digital de uma agência de comunicação que atendia grandes marcas gaúchas.</p>
-        <blockquote class="quote-sm"><p>“A comunicação é uma das ferramentas mais poderosas para transformar pessoas, sociedade e negócios.”</p><cite>Kauê Grasnievicz</cite></blockquote>
-      </div>
-      <div class="facts">
-        <div><b>100+</b><span>projetos nos últimos 6 anos</span></div>
-        <div><b>20+</b><span>parceiros no ecossistema</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- METODO HORIZONTAL -->
-<section class="met" id="metodo" aria-label="Como a Cooltivo trabalha: método 3C's">
-  <div class="met-stage">
-    <div class="met-cards">
-      <article class="met-card mc1" data-i="0">
-        <div class="met-txt">
-          <div class="met-top"><span>Nosso método · 3C's</span><span>01 / 03</span></div>
-          <h3>Context<i>.</i></h3>
-          <p class="met-lead">Entender antes de criar.</p>
-          <p class="met-sub">Imersão no negócio, no mercado e no momento da marca, com diagnóstico e desk research para decidir com base no que é real.</p>
-          <div class="met-tags"><span>Imersão</span><span>Diagnóstico</span><span>Desk research</span></div>
-          <p class="met-get"><small>Você recebe</small><b>Posicionamento único</b></p>
-        </div>
-        <div class="met-img"><img src="img/historia/h4.jpg" alt="Kauê Grasnievicz em imersão na Soprano" loading="lazy"></div>
-      </article>
-      <article class="met-card mc2" data-i="1">
-        <div class="met-txt">
-          <div class="met-top"><span>Nosso método · 3C's</span><span>02 / 03</span></div>
-          <h3>Concept<i>.</i></h3>
-          <p class="met-lead">Decidir junto.</p>
-          <p class="met-sub">Um workshop de co-criação com quem decide define a essência, a diferenciação e a narrativa da marca.</p>
-          <div class="met-tags"><span>Workshop</span><span>Plataforma de marca</span><span>Narrativa</span></div>
-          <p class="met-get"><small>Você recebe</small><b>Mensagem clara</b></p>
-        </div>
-        <div class="met-img"><img src="img/historia/h6.jpg" alt="Workshop de posicionamento da Cooltivo com o Mapa das alternativas" loading="lazy"></div>
-      </article>
-      <article class="met-card mc3" data-i="2">
-        <div class="met-txt">
-          <div class="met-top"><span>Nosso método · 3C's</span><span>03 / 03</span></div>
-          <h3>Craft<i>.</i></h3>
-          <p class="met-lead">Executar com excelência.</p>
-          <p class="met-sub">Identidade, conteúdo e canais saem do mesmo plano, com o ecossistema Cooltivo orquestrando cada frente.</p>
-          <div class="met-tags"><span>Identidade</span><span>Conteúdo</span><span>Canais</span></div>
-          <p class="met-get"><small>Você recebe</small><b>Ecossistema de conteúdo</b></p>
-        </div>
-        <div class="met-img"><img src="img/historia/h3.jpg" alt="Produção audiovisual em vinhedo" loading="lazy"></div>
-      </article>
-    </div>
-  </div>
-  <script>
-  (function(){
-    var sec=document.getElementById("metodo");if(!sec)return;
-    if(window.matchMedia("(prefers-reduced-motion:reduce)").matches)return;
-    var cards=[].slice.call(sec.querySelectorAll(".met-card")),n=cards.length,ticking=false;
-    function ease(t){return 1-Math.pow(1-t,3)}
-    function clamp(v){return v<0?0:v>1?1:v}
-    function upd(){
-      ticking=false;
-      var r=sec.getBoundingClientRect(),vh=window.innerHeight,total=r.height-vh,p=total>0?clamp(-r.top/total):0;
-      var off=parseFloat(getComputedStyle(cards[0]).getPropertyValue("--off"))||36,segs=n-1,span=.82/segs,start=.06;
-      cards.forEach(function(c,i){
-        var base=i*off,x;
-        if(i===0){x=0}else{
-          var t=clamp((p-(start+(i-1)*span))/(span*.9));
-          var w=c.parentNode.clientWidth;
-          x=base+(1-ease(t))*(w-base+30);
-        }
-        c.style.transform="translate3d("+x+"px,0,0)";
-      });
-    }
-    function req(){if(!ticking){ticking=true;requestAnimationFrame(upd)}}
-    window.addEventListener("scroll",req,{passive:true});window.addEventListener("resize",req);upd();
-  })();
-  </script>
-</section>
-
-<!-- JEITO -->
-<section class="way" id="jeito">
-  <div class="wrap">
-    <div class="head">
-      <div>
-        <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Nosso jeito · Método de posicionamento de marca</div>
-        <h2 style="margin-top:18px">Conheça o método <span class="hl">3C's.</span></h2>
-      </div>
-      <p class="lead">O nosso jeito de fazer: entender antes de criar, decidir junto e executar com excelência.</p>
-    </div>
-    <div class="mvid">
-      <video id="v3c" playsinline preload="metadata" poster="video/metodo-3cs.jpg"><source src="video/metodo-3cs.mp4" type="video/mp4"></video>
-      <button class="mplay" type="button" id="p3c" aria-label="Assistir ao vídeo do método 3C's"><span><svg><use href="#play"/></svg></span>Assistir ao método</button>
-    </div>
-    <div class="c3"><span>01 · <b>Context</b></span><span>02 · <b>Concept</b></span><span>03 · <b>Craft</b></span></div>
-  </div>
-</section>
-
 <!-- CASES -->
 <section class="cases" id="cases">
   <div class="wrap head">
     <div>
-      <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Cases de branding · Marcas do RS</div>
+      <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Cases · Marcas do RS</div>
       <h2 style="margin-top:16px">Resultados que <span class="hl">cultivamos.</span></h2>
     </div>
     <div class="ctrl" aria-label="Navegar pelos cases">
@@ -762,6 +619,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
     <article class="case on">
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-introduce" src="logos/introduce.png" alt="Introduce"></span><span class="seg">Tecnologia · Cibersegurança B2B</span></div>
+        <p class="who"><b>Quem é</b> Segurança da informação e transformação digital, em Caxias do Sul. Criou a comunidade Guardiões Digitais.</p>
         <h3>Recorde de faturamento e um canal de crescimento exponencial.</h3>
         <p>Uma empresa de cibersegurança B2B precisava de escala e previsibilidade comercial. Criamos o posicionamento e conectamos marca, conteúdo e performance para gerar demanda.</p>
         <div class="nums"><div><b>2 anos</b><span>seguidos de recorde de faturamento</span></div><div><b>1.500+</b><span>membros na comunidade Guardiões Digitais</span></div></div>
@@ -775,6 +633,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
     <article class="case">
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-soprano" src="logos/soprano.png" alt="Soprano"></span><span class="seg">Indústria · Presença digital</span></div>
+        <p class="who"><b>Quem é</b> Indústria de Farroupilha fundada em 1954, com mais de 4.000 itens e cerca de 1.000 colaboradores.</p>
         <h3>Uma gigante da indústria mais nativa no digital.</h3>
         <p>Levamos o novo posicionamento da Soprano para o digital, com as pessoas à frente dos produtos: bastidores, equipe e quem usa a marca no dia a dia.</p>
         <div class="nums"><div><b>+400%</b><span>de crescimento no engajamento</span></div><div><b>Pessoas</b><span>como protagonistas da marca</span></div></div>
@@ -788,6 +647,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
     <article class="case">
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-santa-clara" src="logos/santa-clara.png" alt="Santa Clara"></span><span class="seg">Cooperativa · Programa Plantando o Bem</span></div>
+        <p class="who"><b>Quem é</b> Cooperativa de laticínios de Carlos Barbosa, fundada em 1911, com cerca de 5.000 famílias associadas.</p>
         <h3>1º Concurso de Sustentabilidade Criativa.</h3>
         <p>As hortas do programa Plantando o Bem não tinham continuidade nas escolas. Reinventamos o programa com um concurso em que os próprios alunos criam e tocam projetos sustentáveis.</p>
         <div class="nums"><div><b>58</b><span>projetos inscritos</span></div><div><b>R$ 35 mil</b><span>em prêmios para alunos e professores</span></div></div>
@@ -801,6 +661,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
     <article class="case">
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-zen" src="logos/zen.png" alt="Zen Design"></span><span class="seg">Indústria · Design para a casa</span></div>
+        <p class="who"><b>Quem é</b> Marca de puxadores e acessórios de alto padrão, de Bento Gonçalves, fundada em 2004.</p>
         <h3>Uma marca brasileira no Salone del Mobile de Milão.</h3>
         <p>Levamos a Zen Design pela primeira vez ao Salone del Mobile, em Milão, para lançar a Zen Pet Collection, uma linha exclusiva para pets. Gerimos um time internacional, entre modelo, video maker e influencer pet.</p>
         <div class="nums"><div><b>1ª vez</b><span>da marca em Milão</span></div><div><b>2025</b><span>lançamento da Zen Pet Collection</span></div></div>
@@ -814,6 +675,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
     <article class="case">
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-dsf" src="logos/dsf.png" alt="DSF Advogados"></span><span class="seg">Advocacia · Posicionamento digital</span></div>
+        <p class="who"><b>Quem é</b> Escritório de advocacia com quase cinco décadas e unidades em cinco cidades, entre elas Porto Alegre e Caxias do Sul.</p>
         <h3>Recorde em geração de leads e posicionamento digital.</h3>
         <p>Um dos escritórios mais admirados do RS precisava transformar reputação em negócios no digital. Criamos verticais de conteúdo que dão voz aos especialistas de cada área, com materiais ricos, eventos segmentados e automação de marketing.</p>
         <div class="nums"><div><b>Top 3</b><span>entre os escritórios mais lembrados e admirados do RS</span></div><div><b>Recorde</b><span>em geração de leads</span></div></div>
@@ -827,6 +689,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
     <article class="case">
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-neomot" src="logos/neomot.png" alt="Neomot"></span><span class="seg">Tecnologia · Prédios inteligentes</span></div>
+        <p class="who"><b>Quem é</b> Empresa de elevadores e tecnologia para prédios inteligentes, de Caxias do Sul.</p>
         <h3>Muito além do elevador.</h3>
         <p>Conhecida por elevadores, a Neomot precisava ser vista como um ecossistema de tecnologia. Conduzimos imersão, workshop de posicionamento, refresh da identidade e plano de go-to-market.</p>
         <div class="nums"><div><b>Imersão</b><span>diagnóstico e workshop de posicionamento</span></div><div><b>GTM</b><span>plano de go-to-market</span></div></div>
@@ -840,6 +703,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
     <article class="case">
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-zen" src="logos/zen.png" alt="Zen Design"><em>+ Ana Hickmann</em></span><span class="seg">Indústria · Expo Revestir</span></div>
+        <p class="who"><b>Quem é</b> Marca de puxadores e acessórios de alto padrão, de Bento Gonçalves, fundada em 2004.</p>
         <h3>Sua Casa Veste Zen: moda e arquitetura no mesmo lugar.</h3>
         <p>O conceito Sua Casa Veste Zen conecta moda e arquitetura. Levamos a campanha com Ana Hickmann à Expo Revestir e transformamos a presença na feira em experiência e conteúdo.</p>
         <div class="nums"><div><b>Ana Hickmann</b><span>rosto da campanha</span></div><div><b>Expo Revestir</b><span>experiência de marca e conteúdo</span></div></div>
@@ -853,6 +717,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
     <article class="case">
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-garbo" src="logos/garbo.png" alt="Garbo Enologia Criativa"></span><span class="seg">Vinícola · Serra Gaúcha</span></div>
+        <p class="who"><b>Quem é</b> Vinícola de Bento Gonçalves com cerca de dez anos, conhecida pela enologia criativa.</p>
         <h3>Um clube de vinhos que virou comunidade de marca.</h3>
         <p>Criamos a estratégia de mídia e conteúdo orgânico do clube de vinhos da Garbo, que virou uma comunidade de marca e um motor de clientes apaixonados.</p>
         <div class="nums"><div><b>R$ 700 mil+</b><span>de receita anual gerada pelo clube de vinhos</span></div><div><b>Comunidade</b><span>de clientes apaixonados pela marca</span></div></div>
@@ -867,6 +732,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
     <article class="case">
       <div class="txt">
         <div class="meta"><span class="brandname"><img class="clogo cl-vallontano" src="logos/vallontano.png" alt="Vallontano"></span><span class="seg">Vinícola · Serra Gaúcha</span></div>
+        <p class="who"><b>Quem é</b> Vinícola familiar do Vale dos Vinhedos, em Bento Gonçalves, fundada em 1999.</p>
         <h3>Uma imagem à altura do vinho.</h3>
         <p>Definimos o posicionamento da comunicação e cuidamos da presença digital da Vallontano. Com direção criativa própria, mantemos um posicionamento claro, verdadeiro e relevante em todos os canais.</p>
         <div class="nums"><div><b>Direção criativa</b><span>posicionamento claro, verdadeiro e relevante</span></div></div>
@@ -880,6 +746,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
     <article class="case">
       <div class="txt">
         <div class="meta"><span class="brandname">Vino Verace</span><span class="seg">E-commerce · Vinhos premium</span></div>
+        <p class="who"><b>Quem é</b> Loja online de vinhos com curadoria, fundada em 2020, com rótulos de mais de 30 países.</p>
         <h3>De R$ 20 mil para R$ 672 mil no mês.</h3>
         <p>Um e-commerce de vinhos precisava crescer sem competir só por preço. Criamos uma comunicação focada em valor de marca e, além do e-commerce, nasceram a VERACE, marca própria de vinhos, e uma linha de serviços de experiência.</p>
         <div class="nums"><div><b>33,6x</b><span>de crescimento: de R$ 20 mil/mês a R$ 672 mil no recorde de Black Friday</span></div><div><b>1.000+</b><span>rótulos de 30 países</span></div></div>
@@ -894,6 +761,53 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
   <div class="wrap"><div class="hint"><svg style="width:14px;height:14px"><use href="#chev"/></svg>Arraste para o lado para ver todos os cases</div></div>
 </section>
 
+<!-- HISTÓRIA -->
+<section class="story" id="historia">
+  <div class="wrap grid">
+    <figure class="slides-wrap">
+      <div class="slides" id="slides"><img src="img/historia/h6.jpg" alt="Workshop de posicionamento da Cooltivo com o Mapa das alternativas" class=on><img src="img/historia/h1.jpg" alt="Time Cooltivo e parceiros em gravação"><img src="img/historia/h2.jpg" alt="Kauê Grasnievicz apresentando desk research em workshop"><img src="img/historia/h3.jpg" alt="Produção audiovisual em vinhedo"><img src="img/historia/h4.jpg" alt="Kauê Grasnievicz em imersão na Soprano"><img src="img/historia/h5.jpg" alt="Time Cooltivo trabalhando no jardim"></div>
+    </figure>
+    <div>
+      <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Nossa história · Estúdio de branding da Serra Gaúcha</div>
+      <h2 class="belief">Marca que dura <span class="hl">se mantém fiel à sua essência.</span></h2>
+      <p class="lead">Escolher uma posição e sustentá-la, mesmo quando ela ainda parece estranha. É isso que mantém a marca viva quando as tendências passam.</p>
+      <p class="lead lead-2">A gente pensa o agora com os olhos no longo prazo, ao lado de quem sabe que a marca é o ativo mais duradouro do negócio.</p>
+      <h3 class="about">No que acreditamos</h3>
+      <ul class="beliefs">
+        <li><svg class="sym"><use href="#sym"/></svg><span><b>Marca é ativo do negócio.</b> Ela gera valor e precisa ser cuidada como tal.</span></li>
+        <li><svg class="sym"><use href="#sym"/></svg><span><b>Longo prazo.</b> O agora importa, com os olhos no que vai durar.</span></li>
+        <li><svg class="sym"><use href="#sym"/></svg><span><b>Decisões diárias na língua dos negócios,</b> com criatividade, clareza e coragem.</span></li>
+      </ul>
+      <div class="origin">
+        <h3 class="about">Sobre Kauê Grasnievicz</h3>
+        <p>A Cooltivo foi cofundada por <a class="name" href="https://www.linkedin.com/in/kauegrasnievicz/" target="_blank" rel="noopener">Kauê Grasnievicz</a>, estrategista com mais de 10 anos de marketing e especialista em marca e comunicação. Antes do estúdio, foi gerente de marketing de uma grande rede hoteleira e líder de digital de uma agência de comunicação que atendia grandes marcas gaúchas.</p>
+        <blockquote class="quote-sm"><p>“A comunicação é uma das ferramentas mais poderosas para transformar pessoas, sociedade e negócios.”</p><cite>Kauê Grasnievicz</cite></blockquote>
+      </div>
+      <div class="facts">
+        <div><b>100+</b><span>projetos nos últimos 6 anos</span></div>
+        <div><b>19</b><span>parceiros no ecossistema</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JEITO -->
+<section class="way" id="jeito">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Nosso método</div>
+        <h2 style="margin-top:18px">Conheça o método <span class="hl">3C's.</span></h2>
+      </div>
+      <p class="lead">Entender antes de criar, decidir junto e executar bem.</p>
+    </div>
+    <div class="mvid">
+      <video id="v3c" playsinline preload="metadata" poster="video/metodo-3cs.jpg"><source src="video/metodo-3cs.mp4" type="video/mp4"></video>
+      <button class="mplay" type="button" id="p3c" aria-label="Assistir ao vídeo do método 3C's"><span><svg><use href="#play"/></svg></span>Assistir ao método</button>
+    </div>
+  </div>
+</section>
+
 <!-- REDE -->
 <section class="network" id="rede">
   <div class="wrap grid">
@@ -904,7 +818,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
       <div class="pills">
         <span class="pill">Audiovisual</span><span class="pill">Mídia paga</span><span class="pill">Assessoria de imprensa</span><span class="pill">Redação publicitária</span><span class="pill">Consultoria de negócios</span><span class="pill">Design</span><span class="pill">Marketing</span><span class="pill">Tecnologia</span><span class="pill">Treinamento comercial e de liderança</span><span class="pill">Análise de dados</span><span class="pill">Growth marketing</span>
       </div>
-      <a class="btn btn-orange" style="margin-top:30px" href="ecossistema/">Conheça o ecossistema <svg><use href="#arr"/></svg></a>
+      <a class="btn btn-orange" style="margin-top:30px" href="ecossistema/">Conheça os 19 parceiros <svg><use href="#arr"/></svg></a>
     </div>
     <div>
       <div class="vid"><video autoplay muted loop playsinline preload="metadata" poster="video/rede-poster.jpg" aria-label="Rede de parceiros da Cooltivo"><source src="video/rede.mp4" type="video/mp4"></video></div>
@@ -918,7 +832,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
   <div class="wrap">
     <div class="head">
       <div>
-        <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Serviços · Branding, comunicação e marketing</div>
+        <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Serviços · Marca, comunicação e marketing</div>
         <h2 style="margin-top:16px">Como podemos<br>trabalhar juntos.</h2>
       </div>
       <p>Projetos pontuais para destravar decisões e contratos recorrentes para sustentar a construção da marca ao longo do tempo.</p>
@@ -927,20 +841,20 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
       <article class="s">
         <span class="s-n">01</span>
         <div class="s-name"><h3><a href="servicos/posicionamento-de-marca.html">Posicionamento</a></h3><div class="s-meta"><span class="chips2"><span class="chip">Pontual</span></span><span class="dur">6 a 8 semanas</span></div></div>
-        <div class="s-body"><p class="what">Construímos marcas com propósito, claras sobre quem são, o que defendem e como querem ser lembradas.</p><ul><li>Diagnóstico</li><li>Workshop de co-criação</li><li>Plataforma de marca</li></ul></div>
-        <div class="s-acts"><a class="s-more" href="servicos/posicionamento-de-marca.html">Conhecer o serviço <svg><use href="#arr"/></svg></a><a class="s-cta" href="#contato" data-int="Posicionamento de marca">Quero conversar</a></div>
+        <div class="s-body"><p class="what">Definimos quem a marca é, o que ela defende e como quer ser lembrada.</p><ul><li>Diagnóstico</li><li>Workshop de co-criação</li><li>Plataforma de marca</li></ul></div>
+        <div class="s-acts"><a class="s-more" href="servicos/posicionamento-de-marca.html">Conhecer o serviço <svg><use href="#arr"/></svg></a><a class="s-cta" href="#contato" data-int="Posicionamento de marca">Conversar sobre minha marca</a></div>
       </article>
       <article class="s">
         <span class="s-n">02</span>
         <div class="s-name"><h3><a href="servicos/presenca-digital.html">Presença digital</a></h3><div class="s-meta"><span class="chips2"><span class="chip rec">Recorrente</span></span><span class="dur">Contratos de 6 a 12 meses</span></div></div>
         <div class="s-body"><p class="what">Planejamos e conduzimos a comunicação da marca no digital, com consistência mês a mês.</p><ul><li>Planejamento de presença digital</li><li>Produção de conteúdo</li><li>Gestão de canais</li></ul></div>
-        <div class="s-acts"><a class="s-more" href="servicos/presenca-digital.html">Conhecer o serviço <svg><use href="#arr"/></svg></a><a class="s-cta" href="#contato" data-int="Presença digital">Quero conversar</a></div>
+        <div class="s-acts"><a class="s-more" href="servicos/presenca-digital.html">Conhecer o serviço <svg><use href="#arr"/></svg></a><a class="s-cta" href="#contato" data-int="Presença digital">Conversar sobre minha marca</a></div>
       </article>
       <article class="s">
         <span class="s-n">03</span>
         <div class="s-name"><h3><a href="servicos/consultoria-de-marketing.html">Consultoria de marketing</a></h3><div class="s-meta"><span class="chips2"><span class="chip">Pontual</span><span class="chip rec">Recorrente</span></span><span class="dur">Formato flexível</span></div></div>
         <div class="s-body"><p class="what">Consultoria conduzida por Kauê Grasnievicz: conexão profunda com o negócio e acompanhamento estratégico do marketing.</p><ul><li>Planejamento estratégico</li><li>Encontros semanais</li><li>Imersões com liderança</li></ul></div>
-        <div class="s-acts"><a class="s-more" href="servicos/consultoria-de-marketing.html">Conhecer o serviço <svg><use href="#arr"/></svg></a><a class="s-cta" href="#contato" data-int="Consultoria de marketing">Quero conversar</a></div>
+        <div class="s-acts"><a class="s-more" href="servicos/consultoria-de-marketing.html">Conhecer o serviço <svg><use href="#arr"/></svg></a><a class="s-cta" href="#contato" data-int="Consultoria de marketing">Conversar sobre minha marca</a></div>
       </article>
     </div>
   </div>
@@ -952,7 +866,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
     <div>
       <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Conteúdos sobre marca e negócios</div>
       <h2 style="margin-top:16px">Siga a <span class="hl">Cooltivo.</span></h2>
-      <p class="sub">Conteúdos sobre negócios, posicionamento e criatividade para quem quer ir além do óbvio.</p>
+      <p class="sub">Conteúdos sobre negócios, marca e criatividade para quem quer vender mais.</p>
       <a class="handle" href="https://www.instagram.com/cooltivoestudio/" target="_blank" rel="noopener">@cooltivoestudio</a>
     </div>
     <div class="right">
@@ -1202,6 +1116,11 @@ fill('row1',L);
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&pl.classList.contains('open'))close()});
 })();
 </script>
+
+
+
+
+
 
 
 

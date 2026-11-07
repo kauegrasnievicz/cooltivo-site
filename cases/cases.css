@@ -330,19 +330,6 @@ footer .links a:hover{color:var(--green-soft)}
 /* /talentos */
 
 
-/* fab+fnav */
-footer .fnav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,auto));justify-content:start;align-items:start;gap:18px 88px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid rgba(249,243,227,.18)}
-footer .fnav>div{display:flex;flex-wrap:wrap;align-items:center;align-content:flex-start;gap:8px 22px}
-footer .fnav small{width:100%;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
-footer .fnav a{font-size:15px;font-weight:600;text-decoration:none;opacity:.88}
-footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
-.wa-fab{position:fixed;right:24px;bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:60;display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 22px 0 16px;border-radius:999px;background:#366c4c;color:#fff;font:700 15px/1 var(--font);text-decoration:none;box-shadow:0 12px 30px rgba(23,38,29,.28);transition:opacity .3s,transform .3s,background .25s}
-.wa-fab svg{width:24px;height:24px;flex:none}
-.wa-fab:hover{background:#1d3a2a;transform:translateY(-2px)}
-.wa-fab.hide{opacity:0;transform:scale(.85);pointer-events:none}
-@media (max-width:760px){.wa-fab{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:56px;height:56px;padding:0;justify-content:center}.wa-fab span{display:none}.wa-fab svg{width:28px;height:28px}footer .fnav{grid-template-columns:1fr;gap:22px}}
-@media print{.wa-fab{display:none}}
-/* /fab+fnav */
 /* ecossistema */
 .eco-draft{position:fixed;left:16px;bottom:16px;z-index:70;background:#fbf0e3;color:#7a4515;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;border:1px dashed #d9a56f;max-width:calc(100% - 110px)}
 .eco-hero h1 span{color:var(--green-soft)}
@@ -405,3 +392,23 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
 .eco-vid video{width:100%;height:100%;object-fit:cover;display:block}
 @media (max-width:900px){.eco-hero .ch-grid.sv-hero{grid-template-columns:1fr;gap:36px}.eco-vid{justify-self:stretch;max-width:none}}
 /* /ecossistema */
+
+
+
+@media (max-width:760px){nav .btn .nl{display:none}}
+
+
+
+/* fab+fnav */
+footer .fnav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,auto));justify-content:start;align-items:start;gap:18px 88px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid rgba(249,243,227,.18)}
+footer .fnav>div{display:flex;flex-wrap:wrap;align-items:center;align-content:flex-start;gap:8px 22px}
+footer .fnav small{width:100%;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
+footer .fnav a{font-size:15px;font-weight:600;text-decoration:none;opacity:.88}
+footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.wa-fab{position:fixed;right:24px;bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:60;display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 22px 0 16px;border-radius:999px;background:#366c4c;color:#fff;font:700 15px/1 var(--font);text-decoration:none;box-shadow:0 12px 30px rgba(23,38,29,.28);transition:opacity .3s,transform .3s,background .25s}
+.wa-fab svg{width:24px;height:24px;flex:none}
+.wa-fab:hover{background:#1d3a2a;transform:translateY(-2px)}
+.wa-fab.hide{opacity:0;transform:scale(.85);pointer-events:none}
+@media (max-width:760px){.wa-fab{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:56px;height:56px;padding:0;justify-content:center}.wa-fab span{display:none}.wa-fab svg{width:28px;height:28px}footer .fnav{grid-template-columns:1fr;gap:22px}}
+@media print{.wa-fab{display:none}}
+/* /fab+fnav */

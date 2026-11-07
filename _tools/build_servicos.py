@@ -30,7 +30,7 @@ S = [
       'A gente organiza tudo na plataforma de marca, um guia para o marketing, para o comercial e para quem chega na empresa.'],
   recebe=[('Posicionamento único', 'O lugar que a sua empresa ocupa na cabeça do cliente e que nenhum concorrente consegue ocupar. A resposta para a pergunta: por que escolher a sua empresa?'),
           ('Mensagem clara', 'A forma de dizer isso que qualquer pessoa entende de primeira: o cliente, o vendedor, o pessoal da produção e a próxima geração da família.'),
-          ('Ecossistema de conteúdo', 'Todos os lugares onde a marca aparece contando a mesma história: site, Instagram, LinkedIn, catálogo, apresentação de vendas, feira e fachada.')],
+          ('Ecossistema estratégico', 'Todos os lugares onde a marca aparece contando a mesma história: site, Instagram, LinkedIn, catálogo, apresentação de vendas, feira e fachada.')],
   cases=['neomot', 'soprano', 'vallontano'],
   faq=[('Quanto tempo leva um projeto de posicionamento?', 'De 6 a 8 semanas, do diagnóstico à entrega da plataforma de marca.'),
        ('Posicionamento é a mesma coisa que logo novo?', 'Não. O posicionamento vem antes e define o que a marca precisa dizer. Logo, identidade visual, site e conteúdo vêm depois, a partir dessa direção.'),
@@ -106,7 +106,7 @@ def card(c):
 def fix(t):
     t = t.replace('href="cases.css"', 'href="../cases/cases.css"')
     t = t.replace('<li><a href="./" aria-current="page">Cases</a></li>', '<li><a href="../cases/">Cases</a></li>')
-    t = t.replace('<li><a href="../index.html#entregas">Entregas</a></li>', '<li><a href="../index.html#entregas" aria-current="page">Entregas</a></li>')
+    t = t.replace('<li><a href="../index.html#entregas">Serviços</a></li>', '<li><a href="../index.html#entregas" aria-current="page">Serviços</a></li>')
     t = t.replace('href="./"', 'href="../cases/"')
     return t
 
