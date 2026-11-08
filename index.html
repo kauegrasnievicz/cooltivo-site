@@ -222,6 +222,8 @@ nav .btn{padding:11px 20px;font-size:14px}
 .mplay span svg{width:30px;height:30px;margin-left:5px;color:var(--white)}
 .mplay:hover span{transform:scale(1.08)}
 .mvid.playing .mplay{display:none}
+.mvid .mplay{background:transparent;font-size:0;gap:0}.mvid .mplay span{display:none}.mvid video{transition:filter var(--t,.3s)}.mvid:hover video{filter:brightness(1.06)}
+.mvid .mplay:focus-visible{outline:3px solid var(--green-soft);outline-offset:-6px}
 .c3{display:flex;justify-content:space-between;gap:16px;margin-top:26px;padding-top:22px;border-top:1px solid var(--line);font-size:15px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;flex-wrap:wrap}
 .c3 b{color:var(--green);font-family:var(--font-display);font-weight:800;font-size:22px;letter-spacing:-.02em;text-transform:none}
 .cs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -756,7 +758,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
       <p class="lead">Entender antes de criar, decidir junto e executar bem.</p>
     </div>
     <div class="mvid">
-      <video id="v3c" playsinline preload="metadata" poster="video/metodo-3cs.jpg"><source src="video/metodo-3cs.mp4" type="video/mp4"></video>
+      <video id="v3c" playsinline preload="metadata" poster="video/metodo-3cs.jpg?v=2"><source src="video/metodo-3cs.mp4" type="video/mp4"></video>
       <button class="mplay" type="button" id="p3c" aria-label="Assistir ao vídeo do método 3C's"><span><svg><use href="#play"/></svg></span>Assistir ao método</button>
     </div>
   </div>
