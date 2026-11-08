@@ -141,7 +141,9 @@ def page(s):
         hv = f'''
     <figure class="sv-vid"><video autoplay muted loop playsinline preload="metadata" poster="../video/{v}-poster.jpg" aria-hidden="true"><source src="../video/{v}.mp4" type="video/mp4"></video></figure>'''
     names = ['Context', 'Concept', 'Craft']
-    c3 = ''.join(f'<div class="c3c"><span>0{i + 1}</span><h3>{names[i]}</h3><p>{e(t)}</p></div>' for i, t in enumerate(s['c3']))
+    etp = ['Entender antes de criar', 'Decidir junto', 'Executar com excelência']
+    c3 = ''.join(f'<li class="tm-s"><button type="button" class="tm-n" aria-label="Etapa {i + 1}: {names[i]}">0{i + 1}</button><small>{etp[i]}</small><h3>{names[i]}</h3><p>{e(t)}</p></li>' for i, t in enumerate(s['c3']))
+    c3 = f'<div class="tm" data-tm><div class="tm-line" aria-hidden="true"><i></i></div><ol class="tm-ol">{c3}</ol><button type="button" class="tm-re">Rever as etapas <span aria-hidden="true">↻</span></button></div>'
     rec = ''.join(f'<li><b>{e(a)}</b><span>{e(b)}</span></li>' for a, b in s['recebe'])
     quando = ''.join(f'<li>{e(q)}</li>' for q in s['quando'])
     cards = ''.join(card(BY[x]) for x in s['cases'])
@@ -169,13 +171,14 @@ def page(s):
   </section>
   <section class="st">
     <div class="st-lab"><i>02</i>Como a gente trabalha</div>
-    <div class="st-body"><p class="big">Método 3C's: entender antes de criar, decidir junto e executar com excelência.</p><div class="c3g">{c3}</div></div>
+    <div class="st-body"><p class="big">Método 3C's: entender antes de criar, decidir junto e executar com excelência.</p>{c3}</div>
   </section>
   <section class="st">
     <div class="st-lab"><i>03</i>O que você recebe</div>
     <div class="st-body"><ul class="rcv">{rec}</ul></div>
   </section>
 </main>
+<script src="../assets/metodo.js" defer></script>
 
 <section class="sv-cases">
   <div class="wrap">

@@ -155,48 +155,52 @@ def wheel():
     return row(a, 0, 'm1') + row(b, 1, 'm2')
 
 
-def media(p, k):
+def tile(p, k):
     m = MEDIA.get(p['nome'])
-    if not m:
-        return f'<span class="eco-mono m{k % 3}">{e(initials(p["nome"]))}</span>'
-    kind, f, bg = m
-    alt = e(p['nome'])
-    if kind == 'foto':
-        return f'<span class="eco-mono ph"><img src="../img/eco/{f}" alt="Foto de {alt}" width="80" height="80" loading="lazy"></span>'
-    if kind == 'logo-full':
-        return f'<span class="eco-mono lf"><img src="../img/eco/{f}" alt="Logo {alt}" width="80" height="80" loading="lazy"></span>'
-    return f'<span class="eco-mono lg" style="background:{bg}"><img src="../img/eco/{f}" alt="Logo {alt}" width="80" height="80" loading="lazy"></span>'
-
-
-def card(p, k):
+    cat = CATS[p['cat']][0]
+    nm = e(p['nome'])
+    if m and m[0] == 'foto':
+        vis = f'<img class="tp" src="../img/eco/{m[1]}" alt="Foto de {nm}" width="320" height="320" loading="lazy">'
+    elif m:
+        bg = m[2] if m[0] == 'logo' else '#fff'
+        vis = f'<span class="tlg" style="background:{bg}"><img src="../img/eco/{m[1]}" alt="Logo {nm}" loading="lazy"></span>'
+    else:
+        vis = f'<span class="tlg" style="background:#24503a"><b>{e(initials(p["nome"]))}</b></span>'
     cases = ''.join(f'<a href="../cases/{s}.html">{e(CASE_NAME[s])}</a>' for s in p['cases'])
-    cases_html = f'<p class="eco-cases"><b>Cases:</b> {cases}</p>' if cases else ''
-    site = f'<a class="eco-site" href="{e(p["site"])}" target="_blank" rel="noopener">Conhecer <svg><use href="#arr"/></svg></a>' if p['site'] else ''
-    desc = f'<p class="eco-faz">{e(p["desc"])}</p>' if p['desc'] else ''
+    cases_html = f'<p class="tcases"><b>Cases:</b> {cases}</p>' if cases else ''
+    site = f'<a class="tsite" href="{e(p["site"])}" target="_blank" rel="noopener">Conhecer <svg><use href="#arr"/></svg></a>' if p['site'] else ''
+    desc = f'<p class="tdesc">{e(p["desc"])}</p>' if p['desc'] else ''
     return f'''
-        <article class="eco-card">
-          <div class="eco-top">{media(p, k)}<div><h4>{e(p['nome'])}</h4><p class="eco-esp">{e(p['papel'])}</p></div></div>
-          {desc}{cases_html}{site}
-        </article>'''
+      <article class="pt" data-cat="{p['cat']}" tabindex="0">
+        {vis}<span class="pshade"></span>
+        <span class="ptag">{e(cat)}</span>
+        <div class="pinfo"><h4>{nm}</h4><p class="prole">{e(p['papel'])}</p></div>
+        <div class="pmore">{desc}{cases_html}{site}</div>
+      </article>'''
 
 
 def page():
     areas = ''.join(f'<span>{e(a)}</span>' for a in AREAS)
     passos = ''.join(f'<div class="c3c"><span>0{i + 1}</span><h3>{a}</h3><p>{e(b)}</p></div>' for i, (a, b) in enumerate(PASSOS))
     ganhos = ''.join(f'<li><b>{e(a)}</b><span>{e(b)}</span></li>' for a, b in GANHOS)
-    grupos = ''
-    k = 0
-    for ci, (cn, cd) in enumerate(CATS):
-        ps = [p for p in P if p['cat'] == ci]
-        cards = ''
-        for p in ps:
-            cards += card(p, k); k += 1
-        grupos += f'''
-      <div class="eco-group">
-        <div class="eco-gh"><h3>{e(cn)}</h3><p>{e(cd)}</p></div>
-        <div class="eco-grid">{cards}
-        </div>
-      </div>'''
+    tiles = ''.join(tile(p, k) for k, p in enumerate(P))
+    cnt = [sum(1 for p in P if p['cat'] == i) for i in range(len(CATS))]
+    chips = f'<button type="button" class="fchip on" data-f="all" aria-pressed="true">Todos · {len(P)}</button>' + ''.join(
+        f'<button type="button" class="fchip" data-f="{i}" aria-pressed="false">{e(CATS[i][0])} · {cnt[i]}</button>' for i in range(len(CATS)))
+    grupos = f'''
+    <div class="fchips" role="group" aria-label="Filtrar por frente">{chips}</div>
+    <div class="pgrid" id="pgrid">{tiles}
+    </div>
+    <p class="pnote">Passe o mouse ou toque em um retrato para conhecer o parceiro.</p>
+    <script>
+    (function(){{var g=document.getElementById('pgrid');if(!g)return;var ts=[].slice.call(g.children);
+    document.querySelectorAll('.fchip').forEach(function(c){{c.addEventListener('click',function(){{
+      document.querySelectorAll('.fchip').forEach(function(x){{x.classList.toggle('on',x===c);x.setAttribute('aria-pressed',x===c)}});
+      var f=c.getAttribute('data-f');ts.forEach(function(t){{var show=f==='all'||t.getAttribute('data-cat')===f;t.hidden=!show;t.classList.remove('open')}});}})}});
+    ts.forEach(function(t){{t.addEventListener('click',function(e){{if(e.target.closest('a'))return;var o=t.classList.contains('open');ts.forEach(function(x){{x.classList.remove('open')}});if(!o)t.classList.add('open')}});
+      t.addEventListener('keydown',function(e){{if(e.key==='Enter'||e.key===' '){{if(e.target.closest('a'))return;e.preventDefault();t.click()}}}})}});
+    }})();
+    </script>'''
     from urllib.parse import quote
     wa = 'https://wa.me/5554991000102?text=' + quote('Olá, Cooltivo! Quero conversar sobre fazer parte do ecossistema.')
     draft = '<div class="eco-draft">Rascunho: esta página ainda não aparece no Google nem no menu do site.</div>' if DRAFT else ''
@@ -219,7 +223,7 @@ def page():
 <section class="tl-vagas eco-marcas" id="marcas">
   <div class="wrap">
     <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Quem faz parte</div>
-    <h2>Quem <span>cultiva</span> com a gente.</h2>
+    <div class="phead"><h2>Quem <span>cultiva</span> com a gente.</h2><p>20 especialistas em quatro frentes. Para cada projeto, um time sob medida.</p></div>
     {grupos}
   </div>
 </section>
