@@ -73,6 +73,9 @@ P = [
  dict(nome='Jonas Schmitt', cat=1, papel='Estrategista de marca e designer de branding',
       desc='Revela essências e traduz verdades em identidades visuais que funcionam, há mais de 10 anos.',
       cases=[], site='https://jonasschmittworkce03.myportfolio.com/work'),
+ dict(nome='Alexandre Brusa', cat=1, papel='Redator publicitário e jornalista',
+      desc='Material jornalístico ou publicitário, criativo ou direto: traduz ideias e informações em mensagens claras e precisas, há mais de 12 anos.',
+      cases=[], site=''),
  dict(nome='Lucas Miotto', cat=2, papel='Desenvolvimento web',
       desc='Desenvolvedor desde 2015: sites gerenciáveis em WordPress, JavaScript e PHP com Laravel.',
       cases=[], site='https://br.linkedin.com/in/lucas-miotto'),
@@ -93,6 +96,7 @@ MEDIA = {
  'Luis Fernando Menti': ('foto', 'luis-fernando-menti.jpg', ''),
  'Marlon Vieira': ('foto', 'marlon-vieira.jpg', ''),
  'Jonas Schmitt': ('foto', 'jonas-schmitt.jpg', ''),
+ 'Alexandre Brusa': ('foto', 'alexandre-brusa.jpg', ''),
  'Tainan Ferrari': ('foto', 'tainan-ferrari.jpg', ''),
  'Esdras Moreira': ('foto', 'esdras-moreira.jpg', ''),
  'Mauricio Gimenes': ('foto', 'mauricio-gimenes.jpg', ''),
@@ -128,7 +132,7 @@ AST = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="
 ARR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 10.6h11.3l-4.6-4.6 2-2L20.7 12l-8 8-2-2 4.6-4.6H4z"/></svg>'
 
 
-SHORT = {'Alba Arte': 'Audiovisual', 'Vitral Filmes': 'Audiovisual', 'Balsa Produtora': 'Audiovisual', 'Estratégia Criativa': 'Redação', 'Impulse Company': 'Mídia paga', 'Dinâmica': 'Imprensa e conteúdo'}
+SHORT = {'Alba Arte': 'Audiovisual', 'Vitral Filmes': 'Audiovisual', 'Balsa Produtora': 'Audiovisual', 'Estratégia Criativa': 'Redação', 'Alexandre Brusa': 'Redação', 'Impulse Company': 'Mídia paga', 'Dinâmica': 'Imprensa e conteúdo'}
 
 
 def wheel():
