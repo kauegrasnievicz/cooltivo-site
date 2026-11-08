@@ -464,6 +464,9 @@ footer .links a:hover{color:var(--green-soft)}
 @media (prefers-reduced-motion:reduce){.tm-line i,.tm-n,.tm-js .tm-s small,.tm-js .tm-s h3,.tm-js .tm-s p{transition:none}}
 
 
+.pt:has(.tlg) .pshade{background:linear-gradient(180deg,rgba(20,36,27,0) 60%,rgba(20,36,27,.94) 82%)}
+.pt .tlg{padding:20% 14% 36%}
+
 /* fab+fnav */
 footer .fnav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,auto));justify-content:start;align-items:start;gap:18px 88px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid rgba(249,243,227,.18)}
 footer .fnav>div{display:flex;flex-wrap:wrap;align-items:center;align-content:flex-start;gap:8px 22px}
@@ -477,5 +480,3 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
 @media (max-width:760px){.wa-fab{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:56px;height:56px;padding:0;justify-content:center}.wa-fab span{display:none}.wa-fab svg{width:28px;height:28px}footer .fnav{grid-template-columns:1fr;gap:22px}}
 @media print{.wa-fab{display:none}}
 /* /fab+fnav */
-.pt:has(.tlg) .pshade{background:linear-gradient(180deg,rgba(20,36,27,0) 60%,rgba(20,36,27,.94) 82%)}
-.pt .tlg{padding:20% 14% 36%}
