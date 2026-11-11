@@ -3,7 +3,7 @@ import os, glob
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FILES = ['index.html', 'tese.html', 'conversa.html', 'diagnostico-de-marca.html'] + \
     sorted(glob.glob(os.path.join(ROOT, 'cases', '*.html')) + glob.glob(os.path.join(ROOT, 'servicos', '*.html')) +
-           glob.glob(os.path.join(ROOT, 'ecossistema', '*.html')) + glob.glob(os.path.join(ROOT, 'talentos', '*.html')))
+           glob.glob(os.path.join(ROOT, 'comunidade', '*.html')) + glob.glob(os.path.join(ROOT, 'talentos', '*.html')))
 for f in FILES:
     p = f if os.path.isabs(f) else os.path.join(ROOT, f)
     if not os.path.exists(p) or os.path.getsize(p) < 3000:

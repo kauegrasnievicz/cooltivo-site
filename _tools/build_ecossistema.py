@@ -1,4 +1,4 @@
-"""Gera ecossistema/index.html.
+"""Gera comunidade/index.html.
 DRAFT=True: noindex, fora do menu e do sitemap. Para publicar: DRAFT=False e rodar de novo.
 Rodar: python3 _tools/build_ecossistema.py"""
 import os, sys, html
@@ -9,13 +9,13 @@ import footer_fab
 
 e = html.escape
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, 'ecossistema')
+OUT = os.path.join(ROOT, 'comunidade')
 os.makedirs(OUT, exist_ok=True)
 DRAFT = False
 
 CASE_NAME = {c['slug']: (c['name'] + (' + ' + c['extra'] if c.get('extra') else '')) for c in bc.CASES}
 
-# Categorias: (nome, o que a categoria entrega no ecossistema)
+# Categorias: (nome, o que a categoria entrega na comunidade)
 CATS = [
  ('Negócios', 'Visão de negócio, vendas, growth e marketing ao lado da liderança dos clientes.'),
  ('Criativos', 'Filmes, fotografia, identidade visual, sistemas de marca, conceito criativo e redação.'),
@@ -120,7 +120,7 @@ PASSOS = [('Context', 'A Cooltivo entende o negócio, o momento da marca e o que
 
 GANHOS = [('Um time sob medida', 'Cada projeto reúne só os especialistas de que ele precisa, no tamanho certo para o seu negócio.'),
           ('Uma estratégia no centro', 'Todas as frentes partem da mesma plataforma de marca, então tudo conta a mesma história.'),
-          ('Um ponto de contato', 'A Cooltivo conduz e orquestra o ecossistema. Você fala com a gente e a gente coordena o resto.')]
+          ('Um ponto de contato', 'A Cooltivo conduz e orquestra a comunidade. Você fala com a gente e a gente coordena o resto.')]
 
 
 def initials(n):
@@ -202,19 +202,19 @@ def page():
     }})();
     </script>'''
     from urllib.parse import quote
-    wa = 'https://wa.me/5554991000102?text=' + quote('Olá, Cooltivo! Quero conversar sobre fazer parte do ecossistema.')
+    wa = 'https://wa.me/5554991000102?text=' + quote('Olá, Cooltivo! Quero conversar sobre fazer parte da comunidade.')
     draft = '<div class="eco-draft">Rascunho: esta página ainda não aparece no Google nem no menu do site.</div>' if DRAFT else ''
     body = f'''{draft}
 <header class="ch eco-hero" id="topo">
   <svg class="bg-sym sym" aria-hidden="true"><use href="#sym"/></svg>
   <div class="wrap ch-grid sv-hero">
     <div class="ch-txt">
-      <div class="ch-brand"><span class="seg">Ecossistema Cooltivo · Nothing great is made alone</span></div>
+      <div class="ch-brand"><span class="seg">Comunidade Cooltivo · Nothing great is made alone</span></div>
       <h1>Nada grande é feito <span>sozinho.</span></h1>
-      <p class="sum">Acreditamos que bons projetos nascem de pessoas boas e talentosas, unidas pelo mesmo objetivo. Acreditamos também que cada especialista deve atuar no seu lugar de potência. Por isso, nos últimos 10 anos, construímos um ecossistema que conecta todas as pontas do marketing às necessidades dos negócios que atendemos.</p>
-      <div class="btns sv-btns"><a class="btn btn-soft" href="#marcas">Conhecer o ecossistema <svg><use href="#arr"/></svg></a><a class="btn btn-line-inv" href="../conversa.html">Agendar diagnóstico</a></div>
+      <p class="sum">Acreditamos que bons projetos nascem de pessoas boas e talentosas, unidas pelo mesmo objetivo. Acreditamos também que cada especialista deve atuar no seu lugar de potência. Por isso, nos últimos 10 anos, construímos uma comunidade que conecta todas as pontas do marketing às necessidades dos negócios que atendemos.</p>
+      <div class="btns sv-btns"><a class="btn btn-soft" href="#marcas">Conhecer a comunidade <svg><use href="#arr"/></svg></a><a class="btn btn-line-inv" href="../conversa.html">Agendar diagnóstico</a></div>
     </div>
-    <figure class="eco-vid"><video autoplay muted loop playsinline preload="metadata" poster="../video/rede-poster.jpg" aria-label="Parceiros do ecossistema Cooltivo"><source src="../video/rede.mp4" type="video/mp4"></video></figure>
+    <figure class="eco-vid"><video autoplay muted loop playsinline preload="metadata" poster="../video/rede-poster.jpg" aria-label="Parceiros da comunidade Cooltivo"><source src="../video/rede.mp4" type="video/mp4"></video></figure>
   </div>
 </header>
 
@@ -237,23 +237,23 @@ def page():
 
 <section class="sv-other eco-join">
   <div class="wrap eco-join-in">
-    <div><small class="lab">Para especialistas e estúdios</small><h2>Quer fazer parte do ecossistema?</h2><p>Se você é referência no que faz e compartilha dos nossos valores, vamos conversar.</p></div>
+    <div><small class="lab">Para especialistas e estúdios</small><h2>Quer fazer parte da comunidade?</h2><p>Se você é referência no que faz e compartilha dos nossos valores, vamos conversar.</p></div>
     <a class="btn btn-dark" href="{wa}" target="_blank" rel="noopener">Quero fazer parte <svg><use href="#arr"/></svg></a>
   </div>
 </section>
 '''
-    path = '/ecossistema/'
-    t = 'Ecossistema Cooltivo · Nothing great is made alone'
-    d = 'O ecossistema da Cooltivo: especialistas em audiovisual, mídia, design, tecnologia, redação e negócios, com a Cooltivo na estratégia e na orquestração.'
-    sch = [] if DRAFT else [seo.crumbs([('Cooltivo', '/'), ('Ecossistema', path)])]
+    path = '/comunidade/'
+    t = 'Comunidade Cooltivo · Nothing great is made alone'
+    d = 'A comunidade da Cooltivo: especialistas em audiovisual, mídia, design, tecnologia, redação e negócios, com a Cooltivo na estratégia e na orquestração.'
+    sch = [] if DRAFT else [seo.crumbs([('Cooltivo', '/'), ('Comunidade', path)])]
     head = bc.HEAD.format(title=e(t), desc=e(d), seo=seo.head(path, t, d, 'home.jpg', 'website', sch, index=not DRAFT))
     out = head + body + bc.FOOT
     out = out.replace('href="cases.css"', 'href="../cases/cases.css"')
     out = out.replace('<li><a href="./" aria-current="page">Cases</a></li>', '<li><a href="../cases/">Cases</a></li>')
-    out = out.replace('<li><a href="../ecossistema/">Ecossistema</a></li>', '<li><a href="../ecossistema/" aria-current="page">Ecossistema</a></li>')
+    out = out.replace('<li><a href="../comunidade/">Comunidade</a></li>', '<li><a href="../comunidade/" aria-current="page">Comunidade</a></li>')
     out = out.replace('href="./"', 'href="../cases/"')
     return footer_fab.apply(out, '../', False)
 
 
 open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write(page())
-print('ok: ecossistema', '(rascunho)' if DRAFT else '')
+print('ok: comunidade', '(rascunho)' if DRAFT else '')

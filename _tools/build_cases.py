@@ -162,7 +162,7 @@ HEAD = '''<!doctype html>
       <li><a href="../index.html#jeito">Método</a></li>
       <li><a href="../index.html#entregas">Serviços</a></li>
       <li><a href="../index.html#conteudos">Conteúdos</a></li>
-      <li><a href="../ecossistema/">Ecossistema</a></li>
+      <li><a href="../comunidade/">Comunidade</a></li>
     </ul>
     <a class="btn" href="../index.html#contato"><span>Conversar<span class="nl"> sobre minha marca</span></span> <svg><use href="#arr"/></svg></a>
   </div>
