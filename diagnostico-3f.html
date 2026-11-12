@@ -181,8 +181,8 @@ const has=v=>!(v===undefined||v===''||(Array.isArray(v)&&!v.length));
 function render(dir){
   const q=Q[i],aq=answerable();
   const done=aq.filter(x=>has(A[x.id])).length;
-  bar.style.width=(q.t==='done'?96:Math.round(done/aq.length*100))+'%';
-  sec.innerHTML=q.t==='done'?'<b>Falta enviar</b>':q.s?`<b>${SECS[q.s]}</b>`:'O Plano 2027';
+  bar.style.width=(q.t==='done'?(SENT===sig()?100:96):Math.round(done/aq.length*100))+'%';
+  sec.innerHTML=q.t==='done'?(SENT===sig()?'<b>Enviado</b>':'<b>Enviando</b>'):q.s?`<b>${SECS[q.s]}</b>`:'O Plano 2027';
   document.getElementById('prevQ').disabled=i===0;
   document.getElementById('nextQ').disabled=q.t==='done';
   let h='';
@@ -214,11 +214,7 @@ function render(dir){
     const opts=[...Array(11).keys()].map(k=>`<button type="button" class="opt" data-o="${k}" aria-pressed="${A[q.id]===k}">${k}</button>`).join('');
     h=`<div class="q">${head}<div class="scale">${opts}</div><div class="scale-l"><span>${q.lo}</span><span>${q.hi}</span></div><p class="err" id="err" hidden></p></div>`;
   }else if(q.t==='done'){
-    h=`<div class="q"><span class="selo">Último passo · ainda não acabou</span><h1>${esc(A.nome||'')}, falta <em>enviar.</em></h1>
-      <p class="help"><strong style="color:#fff;font-weight:600">Suas respostas ainda não chegaram para a gente.</strong> Toque no botão abaixo: o seu e-mail vai abrir com tudo preenchido. Depois, é só tocar em enviar no e-mail.</p>
-      <a class="send" id="send" href="${mailto()}">Enviar minhas respostas</a>
-      <p class="note">O e-mail não abriu? <button type="button" id="copy">Copie as respostas</button> e mande para ${EMAIL}.</p>
-      <p class="ok" id="ok"></p></div>`;
+    h=doneHTML();
   }
   stage.innerHTML=h;
   const qe=stage.querySelector('.q');if(dir<0)qe.classList.add('back');
@@ -227,10 +223,7 @@ function render(dir){
   stage.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>pick(b)));
   const oth=document.getElementById('oth');if(oth)oth.addEventListener('input',()=>{A[q.id+'_outro']=oth.value;save()});
   const fol=document.getElementById('fol');if(fol)fol.addEventListener('input',()=>{A[q.follow.id]=fol.value;save()});
-  if(q.t==='done'){
-    document.getElementById('send').addEventListener('click',()=>setTimeout(()=>ok('Abriu o seu e-mail? Agora toque em enviar por lá. Só assim as respostas chegam.'),400));
-    document.getElementById('copy').onclick=()=>{const t=report();(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>ok('Respostas copiadas. Cole no e-mail para '+EMAIL+'.')).catch(()=>ok('Não consegui copiar. Tente pelo botão de enviar.'))};
-  }
+  if(q.t==='done')autoSend();
   window.scrollTo(0,0);
 }
 const ok=t=>{document.getElementById('ok').textContent=t};
@@ -291,6 +284,37 @@ function report(){
   return out.join('\n').trim();
 }
 function mailto(){return `mailto:${EMAIL}?subject=${encodeURIComponent('Diagnóstico O Plano 2027 · '+(A.empresa||''))}&body=${encodeURIComponent(report())}`}
+
+/* ---------- Envio automático para o e-mail (FormSubmit), com o e-mail manual como reserva ---------- */
+const SEND_URL='https://formsubmit.co/ajax/'+EMAIL;
+let SENT='';try{SENT=localStorage.getItem(KEY+'-sent')||''}catch(e){}
+function sig(){const t=report();let h=0;for(let k=0;k<t.length;k++)h=(h*31+t.charCodeAt(k))|0;return String(h)}
+let state='idle';
+function doneHTML(){
+  if(SENT===sig()||state==='ok')return `<div class="q"><span class="selo">Diagnóstico enviado</span><h1>Pronto, <em>${esc(A.nome||'')}</em>.</h1>
+    <p class="help">Recebemos as suas respostas. Elas vão ajudar a gente a chegar no sábado entendendo o momento da ${esc(A.empresa||'sua empresa')}. Pode fechar esta página.</p></div>`;
+  if(state==='fail')return `<div class="q"><span class="selo">Último passo · ainda não acabou</span><h1>${esc(A.nome||'')}, falta <em>enviar.</em></h1>
+    <p class="help"><strong style="color:#fff;font-weight:600">Não conseguimos enviar automaticamente.</strong> Toque no botão abaixo: o seu e-mail vai abrir com tudo preenchido. Depois, é só tocar em enviar no e-mail.</p>
+    <a class="send" id="send" href="${mailto()}">Enviar minhas respostas</a>
+    <p class="note">O e-mail não abriu? <button type="button" id="copy">Copie as respostas</button> e mande para ${EMAIL}.</p>
+    <p class="ok" id="ok"></p></div>`;
+  return `<div class="q"><span class="selo">Enviando</span><h1>Enviando as suas <em>respostas…</em></h1>
+    <p class="help">Só um instante. Não feche esta página.</p></div>`;
+}
+function paint(){stage.innerHTML=doneHTML();bar.style.width=(state==='ok'?100:96)+'%';sec.innerHTML=state==='ok'?'<b>Enviado</b>':state==='fail'?'<b>Falta enviar</b>':'<b>Enviando</b>';
+  const sd=document.getElementById('send');if(sd)sd.addEventListener('click',()=>setTimeout(()=>ok('Abriu o seu e-mail? Agora toque em enviar por lá. Só assim as respostas chegam.'),400));
+  const cp=document.getElementById('copy');if(cp)cp.onclick=()=>{const t=report();(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>ok('Respostas copiadas. Cole no e-mail para '+EMAIL+'.')).catch(()=>ok('Não consegui copiar. Tente pelo botão de enviar.'))};}
+function autoSend(){
+  if(SENT===sig()){state='ok';paint();return}
+  state='sending';paint();
+  const data={_subject:'Diagnóstico O Plano 2027 · '+(A.empresa||''),_template:'box',_captcha:'false',_replyto:A.email||''};
+  Q.forEach(q=>{if(q.id&&active(q))data[short[q.id]||q.id]=val(q.id)});
+  const ctl=new AbortController();const to=setTimeout(()=>ctl.abort(),15000);
+  fetch(SEND_URL,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data),signal:ctl.signal})
+   .then(r=>r.json().catch(()=>({})).then(j=>({r,j})))
+   .then(({r,j})=>{clearTimeout(to);if(r.ok&&String(j.success)==='true'){SENT=sig();try{localStorage.setItem(KEY+'-sent',SENT)}catch(e){}state='ok'}else state='fail';if(Q[i].t==='done')paint()})
+   .catch(()=>{clearTimeout(to);state='fail';if(Q[i].t==='done')paint()});
+}
 
 render(0);
 </script>
