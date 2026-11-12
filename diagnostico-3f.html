@@ -181,8 +181,8 @@ const has=v=>!(v===undefined||v===''||(Array.isArray(v)&&!v.length));
 function render(dir){
   const q=Q[i],aq=answerable();
   const done=aq.filter(x=>has(A[x.id])).length;
-  bar.style.width=(q.t==='done'?100:Math.round(done/aq.length*100))+'%';
-  sec.innerHTML=q.s?`<b>${SECS[q.s]}</b>`:'O Plano 2027';
+  bar.style.width=(q.t==='done'?96:Math.round(done/aq.length*100))+'%';
+  sec.innerHTML=q.t==='done'?'<b>Falta enviar</b>':q.s?`<b>${SECS[q.s]}</b>`:'O Plano 2027';
   document.getElementById('prevQ').disabled=i===0;
   document.getElementById('nextQ').disabled=q.t==='done';
   let h='';
@@ -214,9 +214,9 @@ function render(dir){
     const opts=[...Array(11).keys()].map(k=>`<button type="button" class="opt" data-o="${k}" aria-pressed="${A[q.id]===k}">${k}</button>`).join('');
     h=`<div class="q">${head}<div class="scale">${opts}</div><div class="scale-l"><span>${q.lo}</span><span>${q.hi}</span></div><p class="err" id="err" hidden></p></div>`;
   }else if(q.t==='done'){
-    h=`<div class="q"><span class="selo">Diagnóstico concluído</span><h1>Obrigado, <em>${esc(A.nome||'')}</em>.</h1>
-      <p class="help">Falta só um passo: enviar as respostas. O botão abre o seu e-mail com tudo preenchido. É só tocar em enviar.</p>
-      <a class="send" id="send" href="${mailto()}">Enviar respostas</a>
+    h=`<div class="q"><span class="selo">Último passo · ainda não acabou</span><h1>${esc(A.nome||'')}, falta <em>enviar.</em></h1>
+      <p class="help"><strong style="color:#fff;font-weight:600">Suas respostas ainda não chegaram para a gente.</strong> Toque no botão abaixo: o seu e-mail vai abrir com tudo preenchido. Depois, é só tocar em enviar no e-mail.</p>
+      <a class="send" id="send" href="${mailto()}">Enviar minhas respostas</a>
       <p class="note">O e-mail não abriu? <button type="button" id="copy">Copie as respostas</button> e mande para ${EMAIL}.</p>
       <p class="ok" id="ok"></p></div>`;
   }
@@ -228,6 +228,7 @@ function render(dir){
   const oth=document.getElementById('oth');if(oth)oth.addEventListener('input',()=>{A[q.id+'_outro']=oth.value;save()});
   const fol=document.getElementById('fol');if(fol)fol.addEventListener('input',()=>{A[q.follow.id]=fol.value;save()});
   if(q.t==='done'){
+    document.getElementById('send').addEventListener('click',()=>setTimeout(()=>ok('Abriu o seu e-mail? Agora toque em enviar por lá. Só assim as respostas chegam.'),400));
     document.getElementById('copy').onclick=()=>{const t=report();(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>ok('Respostas copiadas. Cole no e-mail para '+EMAIL+'.')).catch(()=>ok('Não consegui copiar. Tente pelo botão de enviar.'))};
   }
   window.scrollTo(0,0);
