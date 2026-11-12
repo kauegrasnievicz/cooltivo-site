@@ -287,6 +287,7 @@ function mailto(){return `mailto:${EMAIL}?subject=${encodeURIComponent('Diagnós
 
 /* ---------- Envio automático para o e-mail (FormSubmit), com o e-mail manual como reserva ---------- */
 const SEND_URL='https://formsubmit.co/ajax/'+EMAIL;
+const SHEET_URL=''; /* Google Apps Script (planilha no Drive). Vazio = desligado. */
 let SENT='';try{SENT=localStorage.getItem(KEY+'-sent')||''}catch(e){}
 function sig(){const t=report();let h=0;for(let k=0;k<t.length;k++)h=(h*31+t.charCodeAt(k))|0;return String(h)}
 let state='idle';
@@ -309,11 +310,12 @@ function autoSend(){
   state='sending';paint();
   const data={_subject:'Diagnóstico O Plano 2027 · '+(A.empresa||''),_template:'box',_captcha:'false',_replyto:A.email||''};
   Q.forEach(q=>{if(q.id&&active(q))data[short[q.id]||q.id]=val(q.id)});
+  const sheet=SHEET_URL?fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)}).then(()=>true).catch(()=>false):Promise.resolve(false);
   const ctl=new AbortController();const to=setTimeout(()=>ctl.abort(),15000);
   fetch(SEND_URL,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data),signal:ctl.signal})
    .then(r=>r.json().catch(()=>({})).then(j=>({r,j})))
-   .then(({r,j})=>{clearTimeout(to);if(r.ok&&String(j.success)==='true'){SENT=sig();try{localStorage.setItem(KEY+'-sent',SENT)}catch(e){}state='ok'}else state='fail';if(Q[i].t==='done')paint()})
-   .catch(()=>{clearTimeout(to);state='fail';if(Q[i].t==='done')paint()});
+   .then(({r,j})=>r.ok&&String(j.success)==='true').catch(()=>false)
+   .then(mail=>sheet.then(sh=>{clearTimeout(to);if(mail||sh){SENT=sig();try{localStorage.setItem(KEY+'-sent',SENT)}catch(e){}state='ok'}else state='fail';if(Q[i].t==='done')paint()}));
 }
 
 render(0);
