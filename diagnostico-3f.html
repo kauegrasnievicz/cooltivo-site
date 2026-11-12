@@ -115,6 +115,7 @@ input:focus,textarea:focus{border-color:var(--laranja)}
 <script>
 /* ---------- Roteiro ---------- */
 const EMAIL='kaue@cooltivo.com.br';
+const CC='luisfernando@3fventure.com.br';
 const SECS={sobre:'A empresa',vendas:'Vendas',mkt:'Marketing',marca:'Marca',fim:'Contato'};
 const Q=[
  {t:'intro'},
@@ -283,11 +284,11 @@ function report(){
   Q.forEach(q=>{if(!q.id||!active(q))return;if(q.s!==cur){cur=q.s;out.push('',SECS[cur].toUpperCase())}out.push(`${short[q.id]||q.id}: ${val(q.id)}`)});
   return out.join('\n').trim();
 }
-function mailto(){return `mailto:${EMAIL}?subject=${encodeURIComponent('Diagnóstico O Plano 2027 · '+(A.empresa||''))}&body=${encodeURIComponent(report())}`}
+function mailto(){return `mailto:${EMAIL}?cc=${encodeURIComponent(CC)}&subject=${encodeURIComponent('Diagnóstico O Plano 2027 · '+(A.empresa||''))}&body=${encodeURIComponent(report())}`}
 
 /* ---------- Envio automático para o e-mail (FormSubmit), com o e-mail manual como reserva ---------- */
 const SEND_URL='https://formsubmit.co/ajax/'+EMAIL;
-const SHEET_URL=''; /* Google Apps Script (planilha no Drive). Vazio = desligado. */
+const SHEET_URL='https://script.google.com/macros/s/AKfycbyEbR_a7T83r02HVQNTw6zR6ohzZ3u0vX1OXe_yQND9nA2G7gqtMr1AhJWORPO0Naia7Q/exec'; /* Google Apps Script (planilha no Drive). Vazio = desligado. */
 let SENT='';try{SENT=localStorage.getItem(KEY+'-sent')||''}catch(e){}
 function sig(){const t=report();let h=0;for(let k=0;k<t.length;k++)h=(h*31+t.charCodeAt(k))|0;return String(h)}
 let state='idle';
@@ -308,7 +309,7 @@ function paint(){stage.innerHTML=doneHTML();bar.style.width=(state==='ok'?100:96
 function autoSend(){
   if(SENT===sig()){state='ok';paint();return}
   state='sending';paint();
-  const data={_subject:'Diagnóstico O Plano 2027 · '+(A.empresa||''),_template:'box',_captcha:'false',_replyto:A.email||''};
+  const data={_subject:'Diagnóstico O Plano 2027 · '+(A.empresa||''),_template:'box',_captcha:'false',_cc:CC,_replyto:A.email||''};
   Q.forEach(q=>{if(q.id&&active(q))data[short[q.id]||q.id]=val(q.id)});
   const sheet=SHEET_URL?fetch(SHEET_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)}).then(()=>true).catch(()=>false):Promise.resolve(false);
   const ctl=new AbortController();const to=setTimeout(()=>ctl.abort(),15000);
