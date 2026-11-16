@@ -19,7 +19,7 @@ os.makedirs(OUT, exist_ok=True)
 # ---------------------------------------------------------------- conteúdo
 SEO = {
  'introduce': ('Introduce · Posicionamento e marketing B2B | Case Cooltivo', 'Case Introduce: posicionamento de marca, performance digital e consultoria de marketing em cibersegurança B2B. Dois anos de recorde de faturamento.'),
- 'soprano': ('Soprano · Posicionamento e presença digital | Case Cooltivo', 'Case Soprano: o novo posicionamento da indústria gaúcha levado ao digital, com as pessoas à frente dos produtos. Mais de 400% de crescimento no engajamento.'),
+ 'soprano': ('Soprano · Posicionamento e presença digital | Case Cooltivo', 'Case Soprano: o novo posicionamento da indústria gaúcha levado ao digital, com as pessoas à frente dos produtos. 456% de crescimento no engajamento.'),
  'santa-clara': ('Santa Clara · Programa Plantando o Bem | Case Cooltivo', 'Case Santa Clara: conceito, comunicação e direção criativa do programa Plantando o Bem, em que os alunos criam e tocam projetos sustentáveis.'),
  'zen-design-milao': ('Zen Design em Milão · Zen Pet Collection | Case Cooltivo', 'Case Zen Design: direção criativa e conteúdo da primeira participação da marca gaúcha em Milão, no lançamento da Zen Pet Collection.'),
  'dsf-advogados': ('DSF Advogados · Marketing jurídico digital | Case Cooltivo', 'Case DSF Advogados: verticais de conteúdo e posicionamento digital que levaram a reputação de um dos escritórios mais admirados do RS para o digital.'),
@@ -49,8 +49,8 @@ CASES = [
   desafio='A Soprano, uma gigante da indústria, tinha um novo posicionamento e precisava levá-lo para o digital de um jeito mais próximo das pessoas.',
   estrategia='Construímos uma comunicação que coloca as histórias à frente dos produtos: as pessoas, os bastidores e quem usa a marca no dia a dia.',
   fizemos=['Tradução do posicionamento para o digital', 'Linha editorial com pessoas como protagonistas', 'Produção de conteúdo', 'Gestão da presença digital'],
-  resultado='Mais de 400% de crescimento no engajamento, com as pessoas como protagonistas da marca.',
-  nums=[('+400%', 'de crescimento no engajamento'), ('Pessoas', 'como protagonistas da marca')],
+  resultado='456% de crescimento no engajamento no Instagram, o marco de 50 mil seguidores e mais de 12 horas de aumento no tempo de exibição no YouTube, com as pessoas como protagonistas da marca.',
+  nums=[('+456%', 'de engajamento no Instagram'), ('50 mil', 'seguidores no Instagram'), ('+12 h', 'de watch time no YouTube')],
   chips=['Posicionamento', 'Presença digital', 'Produção de conteúdo'],
   collab='Fabu Design e Vitral Filmes', video='soprano-digital', ig='https://www.instagram.com/p/DdRaOx4Ae9v/'),
  dict(slug='santa-clara', name='Santa Clara', logo=('santa-clara.png', 44), seg='Cooperativa · Programa Plantando o Bem',
