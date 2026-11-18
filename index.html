@@ -283,6 +283,11 @@ nav .btn{padding:11px 20px;font-size:14px}
 .collab b{display:block;font-size:14px;font-weight:700;color:var(--cream);line-height:1.25}
 @media (min-width:901px) and (max-height:820px){.cases{padding:72px 0 64px}.cases h2{font-size:46px}.cases .head{margin-bottom:20px}.case .txt{padding:28px 40px 26px}.case h3{font-size:36px;margin:16px 0 10px}.case p{font-size:17px;line-height:1.45}.case .nums{margin:14px 0 12px}.case .nums b{font-size:34px}.collab{margin-bottom:12px;padding:8px 12px 8px 8px}.case .chips span{padding:6px 10px;font-size:13px}}
 /* Setas laterais sobre o carrossel: sempre à vista enquanto o card está na tela */
+.case.case-all{grid-template-columns:1fr;width:min(620px,86vw);background:var(--green-strong);border:1.5px solid rgba(169,200,179,.35)}
+.case.case-all .txt{justify-content:center;padding:56px 52px}
+.case.case-all h3{font-size:48px}.case.case-all h3 span{color:var(--green-soft)}
+.case.case-all .all-btn{margin-top:30px;align-self:flex-start;font-size:17px;padding:18px 28px}
+@media (max-width:760px){.case.case-all .txt{padding:40px 28px}.case.case-all h3{font-size:36px}}
 .case-more{display:inline-flex;align-items:center;gap:8px;margin-top:16px;width:fit-content;font-size:14px;font-weight:700;color:var(--green-soft);text-decoration:none;border-bottom:1px solid rgba(169,200,179,.4);padding-bottom:3px;transition:color var(--t,.3s) var(--ease,cubic-bezier(.2,.7,.2,1)),border-color var(--t,.3s) var(--ease,cubic-bezier(.2,.7,.2,1))}
 .case-more svg{width:10px;height:10px}
 .case-more:hover{color:var(--white);border-color:var(--white)}
@@ -583,7 +588,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
     </div>
     <div class="ctrl" aria-label="Navegar pelos cases">
       <button type="button" id="prev" aria-label="Case anterior"><svg style="transform:scaleX(-1)"><use href="#chev"/></svg></button>
-      <span class="count" id="count">01 / 09</span>
+      <span class="count" id="count">01 / 06</span>
       <button type="button" id="next" aria-label="Próximo case"><svg><use href="#chev"/></svg></button>
     </div>
   </div>
@@ -652,69 +657,17 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
       <div class="vis"><div class="award"><span class="medal">TOP</span><span>Top de Marketing ADVB/RS 2024</span></div><video data-auto muted loop playsinline preload="none" poster="video/cases/santa-clara.jpg" aria-label="Plantando o Bem, Santa Clara"><source src="video/cases/santa-clara.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/santa-clara.mp4" data-ig="https://www.instagram.com/p/C1-NUVQs1nO/"><svg><use href="#play"/></svg>Assistir com som</button></div>
     </article>
 
-    <article class="case">
+    <article class="case case-all">
       <div class="txt">
-        <div class="meta"><span class="brandname"><img class="clogo cl-zen" src="logos/zen.png" alt="Zen Design"></span><span class="seg">Indústria · Design para a casa</span></div>
-        <h3>Uma marca brasileira no Salone del Mobile de Milão.</h3>
-        <p>Levamos a Zen Design pela primeira vez ao Salone del Mobile, em Milão, para lançar a Zen Pet Collection, uma linha exclusiva para pets. Gerimos um time internacional, entre modelo, video maker e influencer pet.</p>
-        <div class="nums"><div><b>1ª vez</b><span>da marca em Milão</span></div><div><b>2025</b><span>Zen Pet Collection</span></div></div>
-        <div class="chips"><span>Presença digital</span></div>
-        <a class="case-more" href="cases/zen-design-milao.html">Ver case completo <svg><use href="#arr"/></svg></a>
+        <div class="meta"><span class="seg">Mais cases · Marcas do RS</span></div>
+        <h3>Tem muito mais <span>marca cultivada.</span></h3>
+        <p>Zen Design em Milão e na Expo Revestir, Garbo, Vallontano, Vino Verace e outros projetos de posicionamento, presença digital e consultoria.</p>
+        <a class="btn btn-orange all-btn" href="cases/">Conheça mais cases <svg><use href="#arr"/></svg></a>
       </div>
-      <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/zen-milao.jpg" aria-label="Zen Design no Salone del Mobile"><source src="video/cases/zen-milao.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/zen-milao.mp4" data-ig="https://www.instagram.com/reel/DI17ktgPibj/"><svg><use href="#play"/></svg>Assistir com som</button></div>
-    </article>
-
-    <article class="case">
-      <div class="txt">
-        <div class="meta"><span class="brandname"><img class="clogo cl-zen" src="logos/zen.png" alt="Zen Design"><em>+ Ana Hickmann</em></span><span class="seg">Indústria · Expo Revestir</span></div>
-        <h3>Sua Casa Veste Zen: moda e arquitetura no mesmo lugar.</h3>
-        <p>O conceito Sua Casa Veste Zen conecta moda e arquitetura. Levamos a campanha com Ana Hickmann à Expo Revestir e transformamos a presença na feira em experiência e conteúdo.</p>
-        <div class="nums"><div><b>Ana Hickmann</b><span>rosto da campanha</span></div><div><b>Expo Revestir</b><span>experiência de marca</span></div></div>
-        
-        <div class="chips"><span>Posicionamento</span></div>
-        <a class="case-more" href="cases/zen-design-expo-revestir.html">Ver case completo <svg><use href="#arr"/></svg></a>
-      </div>
-      <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/zen-ana-hickmann.jpg" aria-label="Zen Design e Ana Hickmann na Expo Revestir"><source src="video/cases/zen-ana-hickmann.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/zen-ana-hickmann.mp4" data-ig="https://www.instagram.com/reel/DHjgMhqvjAF/"><svg><use href="#play"/></svg>Assistir com som</button></div>
-    </article>
-
-    <article class="case">
-      <div class="txt">
-        <div class="meta"><span class="brandname"><img class="clogo cl-garbo" src="logos/garbo.png" alt="Garbo Enologia Criativa"></span><span class="seg">Vinícola · Serra Gaúcha</span></div>
-        <h3>Um clube de vinhos que virou comunidade de marca.</h3>
-        <p>Criamos a estratégia de mídia e conteúdo orgânico do clube de vinhos da Garbo, que virou uma comunidade de marca e um motor de clientes apaixonados.</p>
-        <div class="nums"><div><b>R$ 700 mil+</b><span>de receita anual do clube</span></div><div><b>Comunidade</b><span>de clientes da marca</span></div></div>
-        <div class="chips"><span>Presença digital</span></div>
-        <a class="case-more" href="cases/garbo.html">Ver case completo <svg><use href="#arr"/></svg></a>
-      </div>
-      <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/garbo.jpg" aria-label="Filme da Garbo Enologia Criativa"><source src="video/cases/garbo.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/garbo.mp4" data-ig="https://www.instagram.com/reel/DMiEqAKq_YA/"><svg><use href="#play"/></svg>Assistir com som</button></div>
-    </article>
-
-    <article class="case">
-      <div class="txt">
-        <div class="meta"><span class="brandname"><img class="clogo cl-vallontano" src="logos/vallontano.png" alt="Vallontano"></span><span class="seg">Vinícola · Serra Gaúcha</span></div>
-        <h3>Uma imagem à altura do vinho.</h3>
-        <p>Definimos o posicionamento da comunicação e cuidamos da presença digital da Vallontano. Com direção criativa própria, mantemos um posicionamento claro, verdadeiro e relevante em todos os canais.</p>
-        <div class="nums"><div><b>Direção criativa</b><span>posicionamento claro e relevante</span></div></div>
-        <div class="chips"><span>Posicionamento</span><span>Presença digital</span></div>
-        <a class="case-more" href="cases/vallontano.html">Ver case completo <svg><use href="#arr"/></svg></a>
-      </div>
-      <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/vallontano.jpg" aria-label="Filme da Vallontano"><source src="video/cases/vallontano.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/vallontano.mp4" data-ig="https://www.instagram.com/p/DdcB5r1lZyP/"><svg><use href="#play"/></svg>Assistir com som</button></div>
-    </article>
-
-    <article class="case">
-      <div class="txt">
-        <div class="meta"><span class="brandname">Vino Verace</span><span class="seg">E-commerce · Vinhos premium</span></div>
-        <h3>De R$ 20 mil para R$ 672 mil no mês.</h3>
-        <p>Um e-commerce de vinhos precisava crescer sem competir só por preço. Criamos uma comunicação focada em valor de marca e, além do e-commerce, nasceram a VERACE, marca própria de vinhos, e uma linha de serviços de experiência.</p>
-        <div class="nums"><div><b>33,6x</b><span>de crescimento: R$ 20 mil a R$ 672 mil por mês</span></div><div><b>1.000+</b><span>rótulos de 30 países</span></div></div>
-        <div class="chips"><span>Consultoria de marketing</span><span>Presença digital</span></div>
-        <a class="case-more" href="cases/vino-verace.html">Ver case completo <svg><use href="#arr"/></svg></a>
-      </div>
-      <div class="vis"><video data-auto muted loop playsinline preload="none" poster="video/cases/vino-verace.jpg" aria-label="Vino Verace"><source src="video/cases/vino-verace.mp4" type="video/mp4"></video><button class="watch" type="button" data-play="video/cases/vino-verace.mp4" data-ig="https://www.instagram.com/p/DN1TI1sZil0/"><svg><use href="#play"/></svg>Assistir com som</button></div>
     </article>
   </div>
   </div>
-  <div class="wrap"><div class="hint"><svg style="width:14px;height:14px"><use href="#chev"/></svg>Arraste para o lado para ver todos os cases</div></div>
+  <div class="wrap"><div class="hint"><svg style="width:14px;height:14px"><use href="#chev"/></svg>Arraste para o lado para ver os cases</div></div>
 </section>
 
 <!-- HISTÓRIA -->
