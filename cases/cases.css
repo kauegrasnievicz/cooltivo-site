@@ -469,6 +469,14 @@ footer .links a:hover{color:var(--green-soft)}
 
 
 
+
+/* galeria de aplicações (cases de marca) */
+.gal-grid.stack{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.gal-grid.stack figure{margin:0;border-radius:24px;overflow:hidden;aspect-ratio:16/9;transform:none!important}
+.gal-grid.stack figure:first-child,.gal-grid.stack figure:nth-child(4){grid-column:1/-1}
+.gal-grid.stack img{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:700px){.gal-grid.stack{grid-template-columns:1fr;gap:12px}.gal-grid.stack figure{border-radius:16px}}
+
 /* fab+fnav */
 footer .fnav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,auto));justify-content:start;align-items:start;gap:18px 88px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid rgba(249,243,227,.18)}
 footer .fnav>div{display:flex;flex-wrap:wrap;align-items:center;align-content:flex-start;gap:8px 22px}
