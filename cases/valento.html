@@ -84,10 +84,10 @@
 </section>
 
 <section class="v2-gal" aria-label="Aplicações">
-<div class="v2-row full"><figure class="v2-f"><img src="../img/cases/valento-1.jpg" alt="Aplicação da marca Valento, imagem 1" loading="lazy"></figure></div>
-<div class="v2-row duo"><figure class="v2-f"><img src="../img/cases/valento-2.jpg" alt="Aplicação da marca Valento, imagem 2" loading="lazy"></figure><figure class="v2-f"><img src="../img/cases/valento-3.jpg" alt="Aplicação da marca Valento, imagem 3" loading="lazy"></figure></div>
-<div class="v2-row inset"><figure class="v2-f"><img src="../img/cases/valento-4.jpg" alt="Aplicação da marca Valento, imagem 4" loading="lazy"></figure></div>
-<div class="v2-row asym"><figure class="v2-f"><img src="../img/cases/valento-5.jpg" alt="Aplicação da marca Valento, imagem 5" loading="lazy"></figure><figure class="v2-f"><img src="../img/cases/valento-6.jpg" alt="Aplicação da marca Valento, imagem 6" loading="lazy"></figure></div>
+<div class="v2-row full"><figure class="v2-f"><img src="../img/cases/valento-1.jpg" alt="Aplicação do case Valento, imagem 1" loading="lazy"></figure></div>
+<div class="v2-row duo"><figure class="v2-f"><img src="../img/cases/valento-2.jpg" alt="Aplicação do case Valento, imagem 2" loading="lazy"></figure><figure class="v2-f"><img src="../img/cases/valento-3.jpg" alt="Aplicação do case Valento, imagem 3" loading="lazy"></figure></div>
+<div class="v2-row inset"><figure class="v2-f"><img src="../img/cases/valento-4.jpg" alt="Aplicação do case Valento, imagem 4" loading="lazy"></figure></div>
+<div class="v2-row asym"><figure class="v2-f"><img src="../img/cases/valento-5.jpg" alt="Aplicação do case Valento, imagem 5" loading="lazy"></figure><figure class="v2-f"><img src="../img/cases/valento-6.jpg" alt="Aplicação do case Valento, imagem 6" loading="lazy"></figure></div>
 </section>
 
 <section class="v2-next">
@@ -108,6 +108,7 @@ function u(){var r=k.getBoundingClientRect(),h=innerHeight,p=Math.min(1,Math.max
 u();addEventListener('scroll',function(){requestAnimationFrame(u)},{passive:true});addEventListener('resize',u);
 var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -12% 0px'}):null;
 document.querySelectorAll('.v2-f,.v2-b,.v2-ficha').forEach(function(f){if(io&&!rm)io.observe(f);else f.classList.add('in')});
+document.querySelectorAll('.v2-key .watch').forEach(function(b){var v=b.parentNode.querySelector('video');b.addEventListener('click',function(){v.muted=false;v.controls=true;v.currentTime=0;v.play().catch(function(){});b.remove()})});
 document.documentElement.classList.add('v2-js');})();
 </script>
 

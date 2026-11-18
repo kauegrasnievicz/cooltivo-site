@@ -35,7 +35,7 @@ SEO = {
 
 ABOUT = {'valento': 'A Valento é um ecossistema de soluções para barbearias: cosméticos desenvolvidos para performance real (Valento Men), ferramentas para uso profissional (Valento Tools), educação em método, gestão e evolução contínua (Valento Academy) e uma comunidade de barbeiros (Valento Club).', 'farol': 'O Farol é um app de gestão para barbearias. Organiza a operação e transforma dados em direção para quem enxerga a barbearia como empresa e quer crescer com visão, método e leitura estratégica.', 'ampf': 'A AMPF é a associação criada para a defesa dos direitos dos membros do Ministério Público Federal.', 'introduce': 'A Introduce é uma empresa de segurança da informação e transformação digital de Caxias do Sul (RS). Assessora empresas em governança, maturidade digital e proteção de ativos críticos, e criou a Guardiões Digitais, a maior comunidade de cibersegurança do Brasil: mais de 1.500 membros, talks semanais e encontros em Santa Catarina e no Rio Grande do Sul.', 'soprano': 'Fundada em 1954 em Farroupilha, na Serra Gaúcha, a Soprano é uma das grandes indústrias do Rio Grande do Sul. Produz mais de 4.000 itens em quatro frentes (fechaduras e ferragens, materiais elétricos, componentes para móveis e utilidades térmicas), tem cerca de 1.000 colaboradores e uma estrutura própria em Xangai há mais de duas décadas.', 'santa-clara': 'Fundada em 1911 em Carlos Barbosa, na Serra Gaúcha, a Cooperativa Santa Clara é considerada a mais antiga cooperativa de laticínios em atividade no Brasil. Reúne cerca de 5.000 famílias associadas e mais de 2.300 colaboradores, com unidades industriais em Getúlio Vargas e Casca, e é referência em leite, queijos e derivados no RS.', 'zen-design-milao': 'Fundada em 2004 em Bento Gonçalves (RS), a Zen Design é uma marca brasileira de puxadores e acessórios de alto padrão para arquitetura e interiores. Une matérias-primas naturais, trabalho artesanal e design contemporâneo, com coleções autorais apresentadas em feiras como a Expo Revestir, em São Paulo, e em Milão.', 'dsf-advogados': 'Com quase cinco décadas de história, a Dupont Spiller Fadanelli Advogados tem escritórios em Porto Alegre, Caxias do Sul, Bento Gonçalves, Florianópolis e São Paulo, além de correspondentes no Brasil e no exterior. Em 2021, foi eleita o escritório jurídico mais lembrado e preferido no prêmio Marcas de Quem Decide, do Jornal do Comércio.', 'neomot': 'A Neomot é uma empresa de elevadores e tecnologia para edifícios inteligentes de Caxias do Sul (RS), fundada e liderada por Gustavo Zolet. Além de elevadores e quadros de comando, desenvolve o Cubo, que recupera energia, o software Zeus, que monitora o prédio, a assistente virtual Anna e o app Neo, com o qual o morador chama o elevador e reserva áreas comuns.', 'garbo': 'A Garbo Enologia Criativa nasceu em Bento Gonçalves (RS) há cerca de dez anos, pelas mãos dos enólogos Andrei Bellé, Guilherme Caio e Jhonatan Marini. É conhecida pela "enologia criativa": cortes autorais, amadurecimento em madeiras brasileiras e exóticas e castas pouco usuais. Tem loja na rota Caminhos de Pedra e o clube de vinhos Experientia.', 'vallontano': 'Fundada em 1999, a Vallontano Vinhos Nobres é uma vinícola familiar de Bento Gonçalves, no Vale dos Vinhedos, sob o comando e a direção de Ana Paula Valduga e com o enólogo Luís Henrique Zanini. Produz vinhos e espumantes em pequena escala, como o Vallontano Reserva Merlot e o espumante LaToller, e recebe visitantes para degustações na Serra Gaúcha.', 'vino-verace': 'Fundada em 2020, a Vino Verace é uma curadoria especializada de vinhos com loja online. Trabalha com pequenos produtores, produções limitadas e rótulos de mais de 30 países, da Serra Gaúcha a regiões menos óbvias do Velho e do Novo Mundo. Mais de 100 mil garrafas já passaram pela sua curadoria, com atendimento de sommeliers e a Confraria da Vino Verace, de degustações guiadas.', 'zen-design-expo-revestir': 'Fundada em 2004 em Bento Gonçalves (RS), a Zen Design é uma marca brasileira de puxadores e acessórios de alto padrão para arquitetura e interiores. Une matérias-primas naturais, trabalho artesanal e design contemporâneo, com coleções autorais apresentadas em feiras como a Expo Revestir, em São Paulo, e em Milão.'}
 
-V2 = ['valento']  # cases no formato editorial (case_page_v2)
+V2 = 'all'  # todos os cases no formato editorial (case_page_v2)
 
 CASES = [
  dict(slug='introduce', name='Introduce', logo=('introduce.png', 30), seg='Tecnologia · Cibersegurança B2B',
@@ -368,32 +368,38 @@ def case_page_v2(i, c, out_path=None, index=True):
     nxt = CASES[(i + 1) % len(CASES)]
     vid = f'../video/cases/{c["video"]}'
     key_img = os.path.join(ROOT, 'img', 'cases', c['slug'] + '-key.jpg')
+    watch = '' if c.get('nosound') else '<button class="watch" type="button"><svg><use href="#play"/></svg>Assistir com som</button>'
+    vtag = f'<video autoplay muted loop playsinline preload="metadata" poster="{vid}.jpg" aria-label="Vídeo do case {e(c["name"])}"><source src="{vid}.mp4" type="video/mp4"></video>'
+    key_cls = ''
     if os.path.exists(key_img):
         key = f'<img src="../img/cases/{c["slug"]}-key.jpg" alt="{e(c["name"])}: {e(c["title"])}">'
+    elif c.get('wide'):
+        key = vtag + watch
     else:
-        key = f'<video autoplay muted loop playsinline preload="metadata" poster="{vid}.jpg" aria-label="Vídeo do case {e(c["name"])}"><source src="{vid}.mp4" type="video/mp4"></video>'
+        key_cls = ' port'
+        key = f'<div class="v2-port">{vtag}{watch}</div>'
     words = ''.join(f'<span class="w" style="--i:{k}"><span>{e(w)}</span></span> ' for k, w in enumerate(c['title'].split()))
     gn = c.get('gal_n', 3)
     imgs = [f'../img/cases/{c["slug"]}-{k}.jpg' for k in range(1, gn + 1)]
-    if os.path.exists(key_img) and not c.get('nosound'):
-        pass
-    # layouts alternados: cheio, dupla, recuado, assimétrico
-    blocks, k = [], 0
-    pattern = ['full', 'duo', 'inset', 'asym', 'full', 'duo']
-    p = 0
-    alt = lambda n: f'Aplicação da marca {e(c["name"])}, imagem {n}'
-    while k < len(imgs):
-        kind = pattern[p % len(pattern)]; p += 1
-        if kind in ('duo', 'asym') and k + 1 < len(imgs):
-            blocks.append(f'<div class="v2-row {kind}"><figure class="v2-f"><img src="{imgs[k]}" alt="{alt(k+1)}" loading="lazy"></figure><figure class="v2-f"><img src="{imgs[k+1]}" alt="{alt(k+2)}" loading="lazy"></figure></div>')
-            k += 2
-        elif kind in ('duo', 'asym'):
-            continue
-        else:
-            blocks.append(f'<div class="v2-row {kind}"><figure class="v2-f"><img src="{imgs[k]}" alt="{alt(k+1)}" loading="lazy"></figure></div>')
-            k += 1
-    if not c.get('nosound') and not os.path.exists(key_img):
-        pass
+    alt = lambda n: f'{"Aplicação" if gn > 3 else "Bastidores"} do case {e(c["name"])}, imagem {n}'
+    blocks = []
+    if gn <= 3:
+        # cases mais estratégicos: uma linha só, sem excesso de layout
+        figs = ''.join(f'<figure class="v2-f"><img src="{src}" alt="{alt(n + 1)}" loading="lazy"></figure>' for n, src in enumerate(imgs))
+        blocks.append(f'<div class="v2-row trio {"h" if c.get("wide") else "v"}">{figs}</div>')
+    else:
+        pattern = ['full', 'duo', 'inset', 'asym', 'full', 'duo']
+        k = p = 0
+        while k < len(imgs):
+            kind = pattern[p % len(pattern)]; p += 1
+            if kind in ('duo', 'asym'):
+                if k + 1 >= len(imgs):
+                    continue
+                blocks.append(f'<div class="v2-row {kind}"><figure class="v2-f"><img src="{imgs[k]}" alt="{alt(k+1)}" loading="lazy"></figure><figure class="v2-f"><img src="{imgs[k+1]}" alt="{alt(k+2)}" loading="lazy"></figure></div>')
+                k += 2
+            else:
+                blocks.append(f'<div class="v2-row {kind}"><figure class="v2-f"><img src="{imgs[k]}" alt="{alt(k+1)}" loading="lazy"></figure></div>')
+                k += 1
     gallery = '\n'.join(blocks)
     ab = c.get('about') or ABOUT.get(c['slug'])
     fizemos = ''.join(f'<li>{e(x)}</li>' for x in c['fizemos'])
@@ -412,7 +418,7 @@ def case_page_v2(i, c, out_path=None, index=True):
   <span class="v2-cue" aria-hidden="true">Role</span>
 </header>
 
-<figure class="v2-key" id="key">{key}</figure>
+<figure class="v2-key{key_cls}" id="key">{key}</figure>
 
 <section class="v2-txt">
   <div class="wrap v2-grid">
@@ -453,6 +459,7 @@ function u(){{var r=k.getBoundingClientRect(),h=innerHeight,p=Math.min(1,Math.ma
 u();addEventListener('scroll',function(){{requestAnimationFrame(u)}},{{passive:true}});addEventListener('resize',u);
 var io='IntersectionObserver' in window?new IntersectionObserver(function(es){{es.forEach(function(x){{if(x.isIntersecting){{x.target.classList.add('in');io.unobserve(x.target)}}}})}},{{rootMargin:'0px 0px -12% 0px'}}):null;
 document.querySelectorAll('.v2-f,.v2-b,.v2-ficha').forEach(function(f){{if(io&&!rm)io.observe(f);else f.classList.add('in')}});
+document.querySelectorAll('.v2-key .watch').forEach(function(b){{var v=b.parentNode.querySelector('video');b.addEventListener('click',function(){{v.muted=false;v.controls=true;v.currentTime=0;v.play().catch(function(){{}});b.remove()}})}});
 document.documentElement.classList.add('v2-js');}})();
 </script>
 '''
@@ -504,6 +511,6 @@ def index_page():
 
 
 for i, c in enumerate(CASES):
-    open(os.path.join(OUT, c['slug'] + '.html'), 'w', encoding='utf-8').write(case_page_v2(i, c) if c['slug'] in V2 else case_page(i, c))
+    open(os.path.join(OUT, c['slug'] + '.html'), 'w', encoding='utf-8').write(case_page_v2(i, c) if (V2 == 'all' or c['slug'] in V2) else case_page(i, c))
 open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write(index_page())
 print('ok:', len(CASES), 'cases')
