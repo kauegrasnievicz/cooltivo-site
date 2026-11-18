@@ -383,7 +383,9 @@ def case_page_v2(i, c, out_path=None, index=True):
     imgs = [f'../img/cases/{c["slug"]}-{k}.jpg' for k in range(1, gn + 1)]
     alt = lambda n: f'{"Aplicação" if gn > 3 else "Bastidores"} do case {e(c["name"])}, imagem {n}'
     blocks = []
-    if gn <= 3:
+    if gn == 0:
+        pass
+    elif gn <= 3:
         # cases mais estratégicos: uma linha só, sem excesso de layout
         figs = ''.join(f'<figure class="v2-f"><img src="{src}" alt="{alt(n + 1)}" loading="lazy"></figure>' for n, src in enumerate(imgs))
         blocks.append(f'<div class="v2-row trio {"h" if c.get("wide") else "v"}">{figs}</div>')
@@ -437,9 +439,7 @@ def case_page_v2(i, c, out_path=None, index=True):
   </div>
 </section>
 
-<section class="v2-gal" aria-label="Aplicações">
-{gallery}
-</section>
+{f'<section class="v2-gal" aria-label="Aplicações">{gallery}</section>' if gn else ''}
 
 <section class="v2-next">
   <a class="v2-nx" href="{nxt['slug']}.html">
