@@ -562,6 +562,7 @@ footer .links a:hover{color:var(--green-soft)}
 .v2-row.trio .v2-f{border-radius:22px}.v2-row.trio.v .v2-f{aspect-ratio:9/16}.v2-row.trio.h .v2-f{aspect-ratio:16/9}
 @media (max-width:900px){.v2-nx{min-height:240px}.v2-nx-in{padding:24px}.v2-cta{padding:28px 24px}.v2-port{height:72vh}.v2-row.trio{width:calc(100% - 40px);gap:10px;margin-bottom:48px}.v2-row.trio.h{grid-template-columns:1fr}}
 
+
 /* fab+fnav */
 footer .fnav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,auto));justify-content:start;align-items:start;gap:18px 88px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid rgba(249,243,227,.18)}
 footer .fnav>div{display:flex;flex-wrap:wrap;align-items:center;align-content:flex-start;gap:8px 22px}
