@@ -35,7 +35,7 @@ SEO = {
 
 ABOUT = {'valento': 'A Valento é um ecossistema de soluções para barbearias: cosméticos desenvolvidos para performance real (Valento Men), ferramentas para uso profissional (Valento Tools), educação em método, gestão e evolução contínua (Valento Academy) e uma comunidade de barbeiros (Valento Club).', 'farol': 'O Farol é um app de gestão para barbearias. Organiza a operação e transforma dados em direção para quem enxerga a barbearia como empresa e quer crescer com visão, método e leitura estratégica.', 'ampf': 'A AMPF é a associação criada para a defesa dos direitos dos membros do Ministério Público Federal.', 'introduce': 'A Introduce é uma empresa de segurança da informação e transformação digital de Caxias do Sul (RS). Assessora empresas em governança, maturidade digital e proteção de ativos críticos, e criou a Guardiões Digitais, a maior comunidade de cibersegurança do Brasil: mais de 1.500 membros, talks semanais e encontros em Santa Catarina e no Rio Grande do Sul.', 'soprano': 'Fundada em 1954 em Farroupilha, na Serra Gaúcha, a Soprano é uma das grandes indústrias do Rio Grande do Sul. Produz mais de 4.000 itens em quatro frentes (fechaduras e ferragens, materiais elétricos, componentes para móveis e utilidades térmicas), tem cerca de 1.000 colaboradores e uma estrutura própria em Xangai há mais de duas décadas.', 'santa-clara': 'Fundada em 1911 em Carlos Barbosa, na Serra Gaúcha, a Cooperativa Santa Clara é considerada a mais antiga cooperativa de laticínios em atividade no Brasil. Reúne cerca de 5.000 famílias associadas e mais de 2.300 colaboradores, com unidades industriais em Getúlio Vargas e Casca, e é referência em leite, queijos e derivados no RS.', 'zen-design-milao': 'Fundada em 2004 em Bento Gonçalves (RS), a Zen Design é uma marca brasileira de puxadores e acessórios de alto padrão para arquitetura e interiores. Une matérias-primas naturais, trabalho artesanal e design contemporâneo, com coleções autorais apresentadas em feiras como a Expo Revestir, em São Paulo, e em Milão.', 'dsf-advogados': 'Com quase cinco décadas de história, a Dupont Spiller Fadanelli Advogados tem escritórios em Porto Alegre, Caxias do Sul, Bento Gonçalves, Florianópolis e São Paulo, além de correspondentes no Brasil e no exterior. Em 2021, foi eleita o escritório jurídico mais lembrado e preferido no prêmio Marcas de Quem Decide, do Jornal do Comércio.', 'neomot': 'A Neomot é uma empresa de elevadores e tecnologia para edifícios inteligentes de Caxias do Sul (RS), fundada e liderada por Gustavo Zolet. Além de elevadores e quadros de comando, desenvolve o Cubo, que recupera energia, o software Zeus, que monitora o prédio, a assistente virtual Anna e o app Neo, com o qual o morador chama o elevador e reserva áreas comuns.', 'garbo': 'A Garbo Enologia Criativa nasceu em Bento Gonçalves (RS) há cerca de dez anos, pelas mãos dos enólogos Andrei Bellé, Guilherme Caio e Jhonatan Marini. É conhecida pela "enologia criativa": cortes autorais, amadurecimento em madeiras brasileiras e exóticas e castas pouco usuais. Tem loja na rota Caminhos de Pedra e o clube de vinhos Experientia.', 'vallontano': 'Fundada em 1999, a Vallontano Vinhos Nobres é uma vinícola familiar de Bento Gonçalves, no Vale dos Vinhedos, sob o comando e a direção de Ana Paula Valduga e com o enólogo Luís Henrique Zanini. Produz vinhos e espumantes em pequena escala, como o Vallontano Reserva Merlot e o espumante LaToller, e recebe visitantes para degustações na Serra Gaúcha.', 'vino-verace': 'Fundada em 2020, a Vino Verace é uma curadoria especializada de vinhos com loja online. Trabalha com pequenos produtores, produções limitadas e rótulos de mais de 30 países, da Serra Gaúcha a regiões menos óbvias do Velho e do Novo Mundo. Mais de 100 mil garrafas já passaram pela sua curadoria, com atendimento de sommeliers e a Confraria da Vino Verace, de degustações guiadas.', 'zen-design-expo-revestir': 'Fundada em 2004 em Bento Gonçalves (RS), a Zen Design é uma marca brasileira de puxadores e acessórios de alto padrão para arquitetura e interiores. Une matérias-primas naturais, trabalho artesanal e design contemporâneo, com coleções autorais apresentadas em feiras como a Expo Revestir, em São Paulo, e em Milão.'}
 
-PREVIEW_V2 = ['valento']
+V2 = ['valento']  # cases no formato editorial (case_page_v2)
 
 CASES = [
  dict(slug='introduce', name='Introduce', logo=('introduce.png', 30), seg='Tecnologia · Cibersegurança B2B',
@@ -458,7 +458,12 @@ document.documentElement.classList.add('v2-js');}})();
 '''
     t, d = SEO.get(c['slug'], (f'{c["name"]} · Case Cooltivo', c['summary']))
     path = '/cases/' + c['slug']
-    sch = [seo.crumbs([('Cooltivo', '/'), ('Cases', '/cases/'), (c['name'], path)])]
+    work = {'@context': 'https://schema.org', '@type': 'CreativeWork', 'name': f'Case {c["name"]}: {c["title"]}',
+            'headline': c['title'], 'description': d, 'url': seo.BASE + path, 'inLanguage': 'pt-BR',
+            'image': seo.BASE + '/img/og/' + c['slug'] + '.jpg', 'creator': {'@id': seo.ORG_ID},
+            'publisher': {'@id': seo.ORG_ID}, 'keywords': ', '.join(c['chips']),
+            'about': {'@type': 'Organization', 'name': c['name'], **({'description': ab} if ab else {})}}
+    sch = [work, seo.crumbs([('Cooltivo', '/'), ('Cases', '/cases/'), (c['name'], path)])]
     head = HEAD.format(title=e(t), desc=e(d), seo=seo.head(path, t, d, c['slug'] + '.jpg', 'article', sch, index=index))
     head = head.replace('<body>', '<body class="v2-body">', 1)
     return footer_fab.apply(head + body + FOOT, '../', False)
@@ -499,8 +504,6 @@ def index_page():
 
 
 for i, c in enumerate(CASES):
-    open(os.path.join(OUT, c['slug'] + '.html'), 'w', encoding='utf-8').write(case_page(i, c))
-    if c['slug'] in PREVIEW_V2:
-        open(os.path.join(OUT, 'preview-' + c['slug'] + '.html'), 'w', encoding='utf-8').write(case_page_v2(i, c, index=False))
+    open(os.path.join(OUT, c['slug'] + '.html'), 'w', encoding='utf-8').write(case_page_v2(i, c) if c['slug'] in V2 else case_page(i, c))
 open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write(index_page())
 print('ok:', len(CASES), 'cases')
