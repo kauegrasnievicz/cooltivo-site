@@ -8,7 +8,7 @@ WEBSITE = {'@context': 'https://schema.org', '@type': 'WebSite', '@id': seo.BASE
            'url': seo.BASE + '/', 'inLanguage': 'pt-BR', 'publisher': {'@id': seo.ORG_ID}}
 PAGES = {
  'index.html': ('/', 'Cooltivo Estúdio · Branding e estratégia de marca na Serra Gaúcha',
-   'Estúdio de branding e estratégia de marca da Serra Gaúcha. Posicionamento, comunicação e presença digital para empresas de Caxias do Sul, Bento Gonçalves e RS.',
+   'Estúdio de branding e estratégia de marca da Serra Gaúcha. Posicionamento, gestão de marca e consultoria de marketing para empresas de Caxias do Sul, Bento Gonçalves e RS.',
    'home.jpg', [seo.ORG, WEBSITE], True),
  'conversa.html': ('/conversa', 'Reunião de diagnóstico de marca · Cooltivo Estúdio',
    'Branding e comunicação para empresas da Serra Gaúcha que querem crescer sem competir só por preço. Agende uma reunião de diagnóstico de marca de 45 minutos.',

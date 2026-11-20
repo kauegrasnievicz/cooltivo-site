@@ -11,7 +11,7 @@ ORG = {
     '@id': ORG_ID,
     'name': 'Cooltivo Estúdio',
     'alternateName': 'Cooltivo',
-    'description': 'Estúdio de branding, estratégia de marca e comunicação da Serra Gaúcha. Posicionamento, presença digital e consultoria de marketing para empresas de Caxias do Sul, Bento Gonçalves e do Rio Grande do Sul.',
+    'description': 'Estúdio de branding, estratégia de marca e comunicação da Serra Gaúcha. Posicionamento, gestão de marca e consultoria de marketing para empresas de Caxias do Sul, Bento Gonçalves e do Rio Grande do Sul.',
     'slogan': 'Cultivamos marcas que resistem ao tempo.',
     'url': BASE + '/',
     'logo': BASE + '/img/favicon.svg',
@@ -33,7 +33,7 @@ ORG = {
     'knowsAbout': ['Branding', 'Posicionamento de marca', 'Estratégia de marca', 'Comunicação', 'Marketing digital', 'Produção de conteúdo', 'Direção criativa'],
     'hasOfferCatalog': {'@type': 'OfferCatalog', 'name': 'Serviços da Cooltivo', 'itemListElement': [
         {'@type': 'Offer', 'itemOffered': {'@type': 'Service', 'name': 'Posicionamento de marca', 'description': 'Projeto de 6 a 8 semanas para definir essência, diferenciação e narrativa da marca.'}},
-        {'@type': 'Offer', 'itemOffered': {'@type': 'Service', 'name': 'Presença digital', 'description': 'Estratégia, conteúdo e gestão dos canais digitais da marca, de 6 a 12 meses.'}},
+        {'@type': 'Offer', 'itemOffered': {'@type': 'Service', 'name': 'Gestão de marca', 'description': 'Estratégia, conteúdo e gestão dos canais digitais da marca, de 6 a 12 meses.'}},
         {'@type': 'Offer', 'itemOffered': {'@type': 'Service', 'name': 'Consultoria de marketing', 'description': 'Acompanhamento estratégico de marketing e marca, em formato flexível.'}},
     ]},
 }
