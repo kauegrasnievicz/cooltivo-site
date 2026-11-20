@@ -162,6 +162,27 @@ nav .btn{padding:11px 20px;font-size:14px}
 .track{display:flex;align-items:center;width:max-content;animation:scroll 80s linear infinite}
 .marquee:hover .track{animation-play-state:paused}
 @keyframes scroll{to{transform:translateX(-50%)}}
+.capa .capa-eb{color:var(--green-soft);margin-bottom:26px;flex-wrap:wrap;gap:4px 10px}
+@media (max-width:560px){.capa .capa-eb{flex-direction:column;align-items:flex-start;font-size:12px}.capa .capa-eb .eb-sep{display:none}}
+.capa-lk{display:inline-flex;align-items:center;gap:10px;color:var(--cream);font-weight:700;font-size:16px;text-decoration:none;padding:16px 6px;border-bottom:1.5px solid rgba(249,243,227,.45);border-radius:0;align-self:center}
+.capa-lk svg{width:12px;height:12px}.capa-lk:hover{border-color:var(--cream)}
+.tensoes{background:var(--cream);color:var(--green-strong);padding:112px 0 104px}
+.tensoes .t-head{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;max-width:900px}
+.tensoes h2{font-size:clamp(34px,4.4vw,64px);line-height:1;letter-spacing:-.04em}
+.tensoes .t-cols{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;margin-top:64px;padding-bottom:14px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(29,58,42,.5)}
+.tensoes .t-list{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--green-strong)}
+.tensoes .t-list li{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;padding:30px 0;border-bottom:1px solid rgba(29,58,42,.16);align-items:start}
+.tensoes .t-dor{font-size:clamp(19px,1.6vw,23px);line-height:1.35;color:rgba(29,58,42,.55);margin:0}
+.tensoes .t-res{font-size:clamp(17px,1.3vw,19px);line-height:1.5;margin:0;color:var(--green-strong)}
+.tensoes .t-res b{display:block;font-size:clamp(21px,1.8vw,26px);letter-spacing:-.02em;margin-bottom:6px;color:var(--green)}
+.tensoes .t-link{display:inline-flex;align-items:center;gap:10px;margin-top:40px;font-weight:700;color:var(--green);text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:4px}
+.tensoes .t-link svg{width:12px;height:12px}
+@media (max-width:760px){.tensoes{padding:80px 0 72px}.tensoes .t-cols{display:none}.tensoes .t-list{margin-top:40px}.tensoes .t-list li{grid-template-columns:1fr;gap:12px;padding:26px 0}}
+.fdone{text-align:center;padding:36px 20px;border:1.5px solid rgba(249,243,227,.3);border-radius:24px;outline:none}
+.fdone h3{font-size:clamp(28px,3vw,40px);letter-spacing:-.03em}
+.fdone p{margin-top:12px;color:#dcebe1;font-size:17px}
+.fdone-wa a{color:var(--green-soft);font-weight:700;display:inline-flex;align-items:center;gap:8px}
+.fdone-wa svg{width:12px;height:12px}
 @media (prefers-reduced-motion:reduce){.track{animation:none}}
 /* Logos da faixa: silhuetas na mesma cor (logos/faixa) e tamanho por peso visual (largura/altura no script) */
 .clients{--s:1}
@@ -550,7 +571,7 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
       <li><a href="#conteudos">Conteúdos</a></li>
       <li><a href="comunidade/">Comunidade</a></li>
     </ul>
-    <a class="btn btn-orange" href="#contato"><span>Conversar<span class="nl"> sobre minha marca</span></span> <svg><use href="#arr"/></svg></a>
+    <a class="btn btn-orange" href="#contato"><span>Diagnóstico<span class="nl"> de marca</span></span> <svg><use href="#arr"/></svg></a>
   </div>
 </nav>
 
@@ -560,11 +581,12 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
   <video autoplay muted loop playsinline preload="auto" poster="video/capa-poster.jpg" aria-hidden="true"><source src="video/capa.mp4" type="video/mp4"></video>
   <div class="inner">
     <div class="wrap">
+      <div class="eyebrow capa-eb"><span>Estúdio de marca e marketing</span><span class="eb-sep">·</span><span>Serra Gaúcha</span></div>
       <h1>Cultivamos marcas que resistem <span class="hl">ao tempo.</span></h1>
       <p class="lead">Para seu negócio valer mais, vender mais e durar mais.</p>
       <div class="ctas">
-        <a class="btn btn-orange" href="#cases">Ver resultados <svg><use href="#arr"/></svg></a>
-        <a class="btn btn-line-inv" href="#contato">Conversar sobre minha marca</a>
+        <a class="btn btn-orange" href="#contato">Fazer diagnóstico de marca <svg><use href="#arr"/></svg></a>
+        <a class="capa-lk" href="#cases">Ver resultados <svg><use href="#arr"/></svg></a>
       </div>
     </div>
   </div>
@@ -576,6 +598,24 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
     <span class="clabel">Marcas que já cultivamos</span>
     <p class="sr">Algumas das empresas do Rio Grande do Sul e do Brasil atendidas pela Cooltivo: Sicredi, Santa Clara, Zen Design, Soprano, Obispa, Cinex, Introduce, Planeta Água, CFL Construtora, Neomot, DSF Advogados, Souto Correa Advogados, MRP Construtora, Comabe, AMPF, Grau, Vallontano, Garbo Enologia Criativa, Tazza Enologia Autoral, Tubástico e Tramarin.</p>
     <div class="marquee"><div class="track" id="row1"></div></div>
+  </div>
+</section>
+
+<!-- POR QUE A COOLTIVO -->
+<section class="tensoes" id="por-que">
+  <div class="wrap">
+    <div class="t-head">
+      <div class="eyebrow"><svg class="sym"><use href="#sym"/></svg>Por que a Cooltivo</div>
+      <h2>Marca com direção vende melhor, cobra melhor e <span class="hl">dura mais.</span></h2>
+    </div>
+    <div class="t-cols" aria-hidden="true"><span>O que o empresário vive</span><span>O que a gente faz</span></div>
+    <ol class="t-list">
+      <li><p class="t-dor">A empresa cresceu, mas cada um explica de um jeito o que ela é.</p><p class="t-res"><b>Clareza e direção.</b> Posicionamento claro para o time, para o mercado e para o cliente.</p></li>
+      <li><p class="t-dor">Tenho a melhor entrega, mas não consigo explicar isso ao mercado.</p><p class="t-res"><b>Ser a melhor escolha.</b> Uma marca que se diferencia, é percebida como mais valiosa e sustenta margem.</p></li>
+      <li><p class="t-dor">A venda depende do dono e recomeça do zero a cada cliente.</p><p class="t-res"><b>Venda mais fácil.</b> Marca, conteúdo e argumentos que chegam antes do vendedor e encurtam o processo.</p></li>
+      <li><p class="t-dor">O marketing faz muita coisa e não leva a lugar nenhum.</p><p class="t-res"><b>Marketing organizado.</b> Plano, direção criativa que diferencia a marca e canais digitais conectados a ela.</p></li>
+    </ol>
+    <a class="t-link" href="tese.html">Entenda a nossa tese <svg><use href="#arr"/></svg></a>
   </div>
 </section>
 
@@ -751,19 +791,19 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
         <span class="s-n">01</span>
         <div class="s-name"><h3><a href="servicos/posicionamento-de-marca.html">Posicionamento</a></h3><div class="s-meta"><span class="chips2"><span class="chip">Pontual</span></span><span class="dur">6 a 8 semanas</span></div></div>
         <div class="s-body"><p class="what">Definimos quem a marca é, o que ela defende e como quer ser lembrada.</p><ul><li>Diagnóstico</li><li>Workshop de co-criação</li><li>Plataforma de marca</li></ul></div>
-        <div class="s-acts"><a class="s-more" href="servicos/posicionamento-de-marca.html">Conhecer o serviço <svg><use href="#arr"/></svg></a><a class="s-cta" href="#contato" data-int="Posicionamento de marca">Conversar sobre minha marca</a></div>
+        <div class="s-acts"><a class="s-more" href="servicos/posicionamento-de-marca.html">Conhecer o serviço <svg><use href="#arr"/></svg></a><a class="s-cta" href="#contato" data-int="Posicionamento de marca">Fazer diagnóstico de marca</a></div>
       </article>
       <article class="s">
         <span class="s-n">02</span>
         <div class="s-name"><h3><a href="servicos/presenca-digital.html">Presença digital</a></h3><div class="s-meta"><span class="chips2"><span class="chip rec">Recorrente</span></span><span class="dur">Contratos de 6 a 12 meses</span></div></div>
         <div class="s-body"><p class="what">Planejamos e conduzimos a comunicação da marca no digital, com consistência mês a mês.</p><ul><li>Planejamento de presença digital</li><li>Produção de conteúdo</li><li>Gestão de canais</li></ul></div>
-        <div class="s-acts"><a class="s-more" href="servicos/presenca-digital.html">Conhecer o serviço <svg><use href="#arr"/></svg></a><a class="s-cta" href="#contato" data-int="Presença digital">Conversar sobre minha marca</a></div>
+        <div class="s-acts"><a class="s-more" href="servicos/presenca-digital.html">Conhecer o serviço <svg><use href="#arr"/></svg></a><a class="s-cta" href="#contato" data-int="Presença digital">Fazer diagnóstico de marca</a></div>
       </article>
       <article class="s">
         <span class="s-n">03</span>
         <div class="s-name"><h3><a href="servicos/consultoria-de-marketing.html">Consultoria de marketing</a></h3><div class="s-meta"><span class="chips2"><span class="chip">Pontual</span><span class="chip rec">Recorrente</span></span><span class="dur">Formato flexível</span></div></div>
         <div class="s-body"><p class="what">Consultoria conduzida por Kauê Grasnievicz: conexão profunda com o negócio e acompanhamento estratégico do marketing.</p><ul><li>Planejamento estratégico</li><li>Encontros semanais</li><li>Imersões com liderança</li></ul></div>
-        <div class="s-acts"><a class="s-more" href="servicos/consultoria-de-marketing.html">Conhecer o serviço <svg><use href="#arr"/></svg></a><a class="s-cta" href="#contato" data-int="Consultoria de marketing">Conversar sobre minha marca</a></div>
+        <div class="s-acts"><a class="s-more" href="servicos/consultoria-de-marketing.html">Conhecer o serviço <svg><use href="#arr"/></svg></a><a class="s-cta" href="#contato" data-int="Consultoria de marketing">Fazer diagnóstico de marca</a></div>
       </article>
     </div>
   </div>
@@ -837,8 +877,8 @@ footer .fnav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4
           <label class="f full"><span>Conte em uma frase o momento do seu negócio <em>(opcional)</em></span><textarea id="f-msg" name="mensagem" rows="2" placeholder="Ex.: vamos lançar uma nova linha e queremos reposicionar a marca"></textarea></label>
         </div>
         <p class="ferr" id="fErr" role="alert" hidden>Preencha nome, empresa, cargo, e-mail, faturamento e o que você procura para continuar.</p>
-        <button class="btn btn-orange fsend" type="submit">Continuar no WhatsApp <svg><use href="#arr"/></svg></button>
-        <p class="fnote">Ao enviar, abrimos o WhatsApp com a sua mensagem pronta. É só tocar em enviar.</p>
+        <button class="btn btn-orange fsend" type="submit">Enviar e agendar diagnóstico <svg><use href="#arr"/></svg></button>
+        <p class="fnote">Seus dados vão direto para a equipe da Cooltivo.</p>
       </form>
     </div>
     <div class="contact">
@@ -930,7 +970,7 @@ fill('row1',L);
 (function(){
   document.querySelectorAll('.s-cta').forEach(a=>a.addEventListener('click',()=>{const sel=document.getElementById('f-int');if(sel){sel.value=a.dataset.int;sel.classList.remove('bad')}setTimeout(()=>{const n=document.getElementById('f-nome');if(n)n.focus({preventScroll:true})},700)}));
 })();
-/* Formulário de contato: monta a mensagem e abre o WhatsApp */
+/* Formulário de contato: grava por e-mail (FormSubmit) e oferece o WhatsApp depois */
 (function(){
   const f=document.getElementById('leadForm');if(!f)return;
   const ids=['f-nome','f-empresa','f-cargo','f-email','f-fat','f-int'];
@@ -944,7 +984,17 @@ fill('row1',L);
     let t=`Olá, Cooltivo! Vim pelo site.\n\n*Nome:* ${g('f-nome')}\n*Empresa:* ${g('f-empresa')}\n*Cargo:* ${g('f-cargo')}\n*E-mail:* ${g('f-email')}\n*Faturamento anual:* ${g('f-fat')}\n*Procuro:* ${g('f-int')}`;
     if(g('f-msg'))t+=`\n\n*Momento do negócio:* ${g('f-msg')}`;
     const url='https://wa.me/5554991000102?text='+encodeURIComponent(t);
-    const w=window.open(url,'_blank');if(w){try{w.opener=null}catch(_){}}else location.href=url;
+    const btn=f.querySelector('.fsend');btn.disabled=true;btn.firstChild.textContent='Enviando… ';
+    const data={_subject:'Diagnóstico de marca · site · '+g('f-empresa'),_template:'box',_captcha:'false',_replyto:g('f-email'),
+      Nome:g('f-nome'),Empresa:g('f-empresa'),Cargo:g('f-cargo'),'E-mail':g('f-email'),'Faturamento anual':g('f-fat'),Procura:g('f-int'),'Momento do negócio':g('f-msg')||'—',Origem:'Formulário da home (cooltivo.com.br)'};
+    const ctl=new AbortController();const to=setTimeout(()=>ctl.abort(),15000);
+    const esc=x=>x.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+    fetch('https://formsubmit.co/ajax/kaue@cooltivo.com.br',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data),signal:ctl.signal})
+      .then(r=>r.json().catch(()=>({})).then(j=>r.ok&&String(j.success)==='true')).catch(()=>false)
+      .then(sent=>{clearTimeout(to);
+        if(sent){f.innerHTML=`<div class="fdone" role="status" tabindex="-1"><h3>Recebemos, ${esc(g('f-nome').split(' ')[0])}.</h3><p>Em até 1 dia útil a gente entra em contato para agendar o seu diagnóstico de marca.</p><p class="fdone-wa">Quer adiantar? <a href="${url}" target="_blank" rel="noopener">Chamar no WhatsApp <svg><use href="#arr"/></svg></a></p></div>`;const d=f.querySelector('.fdone');if(d)d.focus({preventScroll:true});}
+        else{btn.disabled=false;btn.firstChild.textContent='Enviar e agendar diagnóstico ';const w=window.open(url,'_blank');if(w){try{w.opener=null}catch(_){}}else location.href=url;}
+      });
   });
 })();
 /* Slideshow da história: troca a cada 1s */
@@ -1008,15 +1058,6 @@ fill('row1',L);
 
 
 <script src="assets/motion.js" defer></script><!-- /motion -->
-
-
-
-
-
-
-
-
-
 
 <!-- fab --><a class="wa-fab" id="waFab" href="https://wa.me/5554991000102?text=Ol%C3%A1%2C%20Cooltivo!" target="_blank" rel="noopener" aria-label="Falar com a Cooltivo no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span>Falar no WhatsApp</span></a><script>(function(){var f=document.getElementById("waFab"),c=document.querySelector("#contato,section.cta");if(!f||!c||!("IntersectionObserver" in window))return;new IntersectionObserver(function(e){f.classList.toggle("hide",e[0].isIntersecting)},{threshold:.05}).observe(c)})();</script><!-- /fab -->
 </body>

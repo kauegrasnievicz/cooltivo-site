@@ -211,7 +211,7 @@ function render(dir){
   }else if(q.t==='done'){
     const r=report();
     h=`<div class="q done"><div class="num">Diagnóstico concluído</div><h1>Obrigado, <span>${esc(A.nome||'')}</span>!</h1>
-      <p class="help">Agora é só enviar o diagnóstico para a Cooltivo. Com ele em mãos, marcamos a reunião de 45 minutos para entender o momento da ${esc(A.empresa||'sua marca')} e os movimentos necessários.</p>
+      <p class="help" id="dstat">${DSENT===sig()?`Recebemos o seu diagnóstico. Em até 1 dia útil a gente entra em contato para marcar a reunião de 45 minutos sobre o momento da ${esc(A.empresa||'sua marca')}.`:'Enviando o seu diagnóstico para a Cooltivo… Não feche esta página.'}</p>
       <div class="send"><a class="btn btn-soft" id="sendW" href="https://wa.me/5554991000102?text=${encodeURIComponent(r)}" target="_blank" rel="noopener">Enviar pelo WhatsApp <svg><use href="#arr"/></svg></a>
       <a class="btn btn-line-inv" href="mailto:kaue@cooltivo.com.br?subject=${encodeURIComponent('Diagnóstico de marca · '+(A.empresa||''))}&body=${encodeURIComponent(r)}">Enviar por e-mail</a>
       <button class="btn btn-line-inv" type="button" id="copy">Copiar respostas</button></div>
@@ -228,10 +228,27 @@ function render(dir){
   if(q.t==='done'){
     document.getElementById('copy').onclick=()=>{const t=report();(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>ok('Respostas copiadas.')).catch(()=>{const d=stage.querySelector('details');d.open=true;const sel=getSelection(),rg=document.createRange();rg.selectNodeContents(stage.querySelector('pre'));sel.removeAllRanges();sel.addRange(rg);ok('Selecionei as respostas: use Ctrl+C ou Cmd+C para copiar.')})};
     document.getElementById('restart').onclick=()=>{A={};i=0;save();render(-1)};
+    autoSendDM();
   }
   window.scrollTo(0,0);
 }
 const ok=t=>{document.getElementById('ok').textContent=t};
+/* Envio automático do diagnóstico para o e-mail (FormSubmit); WhatsApp, e-mail e copiar ficam como reserva */
+let DSENT='';try{DSENT=localStorage.getItem('cooltivo-dm-sent')||''}catch(e){}
+function sig(){const t=report();let h=0;for(let k=0;k<t.length;k++)h=(h*31+t.charCodeAt(k))|0;return String(h)}
+let dmBusy=false;
+function autoSendDM(){
+  const st=document.getElementById('dstat');const s0=sig();
+  if(DSENT===s0||dmBusy)return;dmBusy=true;
+  const data={_subject:'Diagnóstico de marca · '+(A.empresa||A.nome||'site'),_template:'box',_captcha:'false',_replyto:A.email||'',Respostas:report().replace(/\*/g,''),Origem:'Diagnóstico de marca (cooltivo.com.br)'};
+  const ctl=new AbortController();const to=setTimeout(()=>ctl.abort(),15000);
+  fetch('https://formsubmit.co/ajax/kaue@cooltivo.com.br',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data),signal:ctl.signal})
+    .then(r=>r.json().catch(()=>({})).then(j=>r.ok&&String(j.success)==='true')).catch(()=>false)
+    .then(sent=>{clearTimeout(to);dmBusy=false;const el=document.getElementById('dstat');if(!el)return;
+      if(sent){DSENT=s0;try{localStorage.setItem('cooltivo-dm-sent',s0)}catch(e){}
+        el.textContent='Recebemos o seu diagnóstico. Em até 1 dia útil a gente entra em contato para marcar a reunião de 45 minutos sobre o momento da '+(A.empresa||'sua marca')+'. Se quiser, adiante pelo WhatsApp.'}
+      else el.innerHTML='<strong>Não conseguimos enviar automaticamente.</strong> Use um dos botões abaixo para enviar o diagnóstico para a Cooltivo. Só assim ele chega.'});
+}
 const grow=t=>{t.style.height='auto';t.style.height=Math.max(120,t.scrollHeight)+'px'};
 function err(t){const e=document.getElementById('err');if(e){e.textContent=t;e.hidden=false}}
 function pick(b){
