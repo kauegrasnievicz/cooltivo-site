@@ -55,11 +55,11 @@ h2{font-size:clamp(2rem,4.2vw,3.6rem)}
 .btn-k:hover{background:var(--dark)}
 
 /* topo */
-.util{background:var(--dark-3);color:rgba(255,255,255,.7);border-bottom:1px solid var(--rule-d)}
-.util .wrap{display:flex;justify-content:flex-end;gap:24px;min-height:36px;align-items:center}
-.util a:hover{color:var(--white)}
-.util .sos{color:var(--white)}
-.util .sos b{color:var(--green);font-weight:500}
+.util{background:var(--green);color:var(--dark-3)}
+.util .wrap{display:flex;justify-content:center;min-height:38px;align-items:center}
+.util .sos{color:var(--dark-3);font-weight:500;letter-spacing:.08em}
+.util .sos b{font-weight:500;border-bottom:1px solid currentColor;padding-bottom:1px}
+.util .sos:hover b{border-bottom-width:2px}
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:100;background:var(--dark-3);color:var(--white);border-bottom:1px solid var(--rule-d)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
 header .logo img{height:28px;width:auto}
@@ -308,8 +308,6 @@ footer{background:var(--dark-3);color:var(--white);padding-block:88px 32px}
 }
 @media (max-width:560px){
   body{font-size:16px}
-  .util .hide{display:none}
-  .util .wrap{justify-content:center}
   header .btn{display:none}
   .hero .acts .btn{width:100%}
   .logos{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -343,7 +341,6 @@ footer{background:var(--dark-3);color:var(--white);padding-block:88px 32px}
 <div class="util mono" id="topo">
   <div class="wrap">
     <a href="#diagnostico" class="sos">Sob ataque agora? <b>Acione o CSIRT &rarr;</b></a>
-    <a href="#diagnostico" class="hide">Portal do cliente</a>
   </div>
 </div>
 
