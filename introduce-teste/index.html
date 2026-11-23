@@ -104,6 +104,7 @@ nav a:hover::after{width:100%}
 .slide.on{display:block;animation:slidein .55s cubic-bezier(.2,.7,.3,1) both}
 @keyframes slidein{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 .hero .lede{margin-top:var(--s3);max-width:58ch}
+.hero-logo{height:46px;width:auto;margin:0 0 var(--s3);display:block}
 .hero-actions{display:flex;gap:14px;margin-top:var(--s5);flex-wrap:wrap}
 .hero-note{margin-top:var(--s3);font-size:var(--f-xs);color:rgba(255,255,255,.5)}
 .hero-dots{position:absolute;bottom:40px;left:0;right:0;z-index:5}
@@ -425,6 +426,7 @@ footer{background:var(--gray-950);color:var(--white);padding-block:var(--s6) var
   .hero .lede{color:rgba(255,255,255,.86)}
   .hero .eyebrow{font-size:.6875rem;letter-spacing:.1em}
   .hero-actions{margin-top:var(--s4)}
+  .hero-logo{height:34px}
   .hero-dots{bottom:28px}
   header .btn{display:none}
   .alertbar .hide-sm{display:none}
@@ -485,7 +487,7 @@ footer{background:var(--gray-950);color:var(--white);padding-block:var(--s6) var
     <a class="logo" href="#topo" aria-label="Introduce, início"><img src="media/logos/introduce-word-white.svg" alt="Introduce"></a>
     <nav aria-label="Principal"><ul>
       <li><a href="#solucoes">Soluções</a></li>
-      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#historias">Histórias</a></li>
       <li><a href="#conteudo">Conteúdo</a></li>
       <li><a href="#quem">Quem somos</a></li>
     </ul></nav>
@@ -502,17 +504,18 @@ footer{background:var(--gray-950);color:var(--white);padding-block:var(--s6) var
       <p class="lede">Da operação ao conselho, ajudamos empresas a reduzir riscos, garantir continuidade e crescer com segurança<span class="xl"> por meio de tecnologia, especialistas e governança</span>.</p>
       <div class="hero-actions">
         <a href="#diagnostico" class="btn btn-primary">Fazer meu diagnóstico <span class="arw">&rarr;</span></a>
-        <a href="#depoimentos" class="btn btn-ghost">Ver histórias de crescimento</a>
+        <a href="#historias" class="btn btn-ghost">Ver histórias de crescimento</a>
       </div>
       <p class="hero-note">Resposta em até 1 dia útil.</p>
     </div>
     <div class="slide">
-      <p class="eyebrow" style="color:var(--green)">Savar Auto</p>
-      <h1>Crescer com a operação <span class="accent">protegida.</span></h1>
-      <p class="lede">Conheça a história da Savar Auto com a Introduce.</p>
+      <p class="eyebrow" style="color:var(--green)">Case</p>
+      <img class="hero-logo" src="media/logos/clientes/grupo-savar-branco.png" alt="Grupo Savar" width="294" height="46">
+      <h1>Do técnico ao <span class="accent">board.</span></h1>
+      <p class="lede">Como o Grupo Savar levou a segurança da informação ao nível do negócio, com PESI e monitoramento 24×7.</p>
       <div class="hero-actions">
-        <a href="#depoimentos" class="btn btn-primary">Ler o case <span class="arw">&rarr;</span></a>
-        <a href="#depoimentos" class="btn btn-ghost">Ver todos os cases</a>
+        <a href="#historias" class="btn btn-primary">Ver a história <span class="arw">&rarr;</span></a>
+        <a href="#historias" class="btn btn-ghost">Ver todas as histórias</a>
       </div>
     </div>
     <div class="slide">
@@ -567,16 +570,42 @@ footer{background:var(--gray-950);color:var(--white);padding-block:var(--s6) var
   </div>
 </section>
 
-<section class="section tst" id="depoimentos">
+<section class="section tst" id="historias">
   <div class="wrap tst-head rv">
-    <p class="eyebrow" style="justify-content:center">Depoimentos</p>
+    <p class="eyebrow" style="justify-content:center">Histórias de crescimento</p>
     <h2><b>Quem lidera</b> a segurança conta como foi.</h2>
   </div>
   <div class="tslider">
-    <button class="tarrow tprev" aria-label="Depoimento anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="tarrow tprev" aria-label="História anterior"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
     <div class="tviewport">
       <div class="ttrack">
-        <article class="tslide" aria-roledescription="slide" aria-label="1 de 2: Clube do Valor">
+        <article class="tslide" aria-roledescription="slide" aria-label="1 de 4: Grupo Savar">
+          <div class="tquote">
+            <div class="tbrand"><i></i>Grupo Savar</div>
+            <blockquote>Nós éramos muito voltados ao técnico; precisávamos evoluir o nível da segurança da informação do Grupo Savar.</blockquote>
+            <div class="twho"><strong>Gustavo Filomena</strong><span>Gerente de TI, Grupo Savar</span></div>
+          </div>
+          <div class="tmedia" data-src="media/case-savar.mp4">
+            <img src="media/poster-savar.jpg" alt="Gustavo Filomena, gerente de TI do Grupo Savar, em entrevista" loading="lazy">
+            <svg class="tcurve" viewBox="0 0 90 450" preserveAspectRatio="none" aria-hidden="true"><path d="M70 0C10 120 10 330 70 450" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+            <button class="tplay" aria-label="Assistir à história do Grupo Savar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l15 8-15 8z"/></svg></button>
+            <span class="tdur">7:33</span>
+          </div>
+        </article>
+        <article class="tslide" aria-roledescription="slide" aria-label="2 de 4: Caderode" aria-hidden="true">
+          <div class="tquote">
+            <div class="tbrand"><i></i>Caderode</div>
+            <blockquote>Tivemos uma implementação super rápida, em poucas semanas, com o apoio técnico do time da Introduce.</blockquote>
+            <div class="twho"><strong>Fábio Fortunati</strong><span>Gerente de TI, Caderode Móveis</span></div>
+          </div>
+          <div class="tmedia" data-src="media/case-caderode.mp4">
+            <img src="media/poster-caderode.jpg" alt="Fábio Fortunati, gerente de TI da Caderode Móveis, em entrevista" loading="lazy">
+            <svg class="tcurve" viewBox="0 0 90 450" preserveAspectRatio="none" aria-hidden="true"><path d="M70 0C10 120 10 330 70 450" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+            <button class="tplay" aria-label="Assistir à história do Caderode"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l15 8-15 8z"/></svg></button>
+            <span class="tdur">1:41</span>
+          </div>
+        </article>
+        <article class="tslide" aria-roledescription="slide" aria-label="3 de 4: Clube do Valor" aria-hidden="true">
           <div class="tquote">
             <div class="tbrand"><i></i>Clube do Valor</div>
             <blockquote>A Introduce entrou como uma apoiadora na nossa jornada de negócio.</blockquote>
@@ -585,11 +614,11 @@ footer{background:var(--gray-950);color:var(--white);padding-block:var(--s6) var
           <div class="tmedia" data-src="media/case-clube-do-valor.mp4">
             <img src="media/poster-clube-do-valor.jpg" alt="Leonardo Cardoso em entrevista" loading="lazy">
             <svg class="tcurve" viewBox="0 0 90 450" preserveAspectRatio="none" aria-hidden="true"><path d="M70 0C10 120 10 330 70 450" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
-            <button class="tplay" aria-label="Assistir ao depoimento de Leonardo Cardoso"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l15 8-15 8z"/></svg></button>
+            <button class="tplay" aria-label="Assistir à história do Clube do Valor"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l15 8-15 8z"/></svg></button>
             <span class="tdur">1:53</span>
           </div>
         </article>
-        <article class="tslide" aria-roledescription="slide" aria-label="2 de 2: Grupo Redebrasil" aria-hidden="true">
+        <article class="tslide" aria-roledescription="slide" aria-label="4 de 4: Grupo Redebrasil" aria-hidden="true">
           <div class="tquote">
             <div class="tbrand"><i></i>Grupo Redebrasil</div>
             <blockquote>É como se fosse um colega de trabalho, não um fornecedor.</blockquote>
@@ -598,16 +627,18 @@ footer{background:var(--gray-950);color:var(--white);padding-block:var(--s6) var
           <div class="tmedia" data-src="media/case-redebrasil.mp4">
             <img src="media/poster-redebrasil.jpg" alt="Marcos Felipe em entrevista" loading="lazy">
             <svg class="tcurve" viewBox="0 0 90 450" preserveAspectRatio="none" aria-hidden="true"><path d="M70 0C10 120 10 330 70 450" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
-            <button class="tplay" aria-label="Assistir ao depoimento de Marcos Felipe"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l15 8-15 8z"/></svg></button>
+            <button class="tplay" aria-label="Assistir à história do Grupo Redebrasil"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l15 8-15 8z"/></svg></button>
             <span class="tdur">1:08</span>
           </div>
         </article>
       </div>
     </div>
-    <button class="tarrow tnext" aria-label="Próximo depoimento"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    <button class="tarrow tnext" aria-label="Próxima história"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
   </div>
-  <div class="ttabs" role="tablist" aria-label="Escolher depoimento">
-    <button class="ttab" role="tab" aria-selected="true">Clube do Valor<small>GRC · Governança de IA</small></button>
+  <div class="ttabs" role="tablist" aria-label="Escolher história">
+    <button class="ttab" role="tab" aria-selected="true">Grupo Savar<small>SOC · PESI · 24×7</small></button>
+    <button class="ttab" role="tab" aria-selected="false">Caderode<small>RMM · Gestão de TI</small></button>
+    <button class="ttab" role="tab" aria-selected="false">Clube do Valor<small>GRC · Governança de IA</small></button>
     <button class="ttab" role="tab" aria-selected="false">Grupo Redebrasil<small>GRC · vCISO</small></button>
   </div>
 </section>
@@ -839,12 +870,12 @@ footer{background:var(--gray-950);color:var(--white);padding-block:var(--s6) var
     </a>
     <div class="content-grid">
       <article class="ccard kv rv"><span class="kind">Blog</span><h3>Análises de quem opera</h3><p>Ameaças, frameworks e mercado, por quem opera.</p><a href="#conteudo" class="go">Ler os artigos <span class="arw">&rarr;</span></a></article>
-      <article class="ccard kv rv rv-d1"><span class="kind">Série em vídeo</span><h3>Introduce · Os Desafios de 2027</h3><p>Especialistas falando dos desafios que chegam ao board.</p><a href="#depoimentos" class="go">Assistir <span class="arw">&rarr;</span></a></article>
+      <article class="ccard kv rv rv-d1"><span class="kind">Série em vídeo</span><h3>Introduce · Os Desafios de 2027</h3><p>Especialistas falando dos desafios que chegam ao board.</p><a href="#historias" class="go">Assistir <span class="arw">&rarr;</span></a></article>
       <article class="ccard kv rv rv-d2"><span class="kind">Material</span><h3>Canvas de maturidade</h3><p>Briefing, canvas e e-books para a próxima reunião.</p><a href="#diagnostico" class="go">Baixar materiais <span class="arw">&rarr;</span></a></article>
     </div>
     <div class="community kv rv">
-      <div><h3>Comunidade Guardiões Digitais</h3><p>Quem compartilha conhecimento protege pessoas e negócios. Ninguém constrói segurança sozinho.</p></div>
-      <div><a href="#diagnostico" class="btn btn-primary">Fazer parte <span class="arw">&rarr;</span></a></div>
+      <div><h3>Comunidade Guardiões Digitais</h3><p>Faça parte da comunidade com mais de 1.500 especialistas, linhas de frente na cibersegurança brasileira.</p></div>
+      <div><a href="https://guardioesdigitais.com.br/" target="_blank" rel="noopener" class="btn btn-primary">Fazer parte <span class="arw">&#8599;</span></a></div>
     </div>
   </div>
 </section>
@@ -856,7 +887,7 @@ footer{background:var(--gray-950);color:var(--white);padding-block:var(--s6) var
     <div class="f-top">
       <div class="f-logo"><img src="media/logos/introduce-full-white.svg" alt="Introduce, tecnologia para crescer"></div>
       <div class="f-col"><h4>Jornadas</h4><ul><li><a href="#solucoes" data-front-link="escudo">Escudo Digital</a></li><li><a href="#solucoes" data-front-link="guardioes">Guardiões Digitais</a></li><li><a href="#solucoes" data-front-link="pilares">Pilares de Segurança</a></li><li><a href="#solucoes" data-front-link="acao">Segurança em Ação</a></li><li><a href="#solucoes" data-front-link="corp">Corporativa Avançada</a></li></ul></div>
-      <div class="f-col"><h4>Empresa</h4><ul><li><a href="#quem">Quem somos</a></li><li><a href="#depoimentos">Depoimentos</a></li><li><a href="#quem">Carreiras</a></li><li><a href="#solucoes">Parceiros</a></li></ul></div>
+      <div class="f-col"><h4>Empresa</h4><ul><li><a href="#quem">Quem somos</a></li><li><a href="#historias">Histórias de crescimento</a></li><li><a href="#quem">Carreiras</a></li><li><a href="#solucoes">Parceiros</a></li></ul></div>
       <div class="f-col"><h4>Contato</h4><ul><li>introduce@introduce.com.br</li><li>54 3041 5254</li><li>54 98121 2173</li><li><a href="#topo" style="color:var(--green)">Incidente agora &rarr;</a></li></ul></div>
     </div>
     <div class="f-bottom"><span>Segurança é a base de tudo. © 2026 Introduce.</span><span><a href="#contato">Política de Privacidade</a> · <a href="#contato">Cookies</a> · <a href="#contato">Termos de Uso</a></span></div>
