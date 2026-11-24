@@ -1080,6 +1080,8 @@ a:hover .arw,a:hover .arw-x,button:hover .arw,a:hover .d-go{color:var(--arw-h)}
 a:hover .arw,button:hover .arw{transform:rotate(-35deg) translate(2px,0)}
 a:hover .arw-x{transform:translate(2px,-2px)}
 .tens-r a:hover .d-go{transform:rotate(-35deg) translateX(4px)}
+.lnk{transition:gap .25s,border-color .2s}
+a.lnk:hover,a:hover .lnk,.links a:hover,.cside dd a:hover{border-bottom-color:var(--arw-h)}
 .btn-g:hover .arw,.btn-g:hover .arw-x{color:inherit}
 .btn-k:hover .arw,.btn-k:hover .arw-x{color:var(--green)}
 /* essencial: só as linhas que separam */
