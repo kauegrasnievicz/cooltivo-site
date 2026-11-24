@@ -1103,6 +1103,9 @@ a.lnk:hover,a:hover .lnk,.links a:hover,.cside dd a:hover{border-bottom-color:va
 .cv-h img,.book img{width:auto;flex:none;max-width:none;object-fit:contain}
 .dg-f input,.dg-f select{min-width:0;width:100%}.dg-f .row>label{min-width:0}
 
+.f-brand img{height:32px}
+.f-brand p{font-size:16px;margin-top:18px;color:rgba(255,255,255,.7);max-width:none}
+
 .dg-rot{font-size:clamp(1.15rem,1.6vw,1.4rem);line-height:1.45;color:var(--ink-2,#555);max-width:30ch}
 .dg-pain{position:relative;display:block;overflow:hidden;height:2.9em;margin:6px 0;padding-left:14px;border-left:3px solid var(--green)}
 .dg-pain>span{position:absolute;left:14px;right:0;top:0;color:var(--ink);font-weight:600;transition:transform .55s cubic-bezier(.2,.7,.2,1),opacity .45s}
