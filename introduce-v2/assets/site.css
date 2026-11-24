@@ -151,9 +151,9 @@ header .btn{min-height:44px;padding:0 20px;font-size:14px}
 .jp .lnk{margin-top:32px}
 .jincl{margin-top:72px;padding-top:24px;border-top:1px solid var(--rule-d);color:rgba(255,255,255,.6);display:flex;gap:24px;flex-wrap:wrap}
 .jincl b{color:var(--white);font-weight:500}
-.partners{list-style:none;display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:0;margin-top:40px;border-top:1px solid var(--rule-d);border-left:1px solid var(--rule-d)}
-.partners li{border-right:1px solid var(--rule-d);border-bottom:1px solid var(--rule-d);display:grid;place-items:center;padding:20px 10px;min-height:76px}
-.partners img{max-height:22px;width:auto;object-fit:contain}
+
+
+
 
 /* histórias */
 .st{position:relative}
@@ -277,7 +277,6 @@ footer{background:var(--dark-3);color:var(--white);padding-block:88px 32px}
 
 @media (max-width:1080px){
   .logos{grid-template-columns:repeat(4,minmax(0,1fr))}
-  .partners{grid-template-columns:repeat(5,minmax(0,1fr))}
   .certs{grid-template-columns:repeat(6,minmax(0,1fr))}
 }
 @media (max-width:900px){
@@ -310,7 +309,6 @@ footer{background:var(--dark-3);color:var(--white);padding-block:88px 32px}
   .logos{grid-template-columns:repeat(3,minmax(0,1fr))}
   .logos li{padding:14px}
   .logos img{max-height:32px}
-  .partners{grid-template-columns:repeat(3,minmax(0,1fr))}
   .certs{grid-template-columns:repeat(3,minmax(0,1fr))}
   .d-pain{font-size:18px}
   .d-go{display:none}
@@ -334,6 +332,18 @@ footer{background:var(--dark-3);color:var(--white);padding-block:88px 32px}
 
 header nav a[aria-current="page"]{color:var(--white)}
 header nav .nav-fp{color:var(--green)}
+
+/* parceiros: faixa em movimento lateral */
+.pmarq{margin-top:40px;border-top:1px solid var(--rule-d);border-bottom:1px solid var(--rule-d);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.pmarq-t{display:flex;width:max-content;animation:pmarq 40s linear infinite}
+.pmarq:hover .pmarq-t{animation-play-state:paused}
+.partners{list-style:none;display:flex;align-items:center;gap:56px;padding:18px 28px 18px 0}
+.partners+.partners{padding-left:28px}
+.partners li{flex:none;display:flex;align-items:center;height:28px}
+.partners img{max-height:16px;max-width:96px;width:auto;height:auto;object-fit:contain;opacity:.85;transition:opacity .2s}
+.partners li:hover img{opacity:1}
+@keyframes pmarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.pmarq-t{animation:none;flex-wrap:wrap;width:auto}.partners+.partners{display:none}.partners{flex-wrap:wrap;gap:24px 40px;justify-content:center}}
 
 /* ===== página de jornada ===== */
 :root{--j:#FF7C00;--j-lt:#FFA54D;--j-ink:#B35400}
