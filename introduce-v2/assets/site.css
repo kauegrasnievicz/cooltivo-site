@@ -1093,3 +1093,18 @@ a.lnk:hover,a:hover .lnk,.links a:hover,.cside dd a:hover{border-bottom-color:va
 .pains li:last-child{border-bottom:0}
 .cv-h img,.book img{width:auto;flex:none;max-width:none;object-fit:contain}
 .dg-f input,.dg-f select{min-width:0;width:100%}.dg-f .row>label{min-width:0}
+
+.dg-rot{font-size:clamp(1.15rem,1.6vw,1.4rem);line-height:1.45;color:var(--ink-2,#555);max-width:30ch}
+.dg-pain{position:relative;display:block;overflow:hidden;height:2.9em;margin:6px 0;padding-left:14px;border-left:3px solid var(--green)}
+.dg-pain>span{position:absolute;left:14px;right:0;top:0;color:var(--ink);font-weight:600;transition:transform .55s cubic-bezier(.2,.7,.2,1),opacity .45s}
+.dg-pain>span.in{transform:translateY(100%);opacity:0}
+.dg-pain>span.out{transform:translateY(-100%);opacity:0}
+.dg-on{display:flex;align-items:center;gap:10px;margin:16px 0 0;font-size:14px;color:var(--ink)}
+.dg-av{position:relative;flex:none;width:32px;height:32px}
+.dg-av img{width:32px;height:32px;border-radius:50%;object-fit:cover;display:block}
+.dg-av i{position:absolute;right:-1px;bottom:-1px;width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 2px var(--white,#fff)}
+.dg-av i::after{content:"";position:absolute;inset:0;border-radius:50%;background:#22c55e;animation:dgp 2s ease-out infinite}
+@keyframes dgp{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.6);opacity:0}}
+.dg-on+.note{margin-top:6px}
+@media (prefers-reduced-motion:reduce){.dg-av i::after{animation:none}}
+@media (max-width:560px){.dg-rot{max-width:none}.dg-pain{height:4.35em}}

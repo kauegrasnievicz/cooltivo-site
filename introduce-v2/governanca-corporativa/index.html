@@ -246,7 +246,7 @@
     <div class="dg-l rv">
       <span class="mono">Diagnóstico de governança</span>
       <h2>Comece pelo <b>diagnóstico.</b></h2>
-      <p>Uma conversa com um especialista para mapear onde sua operação está e o que vem primeiro.</p>
+      <p class="dg-rot">Se você <span class="dg-pain"><span>recebe alertas demais e não sabe quais importam,</span></span> nós podemos te ajudar.</p>
       <ul>
         <li><span class="mono">01</span>Você conta o cenário e o que o conselho cobra.</li>
         <li><span class="mono">02</span>Um especialista mapeia maturidade, riscos e exigências.</li>
@@ -267,6 +267,7 @@
         <label for="f-desafio">Conte brevemente seus desafios<textarea id="f-desafio" rows="3" placeholder="Ex.: o conselho pediu um panorama de risco, não temos CISO, cliente cobrando evidências."></textarea></label>
         <p class="err" id="derr" hidden>Preencha nome, empresa e um e-mail válido para continuar.</p>
         <button type="submit" class="btn btn-k">Agendar diagnóstico de governança <span class="arw" aria-hidden="true">&rarr;</span></button>
+        <p class="dg-on"><span class="dg-av"><img src="../media/time/amanda.webp" alt="" width="32" height="32"><i aria-hidden="true"></i></span><span><b>Amanda</b> está disponível para lhe atender.</span></p>
         <p class="note">Resposta em até 1 dia útil.</p>
       </form>
       <div class="ok" id="dok" hidden role="status" tabindex="-1"><strong>Recebemos sua solicitação.</strong><p>Um especialista entra em contato em até 1 dia útil. Protótipo: nenhum dado foi enviado.</p></div>
@@ -345,5 +346,14 @@ b.addEventListener('click',function(){set(!h.classList.contains('open'))});
 n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&h.classList.contains('open')){set(false);b.focus()}});
 window.addEventListener('resize',function(){if(innerWidth>900)set(false)});})();</script>
+<script id="dg-js">(function(){
+var P=["recebe alertas demais e não sabe quais importam,", "não tem ninguém de olho na rede às 3h da manhã,", "só descobre um incidente quando o estrago já está feito,", "tem um cliente cobrando a ISO 27001,", "precisa passar por uma auditoria de segurança,", "não sabe quanto risco a sua empresa corre de verdade,", "quer levar a segurança para a pauta do board,", "não tem certeza se está em dia com a LGPD,", "não tem um plano se um ransomware parar tudo amanhã,", "não sabe quantos equipamentos estão sem proteção,", "tem um time que ainda clica em qualquer link,"],T=[["Amanda", "amanda"], ["Ariagne", "ariagne"], ["Gabriel", "gabriel"], ["Maurício", "mauricio"]],r=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function pick(a,not){var x;do{x=a[Math.floor(Math.random()*a.length)]}while(a.length>1&&x===not);return x}
+var on=document.querySelector('.dg-on');if(on){var t=pick(T),im=on.querySelector('img');im.src=im.src.replace(/[a-z]+\.(webp|jpg)$/,t[1]+'.$1');on.querySelector('b').textContent=t[0];}
+var w=document.querySelector('.dg-pain');if(!w)return;var cur=w.querySelector('span');cur.textContent=pick(P);if(r)return;
+var paused=false;w.closest('.dg-rot').addEventListener('mouseenter',function(){paused=true});w.closest('.dg-rot').addEventListener('mouseleave',function(){paused=false});
+setInterval(function(){if(paused||document.hidden)return;var n=document.createElement('span');n.textContent=pick(P,cur.textContent);n.className='in';w.appendChild(n);
+cur.className='out';var o=cur;setTimeout(function(){o.remove()},600);requestAnimationFrame(function(){requestAnimationFrame(function(){n.className=''})});cur=n},3400);
+})();</script>
 </body>
 </html>
