@@ -1069,5 +1069,12 @@ header nav .nav-fp{color:var(--green)}
 
 /* imagens com width/height: altura proporcional */
 img{height:auto}
+/* essencial: só as linhas que separam */
+.sec-head{border-bottom:0!important;padding-bottom:0!important;margin-bottom:48px}
+.lh-kpis div div,.why-nums div div{border:0!important;padding:0!important}
+.dl-g li:last-child{border-bottom:0}
+.step .take{border-top:0!important;padding-top:6px}
+.cblk li:last-child{border-bottom:0}
+.pains li:last-child{border-bottom:0}
 .cv-h img,.book img{width:auto;flex:none;max-width:none;object-fit:contain}
 .dg-f input,.dg-f select{min-width:0;width:100%}.dg-f .row>label{min-width:0}
