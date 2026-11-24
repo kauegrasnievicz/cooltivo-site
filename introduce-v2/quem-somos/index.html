@@ -338,6 +338,9 @@ footer{background:var(--dark-3);color:var(--white);padding-block:88px 32px}
   .reveal-arc{stroke-dashoffset:0}
 }
 
+header nav a[aria-current="page"]{color:var(--white)}
+header nav .nav-fp{color:var(--green)}
+
 /* ===== quem somos ===== */
 .qh{background:var(--dark-3);color:var(--white)}
 .qh .wrap{padding-top:clamp(64px,9vw,120px)}
@@ -394,16 +397,19 @@ footer{background:var(--dark-3);color:var(--white);padding-block:88px 32px}
 .pr p{margin-top:10px;font-size:15px;color:var(--ink-2);transition:color .35s}
 .pr li:hover{background:var(--green);color:var(--dark-3)}
 .pr li:hover .mono,.pr li:hover p{color:inherit}
-.soc-fig{margin-top:56px}
-.soc-fig img{width:100%;aspect-ratio:21/8;object-fit:cover;object-position:50% 30%}
+.soc-g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;margin-top:56px}
+.soc-fig{grid-column:1/9}
+.soc-fig.soc-v{grid-column:9/13}
+.soc-fig img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:50% 30%}
+.soc-fig.soc-v img{aspect-ratio:auto;height:calc(100% - 30px);object-position:50% 35%}
 .soc-fig figcaption{margin-top:12px;color:var(--ink-3)}
 /* time */
 .tm{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
-.tm-a{grid-column:1/8;position:relative}
-.tm-b{grid-column:8/13;display:grid;gap:24px;grid-template-rows:1fr auto}
+.tm-a{grid-column:1/6;position:relative}
+.tm-b{grid-column:6/13;display:grid;gap:24px}
 .tm img{width:100%;height:100%;object-fit:cover}
-.tm-a img{aspect-ratio:4/3}
-.tm-b img{aspect-ratio:4/3;object-position:50% 30%}
+.tm-a img{aspect-ratio:auto;height:calc(100% - 30px);object-position:50% 40%}
+.tm-b img{aspect-ratio:16/9;object-position:50% 35%}
 .tm figcaption{margin-top:10px;color:var(--ink-3)}
 .gr{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:56px}
 .gr li{border-top:1px solid var(--rule);padding-top:22px}
@@ -456,8 +462,12 @@ footer{background:var(--dark-3);color:var(--white);padding-block:88px 32px}
   .pr{grid-template-columns:1fr 1fr}
   .pr li{border-bottom:1px solid var(--rule)}
   .pr li:nth-child(2n){border-right:0}
+  .soc-g{grid-template-columns:1fr}
+  .soc-fig,.soc-fig.soc-v{grid-column:1/-1}
   .soc-fig img{aspect-ratio:16/9}
-  .tm-b{grid-template-rows:auto;margin-top:8px}
+  .soc-fig.soc-v img{aspect-ratio:4/5;height:auto}
+  .tm-a img{aspect-ratio:4/5;height:auto}
+  .tm-b{margin-top:8px}
   .gr{grid-template-columns:1fr}
   .fp-card{margin-top:40px}
 }
@@ -480,7 +490,7 @@ header nav .nav-fp{color:var(--green)}
 <header>
   <div class="wrap">
     <a href="https://cooltivo.com.br/introduce-v2/" class="logo" aria-label="Introduce, início"><img src="../media/logos/introduce-word-white.svg" alt="Introduce"></a>
-    <nav aria-label="Principal"><ul><li><a href="https://cooltivo.com.br/introduce-v2/#jornadas">Jornadas</a></li><li><a href="https://cooltivo.com.br/introduce-v2/#historias">Histórias</a></li><li><a href="https://cooltivo.com.br/introduce-v2/#perspectivas">Perspectivas</a></li><li><a href="https://cooltivo.com.br/introduce-v2/quem-somos/" aria-current="page">Quem somos</a></li><li><a href="https://cooltivo.com.br/introduce-v2/quem-somos/#faca-parte" class="nav-fp">Faça parte</a></li></ul></nav>
+    <nav aria-label="Principal"><ul><li><a href="https://cooltivo.com.br/introduce-v2/#jornadas">Jornadas</a></li><li><a href="https://cooltivo.com.br/introduce-v2/cases/">Cases</a></li><li><a href="https://cooltivo.com.br/introduce-v2/blog/">Blog</a></li><li><a href="https://cooltivo.com.br/introduce-v2/quem-somos/" aria-current="page">Quem somos</a></li><li><a href="https://cooltivo.com.br/introduce-v2/quem-somos/#faca-parte" class="nav-fp">Faça parte</a></li></ul></nav>
     <a href="https://cooltivo.com.br/introduce-v2/#diagnostico" class="btn btn-g">Fazer meu diagnóstico</a>
   </div>
 </header>
@@ -499,8 +509,8 @@ header nav .nav-fp{color:var(--green)}
       </div>
     </div>
     <figure>
-      <img src="../media/time-guardioes.jpg" alt="Time da Introduce no palco do 6º Encontro dos Guardiões Digitais, em Porto Alegre">
-      <figcaption class="mono">Time Introduce · 6º Encontro dos Guardiões Digitais, Porto Alegre</figcaption>
+      <img src="../media/equipe-stand.jpg" alt="Time da Introduce comemorando no stand da empresa, com bandeiras Segurança é a base de tudo e Guardiões Digitais">
+      <figcaption class="mono">Time Introduce · stand Introduce e Guardiões Digitais</figcaption>
     </figure>
   </div>
 </section>
@@ -524,7 +534,7 @@ header nav .nav-fp{color:var(--green)}
   <div class="wrap">
     <div class="sec-head rv"><span class="mono">Grupo Introduce</span><h2>Quatro empresas. <b>Um parceiro para crescer.</b></h2></div>
     <div class="gp-intro rv"><p>Cibersegurança, cloud, educação e governança reunidas para acompanhar o negócio em cada fase do crescimento, com a mesma visão de segurança.</p></div>
-    <ul class="gp rv"><li><a class="card" href="https://cooltivo.com.br/introduce-v2/#jornadas" style="--c:#9EFF00"><img src="../media/logos/introduce-full-white.svg" alt="Introduce"><span class="mono">Cibersegurança</span><h3>Introduce</h3><p>SOC próprio, GRC, vCISO e cinco jornadas de segurança, da operação ao conselho.</p><span class="lnk">Ver as jornadas <span aria-hidden="true">&rarr;</span></span></a></li><li><div class="card" style="--c:#4FC3F7"><img src="../media/logos/grupo/supreme.png" alt="Supreme"><span class="mono">Cloud</span><h3>Supreme</h3><p>A frente de cloud do grupo, para a infraestrutura crescer junto com o negócio.</p></div></li><li><a class="card" href="https://guardioesdigitais.com.br/" target="_blank" rel="noopener" style="--c:#B57AFF"><img src="../media/logos/grupo/guardioes-digitais.png" alt="Guardiões Digitais"><span class="mono">Ecossistema de educação</span><h3>Guardiões Digitais</h3><p>Comunidade com mais de 1.500 especialistas, linha de frente na cibersegurança brasileira, com encontros, podcast e conteúdo.</p><span class="lnk">Conhecer a comunidade <span aria-hidden="true">&#8599;</span></span></a></li><li><a class="card" href="https://boardsafe.com.br/" target="_blank" rel="noopener" style="--c:#FFA54D"><img src="../media/logos/grupo/boardsafe.png" alt="BoardSafe"><span class="mono">Plataforma de governança com IA</span><h3>BoardSafe</h3><p>Tecnologia para a governança chegar ao board com dados, políticas e evidências.</p><span class="lnk">Conhecer a BoardSafe <span aria-hidden="true">&#8599;</span></span></a></li></ul>
+    <ul class="gp rv"><li><a class="card" href="https://cooltivo.com.br/introduce-v2/#jornadas" style="--c:#9EFF00"><img src="../media/logos/introduce-full-white.svg" alt="Introduce"><span class="mono">Cibersegurança</span><h3>Introduce</h3><p>SOC próprio, GRC, vCISO e cinco jornadas de segurança, da operação ao conselho.</p><span class="lnk">Ver as jornadas <span aria-hidden="true">&rarr;</span></span></a></li><li><a class="card" href="https://www.supreme.inf.br/" target="_blank" rel="noopener" style="--c:#4FC3F7"><img src="../media/logos/grupo/supreme.png" alt="Supreme"><span class="mono">Cloud</span><h3>Supreme</h3><p>Cloud para crescer: migração para a nuvem, backup em nuvem e sustentação de ambientes Microsoft.</p><span class="lnk">Conhecer a Supreme <span aria-hidden="true">&#8599;</span></span></a></li><li><a class="card" href="https://guardioesdigitais.com.br/" target="_blank" rel="noopener" style="--c:#B57AFF"><img src="../media/logos/grupo/guardioes-digitais.png" alt="Guardiões Digitais"><span class="mono">Ecossistema de educação</span><h3>Guardiões Digitais</h3><p>Comunidade com mais de 1.500 especialistas, linha de frente na cibersegurança brasileira, com encontros, podcast e conteúdo.</p><span class="lnk">Conhecer a comunidade <span aria-hidden="true">&#8599;</span></span></a></li><li><a class="card" href="https://boardsafe.com.br/" target="_blank" rel="noopener" style="--c:#FFA54D"><img src="../media/logos/grupo/boardsafe.png" alt="BoardSafe"><span class="mono">Plataforma de governança com IA</span><h3>BoardSafe</h3><p>Tecnologia para a governança chegar ao board com dados, políticas e evidências.</p><span class="lnk">Conhecer a BoardSafe <span aria-hidden="true">&#8599;</span></span></a></li></ul>
     <div class="layers rv">
       <div><span class="mono">Front · Operação</span><h4>Infraestrutura e proteção</h4><p>Supreme e Introduce</p></div>
       <div><span class="mono">Pessoas · Cultura</span><h4>Educação e comunidade</h4><p>Guardiões Digitais</p></div>
@@ -542,10 +552,10 @@ header nav .nav-fp{color:var(--green)}
       <li><span class="mono">03</span><h3>Linguagem do negócio</h3><p>Traduzimos risco técnico em decisão para a diretoria e o conselho.</p></li>
       <li><span class="mono">04</span><h3>Gente que acompanha</h3><p>Toda jornada tem gerente de projeto, Customer Success e gestão de mudanças.</p></li>
     </ol>
-    <figure class="soc-fig rv">
-      <img src="../media/soc-sala.jpg" alt="Analistas trabalhando no SOC da Introduce, com painéis de monitoramento na parede" loading="lazy">
-      <figcaption class="mono">SOC Introduce · sala física e time dedicado</figcaption>
-    </figure>
+    <div class="soc-g rv">
+      <figure class="soc-fig"><img src="../media/soc-sala.jpg" alt="Analistas trabalhando no SOC da Introduce, com painéis de monitoramento na parede" loading="lazy"><figcaption class="mono">SOC Introduce · sala física e time dedicado</figcaption></figure>
+      <figure class="soc-fig soc-v"><img src="../media/soc-monitores.jpg" alt="Painéis de monitoramento acesos na parede do SOC da Introduce" loading="lazy"><figcaption class="mono">Monitoramento 24×7</figcaption></figure>
+    </div>
     <div class="certs-h rv"><h3>Time certificado</h3><span class="mono">Governança · Segurança ofensiva · IA</span></div>
     <ul class="certs rv"><li><img src="../media/logos/certificados/iso-27001-lead-auditor.png" alt="ISO 27001 Lead Auditor" loading="lazy" title="ISO 27001 Lead Auditor"></li><li><img src="../media/logos/certificados/oscp.png" alt="OSCP, Offensive Security" loading="lazy" title="OSCP, Offensive Security"></li><li><img src="../media/logos/certificados/exin-iso-27001.png" alt="EXIN Information Security Management ISO/IEC 27001" loading="lazy" title="EXIN Information Security Management ISO/IEC 27001"></li><li><img src="../media/logos/certificados/itcerts-ism-27001-2022.svg" alt="ITCERTS Information Security Management ISO/IEC 27001:2022" loading="lazy" title="ITCERTS Information Security Management ISO/IEC 27001:2022"></li><li><img src="../media/logos/certificados/comptia-pentest.png" alt="CompTIA PenTest+" loading="lazy" title="CompTIA PenTest+"></li><li><img src="../media/logos/certificados/pmp.png" alt="PMP" loading="lazy" title="PMP"></li><li><img src="../media/logos/certificados/exin-lgpd-essentials.png" alt="EXIN Privacy & Data Protection LGPD" loading="lazy" title="EXIN Privacy & Data Protection LGPD"></li><li><img src="../media/logos/certificados/itcerts-csirt.png" alt="ITCERTS CSIRT Foundation" loading="lazy" title="ITCERTS CSIRT Foundation"></li><li><img src="../media/logos/certificados/oswp.png" alt="OSWP, Offensive Security" loading="lazy" title="OSWP, Offensive Security"></li><li><img src="../media/logos/certificados/cobit-5.png" alt="COBIT 5" loading="lazy" title="COBIT 5"></li><li><img src="../media/logos/certificados/itcerts-gdpr.svg" alt="ITCERTS GDPR" loading="lazy" title="ITCERTS GDPR"></li><li><img src="../media/logos/certificados/exin-privacy-data-protection.png" alt="EXIN Privacy & Data Protection Foundation" loading="lazy" title="EXIN Privacy & Data Protection Foundation"></li><li><img src="../media/logos/certificados/cap-quickstart.png" alt="Certified Authorization Professional (CAP)" loading="lazy" title="Certified Authorization Professional (CAP)"></li><li><img src="../media/logos/certificados/itcerts-ism-27001.svg" alt="ITCERTS ISO/IEC 27001" loading="lazy" title="ITCERTS ISO/IEC 27001"></li><li><img src="../media/logos/certificados/itcerts-privacy-officer.svg" alt="ITCERTS Privacy Officer" loading="lazy" title="ITCERTS Privacy Officer"></li><li><img src="../media/logos/certificados/exin-agile-scrum.png" alt="EXIN Agile Scrum Foundation" loading="lazy" title="EXIN Agile Scrum Foundation"></li><li><img src="../media/logos/certificados/itcerts-data-privacy.svg" alt="ITCERTS Data Privacy" loading="lazy" title="ITCERTS Data Privacy"></li><li><img src="../media/logos/certificados/itcerts-privacy-information-management.svg" alt="ITCERTS Privacy Information Management ISO/IEC 27701" loading="lazy" title="ITCERTS Privacy Information Management ISO/IEC 27701"></li></ul>
   </div>
@@ -555,8 +565,11 @@ header nav .nav-fp{color:var(--green)}
   <div class="wrap">
     <div class="sec-head rv"><span class="mono">Histórias de crescimento · Time</span><h2>Quem protege os clientes <b>também cresce aqui.</b></h2></div>
     <div class="tm rv">
-      <figure class="tm-a"><img src="../media/time-palco.jpg" alt="Especialista da Introduce no palco do 6º Encontro dos Guardiões Digitais" loading="lazy"><figcaption class="mono">Palco do 6º Encontro dos Guardiões Digitais</figcaption></figure>
-      <figure class="tm-b"><img src="../media/cybersim.jpg" alt="Especialista da Introduce conduz dinâmica sobre uso de IA para gestores" loading="lazy"><figcaption class="mono">Conhecimento compartilhado com clientes</figcaption></figure>
+      <figure class="tm-a"><img src="../media/equipe-caldeira.jpg" alt="Time da Introduce em roda, de braços erguidos, comemorando no Campus Caldeira" loading="lazy"><figcaption class="mono">Time Introduce · Campus Caldeira, Porto Alegre</figcaption></figure>
+      <div class="tm-b">
+        <figure><img src="../media/time-guardioes.jpg" alt="Time da Introduce no palco do 6º Encontro dos Guardiões Digitais" loading="lazy"><figcaption class="mono">6º Encontro dos Guardiões Digitais</figcaption></figure>
+        <figure><img src="../media/time-palco.jpg" alt="Especialista da Introduce palestrando no 6º Encontro dos Guardiões Digitais" loading="lazy"><figcaption class="mono">Do SOC ao palco</figcaption></figure>
+      </div>
     </div>
     <ul class="gr rv">
       <li><div class="v">+150</div><h3>Certificações no time</h3><p>Governança, segurança ofensiva e IA, incluindo ISO 27001 Lead Auditor, OSCP e ISO/IEC 42001.</p></li>
@@ -610,7 +623,7 @@ header nav .nav-fp{color:var(--green)}
         <li><a href="https://cooltivo.com.br/introduce-v2/seguranca-em-acao/">Segurança em Ação</a></li>
         <li><a href="https://cooltivo.com.br/introduce-v2/governanca-corporativa/">Governança Corporativa</a></li></ul></div>
       <div class="f-col"><span class="mono">Empresa</span><ul>
-        <li><a href="https://cooltivo.com.br/introduce-v2/quem-somos/">Quem somos</a></li><li><a href="https://cooltivo.com.br/introduce-v2/quem-somos/#faca-parte">Faça parte</a></li><li><a href="https://cooltivo.com.br/introduce-v2/#historias">Histórias</a></li><li><a href="https://cooltivo.com.br/introduce-v2/#perspectivas">Perspectivas</a></li><li><a href="https://guardioesdigitais.com.br/" target="_blank" rel="noopener">Guardiões Digitais</a></li></ul></div>
+        <li><a href="https://cooltivo.com.br/introduce-v2/quem-somos/">Quem somos</a></li><li><a href="https://cooltivo.com.br/introduce-v2/quem-somos/#faca-parte">Faça parte</a></li><li><a href="https://cooltivo.com.br/introduce-v2/cases/">Cases</a></li><li><a href="https://cooltivo.com.br/introduce-v2/blog/">Blog</a></li><li><a href="https://guardioesdigitais.com.br/" target="_blank" rel="noopener">Guardiões Digitais</a></li></ul></div>
       <div class="f-col" style="grid-column:span 4"><span class="mono">Contato</span><ul>
         <li>introduce@introduce.com.br</li><li>54 3041 5254</li><li>54 98121 2173</li><li><a href="#topo" style="color:var(--green)">Incidente agora &rarr;</a></li></ul></div>
     </div>
