@@ -1069,6 +1069,19 @@ header nav .nav-fp{color:var(--green)}
 
 /* imagens com width/height: altura proporcional */
 img{height:auto}
+/* KV: canto cortado nos botões de diagnóstico */
+.btn-g,.btn-k{clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%)}
+/* setas clicáveis inclinadas para cima, verdes no hover */
+:root{--arw-h:var(--green-ink)}
+.dark,header,footer,.jh,.ch,.lh,.mh,.qh,.hero,.bq,.acase,.nl,.fp,.ct-stat,.p-main,.oj,.techb,.cs-dark{--arw-h:var(--green)}
+.arw,.d-go{display:inline-block;transform:rotate(-35deg);transition:transform .25s,color .2s}
+.arw-x{display:inline-block;transition:transform .25s,color .2s}
+a:hover .arw,a:hover .arw-x,button:hover .arw,a:hover .d-go{color:var(--arw-h)}
+a:hover .arw,button:hover .arw{transform:rotate(-35deg) translate(2px,0)}
+a:hover .arw-x{transform:translate(2px,-2px)}
+.tens-r a:hover .d-go{transform:rotate(-35deg) translateX(4px)}
+.btn-g:hover .arw,.btn-g:hover .arw-x{color:inherit}
+.btn-k:hover .arw,.btn-k:hover .arw-x{color:var(--green)}
 /* essencial: só as linhas que separam */
 .sec-head{border-bottom:0!important;padding-bottom:0!important;margin-bottom:48px}
 .lh-kpis div div,.why-nums div div{border:0!important;padding:0!important}
