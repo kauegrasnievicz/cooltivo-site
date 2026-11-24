@@ -43,10 +43,10 @@ h2{font-size:clamp(2rem,4.2vw,3.6rem)}
 .btn-k:hover{background:var(--dark)}
 
 /* topo */
-.util{background:var(--green);color:var(--dark-3)}
+.util{background:var(--dark);color:var(--white);border-bottom:1px solid var(--rule-d)}
 .util .wrap{display:flex;justify-content:center;min-height:38px;align-items:center}
-.util .sos{color:var(--dark-3);font-weight:500;letter-spacing:.08em}
-.util .sos b{font-weight:500;border-bottom:1px solid currentColor;padding-bottom:1px}
+.util .sos{color:var(--white);font-weight:500;letter-spacing:.08em}
+.util .sos b{font-weight:500;color:var(--green);border-bottom:1px solid currentColor;padding-bottom:1px}
 .util .sos:hover b{border-bottom-width:2px}
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:100;background:var(--dark-3);color:var(--white);border-bottom:1px solid var(--rule-d)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
@@ -305,7 +305,13 @@ footer{background:var(--dark-3);color:var(--white);padding-block:88px 32px}
 @media (max-width:560px){
   body{font-size:16px}
   header .btn{display:none}
-  .hero .acts .btn{width:100%}
+  .hero .wrap{padding-top:36px}
+  .hero .mono.eb{margin-bottom:16px;font-size:11px}
+  .hero h1{font-size:2.5rem}
+  .hero .lede{margin-top:18px;font-size:16px;line-height:1.5}
+  .hero .acts{margin-top:24px;gap:10px}
+  .hero .acts .btn{width:100%;min-height:50px}
+  .kpis{margin-top:48px}
   .logos{grid-template-columns:repeat(3,minmax(0,1fr))}
   .logos li{padding:14px}
   .logos img{max-height:32px}
