@@ -38,7 +38,8 @@
 <header>
   <div class="wrap">
     <a href="https://cooltivo.com.br/introduce-v2/" class="logo" aria-label="Introduce, início"><img decoding="async" width="304" height="94" src="../media/logos/introduce-word-white.svg" alt="Introduce"></a>
-    <nav aria-label="Principal"><ul><li><a href="https://cooltivo.com.br/introduce-v2/#jornadas">Jornadas</a></li><li><a href="https://cooltivo.com.br/introduce-v2/cases/">Cases</a></li><li><a href="https://cooltivo.com.br/introduce-v2/blog/">Blog</a></li><li><a href="https://cooltivo.com.br/introduce-v2/quem-somos/">Quem somos</a></li><li><a href="https://cooltivo.com.br/introduce-v2/quem-somos/#faca-parte" class="nav-fp">Faça parte</a></li></ul></nav>
+    <button class="nav-tg" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu"><span></span></button>
+    <nav aria-label="Principal" id="menu-principal"><ul><li><a href="https://cooltivo.com.br/introduce-v2/#jornadas">Jornadas</a></li><li><a href="https://cooltivo.com.br/introduce-v2/cases/">Cases</a></li><li><a href="https://cooltivo.com.br/introduce-v2/blog/">Blog</a></li><li><a href="https://cooltivo.com.br/introduce-v2/quem-somos/">Quem somos</a></li><li><a href="https://cooltivo.com.br/introduce-v2/quem-somos/#faca-parte" class="nav-fp">Faça parte</a></li><li class="nav-cta"><a href="#diagnostico" class="btn btn-g">Fazer meu diagnóstico</a></li></ul></nav>
     <a href="#diagnostico" class="btn btn-g">Fazer meu diagnóstico</a>
   </div>
 </header>
@@ -335,5 +336,11 @@ var RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 </script>
 
+<script id="menu-js">(function(){var h=document.querySelector('header'),n=h&&h.querySelector('nav'),b=h&&h.querySelector('.nav-tg');if(!b)return;
+function set(o){h.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Fechar menu':'Abrir menu');document.documentElement.style.overflow=o?'hidden':''}
+b.addEventListener('click',function(){set(!h.classList.contains('open'))});
+n.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&h.classList.contains('open')){set(false);b.focus()}});
+window.addEventListener('resize',function(){if(innerWidth>900)set(false)});})();</script>
 </body>
 </html>
