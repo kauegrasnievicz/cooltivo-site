@@ -1,0 +1,6 @@
+# Para usar na raiz do domínio final (ex.: introduce.com.br/robots.txt).
+# Enquanto o site estiver em teste, as páginas seguem com noindex.
+User-agent: *
+Allow: /
+
+Sitemap: https://cooltivo.com.br/introduce-v2/sitemap.xml
