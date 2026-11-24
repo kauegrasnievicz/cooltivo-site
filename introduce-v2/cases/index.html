@@ -444,6 +444,141 @@ header nav .nav-fp{color:var(--green)}
   .endcta .btn{width:100%}
 }
 
+/* ===== página de case ===== */
+.crumb{background:var(--dark-3);border-bottom:1px solid var(--rule-d)}
+.crumb .wrap{display:flex;gap:10px;align-items:center;min-height:44px;color:rgba(255,255,255,.5);flex-wrap:wrap}
+.crumb a:hover{color:var(--white)}
+.crumb b{color:var(--green);font-weight:400}
+.ch{background:var(--dark-3);color:var(--white);padding-bottom:clamp(120px,14vw,200px)}
+.ch .wrap{padding-top:clamp(48px,7vw,96px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
+.ch-id{grid-column:1/-1;display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:12px}
+.ch-logo{background:#fff;padding:10px 16px;height:56px;display:inline-flex;align-items:center;border-radius:4px}
+.ch-logo img{max-height:36px;max-width:160px;width:auto}
+.ch-logo .wm{color:var(--ink);font-weight:700;font-size:18px;letter-spacing:-.02em}
+.ch-id .mono{color:rgba(255,255,255,.6)}
+.ch h1{grid-column:1/9;font-size:clamp(2.2rem,4.8vw,4.2rem);max-width:18ch}
+.ch .lede{grid-column:9/13;font-size:18px;color:rgba(255,255,255,.82)}
+.cm{margin-top:calc(-1 * clamp(96px,12vw,170px))}
+.cm .frame{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
+.cm .frame img,.cm .frame video,.cm .frame iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.cm .frame .st-play{left:24px;bottom:24px;min-height:56px;padding:0 22px 0 18px;font-size:15px}
+.cm .frame.logo{background:var(--white);display:grid;place-items:center;aspect-ratio:21/8;border-top:4px solid var(--c)}
+.cm .frame.logo img{position:static;width:auto;height:auto;max-width:50%;max-height:45%;object-fit:contain}
+.cm .frame.logo .wm{font-size:clamp(2.4rem,6vw,5rem);font-weight:700;letter-spacing:-.04em}
+.cm figcaption{margin-top:10px;color:var(--ink-3)}
+.cfacts{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--rule)}
+.cfacts li{padding:26px 20px 26px 0;border-right:1px solid var(--rule)}
+.cfacts li+li{padding-left:20px}
+.cfacts li:last-child{border-right:0}
+.cfacts b{display:block;font-size:clamp(2rem,3.6vw,3rem);font-weight:300;letter-spacing:-.05em;line-height:1}
+.cfacts span{display:block;margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.cbody{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:start}
+.cside{grid-column:1/4;position:sticky;top:96px;display:flex;flex-direction:column;gap:22px}
+.cside dl{border-top:2px solid var(--ink)}
+.cside dt{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);padding-top:16px}
+.cside dd{padding:6px 0 16px;border-bottom:1px solid var(--rule);font-size:15px}
+.cside dd a{border-bottom:1px solid currentColor}
+.jlinks{display:flex;flex-direction:column;gap:8px}
+.jlinks a{display:flex;align-items:center;gap:10px;border:0!important}
+.jlinks a i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+.jlinks a:hover{text-decoration:underline}
+.cside .btn{width:100%}
+.cmain{grid-column:5/13;display:flex;flex-direction:column;gap:56px}
+.cblk .mono{color:var(--green-ink);display:block;margin-bottom:14px}
+.cblk h2{font-size:clamp(1.6rem,2.6vw,2.2rem);margin-bottom:18px}
+.cblk p{font-size:18px;line-height:1.65;color:var(--ink-2);max-width:62ch}
+.cblk p+p{margin-top:14px}
+.cblk ul{list-style:none;border-top:1px solid var(--rule)}
+.cblk li{padding:14px 0 14px 30px;border-bottom:1px solid var(--rule);font-size:17px;line-height:1.55;position:relative}
+.cblk li::before{content:"";position:absolute;left:0;top:23px;width:14px;height:2px;background:var(--ink)}
+.cblk.res li::before{content:"✓";background:none;width:auto;height:auto;top:13px;color:var(--green-ink);font-weight:700}
+.cblk li b{font-weight:600}
+.bq{background:var(--dark-3);color:var(--white);padding:clamp(28px,4vw,48px);position:relative}
+.bq::before{content:"“";position:absolute;top:-6px;left:clamp(20px,3vw,40px);font-size:120px;line-height:1;color:var(--green);font-weight:600}
+.bq blockquote{font-size:clamp(1.3rem,2.2vw,1.8rem);line-height:1.35;letter-spacing:-.02em;font-weight:300;margin-top:36px}
+.bq cite{display:block;margin-top:20px;font-style:normal;font-size:14px}
+.bq cite b{display:block;font-weight:600}
+.bq cite span{color:rgba(255,255,255,.6)}
+.techb .chips2{display:flex;flex-wrap:wrap;gap:10px}
+.techb .chips2 span{border:1px solid var(--rule-d);padding:12px 18px;font-size:16px;transition:background .25s,color .25s,border-color .25s}
+.techb .chips2 span:hover{background:var(--green);color:var(--dark-3);border-color:var(--green)}
+.more{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.mc{display:flex;flex-direction:column;background:var(--white);height:100%;border-top:3px solid var(--c);transition:transform .3s,box-shadow .3s}
+.mc:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.08)}
+.mc .mc-l{height:110px;display:grid;place-items:center;border-bottom:1px solid var(--rule);padding:18px}
+.mc .mc-l img{max-height:48px;max-width:70%;width:auto}
+.mc .mc-l .wm{font-size:22px;font-weight:700;letter-spacing:-.03em}
+.mc .mc-b{padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.mc .mc-b .mono{font-size:10px;color:var(--ink-3)}
+.mc h3{font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.25}
+.mc .lnk{margin-top:auto;align-self:flex-start;font-size:13px}
+/* ===== página de artigo ===== */
+.ah{background:var(--paper);padding-top:clamp(48px,7vw,96px)}
+.ah .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.ah .meta{grid-column:3/11}
+.ah h1{grid-column:3/11;font-size:clamp(2.1rem,4.4vw,3.8rem);margin-top:18px}
+.ah .ex{grid-column:3/11;margin-top:20px;font-size:20px;color:var(--ink-2);max-width:56ch}
+.ah .by{grid-column:3/11;margin-top:26px;display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid var(--rule)}
+.ah .by .av{width:44px;height:44px;border-radius:50%;background:var(--dark-3);display:grid;place-items:center;flex:none}
+.ah .by .av img{width:22px}
+.ah .by b{display:block;font-weight:600;font-size:15px}
+.ah .by span{font-size:13px;color:var(--ink-3)}
+.acover{margin-top:clamp(40px,5vw,64px);display:block!important}
+.acover .pc-img{aspect-ratio:21/9}
+.acover .pc-img .tile b{font-size:clamp(2.4rem,6vw,5rem)}
+.abody{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:start}
+.ashare{grid-column:1/3;position:sticky;top:110px;display:flex;flex-direction:column;gap:10px}
+.ashare .mono{color:var(--ink-3);font-size:10px}
+.ashare button,.ashare a{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border:1px solid var(--rule);background:transparent;font-size:13px;font-weight:500;color:var(--ink);align-self:flex-start;transition:background .2s}
+.ashare button:hover,.ashare a:hover{background:var(--white)}
+.art{grid-column:3/11;font-size:19px;line-height:1.75;color:var(--ink)}
+.art p{margin:0 0 22px;max-width:68ch}
+.art h2{font-size:clamp(1.5rem,2.4vw,2rem);margin:48px 0 16px;font-weight:600;letter-spacing:-.025em;line-height:1.2}
+.art ul{list-style:none;margin:0 0 26px;border-top:1px solid var(--rule)}
+.art li{padding:12px 0 12px 28px;border-bottom:1px solid var(--rule);position:relative;font-size:18px;line-height:1.55}
+.art li::before{content:"";position:absolute;left:0;top:24px;width:12px;height:2px;background:var(--green-ink)}
+.art li b,.art p b{font-weight:600}
+.art .pq{margin:36px 0;padding:6px 0 6px 26px;border-left:4px solid var(--green);font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.3;letter-spacing:-.02em;font-weight:300}
+.art .src{margin-top:40px;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;color:var(--ink-3)}
+.art .src a{border-bottom:1px solid currentColor}
+.acase{margin:40px 0;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;background:var(--dark-3);color:var(--white);padding:22px 24px}
+.acase .ch-logo{height:48px}
+.acase .mono{color:var(--green);font-size:10px}
+.acase b{display:block;font-weight:600;font-size:17px;margin-top:4px}
+@media (max-width:900px){
+  .ch .wrap,.cbody,.ah .wrap,.abody{grid-template-columns:1fr}
+  .ch .wrap>*,.cbody>*,.ah .wrap>*,.abody>*{grid-column:1/-1!important}
+  .ch .lede{margin-top:12px}
+  .cside{position:static;order:2}
+  .cmain{order:1}
+  .more{grid-template-columns:1fr 1fr}
+  .ashare{position:static;flex-direction:row;flex-wrap:wrap;order:2;margin-top:24px}
+  .acase{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .cfacts{grid-template-columns:1fr}
+  .cfacts li,.cfacts li+li{padding:18px 0;border-right:0;border-bottom:1px solid var(--rule)}
+  .more{grid-template-columns:1fr}
+  .art{font-size:18px}
+  .acover .pc-img{aspect-ratio:4/3}
+  .cm .frame.logo{aspect-ratio:16/9}
+}
+
+.mc{position:relative}
+.mc-l{position:relative}
+.mc-v{height:auto!important;aspect-ratio:16/9;padding:0!important;overflow:hidden;background:#000}
+.mc-v img.th{position:absolute;inset:0;width:100%;height:100%;max-width:none!important;max-height:none!important;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.3,1)}
+.mc:hover .mc-v img.th{transform:scale(1.04)}
+.mc-v .lg2{position:absolute;left:14px;top:14px;background:#fff;padding:6px 10px;display:inline-flex;align-items:center;height:36px}
+.mc-v .lg2 img{max-height:22px;max-width:110px;width:auto}
+.mc-v .lg2 .wm{font-size:14px;font-weight:700}
+.vbadge{position:absolute;right:12px;bottom:12px;display:inline-flex;align-items:center;gap:6px;background:var(--white);color:var(--ink);font-size:12px;font-weight:600;padding:6px 10px}
+.vbadge svg{width:12px;height:12px}
+.mc-l:not(.mc-v) .vbadge{background:var(--ink);color:var(--white)}
+.idx{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+@media (max-width:900px){.idx{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.idx{grid-template-columns:1fr}}
+
 header nav a[aria-current="page"]{color:var(--white)}
 header nav .nav-fp{color:var(--green)}
 </style>
@@ -476,107 +611,37 @@ header nav .nav-fp{color:var(--green)}
     <article class="feat rv" data-f="04 03">
       <div class="st-media" data-src="../media/case-savar.mp4"><img src="../media/v2-savar.jpg" alt="Gustavo Filomena, gerente de TI do Grupo Savar, em entrevista"><button class="st-play" aria-label="Assistir à história do Grupo Savar"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg><span class="mono">7:33</span></button></div>
       <div class="feat-b">
-        <div class="cc-top"><span class="mono">Case em destaque · Grupo Savar</span><span class="jdots" aria-label="Jornadas 04, 03"><i style="--c:#005BFF;--co:#FFFFFF" title="Jornada 04 · Segurança em Ação">04</i><i style="--c:#00E6B4;--co:#06231C" title="Jornada 03 · Pilares de Segurança">03</i></span></div>
-        <h2>SOC com MDR Sophos para <b>tirar a segurança do técnico</b> e levar à estratégia.</h2>
-        <p>Um dos principais grupos de concessionárias do Sul do Brasil estruturou SOC com monitoramento e resposta 24×7. A segurança passou a sustentar as exigências de montadoras e parceiros.</p>
-        <blockquote>Nós éramos muito voltados ao técnico; precisávamos evoluir o nível da segurança da informação do Grupo Savar.</blockquote>
-        <p class="st-who" style="margin-top:12px"><strong>Gustavo Filomena</strong><span>Gerente de TI, Grupo Savar</span></p>
-        <ul class="facts"><li><b>34</b><span>unidades</span></li><li><b>+900</b><span>colaboradores</span></li><li><b>24×7</b><span>monitoramento e resposta</span></li></ul>
-        <div class="links"><a href="https://www.baguete.com.br/noticias/grupo-savar-estrutura-soc-com-introduce" target="_blank" rel="noopener">Ler no Baguete <span aria-hidden="true">&#8599;</span></a><a href="https://economiasc.com/2026/09/01/seguranca-da-informacao-se-torna-diferencial-competitivo-e-impulsiona-maturidade-digital-do-grupo-savar/" target="_blank" rel="noopener">Ler na Economia SC <span aria-hidden="true">&#8599;</span></a></div>
+        <div class="cc-top" style="display:flex;justify-content:space-between;align-items:center"><span class="mono">Case em destaque · Grupo Savar</span><span class="jdots" aria-label="Jornadas 04, 03"><i style="--c:#005BFF;--co:#FFFFFF" title="Jornada 04 · Segurança em Ação">04</i><i style="--c:#00E6B4;--co:#06231C" title="Jornada 03 · Pilares de Segurança">03</i></span></div>
+        <h2>SOC com Sophos MDR para tirar a segurança do técnico e levar à estratégia.</h2>
+        <p>Um dos principais grupos de concessionárias do Sul do Brasil passou a tratar segurança como tema corporativo. Hoje, o ambiente é monitorado e respondido 24×7.</p>
+        <ul class="facts"><li><b>34</b><span>unidades</span></li><li><b>+900</b><span>colaboradores</span></li><li><b>+3 mil</b><span>ataques neutralizados nos primeiros 15 dias</span></li></ul>
+        <p style="margin-top:24px"><a href="https://cooltivo.com.br/introduce-v2/cases/grupo-savar/" class="btn btn-k">Ver o case completo <span aria-hidden="true">&rarr;</span></a></p>
       </div>
     </article>
-
-    <div class="chips rv" role="group" aria-label="Filtrar cases por jornada"><button class="chip" data-k="all" aria-pressed="true">Todas</button><button class="chip" data-k="01" aria-pressed="false" style="--c:#A8A8A8"><i></i>Escudo Digital<span class="chip-n">5</span></button><button class="chip" data-k="02" aria-pressed="false" style="--c:#8400FF"><i></i>Guardiões Digitais<span class="chip-n">1</span></button><button class="chip" data-k="03" aria-pressed="false" style="--c:#00E6B4"><i></i>Pilares de Segurança<span class="chip-n">3</span></button><button class="chip" data-k="04" aria-pressed="false" style="--c:#005BFF"><i></i>Segurança em Ação<span class="chip-n">2</span></button><button class="chip" data-k="05" aria-pressed="false" style="--c:#FF7C00"><i></i>Governança Corporativa<span class="chip-n">3</span></button></div>
-
-    <ul class="vrow rv" aria-label="Histórias em vídeo"><li data-f="01" style="list-style:none"><article class="st">
-  <div class="st-media" data-src="../media/case-caderode.mp4"><img src="../media/v2-caderode.jpg" alt="Fábio Fortunati, Gerente de TI, Caderode Móveis, em entrevista" loading="lazy"><button class="st-play" aria-label="Assistir à história de Caderode Móveis"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg><span class="mono">1:41</span></button></div>
-  <div class="st-body"><div class="cc-top"><span class="mono st-brand">Caderode Móveis</span><span class="jdots" aria-label="Jornadas 01"><i style="--c:#A8A8A8;--co:#1E1E1E" title="Jornada 01 · Escudo Digital">01</i></span></div><blockquote>Tivemos uma implementação super rápida, em poucas semanas, com o apoio técnico do time da Introduce.</blockquote><p class="st-who"><strong>Fábio Fortunati</strong><span>Gerente de TI, Caderode Móveis</span></p><p class="mono st-tags">RMM · Gestão de TI</p></div>
-</article></li><li data-f="05" style="list-style:none"><article class="st">
-  <div class="st-media" data-src="../media/case-clube-do-valor.mp4"><img src="../media/v2-clube.jpg" alt="Leonardo Cardoso, CISO, Clube do Valor, em entrevista" loading="lazy"><button class="st-play" aria-label="Assistir à história de Clube do Valor"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg><span class="mono">1:53</span></button></div>
-  <div class="st-body"><div class="cc-top"><span class="mono st-brand">Clube do Valor</span><span class="jdots" aria-label="Jornadas 05"><i style="--c:#FF7C00;--co:#1E1E1E" title="Jornada 05 · Governança Corporativa">05</i></span></div><blockquote>A Introduce entrou como uma apoiadora na nossa jornada de negócio.</blockquote><p class="st-who"><strong>Leonardo Cardoso</strong><span>CISO, Clube do Valor</span></p><p class="mono st-tags">GRC · Governança de IA</p></div>
-</article></li><li data-f="05" style="list-style:none"><article class="st">
-  <div class="st-media" data-src="../media/case-redebrasil.mp4"><img src="../media/v2-redebrasil.jpg" alt="Marcos Felipe, Coord. de Segurança da Informação, Grupo Redebrasil, em entrevista" loading="lazy"><button class="st-play" aria-label="Assistir à história de Grupo Redebrasil"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg><span class="mono">1:08</span></button></div>
-  <div class="st-body"><div class="cc-top"><span class="mono st-brand">Grupo Redebrasil</span><span class="jdots" aria-label="Jornadas 05"><i style="--c:#FF7C00;--co:#1E1E1E" title="Jornada 05 · Governança Corporativa">05</i></span></div><blockquote>É como se fosse um colega de trabalho, não um fornecedor.</blockquote><p class="st-who"><strong>Marcos Felipe</strong><span>Coord. de Segurança da Informação, Grupo Redebrasil</span></p><p class="mono st-tags">GRC · vCISO</p></div>
-</article></li></ul>
-    <ul class="cgrid rv" aria-label="Cases"><li data-f="04 05 02"><article class="cc" style="--c:#005BFF">
-  <div class="cc-logo"><img src="../media/logos/clientes/hed.png" alt="Hospital Ernesto Dornelles" loading="lazy"></div>
-  <div class="cc-b">
-    <div class="cc-top"><span class="mono">Saúde</span><span class="jdots" aria-label="Jornadas 04, 05, 02"><i style="--c:#005BFF;--co:#FFFFFF" title="Jornada 04 · Segurança em Ação">04</i><i style="--c:#FF7C00;--co:#1E1E1E" title="Jornada 05 · Governança Corporativa">05</i><i style="--c:#8400FF;--co:#FFFFFF" title="Jornada 02 · Guardiões Digitais">02</i></span></div>
-    <h3>Cibersegurança como pilar da governança hospitalar.</h3>
-    <p>O hospital saiu da TI reativa para uma segurança estruturada: diagnóstico e gestão de riscos, SOC/MDR 24×7, políticas, conscientização e apoio às decisões da liderança. Parceria de mais de dez anos.</p><blockquote>Escolhi a Introduce por ser um forte partner do fabricante que compunham nossa estratégia de melhoria.<cite>Amaro Neto, Coordenador de Infra</cite></blockquote>
-    <span class="tags2">SOC/MDR · Governança · Conscientização</span>
-    <div class="links"><a href="https://economiasc.com/2026/05/18/como-a-introduce-se-tornou-o-pilar-estrategico-de-ciberseguranca-do-hospital-ernesto-dornelles/" target="_blank" rel="noopener">Ler na Economia SC <span aria-hidden="true">&#8599;</span></a></div>
-  </div></article></li><li data-f="01"><article class="cc" style="--c:#A8A8A8">
-  <div class="cc-logo"><img src="../media/logos/clientes/alfa-transportes.png" alt="Alfa Transportes" loading="lazy"></div>
-  <div class="cc-b">
-    <div class="cc-top"><span class="mono">Transporte e logística</span><span class="jdots" aria-label="Jornadas 01"><i style="--c:#A8A8A8;--co:#1E1E1E" title="Jornada 01 · Escudo Digital">01</i></span></div>
-    <h3>Escudo Digital para a operação não parar.</h3>
-    <p>Firewalls Sophos com redundância de links e SD-WAN, monitoramento 24×7 de firewalls, endpoints, wireless e backups, preventivas semanais e resposta a incidentes. Parceria desde 2016, renovada por mais três anos.</p>
-    <span class="tags2">Escudo Digital · Sophos · SD-WAN</span>
-    <div class="links"><a href="https://economiasc.com/2025/07/30/alfa-transportes-fortalece-seguranca-digital-com-parceria-estrategica-com-a-introduce/" target="_blank" rel="noopener">Ler na Economia SC <span aria-hidden="true">&#8599;</span></a></div>
-  </div></article></li><li data-f="03"><article class="cc" style="--c:#00E6B4">
-  <div class="cc-logo"><img src="../media/logos/clientes/lojas-edmil.png" alt="Lojas Edmil" loading="lazy"></div>
-  <div class="cc-b">
-    <div class="cc-top"><span class="mono">Varejo</span><span class="jdots" aria-label="Jornadas 03"><i style="--c:#00E6B4;--co:#06231C" title="Jornada 03 · Pilares de Segurança">03</i></span></div>
-    <h3>LGPD e comitê de privacidade para 73 lojas interligadas.</h3>
-    <p>Com TI interna de 36 profissionais, lojas, e-commerce e marketplaces, o grupo adequou-se à LGPD, implantou políticas de SI, estruturou o comitê de SI e privacidade e o escritório de processos.</p>
-    <span class="tags2">LGPD · Políticas de SI · Continuidade</span>
-    <div class="links"><a href="https://introduce.com.br/clientes/introduce-e-lojas-edmil" target="_blank" rel="noopener">Ver o case <span aria-hidden="true">&#8599;</span></a></div>
-  </div></article></li><li data-f="01"><article class="cc" style="--c:#A8A8A8">
-  <div class="cc-logo"><img src="../media/logos/clientes/unyterra.png" alt="Unyterra" loading="lazy"></div>
-  <div class="cc-b">
-    <div class="cc-top"><span class="mono">Máquinas agrícolas</span><span class="jdots" aria-label="Jornadas 01"><i style="--c:#A8A8A8;--co:#1E1E1E" title="Jornada 01 · Escudo Digital">01</i></span></div>
-    <h3>Gestão de TI, continuidade e segurança em um só parceiro.</h3>
-    <p>A relação cresceu projeto a projeto até a Introduce assumir a gestão de todos os processos de TI da empresa, com continuidade e segurança.</p><blockquote>Hoje a Introduce é estratégica para a Unyterra, pois tem a gestão de todos os processos de TI das empresas.<cite>Mauro Bellenzier, CEO</cite></blockquote>
-    <span class="tags2">Gestão de TI · Continuidade · Segurança</span>
-    <div class="links"><a href="https://blog.introduce.com.br/introduce-e-a-responsavel-pela-gestao-de-ti-continuidade-e-seguranca-da-unyterra/" target="_blank" rel="noopener">Ler o case <span aria-hidden="true">&#8599;</span></a></div>
-  </div></article></li><li data-f="03"><article class="cc" style="--c:#00E6B4">
-  <div class="cc-logo"><span class="wm">TESC</span></div>
-  <div class="cc-b">
-    <div class="cc-top"><span class="mono">LGPD</span><span class="jdots" aria-label="Jornadas 03"><i style="--c:#00E6B4;--co:#06231C" title="Jornada 03 · Pilares de Segurança">03</i></span></div>
-    <h3>LGPD é mais do que segurança.</h3>
-    <p>A adequação envolveu negócio, segurança e jurídico, com a LGPD tratada como tema de pessoas, processos e tecnologia.</p><blockquote>A Introduce conseguiu nos mostrar que LGPD é um encontro de pessoas, processos, tecnologia. Negócio, Segurança e Jurídico.<cite>TESC</cite></blockquote>
-    <span class="tags2">Adequação à LGPD</span>
-    <div class="links"><a href="https://youtu.be/kb999vu_Yic" target="_blank" rel="noopener">Assistir no YouTube <span aria-hidden="true">&#8599;</span></a></div>
-  </div></article></li><li data-f="01"><article class="cc" style="--c:#A8A8A8">
-  <div class="cc-logo"><span class="wm">Tramontina Multi</span></div>
-  <div class="cc-b">
-    <div class="cc-top"><span class="mono">Indústria</span><span class="jdots" aria-label="Jornadas 01"><i style="--c:#A8A8A8;--co:#1E1E1E" title="Jornada 01 · Escudo Digital">01</i></span></div>
-    <h3>Alta disponibilidade em ambiente crítico de TI.</h3>
-    <p>Cluster de alta disponibilidade sobre os servidores virtualizados existentes e backup reestruturado, sem parar a operação durante a implantação.</p>
-    <span class="tags2">Alta disponibilidade · Backup · Continuidade</span>
-    <div class="links"><a href="https://introduce.com.br/clientes/case-tramontina/" target="_blank" rel="noopener">Ver o case <span aria-hidden="true">&#8599;</span></a></div>
-  </div></article></li><li data-f="01"><article class="cc" style="--c:#A8A8A8">
-  <div class="cc-logo"><span class="wm">Terra &amp; Água</span></div>
-  <div class="cc-b">
-    <div class="cc-top"><span class="mono">Indústria</span><span class="jdots" aria-label="Jornadas 01"><i style="--c:#A8A8A8;--co:#1E1E1E" title="Jornada 01 · Escudo Digital">01</i></span></div>
-    <h3>Muito além de infraestrutura e segurança.</h3>
-    <p>Unidades e parque fabril interligados com firewall e Wi-Fi corporativo, datacenter redefinido, backup e gestão de TI com planejamento estratégico.</p>
-    <span class="tags2">Firewall · Backup · Gestão de TI</span>
-    <div class="links"><a href="https://introduce.com.br/clientes/case-terraeagua/" target="_blank" rel="noopener">Ver o case <span aria-hidden="true">&#8599;</span></a></div>
-  </div></article></li></ul>
-    <p class="empty" id="empty" hidden>Ainda não publicamos um case desta jornada aqui. <a href="#diagnostico-cta" class="lnk">Fale com um especialista</a></p>
+    <div class="chips rv" role="group" aria-label="Filtrar cases por jornada"><button class="chip" data-k="all" aria-pressed="true">Todas<span class="chip-n">12</span></button><button class="chip" data-k="01" aria-pressed="false" style="--c:#A8A8A8"><i></i>Escudo Digital<span class="chip-n">7</span></button><button class="chip" data-k="02" aria-pressed="false" style="--c:#8400FF"><i></i>Guardiões Digitais<span class="chip-n">1</span></button><button class="chip" data-k="03" aria-pressed="false" style="--c:#00E6B4"><i></i>Pilares de Segurança<span class="chip-n">4</span></button><button class="chip" data-k="04" aria-pressed="false" style="--c:#005BFF"><i></i>Segurança em Ação<span class="chip-n">5</span></button><button class="chip" data-k="05" aria-pressed="false" style="--c:#FF7C00"><i></i>Governança Corporativa<span class="chip-n">3</span></button></div>
+    <ul class="idx rv" aria-label="Cases"><li data-f="04 03"><a class="mc" href="https://cooltivo.com.br/introduce-v2/cases/grupo-savar/" style="--c:#005BFF"><div class="mc-l mc-v"><img src="../media/v2-savar.jpg" alt="" loading="lazy" class="th"><span class="vbadge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>Vídeo</span><span class="lg2"><img src="../media/logos/clientes/grupo-savar.png" alt="Grupo Savar" loading="lazy"></span></div><div class="mc-b"><div class="cc-top" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="mono">Concessionárias automotivas</span><span class="jdots" aria-label="Jornadas 04, 03"><i style="--c:#005BFF;--co:#FFFFFF" title="Jornada 04 · Segurança em Ação">04</i><i style="--c:#00E6B4;--co:#06231C" title="Jornada 03 · Pilares de Segurança">03</i></span></div><h3>SOC com Sophos MDR para tirar a segurança do técnico e levar à estratégia.</h3><p style="font-size:15px;color:var(--ink-2)">Um dos principais grupos de concessionárias do Sul do Brasil passou a tratar segurança como tema corporativo. Hoje, o ambiente é monitorado e respondido 24×7.</p><span class="lnk">Ver o case <span aria-hidden="true">&rarr;</span></span></div></a></li><li data-f="04 05 01 03"><a class="mc" href="https://cooltivo.com.br/introduce-v2/cases/hospital-ernesto-dornelles/" style="--c:#005BFF"><div class="mc-l"><img src="../media/logos/clientes/hed.png" alt="Hospital Ernesto Dornelles" loading="lazy"></div><div class="mc-b"><div class="cc-top" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="mono">Saúde</span><span class="jdots" aria-label="Jornadas 04, 05, 01, 03"><i style="--c:#005BFF;--co:#FFFFFF" title="Jornada 04 · Segurança em Ação">04</i><i style="--c:#FF7C00;--co:#1E1E1E" title="Jornada 05 · Governança Corporativa">05</i><i style="--c:#A8A8A8;--co:#1E1E1E" title="Jornada 01 · Escudo Digital">01</i><i style="--c:#00E6B4;--co:#06231C" title="Jornada 03 · Pilares de Segurança">03</i></span></div><h3>Em um hospital, proteger sistemas é proteger vidas.</h3><p style="font-size:15px;color:var(--ink-2)">Uma parceria que nasceu na resposta a um incidente e virou jornada de governança, segurança e continuidade para uma operação que não pode parar.</p><span class="lnk">Ver o case <span aria-hidden="true">&rarr;</span></span></div></a></li><li data-f="05 04"><a class="mc" href="https://cooltivo.com.br/introduce-v2/cases/grupo-redebrasil/" style="--c:#FF7C00"><div class="mc-l mc-v"><img src="../media/v2-redebrasil.jpg" alt="" loading="lazy" class="th"><span class="vbadge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>Vídeo</span><span class="lg2"><span class="wm">Grupo Redebrasil</span></span></div><div class="mc-b"><div class="cc-top" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="mono">Gestão de ativos e call center</span><span class="jdots" aria-label="Jornadas 05, 04"><i style="--c:#FF7C00;--co:#1E1E1E" title="Jornada 05 · Governança Corporativa">05</i><i style="--c:#005BFF;--co:#FFFFFF" title="Jornada 04 · Segurança em Ação">04</i></span></div><h3>Auditorias dos maiores bancos do país, o ano inteiro.</h3><p style="font-size:15px;color:var(--ink-2)">Com quase 3 mil funcionários atendendo grandes bancos, a Redebrasil estruturou governança, segurança operacional e proteção digital em uma jornada só.</p><span class="lnk">Ver o case <span aria-hidden="true">&rarr;</span></span></div></a></li><li data-f="05 02 04"><a class="mc" href="https://cooltivo.com.br/introduce-v2/cases/clube-do-valor/" style="--c:#FF7C00"><div class="mc-l mc-v"><img src="../media/v2-clube.jpg" alt="" loading="lazy" class="th"><span class="vbadge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>Vídeo</span><span class="lg2"><span class="wm">Clube do Valor</span></span></div><div class="mc-b"><div class="cc-top" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="mono">Gestão de patrimônio e educação financeira</span><span class="jdots" aria-label="Jornadas 05, 02, 04"><i style="--c:#FF7C00;--co:#1E1E1E" title="Jornada 05 · Governança Corporativa">05</i><i style="--c:#8400FF;--co:#FFFFFF" title="Jornada 02 · Guardiões Digitais">02</i><i style="--c:#005BFF;--co:#FFFFFF" title="Jornada 04 · Segurança em Ação">04</i></span></div><h3>Uma empresa AI first levando cibersegurança e IA para a conversa com o board.</h3><p style="font-size:15px;color:var(--ink-2)">O Clube do Valor acelerou o uso de inteligência artificial enquanto construía a própria cultura de segurança, com riscos traduzidos em linguagem de negócio.</p><span class="lnk">Ver o case <span aria-hidden="true">&rarr;</span></span></div></a></li><li data-f="01"><a class="mc" href="https://cooltivo.com.br/introduce-v2/cases/caderode/" style="--c:#A8A8A8"><div class="mc-l mc-v"><img src="../media/v2-caderode.jpg" alt="" loading="lazy" class="th"><span class="vbadge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>Vídeo</span><span class="lg2"><span class="wm">Caderode Móveis</span></span></div><div class="mc-b"><div class="cc-top" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="mono">Mobiliário corporativo</span><span class="jdots" aria-label="Jornadas 01"><i style="--c:#A8A8A8;--co:#1E1E1E" title="Jornada 01 · Escudo Digital">01</i></span></div><h3>Controle do parque de máquinas com um TI de duas pessoas.</h3><p style="font-size:15px;color:var(--ink-2)">Com Acronis RMM, a Caderode ganhou visibilidade e automação sobre os equipamentos, em uma implantação de poucas semanas.</p><span class="lnk">Ver o case <span aria-hidden="true">&rarr;</span></span></div></a></li><li data-f="01 04"><a class="mc" href="https://cooltivo.com.br/introduce-v2/cases/grupo-3s-corp/" style="--c:#A8A8A8"><div class="mc-l"><img src="../media/logos/clientes/3s-corp.png" alt="Grupo 3S Corp" loading="lazy"></div><div class="mc-b"><div class="cc-top" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="mono">Multissetorial</span><span class="jdots" aria-label="Jornadas 01, 04"><i style="--c:#A8A8A8;--co:#1E1E1E" title="Jornada 01 · Escudo Digital">01</i><i style="--c:#005BFF;--co:#FFFFFF" title="Jornada 04 · Segurança em Ação">04</i></span></div><h3>Mais de 8 anos crescendo com segurança desde o projeto.</h3><p style="font-size:15px;color:var(--ink-2)">A Introduce atua como extensão do time do 3S: acompanha cada nova unidade, cada implementação e, agora, as aplicações de IA.</p><span class="lnk">Ver o case <span aria-hidden="true">&rarr;</span></span></div></a></li><li data-f="01"><a class="mc" href="https://cooltivo.com.br/introduce-v2/cases/alfa-transportes/" style="--c:#A8A8A8"><div class="mc-l"><img src="../media/logos/clientes/alfa-transportes.png" alt="Alfa Transportes" loading="lazy"></div><div class="mc-b"><div class="cc-top" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="mono">Transporte e logística</span><span class="jdots" aria-label="Jornadas 01"><i style="--c:#A8A8A8;--co:#1E1E1E" title="Jornada 01 · Escudo Digital">01</i></span></div><h3>Escudo Digital para a operação não parar.</h3><p style="font-size:15px;color:var(--ink-2)">Parceira desde 2016, a Alfa Transportes protege unidades e colaboradores remotos com Sophos, SD-WAN e monitoramento 24×7.</p><span class="lnk">Ver o case <span aria-hidden="true">&rarr;</span></span></div></a></li><li data-f="03"><a class="mc" href="https://cooltivo.com.br/introduce-v2/cases/lojas-edmil/" style="--c:#00E6B4"><div class="mc-l"><img src="../media/logos/clientes/lojas-edmil.png" alt="Lojas Edmil" loading="lazy"></div><div class="mc-b"><div class="cc-top" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="mono">Varejo</span><span class="jdots" aria-label="Jornadas 03"><i style="--c:#00E6B4;--co:#06231C" title="Jornada 03 · Pilares de Segurança">03</i></span></div><h3>LGPD e comitê de privacidade para 73 lojas interligadas.</h3><p style="font-size:15px;color:var(--ink-2)">Uma arquitetura de soluções que juntou o técnico, o jurídico e o estratégico para organizar segurança e privacidade sem travar o varejo.</p><span class="lnk">Ver o case <span aria-hidden="true">&rarr;</span></span></div></a></li><li data-f="03"><a class="mc" href="https://cooltivo.com.br/introduce-v2/cases/tesc/" style="--c:#00E6B4"><div class="mc-l"><span class="wm">TESC</span><span class="vbadge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>Vídeo</span></div><div class="mc-b"><div class="cc-top" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="mono">Adequação à LGPD</span><span class="jdots" aria-label="Jornadas 03"><i style="--c:#00E6B4;--co:#06231C" title="Jornada 03 · Pilares de Segurança">03</i></span></div><h3>LGPD é mais do que segurança.</h3><p style="font-size:15px;color:var(--ink-2)">A adequação juntou negócio, segurança e jurídico, tratando a LGPD como um tema de pessoas, processos e tecnologia.</p><span class="lnk">Ver o case <span aria-hidden="true">&rarr;</span></span></div></a></li><li data-f="01"><a class="mc" href="https://cooltivo.com.br/introduce-v2/cases/unyterra/" style="--c:#A8A8A8"><div class="mc-l"><img src="../media/logos/clientes/unyterra.png" alt="Unyterra" loading="lazy"></div><div class="mc-b"><div class="cc-top" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="mono">Máquinas agrícolas</span><span class="jdots" aria-label="Jornadas 01"><i style="--c:#A8A8A8;--co:#1E1E1E" title="Jornada 01 · Escudo Digital">01</i></span></div><h3>Gestão de TI, continuidade e segurança em um só parceiro.</h3><p style="font-size:15px;color:var(--ink-2)">A relação cresceu projeto a projeto até a Introduce assumir a gestão de todos os processos de TI da Unyterra.</p><span class="lnk">Ver o case <span aria-hidden="true">&rarr;</span></span></div></a></li><li data-f="01"><a class="mc" href="https://cooltivo.com.br/introduce-v2/cases/tramontina-multi/" style="--c:#A8A8A8"><div class="mc-l"><span class="wm">Tramontina Multi</span></div><div class="mc-b"><div class="cc-top" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="mono">Indústria</span><span class="jdots" aria-label="Jornadas 01"><i style="--c:#A8A8A8;--co:#1E1E1E" title="Jornada 01 · Escudo Digital">01</i></span></div><h3>Alta disponibilidade em ambiente crítico de TI.</h3><p style="font-size:15px;color:var(--ink-2)">Um cluster de alta disponibilidade sobre os servidores existentes, com backup reestruturado e a operação no ar durante toda a implantação.</p><span class="lnk">Ver o case <span aria-hidden="true">&rarr;</span></span></div></a></li><li data-f="01"><a class="mc" href="https://cooltivo.com.br/introduce-v2/cases/terra-e-agua/" style="--c:#A8A8A8"><div class="mc-l"><span class="wm">Terra &amp; Água</span></div><div class="mc-b"><div class="cc-top" style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="mono">Indústria</span><span class="jdots" aria-label="Jornadas 01"><i style="--c:#A8A8A8;--co:#1E1E1E" title="Jornada 01 · Escudo Digital">01</i></span></div><h3>Muito além de infraestrutura e segurança.</h3><p style="font-size:15px;color:var(--ink-2)">Unidades e parque fabril interligados com segurança, e a TI saindo do reativo para o planejamento estratégico.</p><span class="lnk">Ver o case <span aria-hidden="true">&rarr;</span></span></div></a></li></ul>
+    <p class="empty" id="empty" hidden>Ainda não publicamos um case desta jornada.</p>
   </div>
 </section>
 
 <section class="sec" style="background:var(--white)">
   <div class="wrap">
     <div class="sec-head rv"><span class="mono">Depoimentos</span><h2>Em uma frase, <b>do lado do cliente.</b></h2></div>
-    <ul class="qs rv"><li><q>A Introduce é nosso parceiro estratégico para evoluir tecnologia e processos na Casttini.</q><cite><b>Vitor Agostini</b><span>CEO, Casttini</span></cite></li><li><q>Escolhemos a Introduce, pois podemos notar durante as negociações a qualidade e a dedicação dos envolvidos.</q><cite><b>Tuane Willers</b><span>Coordenadora de TI, Cermissões</span></cite></li><li><q>A Introduce é nossa parceira de tecnologia para projetos de alto risco a nível de negócios.</q><cite><b>Isaac R. Sartori Jr.</b><span>Supervisor de TI, Tramontina Multi</span></cite></li><li><q>Eles orquestram a TI como um todo, não apenas na infraestrutura e segurança.</q><cite><b>Diego Bonet</b><span>Gestor de TI, Terra &amp; Água</span></cite></li></ul>
+    <ul class="qs rv"><li><q>A Introduce é nosso parceiro estratégico para evoluir tecnologia e processos na Casttini.</q><cite><b>Vitor Agostini</b><span>CEO, Casttini</span></cite></li><li><q>Escolhemos a Introduce, pois podemos notar durante as negociações a qualidade e a dedicação dos envolvidos.</q><cite><b>Tuane Willers</b><span>Coordenadora de TI, Cermissões</span></cite></li><li><q>O principal propósito do hospital é salvar vidas. Assim, a segurança é um elemento essencial para a continuidade dos negócios, para a qualidade assistencial e para a proteção dos pacientes.</q><cite><b>Luis Goulart</b><span>Gerente de TI, Hospital Ernesto Dornelles</span></cite></li><li><q>A Introduce entrou como uma apoiadora na nossa jornada de negócio.</q><cite><b>Leonardo Cardoso</b><span>CISO, Clube do Valor</span></cite></li></ul>
   </div>
 </section>
 
 <section class="sec dark">
   <div class="wrap">
-    <div class="sec-head rv"><span class="mono">Na imprensa</span><h2>Cases que <b>viraram notícia.</b></h2></div>
-    <ul class="press rv"><li><a href="https://www.baguete.com.br/noticias/grupo-savar-estrutura-soc-com-introduce" target="_blank" rel="noopener"><span class="mono">Baguete</span><h3>Grupo Savar estrutura SOC com Introduce</h3><small>24/09/2026 &#8599;</small></a></li><li><a href="https://economiasc.com/2026/09/01/seguranca-da-informacao-se-torna-diferencial-competitivo-e-impulsiona-maturidade-digital-do-grupo-savar/" target="_blank" rel="noopener"><span class="mono">Economia SC</span><h3>Segurança da informação se torna diferencial competitivo e impulsiona maturidade digital do Grupo Savar</h3><small>01/09/2026 &#8599;</small></a></li><li><a href="https://economiasc.com/2026/05/18/como-a-introduce-se-tornou-o-pilar-estrategico-de-ciberseguranca-do-hospital-ernesto-dornelles/" target="_blank" rel="noopener"><span class="mono">Economia SC</span><h3>Como a Introduce se tornou o pilar estratégico de cibersegurança do Hospital Ernesto Dornelles</h3><small>18/05/2026 &#8599;</small></a></li><li><a href="https://economiasc.com/2025/07/30/alfa-transportes-fortalece-seguranca-digital-com-parceria-estrategica-com-a-introduce/" target="_blank" rel="noopener"><span class="mono">Economia SC</span><h3>Alfa Transportes fortalece segurança digital com parceria estratégica com a Introduce</h3><small>30/07/2025 &#8599;</small></a></li></ul>
+    <div class="sec-head rv"><span class="mono">Na imprensa e no blog</span><h2>Cases que <b>viraram notícia.</b></h2></div>
+    <ul class="press rv"><li><a href="https://www.baguete.com.br/noticias/grupo-savar-estrutura-soc-com-introduce" target="_blank" rel="noopener"><span class="mono">Baguete</span><h3>Grupo Savar estrutura SOC com Introduce</h3><small>24/09/2026 &#8599;</small></a></li><li><a href="https://cooltivo.com.br/introduce-v2/blog/hed-10-milhoes-em-tecnologia/"><span class="mono">Blog</span><h3>Hospital Ernesto Dornelles: mais de R$ 10 milhões em tecnologia para manter a estrutura que salva vidas</h3><small>Novo &rarr;</small></a></li><li><a href="https://cooltivo.com.br/introduce-v2/blog/savar-seguranca-diferencial-competitivo/"><span class="mono">Blog</span><h3>Segurança da informação se torna diferencial competitivo e impulsiona maturidade digital do Grupo Savar</h3><small>1 de setembro de 2026 &rarr;</small></a></li><li><a href="https://cooltivo.com.br/introduce-v2/blog/hed-pilar-estrategico-de-ciberseguranca/"><span class="mono">Blog</span><h3>Como a Introduce se tornou o pilar estratégico de cibersegurança do Hospital Ernesto Dornelles</h3><small>18 de maio de 2026 &rarr;</small></a></li></ul>
   </div>
 </section>
 
-<div class="endcta" id="diagnostico-cta">
+<div class="endcta">
   <div class="wrap">
     <p>A próxima história de crescimento <b>pode ser a sua.</b></p>
-    <a href="https://cooltivo.com.br/introduce-v2/#diagnostico" class="btn btn-k">Fazer meu diagnóstico <span aria-hidden="true">&rarr;</span></a>
+    <a href="https://cooltivo.com.br/introduce-v2/#diagnostico" class="btn btn-k">Proteger a minha empresa <span aria-hidden="true">&rarr;</span></a>
   </div>
 </div>
 

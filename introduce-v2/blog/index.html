@@ -492,6 +492,126 @@ header nav .nav-fp{color:var(--green)}
 }
 @media (max-width:560px){.pgrid2{grid-template-columns:1fr}}
 
+/* ===== página de case ===== */
+.crumb{background:var(--dark-3);border-bottom:1px solid var(--rule-d)}
+.crumb .wrap{display:flex;gap:10px;align-items:center;min-height:44px;color:rgba(255,255,255,.5);flex-wrap:wrap}
+.crumb a:hover{color:var(--white)}
+.crumb b{color:var(--green);font-weight:400}
+.ch{background:var(--dark-3);color:var(--white);padding-bottom:clamp(120px,14vw,200px)}
+.ch .wrap{padding-top:clamp(48px,7vw,96px);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:end}
+.ch-id{grid-column:1/-1;display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:12px}
+.ch-logo{background:#fff;padding:10px 16px;height:56px;display:inline-flex;align-items:center;border-radius:4px}
+.ch-logo img{max-height:36px;max-width:160px;width:auto}
+.ch-logo .wm{color:var(--ink);font-weight:700;font-size:18px;letter-spacing:-.02em}
+.ch-id .mono{color:rgba(255,255,255,.6)}
+.ch h1{grid-column:1/9;font-size:clamp(2.2rem,4.8vw,4.2rem);max-width:18ch}
+.ch .lede{grid-column:9/13;font-size:18px;color:rgba(255,255,255,.82)}
+.cm{margin-top:calc(-1 * clamp(96px,12vw,170px))}
+.cm .frame{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
+.cm .frame img,.cm .frame video,.cm .frame iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.cm .frame .st-play{left:24px;bottom:24px;min-height:56px;padding:0 22px 0 18px;font-size:15px}
+.cm .frame.logo{background:var(--white);display:grid;place-items:center;aspect-ratio:21/8;border-top:4px solid var(--c)}
+.cm .frame.logo img{position:static;width:auto;height:auto;max-width:50%;max-height:45%;object-fit:contain}
+.cm .frame.logo .wm{font-size:clamp(2.4rem,6vw,5rem);font-weight:700;letter-spacing:-.04em}
+.cm figcaption{margin-top:10px;color:var(--ink-3)}
+.cfacts{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--rule)}
+.cfacts li{padding:26px 20px 26px 0;border-right:1px solid var(--rule)}
+.cfacts li+li{padding-left:20px}
+.cfacts li:last-child{border-right:0}
+.cfacts b{display:block;font-size:clamp(2rem,3.6vw,3rem);font-weight:300;letter-spacing:-.05em;line-height:1}
+.cfacts span{display:block;margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.cbody{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:start}
+.cside{grid-column:1/4;position:sticky;top:96px;display:flex;flex-direction:column;gap:22px}
+.cside dl{border-top:2px solid var(--ink)}
+.cside dt{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);padding-top:16px}
+.cside dd{padding:6px 0 16px;border-bottom:1px solid var(--rule);font-size:15px}
+.cside dd a{border-bottom:1px solid currentColor}
+.jlinks{display:flex;flex-direction:column;gap:8px}
+.jlinks a{display:flex;align-items:center;gap:10px;border:0!important}
+.jlinks a i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+.jlinks a:hover{text-decoration:underline}
+.cside .btn{width:100%}
+.cmain{grid-column:5/13;display:flex;flex-direction:column;gap:56px}
+.cblk .mono{color:var(--green-ink);display:block;margin-bottom:14px}
+.cblk h2{font-size:clamp(1.6rem,2.6vw,2.2rem);margin-bottom:18px}
+.cblk p{font-size:18px;line-height:1.65;color:var(--ink-2);max-width:62ch}
+.cblk p+p{margin-top:14px}
+.cblk ul{list-style:none;border-top:1px solid var(--rule)}
+.cblk li{padding:14px 0 14px 30px;border-bottom:1px solid var(--rule);font-size:17px;line-height:1.55;position:relative}
+.cblk li::before{content:"";position:absolute;left:0;top:23px;width:14px;height:2px;background:var(--ink)}
+.cblk.res li::before{content:"✓";background:none;width:auto;height:auto;top:13px;color:var(--green-ink);font-weight:700}
+.cblk li b{font-weight:600}
+.bq{background:var(--dark-3);color:var(--white);padding:clamp(28px,4vw,48px);position:relative}
+.bq::before{content:"“";position:absolute;top:-6px;left:clamp(20px,3vw,40px);font-size:120px;line-height:1;color:var(--green);font-weight:600}
+.bq blockquote{font-size:clamp(1.3rem,2.2vw,1.8rem);line-height:1.35;letter-spacing:-.02em;font-weight:300;margin-top:36px}
+.bq cite{display:block;margin-top:20px;font-style:normal;font-size:14px}
+.bq cite b{display:block;font-weight:600}
+.bq cite span{color:rgba(255,255,255,.6)}
+.techb .chips2{display:flex;flex-wrap:wrap;gap:10px}
+.techb .chips2 span{border:1px solid var(--rule-d);padding:12px 18px;font-size:16px;transition:background .25s,color .25s,border-color .25s}
+.techb .chips2 span:hover{background:var(--green);color:var(--dark-3);border-color:var(--green)}
+.more{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.mc{display:flex;flex-direction:column;background:var(--white);height:100%;border-top:3px solid var(--c);transition:transform .3s,box-shadow .3s}
+.mc:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.08)}
+.mc .mc-l{height:110px;display:grid;place-items:center;border-bottom:1px solid var(--rule);padding:18px}
+.mc .mc-l img{max-height:48px;max-width:70%;width:auto}
+.mc .mc-l .wm{font-size:22px;font-weight:700;letter-spacing:-.03em}
+.mc .mc-b{padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.mc .mc-b .mono{font-size:10px;color:var(--ink-3)}
+.mc h3{font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.25}
+.mc .lnk{margin-top:auto;align-self:flex-start;font-size:13px}
+/* ===== página de artigo ===== */
+.ah{background:var(--paper);padding-top:clamp(48px,7vw,96px)}
+.ah .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.ah .meta{grid-column:3/11}
+.ah h1{grid-column:3/11;font-size:clamp(2.1rem,4.4vw,3.8rem);margin-top:18px}
+.ah .ex{grid-column:3/11;margin-top:20px;font-size:20px;color:var(--ink-2);max-width:56ch}
+.ah .by{grid-column:3/11;margin-top:26px;display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid var(--rule)}
+.ah .by .av{width:44px;height:44px;border-radius:50%;background:var(--dark-3);display:grid;place-items:center;flex:none}
+.ah .by .av img{width:22px}
+.ah .by b{display:block;font-weight:600;font-size:15px}
+.ah .by span{font-size:13px;color:var(--ink-3)}
+.acover{margin-top:clamp(40px,5vw,64px);display:block!important}
+.acover .pc-img{aspect-ratio:21/9}
+.acover .pc-img .tile b{font-size:clamp(2.4rem,6vw,5rem)}
+.abody{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:start}
+.ashare{grid-column:1/3;position:sticky;top:110px;display:flex;flex-direction:column;gap:10px}
+.ashare .mono{color:var(--ink-3);font-size:10px}
+.ashare button,.ashare a{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border:1px solid var(--rule);background:transparent;font-size:13px;font-weight:500;color:var(--ink);align-self:flex-start;transition:background .2s}
+.ashare button:hover,.ashare a:hover{background:var(--white)}
+.art{grid-column:3/11;font-size:19px;line-height:1.75;color:var(--ink)}
+.art p{margin:0 0 22px;max-width:68ch}
+.art h2{font-size:clamp(1.5rem,2.4vw,2rem);margin:48px 0 16px;font-weight:600;letter-spacing:-.025em;line-height:1.2}
+.art ul{list-style:none;margin:0 0 26px;border-top:1px solid var(--rule)}
+.art li{padding:12px 0 12px 28px;border-bottom:1px solid var(--rule);position:relative;font-size:18px;line-height:1.55}
+.art li::before{content:"";position:absolute;left:0;top:24px;width:12px;height:2px;background:var(--green-ink)}
+.art li b,.art p b{font-weight:600}
+.art .pq{margin:36px 0;padding:6px 0 6px 26px;border-left:4px solid var(--green);font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.3;letter-spacing:-.02em;font-weight:300}
+.art .src{margin-top:40px;padding-top:18px;border-top:1px solid var(--rule);font-size:14px;color:var(--ink-3)}
+.art .src a{border-bottom:1px solid currentColor}
+.acase{margin:40px 0;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;background:var(--dark-3);color:var(--white);padding:22px 24px}
+.acase .ch-logo{height:48px}
+.acase .mono{color:var(--green);font-size:10px}
+.acase b{display:block;font-weight:600;font-size:17px;margin-top:4px}
+@media (max-width:900px){
+  .ch .wrap,.cbody,.ah .wrap,.abody{grid-template-columns:1fr}
+  .ch .wrap>*,.cbody>*,.ah .wrap>*,.abody>*{grid-column:1/-1!important}
+  .ch .lede{margin-top:12px}
+  .cside{position:static;order:2}
+  .cmain{order:1}
+  .more{grid-template-columns:1fr 1fr}
+  .ashare{position:static;flex-direction:row;flex-wrap:wrap;order:2;margin-top:24px}
+  .acase{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .cfacts{grid-template-columns:1fr}
+  .cfacts li,.cfacts li+li{padding:18px 0;border-right:0;border-bottom:1px solid var(--rule)}
+  .more{grid-template-columns:1fr}
+  .art{font-size:18px}
+  .acover .pc-img{aspect-ratio:4/3}
+  .cm .frame.logo{aspect-ratio:16/9}
+}
+
 header nav a[aria-current="page"]{color:var(--white)}
 header nav .nav-fp{color:var(--green)}
 </style>
@@ -515,17 +635,18 @@ header nav .nav-fp{color:var(--green)}
 
 <section class="sec" style="padding-top:clamp(56px,7vw,96px)">
   <div class="wrap">
-    <a class="bf rv" href="https://economiasc.com/2026/04/08/como-ganhar-espaco-na-mesa-do-board-em-2026/" target="_blank" rel="noopener" data-f="artigos">
+    <a class="bf rv" href="https://cooltivo.com.br/introduce-v2/blog/como-ganhar-espaco-na-mesa-do-board-em-2026/" data-f="artigos">
       <div class="bf-img"><img src="../media/time-palco.jpg" alt="Palestra no 6º Encontro dos Guardiões Digitais" style="object-position:50% 40%"></div>
       <div class="bf-b">
-        <div class="meta"><b>Em destaque · Artigo</b><span>08/04/2026</span></div>
+        <div class="meta"><b>Em destaque · Artigo</b><span>8 de abril de 2026</span></div>
         <h2>Como ganhar espaço na mesa do board em 2026</h2>
-        <p>O que o líder de segurança precisa levar ao conselho para deixar de ser custo e virar decisão.</p>
-        <span class="lnk">Ler na Economia SC <span aria-hidden="true">&#8599;</span></span>
+        <p>O board não decide tecnologia. Decide exposição a risco, continuidade e crescimento. Como traduzir segurança para essa conversa.</p>
+        <p class="meta" style="margin-top:14px"><span>Por Mauricio Gimenes</span></p>
+        <span class="lnk">Ler artigo <span aria-hidden="true">&rarr;</span></span>
       </div>
     </a>
     <div class="chips rv" role="group" aria-label="Filtrar conteúdos por tipo"><button class="chip" data-k="all" aria-pressed="true">Todos</button><button class="chip" data-k="artigos" aria-pressed="false">Artigos<span class="chip-n">3</span></button><button class="chip" data-k="cases" aria-pressed="false">Cases<span class="chip-n">3</span></button><button class="chip" data-k="eventos" aria-pressed="false">Eventos<span class="chip-n">2</span></button><button class="chip" data-k="imprensa" aria-pressed="false">Imprensa<span class="chip-n">1</span></button><button class="chip" data-k="video" aria-pressed="false">Podcast e vídeo<span class="chip-n">2</span></button></div>
-    <ul class="pgrid2 rv"><li data-f="imprensa"><a class="pc" href="https://www.baguete.com.br/noticias/grupo-savar-estrutura-soc-com-introduce" target="_blank" rel="noopener"><div class="pc-img"><img src="../media/soc-sala.jpg" alt="SOC da Introduce" loading="lazy" style="object-position:50% 30%"></div><div class="meta"><b>Imprensa</b><span>24/09/2026</span></div><h3>Grupo Savar estrutura SOC com Introduce</h3><p>SOC com MDR Sophos para monitoramento e resposta 24×7 em um dos maiores grupos de concessionárias do Sul.</p><span class="src">Baguete &#8599;</span></a></li><li data-f="eventos"><a class="pc" href="https://economiasc.com/2026/09/18/7o-encontro-guardioes-digitais-vai-debater-lideranca-e-ciberseguranca-na-era-de-transformacao-acelerada-pela-ia/" target="_blank" rel="noopener"><div class="pc-img"><img src="../media/equipe-caldeira.jpg" alt="Time da Introduce comemorando no Campus Caldeira" loading="lazy" style="object-position:50% 30%"></div><div class="meta"><b>Eventos</b><span>18/09/2026</span></div><h3>7º Encontro Guardiões Digitais vai debater liderança e cibersegurança na era de transformação acelerada pela IA</h3><p>O que esperar do próximo encontro da comunidade, com a IA no centro da pauta das lideranças.</p><span class="src">Economia SC &#8599;</span></a></li><li data-f="cases"><a class="pc" href="https://economiasc.com/2026/09/01/seguranca-da-informacao-se-torna-diferencial-competitivo-e-impulsiona-maturidade-digital-do-grupo-savar/" target="_blank" rel="noopener"><div class="pc-img"><img src="../media/v2-savar.jpg" alt="Gustavo Filomena, gerente de TI do Grupo Savar" loading="lazy" style="object-position:50% 40%"></div><div class="meta"><b>Cases</b><span>01/09/2026</span></div><h3>Segurança da informação se torna diferencial competitivo e impulsiona maturidade digital do Grupo Savar</h3><p>Como a segurança passou a sustentar as exigências de montadoras e parceiros comerciais.</p><span class="src">Economia SC &#8599;</span></a></li><li data-f="eventos"><a class="pc" href="https://economiasc.com/2026/07/13/mais-do-que-tecnologia-evento-dos-guardioes-digitais-leva-discussao-sobre-ciberseguranca-a-mesa-do-board/" target="_blank" rel="noopener"><div class="pc-img"><img src="../media/time-guardioes.jpg" alt="Time da Introduce no palco do 6º Encontro dos Guardiões Digitais" loading="lazy" style="object-position:50% 35%"></div><div class="meta"><b>Eventos</b><span>13/07/2026</span></div><h3>Mais do que tecnologia: evento dos Guardiões Digitais leva discussão sobre cibersegurança à mesa do board</h3><p>Os bastidores do encontro que colocou o board no centro da conversa sobre segurança.</p><span class="src">Economia SC &#8599;</span></a></li><li data-f="cases"><a class="pc" href="https://economiasc.com/2026/05/18/como-a-introduce-se-tornou-o-pilar-estrategico-de-ciberseguranca-do-hospital-ernesto-dornelles/" target="_blank" rel="noopener"><div class="pc-img" style="--c:#005BFF;--co:#fff"><div class="tile"><span class="mono">Case · Saúde</span><img class="lg" src="../media/logos/clientes/hed.png" alt=""></div></div><div class="meta"><b>Cases</b><span>18/05/2026</span></div><h3>Como a Introduce se tornou o pilar estratégico de cibersegurança do Hospital Ernesto Dornelles</h3><p>Da TI reativa à segurança como pilar da governança hospitalar.</p><span class="src">Economia SC &#8599;</span></a></li><li data-f="artigos"><a class="pc" href="https://economiasc.com/2026/02/05/gestao-governanca-seguranca-e-a-resiliencia-estrategica-no-ano-de-estresse-brasileiro/" target="_blank" rel="noopener"><div class="pc-img" style="--c:#FF7C00;--co:#1E1E1E"><div class="tile"><span class="mono">Artigo</span><b>Resiliência estratégica</b></div></div><div class="meta"><b>Artigos</b><span>05/02/2026</span></div><h3>Gestão, governança, segurança e a resiliência estratégica no ano de estresse brasileiro</h3><p>Por que governança e segurança andam juntas quando o ano aperta.</p><span class="src">Economia SC &#8599;</span></a></li><li data-f="artigos"><a class="pc" href="https://economiasc.com/2026/01/29/resiliencia-organizacional-o-custo-de-oportunidade-por-tras-das-interrupcoes-do-negocio/" target="_blank" rel="noopener"><div class="pc-img" style="--c:#00E6B4;--co:#06231C"><div class="tile"><span class="mono">Artigo</span><b>O custo da operação parada</b></div></div><div class="meta"><b>Artigos</b><span>29/01/2026</span></div><h3>Resiliência organizacional: o custo de oportunidade por trás das interrupções do negócio</h3><p>Quanto custa a operação parada e por que a continuidade é decisão de negócio.</p><span class="src">Economia SC &#8599;</span></a></li><li data-f="cases"><a class="pc" href="https://economiasc.com/2025/07/30/alfa-transportes-fortalece-seguranca-digital-com-parceria-estrategica-com-a-introduce/" target="_blank" rel="noopener"><div class="pc-img" style="--c:#A8A8A8;--co:#1E1E1E"><div class="tile"><span class="mono">Case · Logística</span><img class="lg" src="../media/logos/clientes/alfa-transportes.png" alt=""></div></div><div class="meta"><b>Cases</b><span>30/07/2025</span></div><h3>Alfa Transportes fortalece segurança digital com parceria estratégica com a Introduce</h3><p>Escudo Digital com Sophos, SD-WAN e monitoramento 24×7 para a operação não parar.</p><span class="src">Economia SC &#8599;</span></a></li><li data-f="video"><a class="pc" href="https://www.youtube.com/watch?v=71Xv7KDSPSo" target="_blank" rel="noopener"><div class="pc-img" style="--c:#8400FF;--co:#fff"><div class="tile"><span class="mono">Podcast</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div></div><div class="meta"><b>Podcast e vídeo</b></div><h3>Alfabetização em IA para executivos: governança sem travar a inovação</h3><p>Episódio do podcast Guardiões Digitais com o Café com Bytes.</p><span class="src">YouTube &#8599;</span></a></li><li data-f="video"><a class="pc" href="https://cooltivo.com.br/introduce-v2/#perspectivas"><div class="pc-img" style="--c:#1E1E1E;--co:#9EFF00"><div class="tile"><span class="mono">Série</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></div></div><div class="meta"><b>Podcast e vídeo</b></div><h3>Introduce · Os Desafios de 2027</h3><p>Série em vídeo com os especialistas da Introduce sobre o que vem pela frente.</p><span class="src">Série em vídeo &rarr;</span></a></li></ul>
+    <ul class="pgrid2 rv"><li data-f="cases"><a class="pc" href="https://cooltivo.com.br/introduce-v2/blog/hed-10-milhoes-em-tecnologia/"><div class="pc-img"><img src="../media/soc-monitores.jpg" alt="Painéis de monitoramento no SOC da Introduce" loading="lazy" style="object-position:50% 30%"></div><div class="meta"><b>Case</b><span>Novo</span></div><h3>Hospital Ernesto Dornelles: mais de R$ 10 milhões em tecnologia para manter a estrutura que salva vidas</h3><p>Firewall, endpoint, wireless, SOC MDR 24×7×365 e uma jornada de governança que começou na resposta a um incidente, em 2016.</p><span class="src">Ler artigo &rarr;</span></a></li><li data-f="eventos"><a class="pc" href="https://cooltivo.com.br/introduce-v2/blog/7-encontro-guardioes-digitais-lideranca-e-ia/"><div class="pc-img"><img src="../media/equipe-caldeira.jpg" alt="Time da Introduce de braços erguidos no Campus Caldeira" loading="lazy" style="object-position:50% 30%"></div><div class="meta"><b>Evento</b><span>18 de setembro de 2026</span></div><h3>7º Encontro Guardiões Digitais vai debater liderança e cibersegurança na era de transformação acelerada pela IA</h3><p>No Instituto Caldeira, em Porto Alegre, o tema é “Liderando transformações que só humanos podem fazer”.</p><span class="src">Ler artigo &rarr;</span></a></li><li data-f="cases"><a class="pc" href="https://cooltivo.com.br/introduce-v2/blog/savar-seguranca-diferencial-competitivo/"><div class="pc-img"><img src="../media/v2-savar.jpg" alt="Gustavo Filomena, gerente de TI do Grupo Savar" loading="lazy" style="object-position:50% 40%"></div><div class="meta"><b>Case</b><span>1 de setembro de 2026</span></div><h3>Segurança da informação se torna diferencial competitivo e impulsiona maturidade digital do Grupo Savar</h3><p>SOC com Sophos MDR, monitoramento 24×7 e a segurança sustentando as exigências de montadoras e parceiros.</p><span class="src">Ler artigo &rarr;</span></a></li><li data-f="eventos"><a class="pc" href="https://cooltivo.com.br/introduce-v2/blog/guardioes-digitais-board-room-challenge/"><div class="pc-img"><img src="../media/time-guardioes.jpg" alt="Time da Introduce no palco do 6º Encontro dos Guardiões Digitais" loading="lazy" style="object-position:50% 35%"></div><div class="meta"><b>Evento</b><span>13 de julho de 2026</span></div><h3>Mais do que tecnologia: evento dos Guardiões Digitais leva discussão sobre cibersegurança à mesa do board</h3><p>No 6º Encontro, o Board Room Challenge colocou mais de 85 líderes no papel de executivos diante de um conselho.</p><span class="src">Ler artigo &rarr;</span></a></li><li data-f="cases"><a class="pc" href="https://cooltivo.com.br/introduce-v2/blog/hed-pilar-estrategico-de-ciberseguranca/"><div class="pc-img" style="--c:#005BFF;--co:#fff"><div class="tile"><span class="mono">Case · Saúde</span><img class="lg" src="../media/logos/clientes/hed.png" alt=""></div></div><div class="meta"><b>Case</b><span>18 de maio de 2026</span></div><h3>Como a Introduce se tornou o pilar estratégico de cibersegurança do Hospital Ernesto Dornelles</h3><p>Da TI reativa à segurança como pilar da governança hospitalar, em uma parceria de mais de dez anos.</p><span class="src">Ler artigo &rarr;</span></a></li><li data-f="artigos"><a class="pc" href="https://cooltivo.com.br/introduce-v2/blog/gestao-governanca-seguranca-resiliencia-2026/"><div class="pc-img" style="--c:#FF7C00;--co:#1E1E1E"><div class="tile"><span class="mono">Artigo</span><b>Resiliência estratégica</b></div></div><div class="meta"><b>Artigo</b><span>5 de fevereiro de 2026</span></div><h3>Gestão, governança, segurança e a resiliência estratégica no ano de estresse brasileiro</h3><p>Feriados, eleições e mais ataques: como usar a IA como âncora de resiliência, com governança e dados seguros.</p><span class="src">Ler artigo &rarr;</span></a></li><li data-f="artigos"><a class="pc" href="https://cooltivo.com.br/introduce-v2/blog/resiliencia-organizacional-custo-de-oportunidade/"><div class="pc-img" style="--c:#00E6B4;--co:#06231C"><div class="tile"><span class="mono">Artigo</span><b>O custo da operação parada</b></div></div><div class="meta"><b>Artigo</b><span>29 de janeiro de 2026</span></div><h3>Resiliência organizacional: o custo de oportunidade por trás das interrupções do negócio</h3><p>O maior risco não é o ataque, é a incapacidade de responder a ele. O papel de um Sistema de Gestão de Continuidade de Negócios.</p><span class="src">Ler artigo &rarr;</span></a></li><li data-f="imprensa"><a class="pc" href="https://www.baguete.com.br/noticias/grupo-savar-estrutura-soc-com-introduce" target="_blank" rel="noopener"><div class="pc-img"><img src="../media/soc-sala.jpg" alt="SOC da Introduce" loading="lazy" style="object-position:50% 30%"></div><div class="meta"><b>Imprensa</b><span>24/09/2026</span></div><h3>Grupo Savar estrutura SOC com Introduce</h3><p>SOC com MDR Sophos para monitoramento e resposta 24×7 em um dos maiores grupos de concessionárias do Sul.</p><span class="src">Baguete &#8599;</span></a></li><li data-f="video"><a class="pc" href="https://www.youtube.com/watch?v=71Xv7KDSPSo" target="_blank" rel="noopener"><div class="pc-img" style="--c:#8400FF;--co:#fff"><div class="tile"><span class="mono">Podcast</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></div></div><div class="meta"><b>Podcast e vídeo</b></div><h3>Alfabetização em IA para executivos: governança sem travar a inovação</h3><p>Episódio do podcast Guardiões Digitais com o Café com Bytes.</p><span class="src">YouTube &#8599;</span></a></li><li data-f="video"><a class="pc" href="https://cooltivo.com.br/introduce-v2/#perspectivas"><div class="pc-img" style="--c:#1E1E1E;--co:#9EFF00"><div class="tile"><span class="mono">Série</span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></div></div><div class="meta"><b>Podcast e vídeo</b></div><h3>Introduce · Os Desafios de 2027</h3><p>Série em vídeo com os especialistas da Introduce sobre o que vem pela frente.</p><span class="src">Série em vídeo &rarr;</span></a></li></ul>
     <p class="empty" id="empty" hidden>Nenhum conteúdo nesta categoria por enquanto.</p>
   </div>
 </section>
