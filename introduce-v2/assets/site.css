@@ -1070,7 +1070,7 @@ header nav .nav-fp{color:var(--green)}
 /* imagens com width/height: altura proporcional */
 img{height:auto}
 /* KV: canto cortado nos botões de diagnóstico */
-.btn-g,.btn-k{clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%)}
+.btn-g,.btn-k{clip-path:polygon(0 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%)}
 /* setas clicáveis inclinadas para cima, verdes no hover */
 :root{--arw-h:var(--green-ink)}
 .dark,header,footer,.jh,.ch,.lh,.mh,.qh,.hero,.bq,.acase,.nl,.fp,.ct-stat,.p-main,.oj,.techb,.cs-dark{--arw-h:var(--green)}
