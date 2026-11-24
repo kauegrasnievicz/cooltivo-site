@@ -1103,6 +1103,7 @@ a.lnk:hover,a:hover .lnk,.links a:hover,.cside dd a:hover{border-bottom-color:va
 .cv-h img,.book img{width:auto;flex:none;max-width:none;object-fit:contain}
 .dg-f input,.dg-f select{min-width:0;width:100%}.dg-f .row>label{min-width:0}
 
+.f-brand{grid-column:1/3}
 .f-brand img{height:32px}
 .f-brand p{font-size:16px;margin-top:18px;color:rgba(255,255,255,.7);max-width:none}
 
